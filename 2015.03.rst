@@ -1,0 +1,118 @@
+=================================
+OpenStack DefCore 2015.03
+=================================
+
+Status: Approved
+Replaces: 2014.07
+
+This document outlines the mandatory and advisory capabilities
+required to exist in a software installation in order to be
+eligible to use marks controlled by the OpenStack Foundation.
+
+This document supersedes the companion JSON version.
+
+
+Releases Covered
+==============================
+Applies to Havana, Icehouse
+
+
+Platform Components
+==============================
+Required: Compute and Object
+
+Advisory: None
+
+Deprecated: None
+
+Removed: None
+
+Compute Component Capabilities
+==============================
+
+========================  ====================
+Capability Name            Associated Project
+------------------------  --------------------
+compute-auth                  Nova
+compute-flavors               Nova
+compute-images                Nova
+compute-instance-actions      Nova
+compute-keypairs              Nova
+compute-quotas                Nova
+compute-servers               Nova
+compute-volume                Nova
+images-v2                     Glance
+========================  ====================
+
+Advisory Capabilities
+------------------------------
+
+========================  ====================
+Capability Name               Associated Project
+------------------------  --------------------
+auth-token                Keystone
+compute-servers-metadata  Nova
+========================  ====================
+
+Deprecated Capabilities
+------------------------------
+None.
+
+Removed Capabilities
+------------------------------
+
+========================  ====================
+Capability Name            Associated Project
+------------------------  --------------------
+compute-floating-ips        Nova
+images-v1                   Glance
+volume                      Nova
+========================  ====================
+
+
+Object Component Capabilities
+==============================
+
+========================  ====================
+Capability Name            Associated Project
+------------------------  --------------------
+objectstore-object         Swift
+========================  ====================
+
+Advisory Capabilities
+------------------------------
+None.
+
+Deprecated Capabilities
+------------------------------
+None.
+
+Removed Capabilities
+------------------------------
+None.
+
+
+Designated Sections
+==============================
+
+The following designated sections apply to the same releases as
+this specification.
+
+* Nova is by default designated except scheduler, filter, drivers, API
+  extensions and networking.
+* Glance designated sections are the API implementation code and domain model.
+* Swift designated sections are proxy server, object server, container server,
+  account server and select middleware (complete list provided by community in
+  linked json document).
+
+
+Advisory Designated Sections
+------------------------------------
+
+None.
+
+Functional Information
+======================
+Format: RestructuredText
+
+Layout: 1.0
