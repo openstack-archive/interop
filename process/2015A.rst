@@ -1,0 +1,233 @@
+OpenStack DefCore Process 2015A
+================================
+
+Status: Draft
+Replaces: none
+
+This document describes the DefCore process required by the OpenStack
+bylaws and approved by the OpenStack Technical Committee and Board.
+
+Expected Time line:
+---------------------------------------
+
++------------+-----------+------------------------------------+-----------+
+| Time Frame | Milestone | Activities                         | Lead By   |
++============+===========+====================================+===========+
+| -3 months  | S-3       | "preliminary” draft (from current) | DefCore   |
++------------+-----------+------------------------------------+-----------+
+| -2 months  | S-2       | ID new Capabilities                | Community |
++------------+-----------+------------------------------------+-----------+
+| -1 month   | S-1       | Score capabilities                 | DefCore   |
++------------+-----------+------------------------------------+-----------+
+| Summit     | S         | "solid" draft                      | Community |
++            +           +------------------------------------+-----------+
+|            |           | Advisory items selected            | DefCore   |
++------------+-----------+------------------------------------+-----------+
+| +1 month   | S+1       | self-testing                       | Vendors   |
++------------+-----------+------------------------------------+-----------+
+| +2 months  | S+2       | Test Flagging                      | DefCore   |
++------------+-----------+------------------------------------+-----------+
+| +3 months  | S+3       | Approve Guidance                   | Board     |
++------------+-----------+------------------------------------+-----------+
+
+Note: DefCore may accelerate the process to correct errors and omissions.
+
+Process Definition
+--------------------------------------
+
+The DefCore Guideline process has two primary phases: Draft and Review.
+During the Draft phase (A), the DefCore Committee is working with community
+leaders to update and score the components of the guideline.  During the
+Review phase (B), general community and vendors have an opportunity to
+provide input and check the guidelines (C) against actual implementations.
+Review phase ends with Board approval of the draft guideline (D).
+
+This section provides specific rules and structure for each phase.
+
+NOTE: To ensure continuity of discussion, process components defined below
+must _not_ reuse numbers in future revisions.  The numbering pattern
+follows draft, section and sub-item numbering, e.g.: 20015A.B2.2.  This
+requirement may create numbering gaps in future iterations that will help
+indicate changes.
+
+Guidelines Draft Phase (A)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Starting: S-3
+
+A1. New Guidelines Start From Previous Guidelines
+
+  1. Receive DefCore Dedicated Section Guidelines
+  2. New Guidelines start from the previous Board approved document.
+  3. New Guidelines are given the preliminary name of the target year and
+     .next.
+
+A2. Community Groups Tests into Capabilities
+
+  1. DefCore Committee coordinates community activities with the TC and
+     PTLs to revise the capabilities based on current technical needs and
+     functionality.
+  2. Groupings may change between iterations.
+  3. Tests must have unique identifiers that are durable across releases
+     and grouping changes to be considered.
+  4. Tests must be under OpenStack governance.
+
+A3. PTLs Recommend Changes to Designated Sections
+
+A4. DefCore Committee identifies required capabilities
+
+  1. DefCore uses Board approved DefCore scoring criteria to evaluate
+     capabilities.
+  2. DefCore needs Board approval to change scoring
+     criteria.
+  3. Scoring criteria factor or weights cannot change after Draft is
+     published.
+  4. DefCore identifies cut-off score for determining that a
+     capability is required.
+  5. Capabilities will not be removed without being deprecated in the
+     previous Guideline.
+  6. Capabilities will not be added without being advisory in the previous
+     Guideline.
+
+A5. Foundation recommends OpenStack Components and OpenStack Platform Scope
+
+  1. Foundation recommends capabilities to include in each OpenStack
+     Component.
+  2. Foundation recommends which Components are required for
+     the OpenStack Platform.
+
+A6. Additional Capabilities and Tests
+
+  1. DefCore will work with the community to define new capabilities.
+  2. Test grouping for new capabilities will be included in the DefCore
+     documents.
+  3. DefCore will publish a list of missing and gapped capabilities.
+
+A7. DefCore Committee creates recommendation for Draft.
+
+  1. DefCore Committee coordinates activities to create draft.
+  2. DefCore Committee may choose to ignore recommendations with documented
+     justification.
+
+Guidelines Review Phase (B)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Starting: Summit
+
+B1. All Reference Artifacts are reviewed via Gerrit
+
+  1. Draft Guideline
+  2. Designated sections
+  3. Test-Capability groupings
+  4. Flagged Test List
+  5. Capability Scoring criteria and weights
+  6. Not in Gerrit: Working materials (spreadsheets, etc)
+
+B2. Presentation of Draft Guidelines
+
+  1. DefCore will present Draft Guidelines to the Board for Review
+  2. DefCore will distribute Draft Guidelines to the community
+  3. Foundation provides Draft to vendors for review
+
+B3. Changes to Guideline made by Gerrit Review Process
+
+  1. Community discussion including vendors must go through Gerrit
+  2. All changes to draft must go through Gerrit process
+
+B4. For Gerrit reviews, DefCore CoChairs act as joint PTLs
+
+  1. Board committee members of DefCore serve as "core" reviewers (+2).
+  2. Requests for changes, must be submitted as patches by the requested
+     party.
+  3. DefCore Committee members cannot proxy for community change requests.
+
+Community Review & Vendor Self-Test (C)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Starting: S and continues past S+3
+
+C1. Vendor Self-Tests
+
+  1. Vendors are responsible for executing these tests identified by the
+     DefCore committee.
+  2. The Foundation may, but is not required to, provide tooling for
+     running tests.
+  3. The Foundation may, but is not required to, define a required
+     reporting format.
+  4. Self-test results may be published by Vendors in advance of Foundation
+     review, but must be clearly labeled as "Unofficial Results - Not Yet
+     Accepted By The OpenStack Foundation".  Vendors who publish
+     self-tests MUST provide them in the same format that would be
+     submitted to the OpenStack Foundation but MAY provide additional
+     formats if they choose to do so.
+  5. Self-test results cannot be used as proof of compliance.
+
+C2. Vendor submits results to Foundation for review
+
+  1. The Foundation determines the acceptable format for submissions.
+  2. The Foundation has final authority to determine if Vendor meets
+     criteria.
+  3. The Foundation must provide a review of the results within 30 days.
+
+C3. Vendor Grievance Process
+
+  1. Vendors may raise concerns with specific tests to the DefCore
+     committee.
+  2. The DefCore committee may choose to remove tests from a Guideline
+     (known as flagging).
+  3. The DefCore committee must respond to vendor requests to flag tests
+     within 30 days.
+  4. Vendors may not request flagging all tests in a capability.
+
+C4. Results of Vendor Self-Tests will be open
+
+  1. The Foundation will make the final results of approved vendors
+     available to the community.
+  2. The Foundation will not publish incomplete or unapproved results.
+  3. Only "pass" results will be reported. Skipped and failed results will
+     be omitted from the reports.
+  4. Reports will include individual test results, not just capability
+     scoring.
+
+C5. API Usage Data Report
+
+  1. The Foundation will provide DefCore committee with an open report
+     about API usage based on self-tests.
+  2. To the extent the data is available, capabilities beyond the DefCore
+     list will be included in the report.
+
+Guideline Approval (D)
+^^^^^^^^^^^^^^^^^^^^^^
+
+Starting: S+3
+
+D1. Board will review and approve DefCore Guideline from draft
+
+  1. Guidelines are set at the Platform, Component and Capability level
+     only.
+  2. Text guideline document is authorative over the JSON representation.
+  3. DefCore will provide JSON representation for automated scoring
+  4. Guidelines only apply to the identified releases (a.k.a. release
+     tags).
+
+D2. DefCore Committee has authority on test categorization
+
+  1. Can add flagged tests before and after Guideline approval.
+  2. Cannot change Test to Capability mappings after approval.
+  3. Maintains the test to capability mappings in the JSON representation.
+
+D3. Designated sections only enforced for projects with required capabilities
+
+  1. Designated sections may be defined for any project.
+  2. Designated sections applies to the release (a.k.a. release tags)
+     identified in the Guideline.
+
+D4. Guidelines are named based on the date of Board approval
+
+  1. Naming pattern will be 4 digital year dot and 2 digit month.
+
+
+Functional Information
+======================
+Format: RestructuredText
+Layout: 1.0
