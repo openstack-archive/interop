@@ -10,12 +10,12 @@ NOTE: Changes to file requires approval of the DefCore committee chair(s).
 DefCore Process Flow
 ====================
 
-TBD
+see /process/2015A.rst or later
 
 Terminology
 ====================
 
-TBD
+see lexicon.rst
 
 JSON Schema
 ==================== 

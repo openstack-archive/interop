@@ -106,6 +106,5 @@ None.
 
 Functional Information
 ======================
-Format: RestructuredText
-
-Layout: 1.0
+:Format: RestructuredText
+:Layout: 1.0
