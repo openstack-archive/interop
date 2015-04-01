@@ -232,7 +232,8 @@
         "description": "Basic server operations in the Compute API",
         "flagged": [
             "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password"
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password",
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft"
         ],
         "name": "compute-servers",
         "tests": [
