@@ -3,7 +3,7 @@
   "schema": "1.1",
   "status": "draft",
   "replaces": "2015.03",
-  "releases": ["havana", "icehouse"],
+  "releases": ["havana", "icehouse", "juno"],
   "platform": {
     "required": ["compute", "object"],
     "advisory": [],
