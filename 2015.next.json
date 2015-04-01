@@ -14,6 +14,8 @@
   "components": {
     "compute": {
       "required": [
+        "identity-auth",
+        "auth-token",
         "compute-auth",
         "compute-flavors",
         "compute-images",
@@ -24,19 +26,46 @@
         "compute-volume",
         "images-v2"],
       "advisory": [
-        "auth-token",
         "compute-servers-metadata"],
       "deprecated": [],
       "removed": []
       },
     "object": {
       "required": ["objectstore-object"],
-      "advisory": [],
+      "advisory": [
+        "identity-auth",
+        "auth-token"],
       "deprecated": [],
       "removed": []
       }
     },
   "capabilities": {
+    "identity-auth": {
+        "achievements": [
+            "deployed",
+            "tools",
+            "clients",
+            "future",
+            "complete",
+            "stable",
+            "discover",
+            "doc",
+            "sticky",
+            "foundation",
+            "atomic",
+            "proximity"
+        ],
+        "admin": false,
+        "status": "required",
+        "guidelines": [],
+        "description": "Auth operations within the Identity API",
+        "flagged": [],
+        "name": "identity-auth",
+        "tests": [
+            "tempest.api.identity.v2.TokensTest.test_create_token",
+            "tempest.api.identity.v3.TokensTest.test_create_token"
+        ]
+    },
     "compute-images": {
         "achievements": [
             "tools",
@@ -449,7 +478,7 @@
     "auth-token": {
         "achievements": [],
         "admin": false,
-        "status": "advisory",
+        "status": "required",
         "guidelines": [],
         "project": "keystone",
         "description": "Generate an auth token given an identity endpoint",
