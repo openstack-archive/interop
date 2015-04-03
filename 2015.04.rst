@@ -1,9 +1,9 @@
 =================================
-OpenStack DefCore 2015.next
+OpenStack DefCore 2015.04
 =================================
 
 Status: Draft
-Replaces: 2015.04
+Replaces: 2015.03
 
 This document outlines the mandatory and advisory capabilities
 required to exist in a software installation in order to be

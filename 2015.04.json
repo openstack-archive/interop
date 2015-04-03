@@ -1,8 +1,8 @@
 {
-  "id": "2015.next",
+  "id": "2015.04",
   "schema": "1.1",
   "status": "draft",
-  "replaces": "2015.04",
+  "replaces": "2015.03",
   "releases": ["havana", "icehouse", "juno"],
   "platform": {
     "required": ["compute", "object"],
