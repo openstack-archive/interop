@@ -71,6 +71,10 @@ A2. Community Groups Tests into Capabilities
   3. Tests must have unique identifiers that are durable across releases
      and grouping changes to be considered.
   4. Tests must be under OpenStack governance.
+  5. The DefCore committee will provide the test groupings in JSON format
+     for automated scoring.
+  6. The DefCore committee will provide a human-readable summary of
+     the guideline generated from the JSON test grouping.
 
 A3. PTLs Recommend Changes to Designated Sections
 
@@ -205,15 +209,18 @@ D1. Board will review and approve DefCore Guideline from draft
 
   1. Guidelines are set at the Platform, Component and Capability level
      only.
-  2. Text guideline document is authorative over the JSON representation.
-  3. DefCore will provide JSON representation for automated scoring
+  2. The DefCore Committee will submit the human-readable summary of
+     capabilities (see section A2[6]) to the Board for approval.
+  3. By voting to approve the summary, the Board delegates responsibility
+     for maintaining test groupings to the DefCore committee subject to
+     the limitations described in section D2.
   4. Guidelines only apply to the identified releases (a.k.a. release
      tags).
 
 D2. DefCore Committee has authority on test categorization
 
   1. Can add flagged tests before and after Guideline approval.
-  2. Cannot change Test to Capability mappings after approval.
+  2. Cannot add additional Tests to Capability mappings after approval.
   3. Maintains the test to capability mappings in the JSON representation.
 
 D3. Designated sections only enforced for projects with required capabilities
