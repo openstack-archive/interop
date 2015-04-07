@@ -69,9 +69,11 @@ Test
 
 Flagged Test
   A test that does not provide consistent results in the
-  field and it not required for vendor self-test * Self-test - process by
-  which a vendor runs tests against their product or service without 3rd
-  party observation.
+  field and it not required for vendor self-test.
+
+Self-test 
+  Process by which a vendor runs tests against their product or service
+  without 3rd party observation.
 
 Certify or Accredit
   DefCore does not do any of these things for OpenStack clouds.  These
