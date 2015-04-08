@@ -13,17 +13,17 @@ Expected Time line:
 +------------+-----------+------------------------------------+-----------+
 | Time Frame | Milestone | Activities                         | Lead By   |
 +============+===========+====================================+===========+
-| -3 months  | S-3       | "preliminary” draft (from current) | DefCore   |
+| -3 months  | S-3       | "Preliminary” draft (from current) | DefCore   |
 +------------+-----------+------------------------------------+-----------+
 | -2 months  | S-2       | ID new Capabilities                | Community |
 +------------+-----------+------------------------------------+-----------+
-| -1 month   | S-1       | Score capabilities                 | DefCore   |
+| -1 month   | S-1       | Score Capabilities                 | DefCore   |
 +------------+-----------+------------------------------------+-----------+
-| Summit     | S         | "solid" draft                      | Community |
+| Summit     | S         | "Solid" draft                      | Community |
 +            +           +------------------------------------+-----------+
-|            |           | Advisory items selected            | DefCore   |
+|            |           | Advisory/Deprecated items selected | DefCore   |
 +------------+-----------+------------------------------------+-----------+
-| +1 month   | S+1       | self-testing                       | Vendors   |
+| +1 month   | S+1       | Self-testing                       | Vendors   |
 +------------+-----------+------------------------------------+-----------+
 | +2 months  | S+2       | Test Flagging                      | DefCore   |
 +------------+-----------+------------------------------------+-----------+
@@ -46,7 +46,7 @@ This section provides specific rules and structure for each phase.
 
 NOTE: To ensure continuity of discussion, process components defined below
 must _not_ reuse numbers in future revisions.  The numbering pattern
-follows draft, section and sub-item numbering, e.g.: 20015A.B2.2.  This
+follows draft, section and sub-item numbering, e.g.: 2015A.B2.2.  This
 requirement may create numbering gaps in future iterations that will help
 indicate changes.
 
@@ -57,9 +57,8 @@ Starting: S-3
 
 A1. New Guidelines Start From Previous Guidelines
 
-  1. Receive DefCore Dedicated Section Guidelines
-  2. New Guidelines start from the previous Board approved document.
-  3. New Guidelines are given the preliminary name of the target year and
+  1. New Guidelines start from the previous Board approved document.
+  2. New Guidelines are given the preliminary name of the target year and
      .next.
 
 A2. Community Groups Tests into Capabilities
@@ -69,12 +68,12 @@ A2. Community Groups Tests into Capabilities
      functionality.
   2. Groupings may change between iterations.
   3. Tests must have unique identifiers that are durable across releases
-     and grouping changes to be considered.
-  4. Tests must be under OpenStack governance.
+     and changes in grouping.
+  4. Tests must be under OpenStack Technical Committee governance.
   5. The DefCore committee will provide the test groupings in JSON format
-     for automated scoring.
+     for scoring.
   6. The DefCore committee will provide a human-readable summary of
-     the guideline generated from the JSON test grouping.
+     the Guideline generated from the JSON version.
 
 A3. PTLs Recommend Changes to Designated Sections
 
@@ -93,11 +92,11 @@ A4. DefCore Committee identifies required capabilities
   6. Capabilities will not be added without being advisory in the previous
      Guideline.
 
-A5. Foundation recommends OpenStack Components and OpenStack Platform Scope
+A5. Foundation Staff recommends OpenStack Components and OpenStack Platform Scope
 
-  1. Foundation recommends capabilities to include in each OpenStack
+  1. Foundation Staff recommends capabilities to include in each OpenStack
      Component.
-  2. Foundation recommends which Components are required for
+  2. Foundation Staff recommends which Components are required for
      the OpenStack Platform.
 
 A6. Additional Capabilities and Tests
@@ -105,7 +104,8 @@ A6. Additional Capabilities and Tests
   1. DefCore will work with the community to define new capabilities.
   2. Test grouping for new capabilities will be included in the DefCore
      documents.
-  3. DefCore will publish a list of missing and gapped capabilities.
+  3. DefCore will publish a list of missing capabilities and capabilities with
+     inadequate test coverage.
 
 A7. DefCore Committee creates recommendation for Draft.
 
@@ -127,23 +127,27 @@ B1. All Reference Artifacts are reviewed via Gerrit
   5. Capability Scoring criteria and weights
   6. Not in Gerrit: Working materials (spreadsheets, etc)
 
-B2. Presentation of Draft Guidelines
+B2. Presentation of Draft Guidelines for Review
 
-  1. DefCore will present Draft Guidelines to the Board for Review
-  2. DefCore will distribute Draft Guidelines to the community
-  3. Foundation provides Draft to vendors for review
+  1. DefCore will present Draft Guidelines to the Board for review.
+  2. DefCore will distribute Draft Guidelines to the community for review.
+  3. Foundation Staff will provide Draft Guidelines to vendors for review.
+  4. A link to the Gerrit document must be provided with the review materials.
 
 B3. Changes to Guideline made by Gerrit Review Process
 
-  1. Community discussion including vendors must go through Gerrit
-  2. All changes to draft must go through Gerrit process
+  1. Community discussion including vendors must go through Gerrit.
+  2. All changes to draft must go through Gerrit process.
+  3. DefCore will proxy for users who do not participate in the Gerrit process
+     with attribution.
 
 B4. For Gerrit reviews, DefCore CoChairs act as joint PTLs
 
   1. Board committee members of DefCore serve as "core" reviewers (+2).
-  2. Requests for changes, must be submitted as patches by the requested
+  2. Requests for changes must be submitted as patches by the requesting
      party.
-  3. DefCore Committee members cannot proxy for community change requests.
+  3. DefCore Committee members may proxy change requests as long as the
+     requesting party is explicitly acknowledged.
 
 Community Review & Vendor Self-Test (C)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,18 +164,18 @@ C1. Vendor Self-Tests
      reporting format.
   4. Self-test results may be published by Vendors in advance of Foundation
      review, but must be clearly labeled as "Unofficial Results - Not Yet
-     Accepted By The OpenStack Foundation".  Vendors who publish
-     self-tests MUST provide them in the same format that would be
-     submitted to the OpenStack Foundation but MAY provide additional
+     Accepted By The OpenStack Foundation".
+  5. Vendors who publish self-tests MUST provide them in the same format that
+     would be submitted to the OpenStack Foundation but MAY provide additional
      formats if they choose to do so.
-  5. Self-test results cannot be used as proof of compliance.
+  6. Self-test results cannot be used as proof of compliance.
 
 C2. Vendor submits results to Foundation for review
 
   1. The Foundation determines the acceptable format for submissions.
   2. The Foundation has final authority to determine if Vendor meets
      criteria.
-  3. The Foundation must provide a review of the results within 30 days.
+  3. The Foundation will provide a review of the results within 30 days.
 
 C3. Vendor Grievance Process
 
@@ -179,7 +183,7 @@ C3. Vendor Grievance Process
      committee.
   2. The DefCore committee may choose to remove tests from a Guideline
      (known as flagging).
-  3. The DefCore committee must respond to vendor requests to flag tests
+  3. The DefCore committee will acknowledge vendor requests to flag tests
      within 30 days.
   4. Vendors may not request flagging all tests in a capability.
 
@@ -226,12 +230,14 @@ D2. DefCore Committee has authority on test categorization
 D3. Designated sections only enforced for projects with required capabilities
 
   1. Designated sections may be defined for any project.
-  2. Designated sections applies to the release (a.k.a. release tags)
+  2. Designated sections apply to the releases (a.k.a. release tags)
      identified in the Guideline.
+  3. Designated sections will be included in the JSON Capabilities file
+     to ensure a single source of identification.
 
 D4. Guidelines are named based on the date of Board approval
 
-  1. Naming pattern will be 4 digital year dot and 2 digit month.
+  1. Naming pattern will be: 4-digit year, dot (period), and 2-digit month.
 
 
 Functional Information
