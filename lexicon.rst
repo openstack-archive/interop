@@ -10,6 +10,23 @@ capability groupings are passed.
 TERMS:
 ----------------------------------------
 
+Advisory
+  Capabilities that have been suggested for the next guideline.
+
+Capability
+  The functionality ensured by a set of tests collected into
+  a group as defined by the DefCore committee Required - capabilities that
+  are required to meet the guideline.
+
+Certify or Accredit
+  DefCore does not do any of these things for OpenStack clouds.  These
+  actions would fall under the governance of the Foundation trademark
+  policy.
+
+Component
+  A collection of functionality generally used together (e.g.:
+  object, compute).
+
 Core
   Word to be avoided in this process due to confusion with other
   uses.
@@ -21,6 +38,9 @@ DefCore
 DefCore Process
   The process used by DefCore to score capabilities and
   select criteria.
+
+Deprecated
+  Capabilities that will be removed in the next guideline.
 
 Designated Sections
   Portions of the OpenStack codebase that must be used to provide
@@ -36,46 +56,26 @@ Designated Sections
   project REST API in a new or different way, or code that is being
   deprecated.
  
+Flagged Test
+  A test that does not provide consistent results in the
+  field and it not required for vendor self-test.
+
 Guidelines
   Output of the DefCore process detailing which sections and
   capabilities are required.  Guidelines will be approved on a regular
   cadence and identified by the date of approval.
 
-Capability
-  The functionality ensured by a set of tests collected into
-  a group as defined by the DefCore committee Required - capabilities that
-  are required to meet the guideline.
-
-Advisory
-  Capabilities that have been suggested for the next guideline.
-
-Deprecated
-  Capabilities that will be removed in the next guideline.
-
-Component
-  A collection of functionality generally used together (e.g.:
-  object, compute).
-
-Platform
-  The collection of components required to use the least restricted mark.
- 
 OpenStack Mark
   Right granted by the OpenStack Foundation to use the name and logo of
   OpenStack in a vendor’s product.
 
-Test
-  Program that exercises functionality of a component to validate
-  expected behavior and provides pass or fail judgement.
-
-Flagged Test
-  A test that does not provide consistent results in the
-  field and it not required for vendor self-test.
+Platform
+  The collection of components required to use the least restricted mark.
 
 Self-test 
   Process by which a vendor runs tests against their product or service
   without 3rd party observation.
 
-Certify or Accredit
-  DefCore does not do any of these things for OpenStack clouds.  These
-  actions would fall under the governance of the Foundation trademark
-  policy.
+Test
+  Program that exercises functionality of a component to validate
+  expected behavior and provides pass or fail judgement.
