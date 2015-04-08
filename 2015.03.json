@@ -1,6 +1,7 @@
 {
   "id": "2015.03",
   "schema": "1.2",
+  "source": "http://git.openstack.org/cgit/openstack/defcore/",
   "status": "approved",
   "replaces": "2014.07",
   "releases": ["havana", "icehouse"],

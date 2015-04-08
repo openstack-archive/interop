@@ -25,7 +25,8 @@ The JSON files have a specific schema to support
 .. code-block:: json
 
   { "id": "2015.03",        # Spec name (date based)
-    "schema": "1.1",        # Schema version
+    "source": "http://git.openstack.org/cgit/openstack/defcore/",   # git repo for files
+    "schema": "1.2",        # Schema version
     "status": "approved",   # can be draft, review or approved
     "replaces": "2014.07",  # previous spec
     "releases": ["icehouse"], # array of releases, lower case
