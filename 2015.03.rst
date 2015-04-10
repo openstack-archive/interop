@@ -1,117 +1,105 @@
-=================================
+=========================
 OpenStack DefCore 2015.03
-=================================
+=========================
 
-Status: Approved
-Replaces: 2014.07
+:Status: approved
+:Replaces: 2014.07
 
-This document outlines the mandatory and advisory capabilities
-required to exist in a software installation in order to be
-eligible to use marks controlled by the OpenStack Foundation.
+This document outlines the mandatory capabilities and designated
+sections required to exist in a software installation in order to
+be eligible to use marks controlled by the OpenStack Foundation.
 
-This document supersedes the companion JSON version.
-
+This document was generated from the master JSON version.
 
 Releases Covered
 ==============================
 Applies to Havana, Icehouse
 
-
 Platform Components
 ==============================
-Required: Compute and Object
+:Required: Compute, Object
 
-Advisory: None
+:Advisory: None
 
-Deprecated: None
+:Deprecated: None
 
-Removed: None
+:Removed: None
+
+
+
 
 Compute Component Capabilities
 ==============================
+Required Capabilities 
+-----------------------
+* Compute-auth (nova)
+* Compute-flavors (nova)
+* Compute-images (nova)
+* Compute-instance-actions (nova)
+* Compute-keypairs (nova)
+* Compute-quotas (nova)
+* Compute-servers (nova)
+* Compute-volume (nova)
+* Images-v2 (glance)
 
-========================  ====================
-Capability Name            Associated Project
-------------------------  --------------------
-compute-auth                  Nova
-compute-flavors               Nova
-compute-images                Nova
-compute-instance-actions      Nova
-compute-keypairs              Nova
-compute-quotas                Nova
-compute-servers               Nova
-compute-volume                Nova
-images-v2                     Glance
-========================  ====================
+Advisory Capabilities 
+-----------------------
+* Auth-token (keystone)
+* Compute-servers-metadata (nova)
 
-Advisory Capabilities
-------------------------------
+Deprecated Capabilities 
+-------------------------
+None 
 
-========================  ====================
-Capability Name               Associated Project
-------------------------  --------------------
-auth-token                Keystone
-compute-servers-metadata  Nova
-========================  ====================
+Removed Capabilities 
+----------------------
+* Compute floating ips (None)
+* Images-v1 (None)
+* Volume (None)
 
-Deprecated Capabilities
-------------------------------
-None.
 
-Removed Capabilities
-------------------------------
-
-========================  ====================
-Capability Name            Associated Project
-------------------------  --------------------
-compute-floating-ips        Nova
-images-v1                   Glance
-volume                      Nova
-========================  ====================
 
 
 Object Component Capabilities
-==============================
+=============================
+Required Capabilities 
+-----------------------
+* Objectstore-object (swift)
 
-========================  ====================
-Capability Name            Associated Project
-------------------------  --------------------
-objectstore-object         Swift
-========================  ====================
+Advisory Capabilities 
+-----------------------
+None 
 
-Advisory Capabilities
-------------------------------
-None.
+Deprecated Capabilities 
+-------------------------
+None 
 
-Deprecated Capabilities
-------------------------------
-None.
-
-Removed Capabilities
-------------------------------
-None.
+Removed Capabilities 
+----------------------
+None 
 
 
 Designated Sections
-==============================
+=====================================
 
 The following designated sections apply to the same releases as
 this specification.
 
-* Nova is by default designated except scheduler, filter, drivers, API
-  extensions and networking.
-* Glance designated sections are the API implementation code and domain model.
-* Swift designated sections are proxy server, object server, container server,
-  account server and select middleware (complete list provided by community in
-  linked json document).
-
+Required Designated Sections
+----------------------------
+* Cinder : Designated sections are the API implementation code
+* Glance : Designated sections are the API implementation code and domain model.
+* Nova : By default, designated except scheduler, filter, drivers, API extensions and networking.
+* Swift : Designated sections are proxy server, object server, container server, account server and select middleware
 
 Advisory Designated Sections
-------------------------------------
+----------------------------
+* Keystone : Update pending from PTL
 
-None.
+Deprecated Designated Sections
+------------------------------
+None
 
-Functional Information
-======================
-:Format: RestructuredText
-:Layout: 1.0
+Removed Designated Sections
+---------------------------
+None

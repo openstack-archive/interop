@@ -244,7 +244,7 @@
         "flagged": [
             "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex",
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft"
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft",
             "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_host_name_is_same_as_server_name",
             "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_created_server_vcpus",
             "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name",

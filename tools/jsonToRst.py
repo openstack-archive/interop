@@ -72,6 +72,11 @@ with open(outFileName, "w") as outFile:
         print "The platform section is not found"
         sys.exit(1)
 
+    # Correct Source
+    if data.get('source') != 'http://git.openstack.org/cgit/openstack/defcore/':
+        print "The expected DefCore source not found"
+        sys.exit(1)
+
     outFile.write("""
 :Status: {status}
 :Replaces: {replaces}

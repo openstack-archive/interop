@@ -465,7 +465,7 @@
       "name": "volume",
       "tests": []
     }
-  },  
+  },
   "designated-sections" : {
     "required" : {
       "nova" : {
