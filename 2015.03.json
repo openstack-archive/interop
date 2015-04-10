@@ -1,6 +1,6 @@
 {
   "id": "2015.03",
-  "schema": "1.1",
+  "schema": "1.2",
   "status": "approved",
   "replaces": "2014.07",
   "releases": ["havana", "icehouse"],
@@ -462,17 +462,129 @@
         "flagged": [],
         "name": "auth-token",
         "tests": []
+    },
+    "volume": {
+      "achievements": [],
+      "admin": true,
+      "status": "removed",
+      "guidelines": ["2014.07"],
+      "description": "CRUD operations for volumes management in Block Storage API",
+      "flagged": [],
+      "name": "volume",
+      "tests": []
     }
   },
-  "volume": {
-    "achievements": [],
-    "admin": true,
-    "status": "removed",
-    "guidelines": ["2014.07"],
-    "description": "CRUD operations for volumes management in Block Storage API",
-    "flagged": [],
-    "name": "volume",
-    "tests": []
+  "designated-sections" : {
+    "required" : {
+      "nova" : {
+        "guidance": "By default, designated except scheduler, filter, drivers, API extensions and networking.",
+        "comment": "All code except driver/plugins listed.  Even for replaceable drivers or plugins, we still expect use of the existing nova service that wraps those interfaces.",
+        "sections": {
+          "scheduler driver": { "description": "(Host and cell)", "designated": false, "comment": "none provided"},
+          "filter scheduler driver": { "description": "(Host and cell)  While the line above implies the entire driver is fair game, this case is incredibly common and worth mentioning specifically.", "designated": false, "comment": "none provided"},
+          "compute driver": { "description": "not provided", "designated": false, "comment": "none provided"},
+          "rest api extensions": { "description": "may be required for capabilities", "designated": false, "comment": "none provided"},
+          "nova networking components": { "description": "not provided", "designated": false, "comment": "none provided"},
+          "nova networking drivers": { "description": "not provided", "designated": false, "comment": "none provided"}
+        }
+      },
+      "glance": {
+        "guidance": "Designated sections are the API implementation code and domain model.",
+        "comment": "not given",
+        "sections": {
+          "http apis": { "description": "not provided", "designated": true, "comment": "API"},
+          "domain model": { "description": "not provided", "designated": true, "comment": "Shared"},
+          "stores": { "description": "the swift, filesystem, and http stores", "designated": false, "comment": "should be replaceable, vendor-specificddCross platform"},
+          "db driver": { "description": "not provided", "designated": false, "comment": "should be replaceable" },
+          "wsgi framework": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+        }
+      },
+      "cinder": {
+        "guidance": "Designated sections are the API implementation code",
+        "comment": "Historically, cinder has had plug-ins around schedulers and drivers.",
+        "sections": {
+          "api": { "description": "API section means actually the CODE that exposes the API, not just API-comparability", "designated": true, "comment": ""},
+          "drivers": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
+          "scheduler": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
+          "api extensions": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+        }
+      },
+      "swift" : {
+        "guidance": "Designated sections are proxy server, object server, container server, account server and select middleware",
+        "required": true,
+        "comment": "You should use the proxy and storage servers, and you can use your own DiskFile or add new middleware for the proxy or storage nodes.  Please review sections for specific middleware guidelines",
+        "sections": {
+          "proxy server": { "description": "the proxy server code and, if enabled, the functionality implemented by provided middleware (eg static large objects or signed urls or bulk requests",
+            "designated": true, "comment": ""},
+          "object server": { "description": "the object server code that calls a DiskFile implementation and updates container listings",
+            "designated": true, "comment": ""},
+          "container server": { "description": "the code that provides a list of objects in a container and container metadata",
+            "designated": true, "comment": ""},
+          "account server": { "description": "the code that provides a list of containers and account metadata",
+            "designated": true, "comment": ""},
+          "catch_errors": { "description": "not provided", "designated": true, "comment": "middleware"},
+          "healthcheck": { "description": "not provided", "designated": true, "comment": ""},
+          "bulk": { "description": "not provided", "designated": true, "comment": ""},
+          "slo": { "description": "not provided", "designated": true, "comment": ""}, 
+          "container-quotas": { "description": "not provided", "designated": true, "comment": ""},
+          "account-quotas": { "description": "not provided", "designated": true, "comment": ""},
+          "tempurl": { "description": "not provided", "designated": true, "comment": ""},
+          "replicators": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "auditors": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "updaters": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "account reaper": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "object expirer": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "ratelimit": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "recon": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "staticweb": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "formpost": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "domain_remap": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "crossdomain": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "cname_lookup": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "diskfile": { "description": "the part of the object server that actually persists the object data to a storage volume",
+            "designated": false, "comment": "replaceable"},
+          "cache": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "tempauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "keystoneauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "proxy-logging": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"}
+        }
+      }
+    },
+    "advisory" : {
+      "keystone": {
+        "guidance": "Update pending from PTL",
+        "comment": "",
+        "sections": []
+      }
+    },
+    "deprecated" : {},
+    "removed" : {},
+    "informational" : {
+      "neutron": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "Neutron was not ready for review.",
+        "sections": []
+      },
+      "heat": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      },
+      "horizon": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      },
+      "ceilometer": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      }
+    }
   },
   "criteria": {
     "atomic": {
