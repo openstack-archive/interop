@@ -45,6 +45,7 @@ Principles
    3. The OpenStack™ mark is not the same as the OpenStack brand; however,
       the Board uses it’s control of the mark as a proxy to help manage the
       brand.
+
 2. Core is a subset of the whole project
 
    1. The OpenStack project is supposed to be a broad and diverse community
