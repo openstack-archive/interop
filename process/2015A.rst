@@ -63,16 +63,19 @@ A1. New Guidelines Start From Previous Guidelines
 
 A2. Community Groups Tests into Capabilities
 
-  1. DefCore Committee coordinates community activities with the TC and
-     PTLs to revise the capabilities based on current technical needs and
-     functionality.
-  2. Groupings may change between iterations.
-  3. Tests must have unique identifiers that are durable across releases
+  1. DefCore Committee coordinates community activities with the Technical
+     Committee ("TC") and Project Team Leaders (PTLs) to revise the
+     capabilities based on current technical needs and functionality.
+  2. Capabilities must correspond to projects which are part of the
+     "TC-approved release" as designated by the TC (see bylaws of the
+     Foundation, section 4.1(b)(iii)).
+  3. Groupings may change between iterations.
+  4. Tests must have unique identifiers that are durable across releases
      and changes in grouping.
-  4. Tests must be under OpenStack Technical Committee governance.
-  5. The DefCore committee will provide the test groupings in JSON format
+  5. Tests must be under OpenStack Technical Committee governance.
+  6. The DefCore committee will provide the test groupings in JSON format
      for scoring.
-  6. The DefCore committee will provide a human-readable summary of
+  7. The DefCore committee will provide a human-readable summary of
      the Guideline generated from the JSON version.
 
 A3. PTLs Recommend Changes to Designated Sections
@@ -81,14 +84,18 @@ A3. PTLs Recommend Changes to Designated Sections
      previous Guideline.
   2. Designated Sections will not be added without being advisory in the
      previous Guideline.
-  3. DefCore coordinates with technical leadership to define advisory sections
+  3. Designated Sections will not be added or be made advisory unless the
+     corresponding code base is designated as part of the "TC-approved release"
+     by the Technical Committee (see bylaws of the Foundation, section
+     4.1(b)(iii)).
+  4. DefCore coordinates with technical leadership to define advisory sections
      for projects that have advisory or required capabilities.
-  4. Designated Sections may be sufficiently defined for Guidelines using
+  5. Designated Sections may be sufficiently defined for Guidelines using
      general descriptions that outline the intent of the technical leadership.
-  5. DefCore will present A3.4 descriptions to the Board for approval.
-  6. Technical leadership may, but is not required to, provide more specific
+  6. DefCore will present A3.4 descriptions to the Board for approval.
+  7. Technical leadership may, but is not required to, provide more specific
      details describing the Designated Sections for a project.
-  7. Designated sections will be included in the JSON Guideline.
+  8. Designated Sections will be included in the JSON Guideline.
 
 A4. DefCore Committee identifies required capabilities
 
