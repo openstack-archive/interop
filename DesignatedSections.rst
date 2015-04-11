@@ -67,19 +67,9 @@ There DefCore committee identified 10 selection criteria. The first seven are te
 Designated Sections
 ===================
 
-Havana
-------
+Effective April 2015, approved Designated Sections are maintained
+in the Board approved DefCore Guidelines.  The 2015.03 Guideline
+was set to match the Board action of 2014 December 2.
 
-The Board approve the following Sections on 2014 Dec 2:
-
-* Havana Nova is by default designated except scheduler, filter, drivers,
-  API extensions and networking.
-
-* Havana Cinder designated sections are the API implementation code
-
-* Havana Glance designated sections are the API implementation code and
-  domain model.
-
-* Havana Swift designated sections are proxy server, object server,
-  container server, account server and select middleware (complete list
-  provided by PTL).
+Please see the current Guidelines to determine which Designated
+Sections apply.
