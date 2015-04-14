@@ -23,17 +23,18 @@ Certify or Accredit
   actions would fall under the governance of the Foundation trademark
   policy.
 
+Community
+  The universe of people and companies that are involved in the OpenStack
+  project as active contributors, users, operators, vendors and enthusiasts.
+  This is a very broad group with diverse interests, needs and participation
+  levels. (see also Participant)
+
 Component
   A collection of functionality generally used together (e.g.:
   object, compute).
 
 Contributor
-  The subset of the Community that actively engages in creating
-  components of OpenStack including, but not limited to, the code,
-  documentation, training, product management and other materials.
-  For DefCore purposes, Contributor is not limited to the community
-  members identified as "ATC" as per http://git.openstack.org/cgit/openstack/governance/tree/reference/charter.rst#n132
-  (see also Technical Leadership)
+  Word to be avoided in this process due to confusion with other uses.
 
 Core
   Word to be avoided in this process due to confusion with other
@@ -77,6 +78,14 @@ OpenStack Mark
   Right granted by the OpenStack Foundation to use the name and logo of
   OpenStack in a vendor’s product.
 
+Participant
+  The subset of the Community that actively engages in creating
+  components of OpenStack including, but not limited to, the code,
+  documentation, training, product management and other materials.
+  For DefCore purposes, Participant is not limited to the community
+  members identified as "ATC" as per http://git.openstack.org/cgit/openstack/governance/tree/reference/charter.rst#n132
+  (see also Technical Leadership)
+
 Platform
   The collection of components required to use the least restricted mark.
 
@@ -85,7 +94,7 @@ Self-test
   without 3rd party observation.
 
 Technical Leadership
-  The subset of the Contributors (see above) that are recognized by the
+  The subset of the Participants (see above) that are recognized by the
   community to guide the technical direction of the OpenStack project.
   These leaders include the Technical Committee (TC) and Project
   Technical Leads (PTL).
