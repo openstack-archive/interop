@@ -7,15 +7,19 @@ This repository contains DefCore committee managed files that provide guidance f
 NOTE: Changes to file requires approval of the DefCore committee chair(s).
 
 
-DefCore Process Flow
-====================
+DefCore Process Documentation
+=============================
 
-see /process/2015A.rst or later
+The /process directory contains details about the DefCore process.
 
-Terminology
-====================
-
-see lexicon.rst
+:Core Definition: process/CoreDefinition.rst
+:Process Goverance: process/2015A.rst (please check for latest)
+:Designated Sections: process/DesignatedSections.rst
+:Core Criteria: process/CoreCriteria.rst
+:DefCore Governance: process/GovernanceProcess.rst
+:Platform and Components: process/PlatformCap.rst
+:DefCore Cycles: process/ProcessCycles.rst
+:Terminology: process/Lexicon.rst
 
 JSON Schema
 ==================== 
