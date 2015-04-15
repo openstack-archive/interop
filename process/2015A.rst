@@ -78,7 +78,7 @@ A2. Community Groups Tests into Capabilities
   7. The DefCore committee will provide a human-readable summary of
      the Guideline generated from the JSON version.
 
-A3. PTLs Recommend Changes to Designated Sections
+A3. DefCore Collects Recommendations for Designated Sections
 
   1. Designated Sections will not be removed without being deprecated in the
      previous Guideline.
@@ -88,10 +88,11 @@ A3. PTLs Recommend Changes to Designated Sections
      corresponding code base is designated as part of the "TC-approved release"
      by the Technical Committee (see bylaws of the Foundation, section
      4.1(b)(iii)).
-  4. DefCore coordinates with technical leadership to define advisory sections
-     for projects that have advisory or required capabilities.
+  4. Technical leadership may, but is not required to, assist DefCore with
+     defining advisory sections for projects that have advisory or required
+     capabilities.
   5. Designated Sections may be sufficiently defined for Guidelines using
-     general descriptions that outline the intent of the technical leadership.
+     general descriptions.
   6. DefCore will present A3.4 descriptions to the Board for approval.
   7. Technical leadership may, but is not required to, provide more specific
      details describing the Designated Sections for a project.
