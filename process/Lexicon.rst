@@ -27,6 +27,14 @@ Component
   A collection of functionality generally used together (e.g.:
   object, compute).
 
+Contributor
+  The subset of the Community that actively engages in creating
+  components of OpenStack including, but not limited to, the code,
+  documentation, training, product management and other materials.
+  For DefCore purposes, Contributor is not limited to the community
+  members identified as "ATC" as per http://git.openstack.org/cgit/openstack/governance/tree/reference/charter.rst#n132
+  (see also Technical Leadership)
+
 Core
   Word to be avoided in this process due to confusion with other
   uses.
@@ -75,6 +83,13 @@ Platform
 Self-test 
   Process by which a vendor runs tests against their product or service
   without 3rd party observation.
+
+Technical Leadership
+  The subset of the Contributors (see above) that are recognized by the
+  community to guide the technical direction of the OpenStack project.
+  These leaders include the Technical Committee (TC) and Project
+  Technical Leads (PTL).
+  See: http://git.openstack.org/cgit/openstack/governance/tree/reference/charter.rst
 
 Test
   Program that exercises functionality of a component to validate
