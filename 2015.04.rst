@@ -2,7 +2,7 @@
 OpenStack DefCore 2015.04
 =========================
 
-:Status: draft
+:Status: approved
 :Replaces: 2015.03
 
 This document outlines the mandatory capabilities and designated
