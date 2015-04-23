@@ -58,7 +58,7 @@ or CentOS 7 have been verified) with administrator privileges.
   directory:
 
   ``cd .tempest``
-  ``./run_tempest -C  <your_tempest.conf> -- --load-tests 2015.04.required.txt``
+  ``./run_tempest -C  <your_tempest.conf> -- --load-list 2015.04.required.txt``
 
 * Review the test results, and when you're satisfied, send them to
   chris@openstack.org. The results are stored in a json file in the directory
