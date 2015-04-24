@@ -1,0 +1,7 @@
+tempest.api.compute.servers.test_instance_actions.InstanceActionsTestJSON.test_list_instance_actions[gate,id-77ca5cc5-9990-45e0-ab98-1de8fead201a]
+tempest.api.compute.servers.test_instance_actions.InstanceActionsTestJSON.test_get_instance_action[gate,id-aacc71ca-1d70-4aa5-bbf6-0ff71470e43c]
+tempest.api.compute.test_quotas.QuotasTestJSON.test_get_default_quotas[gate,id-9bfecac7-b966-4f47-913f-1a9e2c12134a,smoke]
+tempest.api.compute.test_quotas.QuotasTestJSON.test_get_quotas[gate,id-f1ef0a97-dbbb-4cca-adc5-c9fbc4f76107,smoke]
+tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex[gate,id-a905e287-c35e-42f2-b132-d02b09f3654a]
+tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password[gate,id-6158df09-4b82-4ab3-af6d-29cf36af858d]
+tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft[gate,id-4640e3ef-a5df-482e-95a1-ceeeb0faa84d,smoke]
