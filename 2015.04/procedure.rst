@@ -10,13 +10,13 @@ Tempest can be run standalone, or under a test runner such as refstack-client
 or rally. If only testing against Defcore capabilities, you can use the
 --load-list argument and a file containing a list of the Defcore tests. If
 run with the refstack-client, test output will be parsed to list only
-passing tests in a json formatted file. 
+passing tests in a json formatted file.
 
 The test names of the capabilities are derived from a recent release of
 Tempest, from the time of capabilitiy approval. Keep in mind that Tempest
 is under active development, and tests may move. If you're not seeing
 full coverage, please consider reverting back to a Tempest sha that more
-closely matches the capability release date. Please contact Chris Hoge 
+closely matches the capability release date. Please contact Chris Hoge
 <chris@openstack.org> for assistance if needed.
 
 It's important to run a recent version of Tempest, as major bugs related to
@@ -65,10 +65,18 @@ or CentOS 7 have been verified) with administrator privileges.
 
   ``.tempest/.testrepository``
 
+* Every effort should be made to pass all of the required tests, but you
+  will want to compare any lists of failed tests to the list of flagged tests.
+  https://github.com/openstack/defcore/blob/master/2015.03/2015.04.required.txt
+
 Known Issues and Recommendations
 --------------------------------
+
 Currently after failures modes Tempest does not clean up test resources. We
 strongly recommend that you run Tempest against a test OpenStack cloud
 rather than a production cloud. Successful tests against test deployments that
 are functionally equivalent to production clouds is acceptable for current
 capabilities assessment.
+
+You may find it useful to run Swift tests as a seperate run, using the
+``accounts.yaml`` framework to specify users with Swift-specific roles.
