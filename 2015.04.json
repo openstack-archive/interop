@@ -241,7 +241,11 @@
         "flagged": [
             "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex",
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft"
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft",
+            "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_host_name_is_same_as_server_name",
+            "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_created_server_vcpus",
+            "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name",
+            "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus"
         ],
         "name": "compute-servers",
         "tests": [
@@ -343,7 +347,9 @@
         "guidelines": ["2014.07", "2015.03", "2015.04"],
         "project": "nova",
         "description": "Retrieve volume information through the Compute API",
-        "flagged": [],
+        "flagged": [
+            "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_attach_detach_volume"
+        ],
         "name": "compute-volume",
         "tests": [
             "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list",
