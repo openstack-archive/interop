@@ -242,7 +242,8 @@
         "flagged": [
             "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex",
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft"
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft",
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_get_console_output"
         ],
         "name": "compute-servers",
         "tests": [
@@ -301,7 +302,6 @@
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert",
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_unlock_server",
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_get_console_output",
             "tempest.api.compute.servers.test_servers.ServersTestJSON.test_update_access_server_address",
             "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_with_existing_server_name",
             "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_server_with_admin_password",
