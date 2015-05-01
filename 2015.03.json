@@ -248,7 +248,8 @@
             "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_host_name_is_same_as_server_name",
             "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_created_server_vcpus",
             "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name",
-            "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus"
+            "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus",
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_get_console_output"
         ],
         "name": "compute-servers",
         "tests": [
