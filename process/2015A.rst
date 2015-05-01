@@ -59,13 +59,13 @@ A1. New Guidelines Start From Previous Guidelines
 
   1. New Guidelines start from the previous Board approved document.
   2. New Guidelines are given the preliminary name of the target year and
-     .next.
+     .next.  (ref section D4)
 
 A2. Community Groups Tests into Capabilities
 
   1. DefCore Committee coordinates community activities with the Technical
-     Committee ("TC") and Project Team Leaders (PTLs) to revise the
-     capabilities based on current technical needs and functionality.
+     Leadership to revise the capabilities based on current technical needs
+     and functionality.
   2. Capabilities must correspond to projects which are part of the
      "TC-approved release" as designated by the TC (see bylaws of the
      Foundation, section 4.1(b)(iii)).
@@ -177,7 +177,7 @@ Starting: S and continues past S+3
 
 C1. Vendor Self-Tests
 
-  1. Vendors are responsible for executing these tests identified by the
+  1. Vendors are responsible for executing tests identified by the
      DefCore committee.
   2. The Foundation may, but is not required to, provide tooling for
      running tests.
@@ -244,9 +244,11 @@ D1. Board will review and approve DefCore Guideline from draft
 
 D2. DefCore Committee has authority on test categorization
 
-  1. Can add flagged tests before and after Guideline approval.
-  2. Cannot add additional Tests to Capability mappings after approval.
-  3. Maintains the test to capability mappings in the JSON representation.
+  1. DefCore Committee can add flagged tests before and after Guideline approval.
+  2. DefCore Committee cannot add additional Tests to Capability mappings after 
+     approval.
+  3. DefCore Committee maintains the test to capability mappings in the
+     JSON representation.
 
 D3. Designated sections only enforced for projects with required capabilities
 
