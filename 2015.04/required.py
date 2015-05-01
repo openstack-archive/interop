@@ -6,6 +6,7 @@ response = urllib.urlopen(url)
 defcore = json.loads(response.read())
 capabilities = defcore['capabilities']
 required_tests = []
+flagged_tests = []
 
 for capability_name in capabilities:
     capability = capabilities[capability_name]
@@ -13,6 +14,9 @@ for capability_name in capabilities:
         tests = capability['tests']
         for test in tests:
             required_tests.append(test)
+        flagged = capability['flagged']
+        for test in flagged:
+            flagged_tests.append(test)
 
 required_tests.sort()
 
@@ -32,3 +36,16 @@ for rtest in required_tests:
             found = True
     if not found:
         print "!!! Did not find test matching " % (rtest)
+
+print "\nflagged\n======="
+
+for flagged in flagged_tests:
+    testmatch = flagged + '['
+    found = False
+    for test in alltests:
+        if test.startswith(testmatch):
+            print test
+            found = True
+    if not found:
+        print "!!! Did not find flagged test matching " % (flagged)
+
