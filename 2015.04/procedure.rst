@@ -48,7 +48,7 @@ or CentOS 7 have been verified) with administrator privileges.
   ``./setup-env``
 
 * Download a list of tests from the Defcore site:
-  https://github.com/openstack/defcore/blob/master/2015.03/2015.04.required.txt
+  https://github.com/openstack/defcore/blob/master/2015.04/2015.04.required.txt
 
 * Configure tempest.conf for your cloud. If you need assistance in common
   parameters or settings contact chris@openstack.org.
@@ -67,7 +67,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Every effort should be made to pass all of the required tests, but you
   will want to compare any lists of failed tests to the list of flagged tests.
-  https://github.com/openstack/defcore/blob/master/2015.03/2015.04.required.txt
+  https://github.com/openstack/defcore/blob/master/2015.04/2015.04.required.txt
 
 Known Issues and Recommendations
 --------------------------------
