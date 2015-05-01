@@ -45,7 +45,7 @@ or CentOS 7 have been verified) with administrator privileges.
   You may specify a specific tag of tempest with the -t option. refstack-client
   defaults to '7c8fcc67'
 
-  ``./setup-env``
+  ``./setup_env``
 
 * Download a list of tests from the Defcore site:
   https://github.com/openstack/defcore/blob/master/2015.03/2015.04.required.txt
