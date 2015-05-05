@@ -17,7 +17,7 @@ Tempest, from the time of capabilitiy approval. Keep in mind that Tempest
 is under active development, and tests may move. If you're not seeing
 full coverage, please consider reverting back to a Tempest sha that more
 closely matches the capability release date. Please contact Chris Hoge
-<chris@openstack.org> for assistance if needed.
+<interop@openstack.org> for assistance if needed.
 
 It's important to run a recent version of Tempest, as major bugs related to
 network provisioning have been fixed. Some tests are still flagged due to
@@ -51,7 +51,7 @@ or CentOS 7 have been verified) with administrator privileges.
   https://github.com/openstack/defcore/blob/master/2015.04/2015.04.required.txt
 
 * Configure tempest.conf for your cloud. If you need assistance in common
-  parameters or settings contact chris@openstack.org.
+  parameters or settings contact interop@openstack.org.
 
 * Once you have a working config, run tempest. You can run within the refstack
   client, or run tempest directly. For direct running, from the refstack-client
@@ -61,7 +61,7 @@ or CentOS 7 have been verified) with administrator privileges.
   ``./run_tempest -C  <your_tempest.conf> -- --load-list 2015.04.required.txt``
 
 * Review the test results, and when you're satisfied, send them to
-  chris@openstack.org. The results are stored in a json file in the directory
+  interop@openstack.org. The results are stored in a json file in the directory
 
   ``.tempest/.testrepository``
 
