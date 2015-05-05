@@ -51,7 +51,9 @@ or CentOS 7 have been verified) with administrator privileges.
   https://github.com/openstack/defcore/blob/master/2015.04/2015.04.required.txt
 
 * Configure tempest.conf for your cloud. If you need assistance in common
-  parameters or settings contact interop@openstack.org.
+  parameters or settings contact interop@openstack.org. There is also a tempest
+  configuration guide at
+  https://github.com/openstack/tempest/blob/master/doc/source/configuration.rst
 
 * Once you have a working config, run tempest. You can run within the refstack
   client, or run tempest directly. For direct running, from the refstack-client
