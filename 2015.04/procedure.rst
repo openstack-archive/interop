@@ -57,10 +57,10 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Once you have a working config, run tempest. You can run within the refstack
   client, or run tempest directly. For direct running, from the refstack-client
-  directory:
+  directory::
 
-  ``cd .tempest``
-  ``./run_tempest -C  <your_tempest.conf> -- --load-list 2015.04.required.txt``
+    cd .tempest
+    ./run_tempest.sh -C <your_tempest.conf> -- --load-list 2015.04.required.txt
 
 * Review the test results, and when you're satisfied, send them to
   interop@openstack.org. The results are stored in a json file in the directory
