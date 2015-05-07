@@ -23,7 +23,7 @@ make sense to be the primary factors used when we select core capabilities.
 While we strive to make the DefCore process objective and quantitive, we
 must recognize that these choices drive community behavior.
 
-.. figure:: images/Defcore_capabilities_criteria.png
+.. figure:: ../images/Defcore_capabilities_criteria.png
 
    Graphic showing Capabilities Seleciton Criteria
 

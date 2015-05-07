@@ -33,7 +33,7 @@ Implementation
 Principles
 ==========
 
-.. image:: images/500px-Core_flow.png
+.. image:: ../images/500px-Core_flow.png
 
 1. Implementations that are Core can use OpenStack trademark (OpenStack™)
 

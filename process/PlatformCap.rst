@@ -62,4 +62,4 @@ Compute and Object programs and the following capabilities:
 Platform and Components Illustration
 ====================================
 
-.. image:: images/DefCore_Platform_and_Programs_v14.jpg
+.. image:: ../images/DefCore_Platform_and_Programs_v14.jpg
