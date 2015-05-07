@@ -7,7 +7,7 @@ Designated Sections
 Designated Sections Illustration
 ================================
 
-.. image:: images/Defcore_designated_sections.png
+.. image:: ../images/Defcore_designated_sections.png
 
 Designated Sections Selection Guidance
 ======================================
