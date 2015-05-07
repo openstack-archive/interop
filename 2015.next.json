@@ -495,7 +495,9 @@
         "guidelines": ["2014.07", "2015.03", "2015.04"],
         "project": "swift",
         "description": "Basic object operations in Object Storage API",
-        "flagged": [],
+        "flagged": [
+            "tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time"
+        ],
         "name": "objectstore-object",
         "tests": [
             "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_2d_way",
