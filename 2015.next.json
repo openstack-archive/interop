@@ -4,7 +4,7 @@
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
   "status": "draft",
   "replaces": "2015.04",
-  "releases": ["havana", "icehouse", "juno"],
+  "releases": ["icehouse", "juno", "kilo"],
   "platform": {
     "required": ["compute", "object"],
     "advisory": [],
