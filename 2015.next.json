@@ -498,7 +498,9 @@
         "project": "swift",
         "description": "Basic object operations in Object Storage API",
         "flagged": [
-            "tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time"
+            "tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time",
+            "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_object_with_another_user_creds",
+            "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_container_object_without_using_creds"
         ],
         "name": "objectstore-object",
         "tests": [
