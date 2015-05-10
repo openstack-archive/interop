@@ -1,0 +1,106 @@
+=========================
+OpenStack DefCore 2015.05
+=========================
+
+:Status: approved
+:Replaces: 2015.04
+
+This document outlines the mandatory capabilities and designated
+sections required to exist in a software installation in order to
+be eligible to use marks controlled by the OpenStack Foundation.
+
+This document was generated from the master JSON version.
+
+Releases Covered
+==============================
+Applies to Icehouse, Juno, Kilo
+
+Platform Components
+==============================
+:Required: Compute, Object
+
+:Advisory: None
+
+:Deprecated: None
+
+:Removed: None
+
+
+
+
+Compute Component Capabilities
+==============================
+Required Capabilities 
+-----------------------
+* Identity-auth (keystone)
+* Compute-auth (nova)
+* Compute-flavors (nova)
+* Compute-images (nova)
+* Compute-instance-actions (nova)
+* Compute-keypairs (nova)
+* Compute-quotas (nova)
+* Compute-servers (nova)
+* Compute-volume (nova)
+* Images-v2 (nova)
+
+Advisory Capabilities 
+-----------------------
+* Auth-token (keystone)
+* Compute-servers-metadata (nova)
+
+Deprecated Capabilities 
+-------------------------
+None 
+
+Removed Capabilities 
+----------------------
+None 
+
+
+
+
+Object Component Capabilities
+=============================
+Required Capabilities 
+-----------------------
+* Objectstore-object (swift)
+
+Advisory Capabilities 
+-----------------------
+* Identity-auth (keystone)
+* Auth-token (keystone)
+
+Deprecated Capabilities 
+-------------------------
+None 
+
+Removed Capabilities 
+----------------------
+None 
+
+
+Designated Sections
+=====================================
+
+The following designated sections apply to the same releases as
+this specification.
+
+Required Designated Sections
+----------------------------
+* Cinder : Designated sections are the API implementation code
+* Glance : Designated sections are the API implementation code and domain model.
+* Keystone : Designation is outlined per API grouping. Identity (user and group) management APIs will not be designated. API access (with exception of auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs include both v2.0 and v3 versions where applicable.
+* Nova : By default, designated except scheduler, filter, drivers, API extensions and networking.
+* Swift : Designated sections are proxy server, object server, container server, account server and select middleware
+
+Advisory Designated Sections
+----------------------------
+* Keystone : Update pending from PTL
+
+Deprecated Designated Sections
+------------------------------
+None
+
+Removed Designated Sections
+---------------------------
+None
