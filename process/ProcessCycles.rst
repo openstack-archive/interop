@@ -31,7 +31,7 @@ Objectives
 * Establish the "must-pass" tests, processes and tools
 
 * Define tests that will be used to determine core based on Spider
-cycle work
+  cycle work
 
 * Lower the water in the discussion to expose broader issues
 
@@ -55,7 +55,7 @@ Objectives
 ~~~~~~~~~~
 
 * Complete Capabilities Score for Havana (Advisory), Icehouse and
-Juno
+  Juno
 
 * Recommend by-laws changes for winter voting
 

@@ -10,25 +10,25 @@ bylaws and approved by the OpenStack Technical Committee and Board.
 Expected Time line:
 ---------------------------------------
 
-+------------+-----------+------------------------------------+-----------+
-| Time Frame | Milestone | Activities                         | Lead By   |
-+============+===========+====================================+===========+
-| -3 months  | S-3       | "Preliminary” draft (from current) | DefCore   |
-+------------+-----------+------------------------------------+-----------+
-| -2 months  | S-2       | ID new Capabilities                | Community |
-+------------+-----------+------------------------------------+-----------+
-| -1 month   | S-1       | Score Capabilities                 | DefCore   |
-+------------+-----------+------------------------------------+-----------+
-| Summit     | S         | "Solid" draft                      | Community |
-+            +           +------------------------------------+-----------+
-|            |           | Advisory/Deprecated items selected | DefCore   |
-+------------+-----------+------------------------------------+-----------+
-| +1 month   | S+1       | Self-testing                       | Vendors   |
-+------------+-----------+------------------------------------+-----------+
-| +2 months  | S+2       | Test Flagging                      | DefCore   |
-+------------+-----------+------------------------------------+-----------+
-| +3 months  | S+3       | Approve Guidance                   | Board     |
-+------------+-----------+------------------------------------+-----------+
++------------+-----------+--------------------------------------+-----------+
+| Time Frame | Milestone | Activities                           | Lead By   |
++============+===========+======================================+===========+
+| -3 months  | S-3       | \"Preliminary\" draft (from current) | DefCore   |
++------------+-----------+--------------------------------------+-----------+
+| -2 months  | S-2       | ID new Capabilities                  | Community |
++------------+-----------+--------------------------------------+-----------+
+| -1 month   | S-1       | Score Capabilities                   | DefCore   |
++------------+-----------+--------------------------------------+-----------+
+| Summit     | S         | \"Solid\" draft                      | Community |
++            +           +--------------------------------------+-----------+
+|            |           | Advisory/Deprecated items selected   | DefCore   |
++------------+-----------+--------------------------------------+-----------+
+| +1 month   | S+1       | Self-testing                         | Vendors   |
++------------+-----------+--------------------------------------+-----------+
+| +2 months  | S+2       | Test Flagging                        | DefCore   |
++------------+-----------+--------------------------------------+-----------+
+| +3 months  | S+3       | Approve Guidance                     | Board     |
++------------+-----------+--------------------------------------+-----------+
 
 Note: DefCore may accelerate the process to correct errors and omissions.
 
@@ -113,7 +113,8 @@ A4. DefCore Committee identifies required capabilities
   6. Capabilities will not be added without being advisory in the previous
      Guideline.
 
-A5. Foundation Staff recommends OpenStack Components and OpenStack Platform Scope
+A5. Foundation Staff recommends OpenStack Components and OpenStack Platform
+    Scope
 
   1. Foundation Staff recommends capabilities to include in each OpenStack
      Component.
@@ -244,9 +245,10 @@ D1. Board will review and approve DefCore Guideline from draft
 
 D2. DefCore Committee has authority on test categorization
 
-  1. DefCore Committee can add flagged tests before and after Guideline approval.
-  2. DefCore Committee cannot add additional Tests to Capability mappings after 
+  1. DefCore Committee can add flagged tests before and after Guideline
      approval.
+  2. DefCore Committee cannot add additional Tests to Capability mappings
+     after approval.
   3. DefCore Committee maintains the test to capability mappings in the
      JSON representation.
 

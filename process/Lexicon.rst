@@ -64,7 +64,7 @@ Designated Sections
   intended by the project maintainers to be replaceable, extend the
   project REST API in a new or different way, or code that is being
   deprecated.
- 
+
 Flagged Test
   A test that does not provide consistent results in the
   field and it not required for vendor self-test.
@@ -89,7 +89,7 @@ Participant
 Platform
   The collection of components required to use the least restricted mark.
 
-Self-test 
+Self-test
   Process by which a vendor runs tests against their product or service
   without 3rd party observation.
 

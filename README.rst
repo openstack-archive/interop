@@ -2,7 +2,8 @@
 Understanding the DefCore Guidelines
 =================================================
 
-This repository contains DefCore committee managed files that provide guidance for the OpenStack community.
+This repository contains DefCore committee managed files that provide guidance
+for the OpenStack community.
 
 NOTE: Changes to file requires approval of the DefCore committee chair(s).
 

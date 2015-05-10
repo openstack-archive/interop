@@ -16,7 +16,9 @@ Designated Sections Selection Guidance
 
    _Approved 2014 Dec 2_
 
-There DefCore committee identified 10 selection criteria. The first seven are technical from the TC and last three allow the Board to resolve issues without needed a technical judgement.
+There DefCore committee identified 10 selection criteria. The first seven are
+technical from the TC and last three allow the Board to resolve issues without
+needed a technical judgement.
 
 1. Designated if the code provides the project external REST API
 
