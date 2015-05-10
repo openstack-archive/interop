@@ -207,7 +207,8 @@ C3. Vendor Grievance Process
   3. The DefCore committee will acknowledge vendor requests to flag tests
      within 30 days.
   4. Vendors may not request flagging all tests in a capability.
-  5. Tests marked for flagging must include:
+  5. Tests marked for flagging must include reason, remediation and date:
+
      a. A reason for the flag, which may include but is not limited to
         a capability not being widely supported or an existing bug
         in the test.
@@ -216,6 +217,7 @@ C3. Vendor Grievance Process
         upstream code, or fixing the bug in the test suite.
      c. A date of test flagging to give guidance to the committee for
         future test removal.
+  
   6. Vendors must make a good-faith effort to document the reason for
      flagging, and where possible attempt to fix upstream bugs in test
      or production code before submitting tests for flagging.
