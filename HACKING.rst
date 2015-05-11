@@ -18,7 +18,7 @@ DefCore Specific Commandments
   in an approved capability list, add it to the "flagged" section but do
   not remove it from the "tests" section.
 - [D302] If a capability is found to not meet the `Core Criteria
-  <process/CoreCriteria.rst?`_ after the Board has approved a guideline,
+  <./process/CoreCriteria.rst>`_ after the Board has approved a guideline,
   the corresponding tests should be added to the "flagged" section of
   the relevant Board-approved guidelines and removed from the "tests"
   section of the .next.json file.
