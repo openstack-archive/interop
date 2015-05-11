@@ -472,7 +472,9 @@
         "guidelines": ["2014.07", "2015.03", "2015.04"],
         "project": "nova",
         "description": "CRUD image operations in Images API v2",
-        "flagged": [],
+        "flagged": [
+            "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params"
+        ],
         "name": "images-v2",
         "tests": [
             "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params"
