@@ -42,5 +42,6 @@ tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resiz
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert[gate,id-c03aab19-adb1-44f5-917d-c419577e9e68]
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_stop_start_server[gate,id-af8eafd4-38a7-4a4b-bdbc-75145a580560]
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_unlock_server[gate,id-80a8094c-211e-440a-ab88-9e59d556c7ee]
+tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_stop_non_existent_server[gate,id-a31460a9-49e1-42aa-82ee-06e0bb7c2d03,negative]
 tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_keypair_in_analt_user_tenant[gate,id-f03d1ded-7fd4-4d29-bc13-e2391f29c625]
 tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_keypair_of_alt_account_fails[gate,id-85bcdd8f-56b4-4868-ae56-63fbf6f7e405]
