@@ -641,13 +641,7 @@
         }
       }
     },
-    "advisory" : {
-      "keystone": {
-        "guidance": "Update pending from PTL",
-        "comment": "",
-        "sections": []
-      }
-    },
+    "advisory" : {},
     "deprecated" : {},
     "removed" : {},
     "informational" : {
