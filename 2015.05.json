@@ -1,9 +1,9 @@
 {
-  "id": "2015.next",
+  "id": "2015.05",
   "schema": "1.2",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
-  "status": "draft",
-  "replaces": "2015.05",
+  "status": "approved",
+  "replaces": "2015.04",
   "releases": ["icehouse", "juno", "kilo"],
   "platform": {
     "required": ["compute", "object"],
@@ -59,6 +59,7 @@
         "status": "required",
         "guidelines": ["2015.05"],
         "description": "Auth operations within the Identity API",
+        "project": "keystone",
         "flagged": [],
         "name": "identity-auth",
         "tests": [
@@ -83,21 +84,7 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "nova",
         "description": "Image operations within the Compute API",
-        "flagged": [
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_id",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_changes_since",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_status",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_type",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_ref",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_name",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_type",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_status",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_server_ref",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_limit_results",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_name",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_limit_results",
-            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_changes_since"
-        ],
+        "flagged": [],
         "name": "compute-images",
         "tests": [
             "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_id",
@@ -176,12 +163,7 @@
       "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
       "project": "nova",
       "description": "Auth related tests using Compute API",
-      "flagged": [
-          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image",
-          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_metadata_of_alt_account_server_fails",
-          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_fails_when_tenant_incorrect",
-          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_set_metadata_of_alt_account_server_fails"
-      ],
+      "flagged": [],
       "name": "compute-auth",
       "tests": [
           "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image",
@@ -232,10 +214,7 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "nova",
         "description": "Generate, import, and delete SSH keys within Compute services",
-        "flagged": [
-            "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_keypair_in_analt_user_tenant",
-            "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_keypair_of_alt_account_fails"
-        ],
+        "flagged": [],
         "name": "compute-keypairs",
         "tests": [
             "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_specify_keypair",
@@ -290,31 +269,7 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "nova",
         "description": "Basic server operations in the Compute API",
-        "flagged": [
-            "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_get_console_output",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_changes_since_future_date",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_changes_since_invalid_date",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits_pass_negative_value",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits_pass_string",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_non_existing_flavor",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_non_existing_image",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_non_existing_server_name",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_detail_server_is_deleted",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_with_a_deleted_server",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_status_non_existing",
-            "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits_greater_than_actual_count",
-            "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_null_flavor",
-            "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_non_existent_flavor",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_confirm",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_stop_start_server",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_unlock_server",
-            "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_stop_non_existent_server"
-        ],
+        "flagged": [],
         "name": "compute-servers",
         "tests": [
             "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_server_name_length_exceeds_256",
@@ -473,9 +428,7 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "nova",
         "description": "CRUD image operations in Images API v2",
-        "flagged": [
-            "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params"
-        ],
+        "flagged": [],
         "name": "images-v2",
         "tests": [
             "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params"
@@ -498,11 +451,7 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "swift",
         "description": "Basic object operations in Object Storage API",
-        "flagged": [
-            "tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time",
-            "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_object_with_another_user_creds",
-            "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_container_object_without_using_creds"
-        ],
+        "flagged": [],
         "name": "objectstore-object",
         "tests": [
             "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_2d_way",
