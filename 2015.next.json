@@ -62,8 +62,8 @@
         "flagged": [],
         "name": "identity-auth",
         "tests": [
-            "tempest.api.identity.v2.TokensTest.test_create_token",
-            "tempest.api.identity.v3.TokensTest.test_create_token"
+            "tempest.api.identity.v2.test_tokens.TokensTest.test_create_token",
+            "tempest.api.identity.v3.test_tokens.TokensV3Test.test_create_token"
         ]
     },
     "compute-images": {
