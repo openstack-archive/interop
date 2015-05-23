@@ -86,8 +86,8 @@ Objectives
 
 * Process approved by TC & Board
 
-Meetings
-~~~~~~~~
+Process Meetings
+~~~~~~~~~~~~~~~~
 
 * https://etherpad.openstack.org/p/DefCoreScale.1
 
@@ -106,6 +106,68 @@ Meetings
 * https://etherpad.openstack.org/p/DefCoreScale.7
 
 * https://etherpad.openstack.org/p/DefCoreScale.8
+
+* https://etherpad.openstack.org/p/DefCoreScale.9
+
+* https://etherpad.openstack.org/p/DefCoreScale.10
+
+* https://etherpad.openstack.org/p/DefCoreScale.11
+
+* https://etherpad.openstack.org/p/DefCoreScale.12
+
+* https://etherpad.openstack.org/p/DefCoreScale.13
+
+* https://etherpad.openstack.org/p/DefCoreScale.14
+
+* https://etherpad.openstack.org/p/DefCoreScale.15
+
+* https://etherpad.openstack.org/p/DefCoreScale.16
+
+Capabilities Meetings
+~~~~~~~~~~~~~~~~~~~~~
+
+* https://etherpad.openstack.org/p/defcore-capabilities-jan-28-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-feb-04-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-feb-18-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-mar-04-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-mar-11-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-mar-25-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-apr-01-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-apr-08-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-apr-15-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-apr-22-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-apr-29-2015
+
+* https://etherpad.openstack.org/p/defcore-capabilities-may-13-2015
+
+Flag Cycle (Spring - Summer 2015)
+---------------------------------
+
+Objectives
+~~~~~~~~~~
+
+* Improve and clearly document the test flagging process.
+
+* Ensure that DefCore/RefStack can include tests that are not run via Tempest.
+
+* Determine a path forward for components with overlapping capabilities
+  (such as networking).
+
+Meetings
+~~~~~~~~
+Meeting information for the Flag cycle will be archived here once the cycle
+is complete.  During the cycle, please refer to the
+`DefCore Committee wiki page <https://wiki.openstack.org/wiki/Governance/DefCoreCommittee/>`_.
 
 Future
 ------
