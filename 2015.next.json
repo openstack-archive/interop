@@ -1104,6 +1104,9 @@
       "tests": {
         "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_attach_detach_volume": {
           "idempotent_id": "id-52e9045a-e90d-4c0d-9087-79d657faffff"
+        },
+        "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_list_get_volume_attachments": {
+          "idempotent_id": "id-7fa563fe-f0f7-43eb-9e22-a1ece036b513"
         }
       }
     },
