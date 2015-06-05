@@ -95,7 +95,7 @@ Required Designated Sections
 
 Advisory Designated Sections
 ----------------------------
-* Keystone : Update pending from PTL
+None
 
 Deprecated Designated Sections
 ------------------------------
