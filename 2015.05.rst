@@ -30,7 +30,7 @@ Platform Components
 
 Compute Component Capabilities
 ==============================
-Required Capabilities 
+Required Capabilities
 -----------------------
 * Identity-auth (keystone)
 * Compute-auth (nova)
@@ -43,40 +43,40 @@ Required Capabilities
 * Compute-volume (nova)
 * Images-v2 (nova)
 
-Advisory Capabilities 
+Advisory Capabilities
 -----------------------
 * Auth-token (keystone)
 * Compute-servers-metadata (nova)
 
-Deprecated Capabilities 
+Deprecated Capabilities
 -------------------------
-None 
+None
 
-Removed Capabilities 
+Removed Capabilities
 ----------------------
-None 
+None
 
 
 
 
 Object Component Capabilities
 =============================
-Required Capabilities 
+Required Capabilities
 -----------------------
 * Objectstore-object (swift)
 
-Advisory Capabilities 
+Advisory Capabilities
 -----------------------
 * Identity-auth (keystone)
 * Auth-token (keystone)
 
-Deprecated Capabilities 
+Deprecated Capabilities
 -------------------------
-None 
+None
 
-Removed Capabilities 
+Removed Capabilities
 ----------------------
-None 
+None
 
 
 Designated Sections
@@ -87,20 +87,30 @@ this specification.
 
 Required Designated Sections
 ----------------------------
+
 * Cinder : Designated sections are the API implementation code
-* Glance : Designated sections are the API implementation code and domain model.
-* Keystone : Designation is outlined per API grouping. Identity (user and group) management APIs will not be designated. API access (with exception of auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs include both v2.0 and v3 versions where applicable.
-* Nova : By default, designated except scheduler, filter, drivers, API extensions and networking.
-* Swift : Designated sections are proxy server, object server, container server, account server and select middleware
+* Glance : Designated sections are the API implementation code and domain
+  model.
+* Keystone : Designation is outlined per API grouping. Identity (user and
+  group) management APIs will not be designated. API access (with exception of
+  auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs
+  include both v2.0 and v3 versions where applicable.
+* Nova : By default, designated except scheduler, filter, drivers, API
+  extensions and networking.
+* Swift : Designated sections are proxy server, object server, container
+  server, account server and select middleware
 
 Advisory Designated Sections
 ----------------------------
+
 None
 
 Deprecated Designated Sections
 ------------------------------
+
 None
 
 Removed Designated Sections
 ---------------------------
+
 None

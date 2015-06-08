@@ -19,6 +19,7 @@
 
 import json
 import sys
+import textwrap
 
 
 def printHelpArrays(input):
@@ -29,6 +30,8 @@ def printHelpArrays(input):
         output = output + i.capitalize() + ', '
 
     return output[0:-2]
+
+wrapper = textwrap.TextWrapper(width=79, subsequent_indent='  ')
 
 inFileName = "NONE"
 for potentialFile in sys.argv:
@@ -127,12 +130,12 @@ Platform Components
 
         for event in order:
 
-            outFile.write("\n{event} Capabilities \n".format(
+            outFile.write("\n{event} Capabilities\n".format(
                 event=event.capitalize()))
             outFile.write("-" * (len(event) + 15) + "\n")
 
             if(len(data['components'][component][event]) == 0):
-                outFile.write("None \n")
+                outFile.write("None\n")
 
             for req in data['components'][component][event]:
                 if not data["capabilities"][req].get('name') is None:
@@ -166,15 +169,20 @@ this specification.""")
 
         outFile.write('\n\n{event} Designated Sections\n'.format(
                       event=event.capitalize()))
-        outFile.write('-'*(len(event) + 20))  # +20 is for length of header
+        # +20 is for length of header
+        outFile.write('-'*(len(event) + 20) + '\n\n')
 
         names = sorted(desig[event].keys())
         if len(names) is 0:
-            outFile.write('\nNone')
+            outFile.write('None')
 
+        outlines = []
         for name in names:
-            outFile.write("\n* {name} : {guide}".format(
-                          name=name.capitalize(),
-                          guide=desig[event][name].get('guidance')))
+            outlines.append(
+                wrapper.fill(
+                    "* {name} : {guide}".format(
+                        name=name.capitalize(),
+                        guide=desig[event][name].get('guidance'))))
+        outFile.write("\n".join(outlines))
 
     outFile.write('\n')
