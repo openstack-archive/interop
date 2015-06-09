@@ -1347,12 +1347,6 @@
       "project": "swift",
       "required-since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_container_object_without_using_creds": {
-          "idempotent_id": "id-07c9cf95-c0d4-4b49-b9c8-0ef2c9b27193"
-        },
-        "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_object_with_another_user_creds": {
-          "idempotent_id": "id-54e2a2fe-42dc-491b-8270-8e4217dd4cdc"
-        }
       }
     },
     "objectstore-object-copy": {

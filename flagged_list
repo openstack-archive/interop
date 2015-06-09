@@ -15,5 +15,3 @@ tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_stop_start_server[gate,id-af8eafd4-38a7-4a4b-bdbc-75145a580560]
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_stop_non_existent_server[gate,id-a31460a9-49e1-42aa-82ee-06e0bb7c2d03,negative]
 tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params[gate,id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee]
-tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_container_object_without_using_creds[gate,id-07c9cf95-c0d4-4b49-b9c8-0ef2c9b27193,smoke]
-tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_object_with_another_user_creds[gate,id-54e2a2fe-42dc-491b-8270-8e4217dd4cdc,smoke]
