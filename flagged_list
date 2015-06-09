@@ -46,6 +46,5 @@ tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_metadata_o
 tempest.api.compute.test_authorization.AuthorizationTestJSON.test_set_metadata_of_alt_account_server_fails[gate,id-c5f52351-53d9-4fc9-83e5-917f7f5e3d71]
 tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_attach_detach_volume[gate,id-52e9045a-e90d-4c0d-9087-79d657faffff]
 tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params[gate,id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee]
-tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time[gate,id-fb024a42-37f3-4ba5-9684-4f40a7910b41]
 tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_container_object_without_using_creds[gate,id-07c9cf95-c0d4-4b49-b9c8-0ef2c9b27193,smoke]
 tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_object_with_another_user_creds[gate,id-54e2a2fe-42dc-491b-8270-8e4217dd4cdc,smoke]
