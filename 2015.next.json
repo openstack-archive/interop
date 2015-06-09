@@ -42,7 +42,7 @@
     },
     "test-repositories": {
         "tempest": {
-            "git-sha: "26149b612d",
+            "git-sha": "26149b612d",
             "url": "https://git.openstack.org/cgit/openstack/tempest/"
         }
     },
