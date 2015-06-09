@@ -29,7 +29,6 @@ tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJS
 tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_status_non_existing[gate,id-fcdf192d-0f74-4d89-911f-1ec002b822c4,negative]
 tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_with_a_deleted_server[gate,id-24a26f1a-1ddc-4eea-b0d7-a90cc874ad8f,negative]
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_unlock_server[gate,id-80a8094c-211e-440a-ab88-9e59d556c7ee]
-tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft[gate,id-4640e3ef-a5df-482e-95a1-ceeeb0faa84d,smoke]
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_stop_start_server[gate,id-af8eafd4-38a7-4a4b-bdbc-75145a580560]
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_stop_non_existent_server[gate,id-a31460a9-49e1-42aa-82ee-06e0bb7c2d03,negative]
 tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_keypair_in_analt_user_tenant[gate,id-f03d1ded-7fd4-4d29-bc13-e2391f29c625]
