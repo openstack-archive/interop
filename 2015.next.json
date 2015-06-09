@@ -102,10 +102,20 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_fails_when_tenant_incorrect": {
-          "idempotent_id": "id-acf8724b-142b-4044-82c3-78d31a533f24"
+          "idempotent_id": "id-acf8724b-142b-4044-82c3-78d31a533f24",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image": {
-          "idempotent_id": "id-95d445f6-babc-4f2e-aea3-aa24ec5e7f0d"
+          "idempotent_id": "id-95d445f6-babc-4f2e-aea3-aa24ec5e7f0d",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         }
       }
     },
@@ -130,10 +140,20 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_keypair_of_alt_account_fails": {
-          "idempotent_id": "id-85bcdd8f-56b4-4868-ae56-63fbf6f7e405"
+          "idempotent_id": "id-85bcdd8f-56b4-4868-ae56-63fbf6f7e405",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_metadata_of_alt_account_server_fails": {
-          "idempotent_id": "id-dea1936a-473d-49f2-92ad-97bb7aded22e"
+          "idempotent_id": "id-dea1936a-473d-49f2-92ad-97bb7aded22e",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         }
       }
     },
@@ -157,7 +177,12 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_set_metadata_of_alt_account_server_fails": {
-          "idempotent_id": "id-c5f52351-53d9-4fc9-83e5-917f7f5e3d71"
+          "idempotent_id": "id-c5f52351-53d9-4fc9-83e5-917f7f5e3d71",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         }
       }
     },
@@ -248,43 +273,106 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_changes_since": {
-          "idempotent_id": "id-18bac3ae-da27-436c-92a9-b22474d13aab"
+          "idempotent_id": "id-18bac3ae-da27-436c-92a9-b22474d13aab",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_name": {
-          "idempotent_id": "id-33163b73-79f5-4d07-a7ea-9213bcc468ff"
+          "idempotent_id": "id-33163b73-79f5-4d07-a7ea-9213bcc468ff",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_id": {
-          "idempotent_id": "id-9f238683-c763-45aa-b848-232ec3ce3105"
+          "idempotent_id": "id-9f238683-c763-45aa-b848-232ec3ce3105",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_ref": {
-          "idempotent_id": "id-05a377b8-28cf-4734-a1e6-2ab5c38bf606"
+          "idempotent_id": "id-05a377b8-28cf-4734-a1e6-2ab5c38bf606",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_status": {
-          "idempotent_id": "id-a3f5b513-aeb3-42a9-b18e-f091ef73254d"
+          "idempotent_id": "id-a3f5b513-aeb3-42a9-b18e-f091ef73254d",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_type": {
-          "idempotent_id": "id-e3356918-4d3e-4756-81d5-abc4524ba29f"
+          "idempotent_id": "id-e3356918-4d3e-4756-81d5-abc4524ba29f",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_limit_results": {
-          "idempotent_id": "id-3a484ca9-67ba-451e-b494-7fcf28d32d62"
+          "idempotent_id": "id-3a484ca9-67ba-451e-b494-7fcf28d32d62",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_changes_since": {
-          "idempotent_id": "id-7d439e18-ac2e-4827-b049-7e18004712c4"
+          "idempotent_id": "id-7d439e18-ac2e-4827-b049-7e18004712c4",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_name": {
-          "idempotent_id": "id-644ea267-9bd9-4f3b-af9f-dffa02396a17"
+          "idempotent_id": "id-644ea267-9bd9-4f3b-af9f-dffa02396a17",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_server_ref": {
-          "idempotent_id": "id-8c78f822-203b-4bf6-8bba-56ebd551cf84"
+          "idempotent_id": "id-8c78f822-203b-4bf6-8bba-56ebd551cf84",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_status": {
-          "idempotent_id": "id-9b0ea018-6185-4f71-948a-a123a107988e"
+          "idempotent_id": "id-9b0ea018-6185-4f71-948a-a123a107988e",
+          "date": "2015-05-06",
+          "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+          "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_type": {
-          "idempotent_id": "id-888c0cc0-7223-43c5-9db0-b125fd0a393b"
+          "idempotent_id": "id-888c0cc0-7223-43c5-9db0-b125fd0a393b",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_limit_results": {
-          "idempotent_id": "id-ba2fa9a9-b672-47cc-b354-3b4c0600e2cb"
+          "idempotent_id": "id-ba2fa9a9-b672-47cc-b354-3b4c0600e2cb",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         },
         "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_list_images": {
           "idempotent_id": "id-fd51b7f4-d4a3-4331-9885-866658112a6f"
@@ -360,7 +448,12 @@
           "idempotent_id": "id-f9e15296-d7f9-4e62-b53f-a04e89160833"
         },
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_keypair_in_analt_user_tenant": {
-          "idempotent_id": "id-f03d1ded-7fd4-4d29-bc13-e2391f29c625"
+          "idempotent_id": "id-f03d1ded-7fd4-4d29-bc13-e2391f29c625",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
         }
       }
     },
