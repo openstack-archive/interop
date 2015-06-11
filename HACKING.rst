@@ -17,17 +17,19 @@ DefCore Specific Commandments
   once approved by the Board.  Therefore if you desire to flag a test,
   in an approved capability list, add a "flagged" block to the test.  Do
   _not_ remove it from the "tests" section.
-- [D302] If a test is found to not meet the DefCore Flagging Criteria
-  defined in this document after the Board has approved a Guideline,
+- [D302] If a Capability is found to not meet the `Core Criteria
+  <./process/CoreCriteria.rst>`_ after the Board has approved a Guideline,
   the corresponding tests should have a "flagged" block added to the
   the relevant tests in the "tests" section of the relevant Board-approved
-  Guidelines.
-    - See [D307] for details about format requirements.
-    - See [D308] for conditions on also adding to the .next.json.
+  Guidelines.  The tests should also be removed from the "tests" section of
+  the .next.json file.
+    - See [D307] for details about the flagged block
 - [D303] Tests that are found to inadequately test the underlying
-  Capability, due to bugs or design flaws, should have a "flagged"
+  Capability due to bugs or design flaws, should have a "flagged"
   block added to the section for the test in the "tests" section of
   the most recent Board-approved Guideline.
+    - See [D307] for details about the flagged block
+    - See [D308] for conditions on also adding to the .next.json.
 - [D304] Before the Board approves the capabilities listed in the
   .next.json file, a committee member will submit a patch that copies
   the .next.json file to an appropriately named new file, updates the
