@@ -395,10 +395,20 @@
                 "idempotent_id": "id-d86141a7-906e-4731-b187-d64a2ea61422"
             },
             "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_null_flavor": {
-                "idempotent_id": "id-45436a7d-a388-4a35-a9d8-3adc5d0d940b"
+                "idempotent_id": "id-45436a7d-a388-4a35-a9d8-3adc5d0d940b",
+                "flag": {
+                    "date": "2015-05-07",
+                    "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors.",
+                    "action": "Fix resize upstream in Nova and remove flag."
+                }
             },
             "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_non_existent_flavor": {
-                "idempotent_id": "id-ced1a1d7-2ab6-45c9-b90f-b27d87b30efd"
+                "idempotent_id": "id-ced1a1d7-2ab6-45c9-b90f-b27d87b30efd",
+                "flag": {
+                    "date": "2015-05-07",
+                    "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors.",
+                    "action": "Fix resize upstream in Nova and remove flag."
+                }
             },
             "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_server_name_blank": {
                 "idempotent_id": "id-dbbfd247-c40c-449e-8f6c-d2aa7c7da7cf"
@@ -494,7 +504,12 @@
                 "idempotent_id": "id-80c574cc-0925-44ba-8602-299028357dd9"
             },
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_confirm": {
-                "idempotent_id": "id-1499262a-9328-4eda-9068-db1ac57498d2"
+                "idempotent_id": "id-1499262a-9328-4eda-9068-db1ac57498d2",
+                "flag": {
+                    "date": "2015-05-07",
+                    "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors.",
+                    "action": "Fix resize upstream in Nova and remove flag."
+                }
             },
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_hard": {
                 "idempotent_id": "id-2cb1baf6-ac8d-4429-bf0d-ba8a0ba53e32"
@@ -509,7 +524,12 @@
                 "idempotent_id": "id-aaa6cdf3-55a7-461a-add9-1c8596b9a07c"
             },
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert": {
-                "idempotent_id": "id-c03aab19-adb1-44f5-917d-c419577e9e68"
+                "idempotent_id": "id-c03aab19-adb1-44f5-917d-c419577e9e68",
+                "flag": {
+                    "date": "2015-05-07",
+                    "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors.",
+                    "action": "Fix resize upstream in Nova and remove flag."
+                }
             },
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_unlock_server": {
                 "idempotent_id": "id-80a8094c-211e-440a-ab88-9e59d556c7ee"
