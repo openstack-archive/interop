@@ -4,7 +4,7 @@ Kilo Cycle DefCore Testing for Vancouver Summit.
 Testing against Defcore 2015.04 Capabilities
 --------------------------------------------
 
-https://github.com/openstack/defcore/blob/master/2015.04.json
+http://git.openstack.org/cgit/openstack/defcore/tree/2015.04.json
 
 Tempest can be run standalone, or under a test runner such as refstack-client
 or rally. If only testing against Defcore capabilities, you can use the
@@ -39,7 +39,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Download the refstack client:
 
-  ``git clone https://gitub.com/stackforge/refstack-client.git``
+  ``git clone https://git.openstack.org/stackforge/refstack-client``
 
 * In the refstack-client directory, install tempest and required dependencies.
   You may specify a specific tag of tempest with the -t option. refstack-client
@@ -48,12 +48,12 @@ or CentOS 7 have been verified) with administrator privileges.
   ``./setup_env``
 
 * Download a list of tests from the Defcore site:
-  https://github.com/openstack/defcore/blob/master/2015.04/2015.04.required.txt
+  http://git.openstack.org/cgit/openstack/defcore/tree/2015.04/2015.04.required.txt
 
 * Configure tempest.conf for your cloud. If you need assistance in common
   parameters or settings contact interop@openstack.org. There is also a tempest
   configuration guide at
-  https://github.com/openstack/tempest/blob/master/doc/source/configuration.rst
+  https://git.openstack.org/cgit/openstack/tempest/tree/doc/source/configuration.rst
 
 * Once you have a working config, run tempest. You can run within the refstack
   client, or run tempest directly. For direct running, from the refstack-client
@@ -69,7 +69,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Every effort should be made to pass all of the required tests, but you
   will want to compare any lists of failed tests to the list of flagged tests.
-  https://github.com/openstack/defcore/blob/master/2015.04/2015.04.required.txt
+  http://git.openstack.org/cgit/openstack/defcore/tree/2015.04/2015.04.flagged.txt
 
 Known Issues and Recommendations
 --------------------------------
