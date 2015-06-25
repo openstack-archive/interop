@@ -2,10 +2,12 @@ JSON Schema v1.3
 ====================
 
 Changes from v1.2
+
 :added: reference
 :added: tests-repositories
 :added: required-since
-:added: tests now have block including idempotent_id and (optional) flagged information
+:added: tests now have block including idempotent_id and (optional) flagged
+  information
 :change: guidelines to point to required-since
 :change: tests from array to hash
 :change: add hash after test-name keys
