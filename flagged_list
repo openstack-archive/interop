@@ -28,8 +28,6 @@ tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJS
 tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_detail_server_is_deleted[gate,id-93055106-2d34-46fe-af68-d9ddbf7ee570,negative]
 tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_status_non_existing[gate,id-fcdf192d-0f74-4d89-911f-1ec002b822c4,negative]
 tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_with_a_deleted_server[gate,id-24a26f1a-1ddc-4eea-b0d7-a90cc874ad8f,negative]
-tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password[gate,id-6158df09-4b82-4ab3-af6d-29cf36af858d]
-tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_get_console_output[gate,id-4b8867e6-fffa-4d54-b1d1-6fdda57be2f3]
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_unlock_server[gate,id-80a8094c-211e-440a-ab88-9e59d556c7ee]
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft[gate,id-4640e3ef-a5df-482e-95a1-ceeeb0faa84d,smoke]
 tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_stop_start_server[gate,id-af8eafd4-38a7-4a4b-bdbc-75145a580560]

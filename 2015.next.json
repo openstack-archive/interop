@@ -514,9 +514,6 @@
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_hard": {
                 "idempotent_id": "id-2cb1baf6-ac8d-4429-bf0d-ba8a0ba53e32"
             },
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password": {
-                "idempotent_id": "id-6158df09-4b82-4ab3-af6d-29cf36af858d"
-            },
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_stop_start_server": {
                 "idempotent_id": "id-af8eafd4-38a7-4a4b-bdbc-75145a580560"
             },
