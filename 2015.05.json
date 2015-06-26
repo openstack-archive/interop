@@ -451,7 +451,10 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "swift",
         "description": "Basic object operations in Object Storage API",
-        "flagged": [],
+        "flagged": [
+            "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_object_with_another_user_creds",
+            "tempest.api.object_storage.test_object_services.PublicObjectTest.test_access_public_container_object_without_using_creds"
+        ],
         "name": "objectstore-object",
         "tests": [
             "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_2d_way",
