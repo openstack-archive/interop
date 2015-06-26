@@ -274,7 +274,8 @@
             "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_null_flavor",
             "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_non_existent_flavor",
             "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_confirm",
-            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert"
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert",
+            "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password"
         ],
         "name": "compute-servers",
         "tests": [
