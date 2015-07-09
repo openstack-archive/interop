@@ -43,7 +43,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * In the refstack-client directory, install tempest and required dependencies.
   You may specify a specific tag of tempest with the -t option. refstack-client
-  defaults to '7c8fcc67'
+  defaults to '98f62ee' as of this writing.
 
   ``./setup_env``
 
