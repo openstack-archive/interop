@@ -381,7 +381,7 @@
         "project": "nova",
         "description": "Retrieve volume information through the Compute API",
         "flagged": [
-            "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_attach_detach_volume",
+            "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_attach_detach_volume"
         ],
         "name": "compute-volume",
         "tests": [
