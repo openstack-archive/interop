@@ -39,7 +39,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Download the refstack client:
 
-  ``git clone https://git.openstack.org/stackforge/refstack-client.git``
+  ``git clone https://git.openstack.org/stackforge/refstack-client``
 
 * In the refstack-client directory, install tempest and required dependencies.
   You may specify a specific tag of tempest with the -t option. refstack-client
