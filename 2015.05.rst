@@ -4,12 +4,13 @@ OpenStack DefCore 2015.05
 
 :Status: approved
 :Replaces: 2015.04
+:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/2015.05.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to
 be eligible to use marks controlled by the OpenStack Foundation.
 
-This document was generated from the master JSON version.
+This document was generated from the `master JSON version <2015.05.json>`_.
 
 Releases Covered
 ==============================
@@ -32,21 +33,21 @@ Compute Component Capabilities
 ==============================
 Required Capabilities
 -----------------------
-* Identity-auth (keystone)
-* Compute-auth (nova)
-* Compute-flavors (nova)
-* Compute-images (nova)
-* Compute-instance-actions (nova)
-* Compute-keypairs (nova)
-* Compute-quotas (nova)
-* Compute-servers (nova)
-* Compute-volume (nova)
-* Images-v2 (nova)
+* identity-auth (Keystone)
+* compute-auth (Nova)
+* compute-flavors (Nova)
+* compute-images (Nova)
+* compute-instance-actions (Nova)
+* compute-keypairs (Nova)
+* compute-quotas (Nova)
+* compute-servers (Nova)
+* compute-volume (Nova)
+* images-v2 (Nova)
 
 Advisory Capabilities
 -----------------------
-* Auth-token (keystone)
-* Compute-servers-metadata (nova)
+* auth-token (Keystone)
+* compute-servers-metadata (Nova)
 
 Deprecated Capabilities
 -------------------------
@@ -63,12 +64,12 @@ Object Component Capabilities
 =============================
 Required Capabilities
 -----------------------
-* Objectstore-object (swift)
+* objectstore-object (Swift)
 
 Advisory Capabilities
 -----------------------
-* Identity-auth (keystone)
-* Auth-token (keystone)
+* identity-auth (Keystone)
+* auth-token (Keystone)
 
 Deprecated Capabilities
 -------------------------

@@ -83,12 +83,13 @@ with open(outFileName, "w") as outFile:
     outFile.write("""
 :Status: {status}
 :Replaces: {replaces}
+:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/{id}.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to
 be eligible to use marks controlled by the OpenStack Foundation.
 
-This document was generated from the master JSON version.
+This document was generated from the `master JSON version <{id}.json>`_.
 
 Releases Covered
 ==============================
@@ -105,6 +106,7 @@ Platform Components
 :Removed: {platformRemoved}
 """.format(status=data.get("status"),
            replaces=data.get("replaces"),
+           id=data.get("id"),
            releases=printHelpArrays(data.get("releases")),
            platformRequired=printHelpArrays(data["platform"].get("required")),
            platformAdvisory=printHelpArrays(data["platform"].get("advisory")),
@@ -138,17 +140,9 @@ Platform Components
                 outFile.write("None\n")
 
             for req in data['components'][component][event]:
-                if not data["capabilities"][req].get('name') is None:
-
-                    outFile.write("* {name} ({project})\n".format(
-                        name=data["capabilities"][req]["name"].capitalize(),
-                        project=data["capabilities"][req].get("project")))
-                else:
-                    print "{ capabilities /", req, "/ name } does not exist"
-
-                    outFile.write("* {name} ({project})\n".format(
-                        name=req.capitalize(),
-                        project=data["capabilities"][req].get("project")))
+                outFile.write("* {name} ({project})\n".format(
+                    name=req,
+                    project=data["capabilities"][req].get("project").capitalize()))
 
     # Designated -Sections
 
