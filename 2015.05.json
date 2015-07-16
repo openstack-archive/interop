@@ -84,7 +84,21 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "nova",
         "description": "Image operations within the Compute API",
-        "flagged": [],
+        "flagged": [
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_id",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_changes_since",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_status",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_type",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_ref",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_name",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_type",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_status",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_server_ref",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_limit_results",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_name",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_limit_results",
+            "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_changes_since"
+        ],
         "name": "compute-images",
         "tests": [
             "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_id",
@@ -163,7 +177,12 @@
       "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
       "project": "nova",
       "description": "Auth related tests using Compute API",
-      "flagged": [],
+      "flagged": [
+          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image",
+          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_metadata_of_alt_account_server_fails",
+          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_fails_when_tenant_incorrect",
+          "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_set_metadata_of_alt_account_server_fails"
+      ],
       "name": "compute-auth",
       "tests": [
           "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image",
@@ -214,7 +233,10 @@
         "guidelines": ["2014.07", "2015.03", "2015.04", "2015.05"],
         "project": "nova",
         "description": "Generate, import, and delete SSH keys within Compute services",
-        "flagged": [],
+        "flagged": [
+            "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_keypair_in_analt_user_tenant",
+            "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_keypair_of_alt_account_fails"
+        ],
         "name": "compute-keypairs",
         "tests": [
             "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_specify_keypair",
