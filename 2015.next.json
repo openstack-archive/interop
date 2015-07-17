@@ -25,17 +25,18 @@
         "compute-servers",
         "compute-volume",
         "images-v2",
-        "auth-token"],
-      "advisory": [
+        "auth-token",
         "compute-servers-metadata"],
+      "advisory": [],
       "deprecated": [],
       "removed": []
     },
     "object": {
-      "required": ["objectstore-object"],
-      "advisory": [
+      "required": [
+        "objectstore-object",
         "identity-auth",
         "auth-token"],
+      "advisory": [],
       "deprecated": [],
       "removed": []
     }
