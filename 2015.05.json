@@ -525,6 +525,7 @@
       "admin": true,
       "status": "removed",
       "guidelines": ["2014.07"],
+      "project": "cinder",
       "description": "CRUD operations for volumes management in Block Storage API",
       "flagged": [],
       "name": "volume",
