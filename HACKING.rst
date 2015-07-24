@@ -78,6 +78,7 @@ DefCore Specific Commandments
      demonstrate the reason a new flag type is needed.
   #. The DefCore committee will discuss and consider the flagging proposal as
      well as the proposed new reason. They may accept or decline either proposal.
+- [D311] Once a test has been flaged, it will remain flagged for that Guideline.
 
 
 DefCore Test Flagging Guidelines
