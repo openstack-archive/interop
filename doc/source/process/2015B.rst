@@ -226,6 +226,21 @@ C5. API Usage Data Report
   2. To the extent the data is available, capabilities beyond the DefCore
      list will be included in the report.
 
+C6. Only Two Approved Guidelines at a time:
+
+  1. Vendors seeking Foundation validation are limited to using the two
+     latest approved Guidelines.
+
+  2. Since past validations are respected, older Guidelines will be
+     maintained as superseded for historical reference.
+
+  3. Guideline status progresses as follows:
+
+  :draft: initial work, pre-summit (S-3) discussion material
+  :preliminary: as presented at summit (S) for community review
+  :approved: board approved, one of the two official guidelines
+  :superseded: board approved, now superseded by two latest guidelines
+
 Guideline Approval (D)
 ^^^^^^^^^^^^^^^^^^^^^^
 
