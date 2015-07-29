@@ -218,6 +218,11 @@ C4. Results of Vendor Self-Tests will be open
      be omitted from the reports.
   4. Reports will include individual test results, not just capability
      scoring.
+  5. Vendors are required to submit a description of the system and
+     configuration used to achieve the results.
+  6. The Foundation may require vendors to submit specific details of the
+     configuration and may also require use of a specific format for
+     reporting.
 
 C5. API Usage Data Report
 
