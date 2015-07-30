@@ -13,13 +13,13 @@ Expected Time line:
 +------------+-----------+--------------------------------------+-----------+
 | Time Frame | Milestone | Activities                           | Lead By   |
 +============+===========+======================================+===========+
-| -3 months  | S-3       | \"Preliminary\" draft (from current) | DefCore   |
+| -3 months  | S-3       | Draft status                         | DefCore   |
 +------------+-----------+--------------------------------------+-----------+
 | -2 months  | S-2       | ID new Capabilities                  | Community |
 +------------+-----------+--------------------------------------+-----------+
 | -1 month   | S-1       | Score Capabilities                   | DefCore   |
 +------------+-----------+--------------------------------------+-----------+
-| Summit     | S         | \"Solid\" draft                      | Community |
+| Summit     | S         | Review status                        | Community |
 +            +           +--------------------------------------+-----------+
 |            |           | Advisory/Deprecated items selected   | DefCore   |
 +------------+-----------+--------------------------------------+-----------+
@@ -237,7 +237,7 @@ C6. Only Two Approved Guidelines at a time:
   3. Guideline status progresses as follows:
 
   :draft: initial work, pre-summit (S-3) discussion material
-  :preliminary: as presented at summit (S) for community review
+  :review: as presented at summit (S) for community review
   :approved: board approved, one of the two official guidelines
   :superseded: board approved, now superseded by two latest guidelines
 
