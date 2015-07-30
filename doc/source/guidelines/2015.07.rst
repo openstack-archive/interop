@@ -1,0 +1,152 @@
+=========================
+OpenStack DefCore 2015.07
+=========================
+
+:Status: approved
+:Replaces: 2015.05
+:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/2015.07.json
+
+This document outlines the mandatory capabilities and designated
+sections required to exist in a software installation in order to
+be eligible to use marks controlled by the OpenStack Foundation.
+
+This document was generated from the `master JSON version <2015.07.json>`_.
+
+Releases Covered
+==============================
+Applies to Icehouse, Juno, Kilo
+
+Platform Components
+==============================
+:Required: Compute, Object
+
+:Advisory: None
+
+:Deprecated: None
+
+:Removed: None
+
+
+
+
+Compute Component Capabilities
+==============================
+Required Capabilities
+-----------------------
+* identity-v2-tokens-create (Keystone)
+* identity-v3-tokens-create (Keystone)
+* compute-auth-create (Nova)
+* compute-auth-get (Nova)
+* compute-auth-set (Nova)
+* compute-images-create (Nova)
+* compute-images-delete (Nova)
+* compute-images-get (Nova)
+* compute-images-list (Nova)
+* compute-instance-actions-get (Nova)
+* compute-instance-actions-list (Nova)
+* compute-keypairs-create (Nova)
+* compute-quotas-get (Nova)
+* compute-servers-change (Nova)
+* compute-servers-create (Nova)
+* compute-servers-delete (Nova)
+* compute-servers-get (Nova)
+* compute-servers-host (Nova)
+* compute-servers-invalid (Nova)
+* compute-servers-list (Nova)
+* compute-servers-lock (Nova)
+* compute-servers-name (Nova)
+* compute-servers-reboot (Nova)
+* compute-servers-rebuild (Nova)
+* compute-servers-resize (Nova)
+* compute-servers-stop (Nova)
+* compute-servers-update (Nova)
+* compute-servers-verify (Nova)
+* compute-volume-attach (Nova)
+* compute-volume-get (Nova)
+* compute-volume-list (Nova)
+* images-v2-index (Nova)
+* compute-servers-metadata-delete (Nova)
+* compute-servers-metadata-get (Nova)
+* compute-servers-metadata-list (Nova)
+* compute-servers-metadata-set (Nova)
+* compute-servers-metadata-update (Nova)
+
+Advisory Capabilities
+-----------------------
+None
+
+Deprecated Capabilities
+-------------------------
+None
+
+Removed Capabilities
+----------------------
+None
+
+
+
+
+Object Component Capabilities
+=============================
+Required Capabilities
+-----------------------
+* objectstore-object-access (Swift)
+* objectstore-object-copy (Swift)
+* objectstore-object-create (Swift)
+* objectstore-object-delete (Swift)
+* objectstore-object-get (Swift)
+* objectstore-object-put (Swift)
+* objectstore-object-upload (Swift)
+* objectstore-object-versioned (Swift)
+* objectstore-temp-url-get (Swift)
+* identity-v2-tokens-create (Keystone)
+* identity-v3-tokens-create (Keystone)
+
+Advisory Capabilities
+-----------------------
+None
+
+Deprecated Capabilities
+-------------------------
+None
+
+Removed Capabilities
+----------------------
+None
+
+
+Designated Sections
+=====================================
+
+The following designated sections apply to the same releases as
+this specification.
+
+Required Designated Sections
+----------------------------
+
+* Cinder : Designated sections are the API implementation code
+* Glance : Designated sections are the API implementation code and domain
+  model.
+* Keystone : Designation is outlined per API grouping. Identity (user and
+  group) management APIs will not be designated. API access (with exception of
+  auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs
+  include both v2.0 and v3 versions where applicable.
+* Nova : By default, designated except scheduler, filter, drivers, API
+  extensions and networking.
+* Swift : Designated sections are proxy server, object server, container
+  server, account server and select middleware
+
+Advisory Designated Sections
+----------------------------
+
+None
+
+Deprecated Designated Sections
+------------------------------
+
+None
+
+Removed Designated Sections
+---------------------------
+
+None
