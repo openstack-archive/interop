@@ -21,3 +21,13 @@ Schema Documentation
    :maxdepth: 1
 
    schema/*
+
+==========
+Guidelines
+==========
+
+.. toctree::
+   :glob:
+   :maxdepth: 1
+
+   guidelines/*
