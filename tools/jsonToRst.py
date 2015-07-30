@@ -52,7 +52,7 @@ if not isinstance(data, dict):
     print 'Make sure this is a valid file'
     sys.exit(1)
 
-outFileName = inFileName.replace("json", "rst")
+outFileName = 'doc/source/guidelines/' + inFileName.replace("json", "rst")
 
 
 print "writing to", outFileName
