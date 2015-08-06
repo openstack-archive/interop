@@ -1,0 +1,19 @@
+DefCore Scoring Worksheet
+=========================
+
+This file is used to maintain capabilities scoring for DefCore.
+It is considered "working materials" under the 2015B process and
+is not an authoritative, Board-approved source of information
+as to which capabilities are required for a particular Guideline.
+Rather, it is a point-in-time listing used by DefCore Committee
+members while determining which capabilities may be included in
+a future Guideline.  Each line takes the following form:
+
+Capability Name: [Widely Deployed,Used By Tools,Used by Clients],
+                 [TC Future Direction, Complete, Stable],
+                 [Discoverable, Doc'd, Core in Last Release],
+                 [Foundational, Atomic, Proximity],
+                 [Non-Admin]
+
+Possible scores: 0, 1, ? (not scored yet or needs discussion)
+
