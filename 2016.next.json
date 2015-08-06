@@ -52,7 +52,12 @@
         "compute-servers-metadata-set",
         "compute-servers-metadata-update"
         ],
-      "advisory": [],
+      "advisory": [
+        "networks-floating-ips-CRUD-and-associate",
+        "networks-l3-router",
+        "networks-l2-CRUD",
+        "networks-l3-CRUD",
+        "networks-security-groups-CRUD"],
       "deprecated": [
         "compute-servers-change"
       ],
@@ -1592,6 +1597,369 @@
           "idempotent_id": "id-f91c96d4-1230-4bba-8eb9-84476d18d991"
         }
       }
+    },
+    "networks-floating-ips-CRUD-and-associate": {
+      "achievements": [
+          "complete",
+          "doc",
+          "proximity",
+          "clients",
+          "future",
+          "atomic",
+          "stable",
+          "tools",
+          "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Basic CRUD (and associate) operations on floating IP addresses",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_floating_ips_negative.FloatingIPNegativeTestJSON.test_associate_floatingip_port_ext_net_unreachable": {
+          "idempotent_id": "id-6b3b8797-6d43-4191-985c-c48b773eb429"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_floating_ip_specifying_a_fixed_ip_address": {
+          "idempotent_id": "id-36de4bd0-f09c-43e3-a8e1-1decc1ffd3a5"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_list_show_update_delete_floating_ip": {
+          "idempotent_id": "id-62595970-ab1c-4b7f-8fcc-fddfe55e8718"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_with_port_multiple_ip_address": {
+          "idempotent_id": "id-45c4c683-ea97-41ef-9c51-5e9802f2f3d7"
+        },
+        "tempest.api.network.test_floating_ips_negative.FloatingIPNegativeTestJSON.test_create_floatingip_in_private_network": {
+          "idempotent_id": "id-50b9aeb4-9f0b-48ee-aa31-fa955a48ff54"
+        },
+        "tempest.api.network.test_floating_ips_negative.FloatingIPNegativeTestJSON.test_create_floatingip_with_port_ext_net_unreachable": {
+          "idempotent_id": "id-22996ea8-4a81-4b27-b6e1-fa5df92fa5e8"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_floating_ip_delete_port": {
+          "idempotent_id": "id-e1f6bffd-442f-4668-b30e-df13f2705e77"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_floating_ip_update_different_router": {
+          "idempotent_id": "id-1bb2f731-fe5a-4b8c-8409-799ade1bed4d"
+        }
+      }
+    }
+  },
+  "networks-l2-CRUD": {
+    "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+    ],
+    "admin": false,
+    "status": "advisory",
+    "description": "Basic CRUD operations on L2 networks and L2 network ports",
+    "project": "neutron",
+    "required-since": "",
+    "tests": {
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_all_attributes": {
+        "idempotent_id": "id-a4d9ec4c-0306-4111-a75c-db01a709030b"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_allocation_pools": {
+        "idempotent_id": "id-bec949c4-3147-4ba6-af5f-cd2306118404"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_dhcp_enabled": {
+        "idempotent_id": "id-94ce038d-ff0a-4a4c-a56b-09da3ca0b55d"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_gw": {
+        "idempotent_id": "id-9393b468-186d-496d-aa36-732348cd76e7"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_gw_and_allocation_pools": {
+        "idempotent_id": "id-8217a149-0c6c-4cfb-93db-0486f707d13f"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_host_routes_and_dns_nameservers": {
+        "idempotent_id": "id-d830de0a-be47-468f-8f02-1fd996118289"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_without_gateway": {
+        "idempotent_id": "id-d2d596e2-8e76-47a9-ac51-d4648009f4d3"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_create_update_delete_network_subnet": {
+        "idempotent_id": "id-0e269138-0da6-4efc-a46d-578161e7b221"
+      },
+      "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_create_port_binding_ext_attr": {
+        "idempotent_id": "id-8e8569c1-9ac7-44db-8bc1-f5fb2814f29b"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_create_bulk_port": {
+        "idempotent_id": "id-67f1b811-f8db-43e2-86bd-72c074d4a42c"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_create_port_in_allowed_allocation_pools": {
+        "idempotent_id": "id-0435f278-40ae-48cb-a404-b8a087bc09b1"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_create_port_with_no_securitygroups": {
+        "idempotent_id": "id-4179dcb9-1382-4ced-84fe-1b91c54f5735"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_create_show_delete_port_user_defined_mac": {
+        "idempotent_id": "id-13e95171-6cbd-489c-9d7c-3f9c58215c18"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_create_update_delete_port": {
+        "idempotent_id": "id-c72c1c0c-2193-4aca-aaa4-b1442640f51c"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_create_update_port_with_second_ip": {
+        "idempotent_id": "id-63aeadd4-3b49-427f-a3b1-19ca81f06270"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_delete_network_with_subnet": {
+        "idempotent_id": "id-f04f61a9-b7f3-4194-90b2-9bcf660d1bfe"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_list_networks": {
+        "idempotent_id": "id-f7ffdeda-e200-4a7a-bcbe-05716e86bf43"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_list_networks_fields": {
+        "idempotent_id": "id-6ae6d24f-9194-4869-9c85-c313cb20e080"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_list_subnets": {
+        "idempotent_id": "id-db68ba48-f4ea-49e9-81d1-e367f6d0b20a"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_list_subnets_fields": {
+        "idempotent_id": "id-842589e3-9663-46b0-85e4-7f01273b0412"
+      },
+      "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_list_ports_binding_ext_attr": {
+        "idempotent_id": "id-1c82a44a-6c6e-48ff-89e1-abe7eaf8f9f8"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_list_ports": {
+        "idempotent_id": "id-cf95b358-3e92-4a29-a148-52445e1ac50e"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_list_ports_fields": {
+        "idempotent_id": "id-ff7f117f-f034-4e0e-abff-ccef05c454b4"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_show_network": {
+        "idempotent_id": "id-2bf13842-c93f-4a69-83ed-717d2ec3b44e"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_show_network_fields": {
+        "idempotent_id": "id-867819bb-c4b6-45f7-acf9-90edcf70aa5e"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_show_subnet": {
+        "idempotent_id": "id-bd635d81-6030-4dd1-b3b9-31ba0cfdf6cc"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_show_subnet_fields": {
+        "idempotent_id": "id-270fff0b-8bfc-411f-a184-1e8fd35286f0"
+      },
+      "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_show_port_binding_ext_attr": {
+        "idempotent_id": "id-b54ac0ff-35fc-4c79-9ca3-c7dbd4ea4f13"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_show_port": {
+        "idempotent_id": "id-c9a685bd-e83f-499c-939f-9f7863ca259f"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_show_port_fields": {
+        "idempotent_id": "id-45fcdaf2-dab0-4c13-ac6c-fcddfb579dbd"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_update_subnet_gw_dns_host_routes_dhcp": {
+        "idempotent_id": "id-3d3852eb-3009-49ec-97ac-5ce83b73010a"
+      },
+      "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_update_port_binding_ext_attr": {
+        "idempotent_id": "id-6f6c412c-711f-444d-8502-0ac30fbf5dd5"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_security_group_and_extra_attributes": {
+        "idempotent_id": "id-58091b66-4ff4-4cc1-a549-05d60c7acd1a"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_two_security_groups_and_extra_attributes": {
+        "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d"
+      },
+      "tempest.api.network.test_networks.NetworksTestJSON.test_external_network_visibility": {
+        "idempotent_id": "id-af774677-42a9-4e4b-bb58-16fe6a5bc1ec"
+      },
+      "tempest.api.network.test_ports.PortsTestJSON.test_port_list_filter_by_router_id": {
+        "idempotent_id": "id-5ad01ed0-0e6e-4c5d-8194-232801b15c72"
+      }
+    }
+  },
+  "networks-l3-CRUD": {
+    "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+    ],
+    "admin": false,
+    "status": "advisory",
+    "description": "Basic CRUD operations on L3 networks and L3 routers",
+    "project": "neutron",
+    "required-since": "",
+    "tests": {
+      "tempest.api.network.test_routers.RoutersTest.test_add_multiple_router_interfaces": {
+        "idempotent_id": "id-802c73c9-c937-4cef-824b-2191e24a6aab"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_port_id": {
+        "idempotent_id": "id-2b7d2f37-6748-4d78-92e5-1d590234f0d5"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_subnet_id": {
+        "idempotent_id": "id-b42e6e39-2e37-49cc-a6f4-8467e940900a"
+      },
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_add_router_interfaces_on_overlapping_subnets_returns_400": {
+        "idempotent_id": "id-957751a3-3c68-4fa2-93b6-eb52ea10db6e"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_create_router_setting_tenant_id": {
+        "idempotent_id": "id-e54dd3a3-4352-4921-b09d-44369ae17397"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_create_router_with_default_snat_value": {
+        "idempotent_id": "id-847257cc-6afd-4154-b8fb-af49f5670ce8"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_create_router_with_snat_explicit": {
+        "idempotent_id": "id-ea74068d-09e9-4fd7-8995-9b6a1ace920f"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_create_show_list_update_delete_router": {
+        "idempotent_id": "id-f64403e2-8483-4b34-8ccd-b09a87bcc68c"
+      },
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_delete_non_existent_router_returns_404": {
+        "idempotent_id": "id-c7edc5ad-d09d-41e6-a344-5c0c31e2e3e4"
+      },
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_show_non_existent_router_returns_404": {
+        "idempotent_id": "id-c2a70d72-8826-43a7-8208-0209e6360c47"
+      },
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_show_non_existent_router_returns_404": {
+        "idempotent_id": "id-c2a70d72-8826-43a7-8208-0209e6360c47"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_update_extra_route": {
+        "idempotent_id": "id-c86ac3a8-50bd-4b00-a6b8-62af84a0765c"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_update_router_admin_state": {
+        "idempotent_id": "id-a8902683-c788-4246-95c7-ad9c6d63a4d9"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_update_router_reset_gateway_without_snat": {
+        "idempotent_id": "id-f2faf994-97f4-410b-a831-9bc977b64374"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway": {
+        "idempotent_id": "id-6cc285d8-46bf-4f36-9b1a-783e3008ba79"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_with_snat_explicit": {
+        "idempotent_id": "id-b386c111-3b21-466d-880c-5e72b01e1a33"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_without_snat": {
+        "idempotent_id": "id-96536bc7-8262-4fb2-9967-5c46940fa279"
+      },
+      "tempest.api.network.test_routers.RoutersTest.test_update_router_unset_gateway": {
+        "idempotent_id": "id-ad81b7ee-4f81-407b-a19c-17e623f763e8"
+      },
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_update_non_existent_router_returns_404": {
+        "idempotent_id": "id-b23d1569-8b0c-4169-8d4b-6abd34fad5c7"
+      }
+    }
+  },
+  "networks-l3-router": {
+    "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+    ],
+    "admin": false,
+    "status": "advisory",
+    "description": "Operations on L3 routers",
+    "project": "neutron",
+    "required-since": "",
+    "tests": {
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_router_add_gateway_invalid_network_returns_404": {
+        "idempotent_id": "id-37a94fc0-a834-45b9-bd23-9a81d2fd1e22"
+      },
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_router_add_gateway_net_not_external_returns_400": {
+        "idempotent_id": "id-11836a18-0b15-4327-a50b-f0d9dc66bddd"
+      },
+      "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_router_remove_interface_in_use_returns_409": {
+        "idempotent_id": "id-04df80f9-224d-47f5-837a-bf23e33d1c20"
+      }
+    }
+  },
+  "networks-security-groups-CRUD": {
+    "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+    ],
+    "admin": false,
+    "status": "advisory",
+    "description": "Basic CRUD operations on security groups",
+    "project": "neutron",
+    "required-since": "",
+    "tests": {
+      "tempest.api.network.test_security_groups.SecGroupTest.test_create_list_update_show_delete_security_group": {
+        "idempotent_id": "id-bfd128e5-3c92-44b6-9d66-7fe29d22c802"
+      },
+      "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_additional_args": {
+        "idempotent_id": "id-87dfbcf9-1849-43ea-b1e4-efa3eeae9f71"
+      },
+      "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_icmp_type_code": {
+        "idempotent_id": "id-c9463db8-b44d-4f52-b6c0-8dbda99f26ce"
+      },
+      "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_protocol_integer_value": {
+        "idempotent_id": "id-0a307599-6655-4220-bebc-fd70c64f2290"
+      },
+      "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_remote_group_id": {
+        "idempotent_id": "id-c2ed2deb-7a0c-44d8-8b4c-a5825b5c310b"
+      },
+      "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_remote_ip_prefix": {
+        "idempotent_id": "id-16459776-5da2-4634-bce4-4b55ee3ec188"
+      },
+      "tempest.api.network.test_security_groups.SecGroupTest.test_create_show_delete_security_group_rule": {
+        "idempotent_id": "id-cfb99e0e-7410-4a3d-8a0c-959a63ee77e9"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_additional_default_security_group_fails": {
+        "idempotent_id": "id-2323061e-9fbf-4eb0-b547-7e8fafc90849"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_duplicate_security_group_rule_fails": {
+        "idempotent_id": "id-8fde898f-ce88-493b-adc9-4e4692879fc5"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_bad_ethertype": {
+        "idempotent_id": "id-5666968c-fff3-40d6-9efc-df1c8bd01abb"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_bad_protocol": {
+        "idempotent_id": "id-981bdc22-ce48-41ed-900a-73148b583958"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_bad_remote_ip_prefix": {
+        "idempotent_id": "id-5f8daf69-3c5f-4aaa-88c9-db1d66f68679"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_invalid_ports": {
+        "idempotent_id": "id-0d9c7791-f2ad-4e2f-ac73-abf2373b0d2d"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_non_existent_remote_groupid": {
+        "idempotent_id": "id-4bf786fd-2f02-443c-9716-5b98e159a49a"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_non_existent_security_group": {
+        "idempotent_id": "id-be308db6-a7cf-4d5c-9baf-71bafd73f35e"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_delete_non_existent_security_group": {
+        "idempotent_id": "id-1f1bb89d-5664-4956-9fcd-83ee0fa603df"
+      },
+      "tempest.api.network.test_security_groups.SecGroupTest.test_list_security_groups": {
+        "idempotent_id": "id-e30abd17-fef9-4739-8617-dc26da88e686"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_show_non_existent_security_group": {
+        "idempotent_id": "id-424fd5c3-9ddc-486a-b45f-39bf0c820fc6"
+      },
+      "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_show_non_existent_security_group_rule": {
+        "idempotent_id": "id-4c094c09-000b-4e41-8100-9617600c02a6"
+      }
     }
   },
   "designated-sections" : {
@@ -1691,16 +2059,28 @@
         }
       }
     },
-    "advisory" : {},
+    "advisory" : {
+      "neutron" : {
+        "guidance": "By default, designated for all code backing required capabilities except plugable components such as plugins, drivers, and API extensions other than those listed below.",
+        "required": false,
+        "comment": "Intentionally replaceable code such as network plugins, ML2 drivers, IPAM drivers, schedulers are not designated.",
+        "sections": {
+          "Scheduler drivers": { "description": "Scheduler drivers", "designated": false, "comment": "none provided"},
+          "IPAM drivers": { "description": "IPAM drivers", "designated": false, "comment": "none provided"},
+          "Network plugins": { "description": "Network backend plugins", "designated": false, "comment": "none provided"},
+          "ML2 drivers": { "description": "ML2 type and mechanism drivers", "designated": false, "comment": "none provided"},
+          "Core API and server": { "description": "Core API and server", "designated": true, "comment": "none provided"},
+          "Core API quota extension": { "description": "Quota API", "designated": true, "comment": "none provided"},
+          "Core API security group extension": { "description": "Security group API", "designated": true, "comment": "none provided"},
+          "Core API L3 extension": { "description": "L3 API for floating IPs and routers", "designated": true, "comment": "none provided"},
+          "Agents": { "description": "Agents if used by relevant driver", "designated": true, "comment": "Some drivers require the use of community-developed agents to provide required Capabilities (such as L3 networking). If a product uses such agents, they are designated."},
+          "RPC": { "description": "RPC API", "designated": true, "comment": "none provided"}
+        }
+      }
+    },
     "deprecated" : {},
     "removed" : {},
     "informational" : {
-      "neutron": {
-        "guidance": "Not a core capability, no position at this time",
-        "required": false,
-        "comment": "Neutron was not ready for review.",
-        "sections": []
-      },
       "heat": {
         "guidance": "Not a core capability, no position at this time",
         "required": false,

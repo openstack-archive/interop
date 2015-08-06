@@ -17,3 +17,78 @@ Capability Name: [Widely Deployed,Used By Tools,Used by Clients],
 
 Possible scores: 0, 1, ? (not scored yet or needs discussion)
 
+Networking
+----------
+network-floating-ips-associate:       [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
+network-floating-ips-create:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
+network-floating-ips-update:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
+network-floating-ips-delete:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
+network-l2-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l2-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l2-external:                  [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l2-list:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l2-port:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l2-show:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l2-update:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l3-add:                       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l3-convert:                   [0,0,0] [1,0,0] [0,0,0] [0,0,0] [1] [9]
+network-l3-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l3-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l3-router:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l3-show:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l3-update:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-security-groups-create:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-security-groups-delete:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-security-groups-list:         [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-security-groups-show:         [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-extensions-provider-add:      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
+network-extensions-provider-create:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
+network-extensions-provider-delete:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
+network-extensions-provider-show:     [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
+
+Notes:
+  * DVR-related testcases (if any) will not be added until DVR gains wider
+    acceptance and isn't driver-specific.
+  * IPv6 is currently not widely deployed, so v6 versions of these tests need
+    not be added at this time.  Vendor feedback on v6 support is requested,
+    though it is understood that IPv6 capabilities may be driver-dependent.
+  * A few folks have asked about provider network extensions as they are
+    frequently used for high performance networks and a simplified networking
+    model that provides for use cases similar to nova-net.  However with default
+    policy settings, using provider networks requires admin access and therefore
+    is disqualified.  I've listed them here anyway just to show that they were
+    considered but can't be added to the Guideline.
+  * Based on feedback from earlier patchsets, capabilities will be grouped
+    together where they had previously been listed separately but are adjacent.
+    For example, there are several tests for network creation, but only one or
+    few for deletion, listing, and updating.  Combining these into a single
+    "CRUD" group reduces the chance the chance of running into problems with
+    DefCore's 2015A process (specifically section C3(4)) in cases where there
+    is only a single test for a capability and the test needs to be flagged on
+    account of bugs or other valid reasons.  The combined groups are:
+    * networks-floating-ips-CRUD-and-associate
+      * networks-floating-ips-associate
+      * networks-floating-ips-create
+      * networks-floating-ips-update
+      * networks-floating-ips-delete
+    * networks-l2-CRUD
+      * networks-l2-create
+      * networks-l2-delete
+      * networks-l2-external
+      * networks-l2-list
+      * networks-l2-port
+      * networks-l2-show
+      * networks-l2-update
+    * networks-l3-CRUD
+      * networks-l3-add
+      * networks-l3-create
+      * networks-l3-delete
+      * networks-l3-show
+      * networks-l3-update
+    * networks-l3-router
+    * networks-security-groups-CRUD
+      * networks-security-groups-create
+      * networks-security-groups-delete
+      * networks-security-groups-router
+      * networks-security-groups-show
+      * networks-security-groups-update
