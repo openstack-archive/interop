@@ -66,9 +66,9 @@ with open(outFileName, "w") as outFile:
 
     line01 = "OpenStack DefCore %s" % data["id"]
 
-    outFile.write('='*len(line01) + '\n')
+    outFile.write('=' * len(line01) + '\n')
     outFile.write(line01 + '\n')
-    outFile.write('='*len(line01) + '\n')
+    outFile.write('=' * len(line01) + '\n')
 
     # Nonlooping
     if data.get('platform') is None:
@@ -76,7 +76,8 @@ with open(outFileName, "w") as outFile:
         sys.exit(1)
 
     # Correct Source
-    if data.get('source') != 'http://git.openstack.org/cgit/openstack/defcore/':
+    if data.get('source') != \
+       'http://git.openstack.org/cgit/openstack/defcore/':
         print "The expected DefCore source not found"
         sys.exit(1)
 
@@ -128,7 +129,7 @@ Platform Components
 
 {component} Component Capabilities
 """.format(component=component.capitalize()))
-        outFile.write('='*(len(component) + 23))  # footer
+        outFile.write('=' * (len(component) + 23))  # footer
 
         for event in order:
 
@@ -142,7 +143,8 @@ Platform Components
             for req in data['components'][component][event]:
                 outFile.write("* {name} ({project})\n".format(
                     name=req,
-                    project=data["capabilities"][req].get("project").capitalize()))
+                    project=data["capabilities"][req].get(
+                        "project").capitalize()))
 
     # Designated -Sections
 
@@ -164,7 +166,7 @@ this specification.""")
         outFile.write('\n\n{event} Designated Sections\n'.format(
                       event=event.capitalize()))
         # +20 is for length of header
-        outFile.write('-'*(len(event) + 20) + '\n\n')
+        outFile.write('-' * (len(event) + 20) + '\n\n')
 
         names = sorted(desig[event].keys())
         if len(names) is 0:

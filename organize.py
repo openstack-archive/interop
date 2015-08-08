@@ -1,7 +1,7 @@
 import json
 
-defcore = json.loads(open('2015.next.json','r').read())
-new_caps = json.loads(open('newcaps.json','r').read())
+defcore = json.loads(open('2015.next.json', 'r').read())
+new_caps = json.loads(open('newcaps.json', 'r').read())
 
 capabilities = {}
 
@@ -56,4 +56,5 @@ for capability in capabilities:
     cap["required-since"] = ", ".join(cap["required-since"])
     cap["description"] = ", ".join(cap["description"])
     cap["project"] = ", ".join(cap["project"])
-print json.dumps(capabilities, sort_keys=True, indent=2, separators=(',', ': '))
+print json.dumps(capabilities, sort_keys=True, indent=2,
+                 separators=(',', ': '))

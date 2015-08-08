@@ -1,13 +1,12 @@
 import json
-import urllib
 
-capabilities_file = open('../2015.04.json','r')
+capabilities_file = open('../2015.04.json', 'r')
 defcore = json.loads(capabilities_file.read())
 capabilities = defcore['capabilities']
 required_tests = []
 flagged_tests = []
 
-required_tests_file = open('2015.04.required.txt','w')
+required_tests_file = open('2015.04.required.txt', 'w')
 flagged_tests_file = open('2015.04.flagged.txt', 'w')
 
 for capability_name in capabilities:
