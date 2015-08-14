@@ -136,3 +136,29 @@ Notes:
 [3] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n48
 [4] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n90
 [5] http://eavesdrop.openstack.org/meetings/defcore_flag_14/2015/defcore_flag_14.2015-09-09-15.03.log.html#l-13 
+
+Image
+-----
+images-v1-delete:                [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-index:                 [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-list:                  [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-register:              [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-shared-images-add:     [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-shared-images-delete:  [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-shared-images-get:     [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-shared-images-remove:  [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+images-v1-update:                [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
+
+images-v2-remove:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+images-v2-update:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+images-v2-share:                 [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+images-v2-import:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+images-v2-list:                  [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+images-v2-delete:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+images-v2-get:                   [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+
+Notes:
+    * Image creation is captured under the register operation.
+    * No public image tests have explicit support for task API.
+    * Scoring for v1 remains in place, but v2 is preferred interop
+      standard (as reflected in worksheet).

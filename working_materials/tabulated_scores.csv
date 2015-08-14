@@ -1,0 +1,17 @@
+Capability,Widely Deployed,Used by Tools,Used by Clients,Future Direction,Complete,Stable,Discoverable,Documented,Core in Last Release,Foundation,Atomic,Proximity,Non-Admin,Total
+images-v1-delete,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-index,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-list,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-register,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-shared-images-add,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-shared-images-delete,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-shared-images-get,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-shared-images-remove,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v1-update,0,1,1,0,1,1,0,1,0,1,0,1,1,58
+images-v2-remove,1,0,1,1,1,1,1,1,0,1,0,1,1,74
+images-v2-update,1,0,1,1,1,1,1,1,0,1,0,1,1,74
+images-v2-share,1,0,1,1,1,1,1,1,0,1,0,1,1,74
+images-v2-import,1,0,1,1,1,1,1,1,0,1,0,1,1,74
+images-v2-list,1,0,1,1,1,1,1,1,0,1,0,1,1,74
+images-v2-delete,1,0,1,1,1,1,1,1,0,1,0,1,1,74
+images-v2-get,1,0,1,1,1,1,1,1,0,1,0,1,1,74
