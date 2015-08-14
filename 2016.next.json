@@ -15,7 +15,6 @@
   "components": {
     "compute": {
       "required": [
-        "identity-v2-tokens-create",
         "identity-v3-tokens-create",
         "compute-auth-create",
         "compute-auth-get",
@@ -82,9 +81,11 @@
         "volumes-v2-metadata",
         "volumes-v2-transfer",
         "volumes-v2-reserve",
-        "volumes-v2-readonly"
+        "volumes-v2-readonly",
+        "identity-v3-api-discovery"
       ],
       "deprecated": [
+        "identity-v2-tokens-create",
         "compute-servers-change"
       ],
       "removed": []
@@ -100,10 +101,11 @@
         "objectstore-object-upload",
         "objectstore-object-versioned",
         "objectstore-temp-url-get",
-        "identity-v2-tokens-create",
         "identity-v3-tokens-create"],
       "advisory": [],
-      "deprecated": [],
+      "deprecated": [
+        "identity-v2-tokens-create"
+      ],
       "removed": []
     }
   },
@@ -1369,10 +1371,10 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
+      "status": "deprecated",
       "description": "Auth operations within the Identity API",
       "project": "keystone",
-      "required-since": "2015.05",
+      "required-since": "",
       "tests": {
         "tempest.api.identity.v2.test_tokens.TokensTest.test_create_token": {
           "idempotent_id": "id-65ae3b78-91ff-467b-a705-f6678863b8ec"
@@ -1404,6 +1406,35 @@
           "idempotent_id": "id-6f8e4436-fc96-4282-8122-e41df57197a9"
         }
       }
+    },
+    "identity-v3-api-discovery": {
+        "achievements": [
+          "atomic",
+          "complete",
+          "deployed",
+          "discover",
+          "doc",
+          "foundation",
+          "future",
+          "proximity",
+          "stable"
+        ],
+        "admin": false,
+        "status": "advisory",
+        "description": "API discovery operations within the Identity v3 API",
+        "project": "keystone",
+        "required-since": "",
+        "tests": {
+            "tempest.api.identity.v3.TestApiDiscovery.test_api_version_resources": {
+                "idempotent_id": "b9232f5e-d9e5-4d97-b96c-28d3db4de1bd"
+            },
+            "tempest.api.identity.v3.TestApiDiscovery.test_api_media_types": {
+                "idempotent_id": "657c1970-4722-4189-8831-7325f3bc4265"
+            },
+            "tempest.api.identity.v3.TestApiDiscovery.test_api_version_statuses": {
+                "idempotent_id": "8879a470-abfb-47bb-bb8d-5a7fd279ad1e"
+            }
+        }
     },
     "images-v2-index": {
       "achievements": [

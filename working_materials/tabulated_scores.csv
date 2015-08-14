@@ -58,3 +58,4 @@ volumes-v2-metadata,1,0,0,1,1,1,1,1,0,1,1,0,1,66
 volumes-v2-transfer,1,0,0,1,1,1,1,1,0,1,1,0,1,66
 volumes-v2-reserve,1,0,0,1,1,1,1,1,0,1,1,0,1,66
 volumes-v2-readonly,1,0,0,1,1,1,1,1,0,1,1,0,1,66
+identity-v3-api-discovery,0,0,1,1,1,1,1,1,0,1,1,1,1,74
