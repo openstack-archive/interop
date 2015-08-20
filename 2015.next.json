@@ -28,7 +28,6 @@
         "compute-instance-actions-list",
         "compute-keypairs-create",
         "compute-quotas-get",
-        "compute-servers-change",
         "compute-servers-create",
         "compute-servers-delete",
         "compute-servers-get",
@@ -54,7 +53,9 @@
         "compute-servers-metadata-update"
         ],
       "advisory": [],
-      "deprecated": [],
+      "deprecated": [
+        "compute-servers-change"
+      ],
       "removed": []
     },
     "object": {
@@ -502,11 +503,17 @@
       ],
       "admin": "False",
       "description": "Basic server operations in the Compute API",
+      "status": "deprecated",
       "project": "nova",
-      "required-since": "2014.07",
+      "required-since": "",
       "tests": {
         "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password": {
-          "idempotent_id": "id-6158df09-4b82-4ab3-af6d-29cf36af858d"
+          "idempotent_id": "id-6158df09-4b82-4ab3-af6d-29cf36af858d",
+          "flagged": {
+            "reason": "[D400] This test is backend-specific (only works on one hypervisor)",
+            "action": "This test should be removed from future Guidelines.",
+            "date": "2015-08-20"
+          }
         }
       }
     },
