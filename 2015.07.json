@@ -883,7 +883,7 @@
           "idempotent_id": "id-2cb1baf6-ac8d-4429-bf0d-ba8a0ba53e32"
         },
         "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft": {
-          "flag": {
+          "flagged": {
             "action": "Remove flag after Tempest bug is fixed (in progress).",
             "date": "2015-03-24",
             "reason": "Tempest bug for soft reboot of server (id 1014647)."
@@ -947,7 +947,7 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_confirm": {
-          "flag": {
+          "flagged": {
             "action": "Fix resize upstream in Nova and remove flag.",
             "date": "2015-05-07",
             "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
@@ -955,7 +955,7 @@
           "idempotent_id": "id-1499262a-9328-4eda-9068-db1ac57498d2"
         },
         "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert": {
-          "flag": {
+          "flagged": {
             "action": "Fix resize upstream in Nova and remove flag.",
             "date": "2015-05-07",
             "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
@@ -963,7 +963,7 @@
           "idempotent_id": "id-c03aab19-adb1-44f5-917d-c419577e9e68"
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_non_existent_flavor": {
-          "flag": {
+          "flagged": {
             "action": "Fix resize upstream in Nova and remove flag.",
             "date": "2015-05-07",
             "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
@@ -971,7 +971,7 @@
           "idempotent_id": "id-ced1a1d7-2ab6-45c9-b90f-b27d87b30efd"
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_null_flavor": {
-          "flag": {
+          "flagged": {
             "action": "Fix resize upstream in Nova and remove flag.",
             "date": "2015-05-07",
             "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
