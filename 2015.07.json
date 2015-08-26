@@ -96,7 +96,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Auth related tests using Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -124,7 +125,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Auth related tests using Compute API, Generate, import, and delete SSH keys within Compute services",
       "project": "nova",
       "required-since": "2014.07",
@@ -151,7 +153,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Auth related tests using Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -173,7 +176,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -198,7 +202,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -220,7 +225,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -242,7 +248,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -306,7 +313,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic support Compute API for server actions such as reboot, rebuild, resize",
       "project": "nova",
       "required-since": "2014.07",
@@ -328,7 +336,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic support Compute API for server actions such as reboot, rebuild, resize",
       "project": "nova",
       "required-since": "2014.07",
@@ -351,7 +360,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Generate, import, and delete SSH keys within Compute services",
       "project": "nova",
       "required-since": "2014.07",
@@ -379,7 +389,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Quotas management in Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -407,7 +418,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -432,7 +444,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -478,7 +491,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -509,7 +523,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -534,7 +549,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -562,7 +578,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -587,7 +604,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -696,7 +714,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -721,7 +740,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -746,7 +766,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -771,7 +792,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -796,7 +818,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -824,7 +847,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -849,7 +873,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -874,7 +899,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -910,7 +936,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -941,7 +968,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -995,7 +1023,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1023,7 +1052,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1063,7 +1093,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1097,7 +1128,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1125,7 +1157,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1153,7 +1186,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1181,7 +1215,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Auth operations within the Identity API",
       "project": "keystone",
       "required-since": "2015.05",
@@ -1206,7 +1241,8 @@
         "tools",
         "deployed"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Auth operations within the Identity API",
       "project": "keystone",
       "required-since": "2015.05",
@@ -1227,7 +1263,8 @@
         "atomic",
         "stable"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "CRUD image operations in Images API v2",
       "project": "nova",
       "required-since": "2014.07",
@@ -1249,7 +1286,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1274,7 +1312,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1305,7 +1344,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1327,7 +1367,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1349,7 +1390,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1377,7 +1419,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1399,7 +1442,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1421,7 +1465,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1443,7 +1488,8 @@
         "stable",
         "tools"
       ],
-      "admin": "False",
+      "admin": false,
+      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
