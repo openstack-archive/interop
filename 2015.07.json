@@ -425,7 +425,12 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password": {
-          "idempotent_id": "id-6158df09-4b82-4ab3-af6d-29cf36af858d"
+          "idempotent_id": "id-6158df09-4b82-4ab3-af6d-29cf36af858d",
+          "flagged": {
+            "reason": "[D400] This test is backend-specific (only works on one hypervisor)",
+            "action": "This test should be removed from future Guidelines.",
+            "date": "2015-08-20"
+          }
         }
       }
     },
