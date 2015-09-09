@@ -162,3 +162,22 @@ Notes:
     * No public image tests have explicit support for task API.
     * Scoring for v1 remains in place, but v2 is preferred interop
       standard (as reflected in worksheet).
+
+Volume
+----------
+volumes-v2-create-delete:          [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+volumes-v2-attach-detach:          [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [66]
+volumes-v2-snapshot-create-delete: [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+volumes-v2-get:                    [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [66]
+volumes-v2-list:                   [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [66]
+volumes-v2-update:                 [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+volumes-v2-copy-image-to-volume:   [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+volumes-v2-copy-volume-to-image:   [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+volumes-v2-clone:                  [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+volumes-v2-qos:                    [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
+volumes-v2-availability-zones:     [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
+volumes-v2-extensions:             [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
+volumes-v2-metadata:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
+volumes-v2-transfer:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
+volumes-v2-reserve:                [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
+volumes-v2-readonly:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
