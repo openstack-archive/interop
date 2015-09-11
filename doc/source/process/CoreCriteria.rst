@@ -41,12 +41,16 @@ SHOWS PROVEN USAGE
   capabilities that are supported by multiple public cloud providers and
   private cloud products.
 
-* **"Used by Tools"** Candidates are widely used capabilities:Should be
-  included if supported by common tools (RightScale, Scalr, CloudForms,
-  ...)
+* **"Used by Tools"** Candidates are widely used capabilities: Should be
+  included if supported by common tools outside of the OpenStack community
+  (RightScale, Scalr, CloudForms, jClouds, Fog, etc...)
 
 * **"Used by Clients"** Candidates are widely used capabilities: Should be
-  included if part of common libraries (Fog, Apache jclouds, etc)
+  included if called by common OpenStack clients (openstackclient,
+  neutronclient, novaclient, etc) if necessary.  This Criteria pertains
+  mostly to API versioning.  For example: if v2 of a given API is not used
+  by other OpenStack clients but v1 is, then v2 doesn't achieve the "used
+  by clients" Criteria.
 
 ALIGNS WITH TECHNICAL DIRECTION
 -------------------------------
