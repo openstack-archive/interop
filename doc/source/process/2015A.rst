@@ -266,6 +266,6 @@ D4. Guidelines are named based on the date of Board approval
 
 
 Functional Information
-======================
+----------------------
 :Format: RestructuredText
 :Layout: 1.0
