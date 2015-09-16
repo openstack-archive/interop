@@ -50,7 +50,7 @@ parser = argparse.ArgumentParser(
     formatter_class=CustomFormatter)
 parser.add_argument(
     '-j', '--json-file',
-    default='../2015.next.json',
+    default='../2016.next.json',
     dest='json_file_name',
     help='Path to the Guideline JSON file to read weights and names from.')
 parser.add_argument(
