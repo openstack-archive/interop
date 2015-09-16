@@ -1,0 +1,76 @@
+.. -*- mode: rst -*-
+
+:Status: {{data['status'].title()}}
+:Replaces: :doc:`{{data['replaces']}}`
+
+Releases Covered
+================
+
+{% for release in data['releases'] %}
+- {{release.title()}}
+{% endfor %}
+
+Platform Components
+===================
+
+{% for category in ['required', 'advisory', 'deprecated', 'removed'] %}
+:{{category}}: {% for r in data['platform'][category] %}{{r.title()}}{% if not loop.last %}, {% endif %}{% else %}None{% endfor %}
+{% endfor %}{# category #}
+
+{% for component_name, component in data['components'].items()|sort %}
+{{component_name.title()}} Component Capabilities
+{% for _ in component_name %}={% endfor %}========================
+
+{% for category in ['required', 'advisory', 'deprecated', 'removed'] %}
+{{category.title()}} Capabilities
+{% for _ in category %}-{% endfor %}-------------
+
+{% for capability in component[category.lower()] %}
+- {{ capability }} ({{data['capabilities'][capability]['project'].title()}})
+{% else %}
+None
+{% endfor %}{# capabilities #}
+
+{% endfor %}{# category1 #}
+
+{% endfor %}{# component2 #}
+
+Designated Sections
+===================
+
+The following designated sections apply to the same releases as this
+specification.
+
+{% for category in ['required', 'advisory', 'deprecated', 'removed'] %}
+{{category.title()}} Designated Sections
+{% for _ in category %}-{% endfor %}--------------------
+
+{% for component_name, component in data['designated-sections'][category].items()|sort %}
+{{component_name.title()}}
+{% for _ in category %}~{% endfor %}
+
+:Guidance: {{component['guidance']}}
+:Comment: {{component['comment']}}
+
+.. list-table:: Sections
+   :header-rows: 1
+   :widths: 20 40 10 30
+
+   - * Section
+     * Description
+     * Designated
+     * Comments
+{% for section_name, section in component['sections'].items()|sort %}
+   - * {{section_name.title()}}
+     * {{section['description']}}
+     * {% if section['designated'] %}Yes{% else %}No{% endif %}
+     * {{section['comment']}}
+{% else %}
+None
+{%- endfor %}{# section #}
+
+{% else %}
+None
+{% endfor %}{# component2 #}
+
+{% endfor %}{# category2 #}
