@@ -1,0 +1,108 @@
+JSON Schema v1.4
+====================
+
+Changes from v1.3
+
+:added: target_approval
+:removed: Status field in Capability blocks (as it duplicates the information
+          already present in the Components list)
+
+Changes from v1.2
+
+:added: reference
+:added: tests-repositories
+:added: required-since
+:added: tests now have block including idempotent_id and (optional) flagged
+  information
+:change: guidelines to point to required-since
+:change: tests from array to hash
+:change: add hash after test-name keys
+:change: flagged points to new location tests/test-name/flagged
+:change: new version 1.3
+
+
+.. code-block:: json
+
+  { "id": "2016.01",        # Spec name (date based)
+    "schema": "1.4",        # Schema version
+    "reference": "http://github.com/openstack/defcore/schema.1.4.rst", # Schema description
+    "source": "http://git.openstack.org/cgit/openstack/defcore/",   # git repo for files
+    "status": "approved",   # can be draft, review, approved or superseded [see 2015B C6.3]
+    "target_approval": "2016-01-27", # Target date for BoD to approve Guideline
+    "replaces": "2015.07",  # previous spec
+    "releases": ["icehouse"], # array of releases, lower case (generally three releases)
+    "platform": {           # platform components
+      "required": [         # required array
+        "compute", "object"
+      ],
+      "advisory": [],       # incoming array
+      "deprecated": [],     # outgoing array
+      "removed": []         # removed array
+    },
+    "components": {         # components detail
+      "compute": {          # component name
+        "required": [       # required array
+          "compute-auth"
+        ],
+        "advisory": [       # incoming array
+          "compute-servers-metadata"
+        ],
+        "deprecated": [],   # outgoing array
+        "removed": [        # removed array
+          "volume"
+        ]
+      },
+    },
+    "test-repositories": {  # tracks difference possible test sources
+      "tempest": {        # source of tests
+        "git-sha": "c77e46d8e3",  # reference for automated checkout
+        "url": "https://git.openstack.org/cgit/openstack/tempest/"   # git location from OpenStack
+      }
+    },
+    "criteria" : {          # explains achievements
+      "core01" : {
+        "Description" : "blah blah blah",
+        "name" : "readable core01", # allows more readable name than key
+        "weight": 8         # total of all weights must be 100
+      },
+    }
+    "capabilities": {       # capabilities listed in components
+      "example-cap" : {     # capability key (cross reference to components required)
+        "achievements" : ["core01"], # array of criteria met.  must be one of items from "criteria" section
+        "admin" : false,    # boolean designating whether an admin API is required
+        "guidelines" : ["deprecated"]  # deprecated DO NOT USE
+        "required-since" : "2015.05" # guideline where capability became required, "" if not required
+        "description" : "Helpful Description",
+        "flagged" : [],     # deprecated DO NOT USE, moved under test
+        "name" : "Friendly Short Name",
+        "tests" : {         # hash of tests (use unique names)
+          "tempest.api.project.file.class.test_name" : {  # test ID
+            "idempotent_id" : "id-123-456",  # internal test identifier to track changes if test is moved
+            "flagged" : {   # This section is required only if the test is flagged
+              "reason" : "why this test was flagged",  # required to support flag request
+              "action" : "proposed action to resolve", # required path to resolve flag
+              "date" : "yyyy-mm-dd"                    # date flag was proposed (not approved)
+            }
+          },
+        },
+      },
+    },
+    "designated-sections" : {   # designated sections
+      "required" : {            # sections that are required for this Guideline
+        "nova" : {              # project name
+          "guidance": "short description",    # general information providing actionable detail
+          "comment": "optional rationale",    # additional clairification
+          "sections": {                       # hash of sections, project specific
+            "section": {                      # key / name of a section
+              "description": "useful detail", # expand on key in useful way
+              "designated": false,            # boolean.  true if designated.  must align with guidance
+              "comment": "none provided"      # optional details
+            }
+          }
+        }
+      },
+      "advisory" : { # not required in this Guideline but may be required in a future guideline },
+      "deprecated" : { # no longer required in this Guideline and will be removed in futur Guidelines },
+      "removed" : { # no longer required and have been removed since the last Guideline }
+    }
+  }
