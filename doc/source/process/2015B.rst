@@ -58,8 +58,7 @@ Starting: S-3
 A1. New Guidelines Start From Previous Guidelines
 
   1. New Guidelines start from the previous Board approved document.
-  2. New Guidelines are given the preliminary name of the target year and
-     .next.  (ref section D4)
+  2. New Guidelines are given the preliminary name of "next.json".
 
 A2. Community Groups Tests into Capabilities
 
