@@ -92,3 +92,47 @@ Notes:
       * networks-security-groups-router
       * networks-security-groups-show
       * networks-security-groups-update
+
+Compute
+-------
+compute-list-api-versions:             [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+
+Notes:
+  * There has been some discussion that this capability is not widely
+    deployed [1].  However it appears that in most cases the API either:
+    * Is present and works, but only if a non-SSL endpoint is exposed.
+      SSL endpoints may have issues with redirects (which may actually
+      merely be configuration issues).
+    * Is accidentally blocked due to load balancer or API gateway
+      misconfiguration which is being remedied by affected providers.
+    Taking those situations into account, it is believed that it's actually
+    safe to call this "widely deployed".
+  * I'm having trouble finding evidence that tools actually support this
+    API (refer to [2] for information about what constitutes "tools").
+    Unlike most of the CRUD-like API's, this one lists information about
+    the API versions available instead of on end user actionable resources
+    (such as instances or security groups), and the need to do so is newish
+    with the advent of microversioning.  Hence, I think many tools may not
+    actually support this yet.  Please feel free to provide evidence to the
+    contrary; I'd love to be proven wrong.
+  * Similarly, I'm having trouble finding evidence that clients [3] like
+    jClouds or Fog support this API (yet?) as they tend to focus on actions.
+    Please feel free to provide evidence to the contrary; I'd love to be
+    proven wrong.
+  * I'm tentatively scoring this API as Proximate [4].  Generally this applies
+    to CRUD operations (e.g. the delete API is considered proximate to the
+    create API).  However I'm providing a 1 here on the grounds that due
+    to the shift to microversioning in the Nova API, this will be somewhat
+    proximate to everything going forward.
+  * The DefCore Committee is considering this capability for inclusion
+    in it's projected 2016.01 Guideline even though the test for it wasn't
+    developed until (narrowly) outside the normal window for identifying
+    new Capabilities on account of strong indications from the community
+    that such a Capability is important for API microversioning going
+    forward [5].
+
+[1] https://bugs.launchpad.net/python-novaclient/+bug/1491579
+[2] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n44
+[3] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n48
+[4] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n90
+[5] http://eavesdrop.openstack.org/meetings/defcore_flag_14/2015/defcore_flag_14.2015-09-09-15.03.log.html#l-13 

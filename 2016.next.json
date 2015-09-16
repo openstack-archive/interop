@@ -57,7 +57,9 @@
         "networks-l3-router",
         "networks-l2-CRUD",
         "networks-l3-CRUD",
-        "networks-security-groups-CRUD"],
+        "networks-security-groups-CRUD",
+        "compute-list-api-versions"
+      ],
       "deprecated": [
         "compute-servers-change"
       ],
@@ -88,6 +90,28 @@
     }
   },
   "capabilities": {
+    "compute-list-api-versions": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "List supported versions of the Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.test_versions.TestVersions.test_list_api_versions": {
+          "idempotent_id": "id-6c0a0990-43b6-4529-9b61-5fd8daf7c55c"
+        }
+      }
+    },
     "compute-auth-create": {
       "achievements": [
         "foundation",
