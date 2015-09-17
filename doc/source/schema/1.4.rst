@@ -5,6 +5,7 @@ Changes from v1.3
 
 :change: update the aliases field description
 :added: aliases field in test block
+:added: cutoff_score
 :added: target_approval
 :removed: Status field in Capability blocks (as it duplicates the information
           already present in the Components list)
@@ -30,6 +31,7 @@ Changes from v1.2
     "reference": "http://github.com/openstack/defcore/schema.1.4.rst", # Schema description
     "source": "http://git.openstack.org/cgit/openstack/defcore/",   # git repo for files
     "status": "approved",   # can be draft, review, approved or superseded [see 2015B C6.3]
+    "cutoff_score": "74", # the minimum score a Capability must achieve to be required in this Guideline
     "target_approval": "2016-01-27", # Target date for BoD to approve Guideline
     "replaces": "2015.07",  # previous spec
     "releases": ["icehouse"], # array of releases, lower case (generally three releases)
