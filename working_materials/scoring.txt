@@ -19,10 +19,10 @@ Possible scores: 0, 1, ? (not scored yet or needs discussion)
 
 Networking
 ----------
-network-floating-ips-associate:       [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
-network-floating-ips-create:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
-network-floating-ips-update:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
-network-floating-ips-delete:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [75]
+network-floating-ips-associate:       [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
+network-floating-ips-create:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
+network-floating-ips-update:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
+network-floating-ips-delete:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
 network-l2-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
 network-l2-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
 network-l2-external:                  [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
@@ -31,7 +31,7 @@ network-l2-port:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
 network-l2-show:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
 network-l2-update:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
 network-l3-add:                       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l3-convert:                   [0,0,0] [1,0,0] [0,0,0] [0,0,0] [1] [9]
+network-l3-convert:                   [0,0,0] [1,0,0] [0,0,0] [0,0,0] [1] [11]
 network-l3-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
 network-l3-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
 network-l3-router:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
@@ -95,7 +95,7 @@ Notes:
 
 Compute
 -------
-compute-list-api-versions:             [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+compute-list-api-versions:             [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
 
 Notes:
   * There has been some discussion that this capability is not widely
@@ -149,13 +149,13 @@ images-v1-shared-images-get:     [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 images-v1-shared-images-remove:  [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 images-v1-update:                [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 
-images-v2-remove:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
-images-v2-update:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
-images-v2-share:                 [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
-images-v2-import:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
-images-v2-list:                  [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
-images-v2-delete:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
-images-v2-get:                   [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [74]
+images-v2-remove:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
+images-v2-update:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
+images-v2-share:                 [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
+images-v2-import:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
+images-v2-list:                  [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
+images-v2-delete:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
+images-v2-get:                   [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
 
 Notes:
     * Image creation is captured under the register operation.
@@ -165,23 +165,23 @@ Notes:
 
 Volume
 ----------
-volumes-v2-create-delete:          [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
-volumes-v2-attach-detach:          [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [66]
-volumes-v2-snapshot-create-delete: [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
-volumes-v2-get:                    [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [66]
-volumes-v2-list:                   [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [66]
-volumes-v2-update:                 [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
-volumes-v2-copy-image-to-volume:   [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
-volumes-v2-copy-volume-to-image:   [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
-volumes-v2-clone:                  [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [74]
-volumes-v2-qos:                    [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
-volumes-v2-availability-zones:     [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
-volumes-v2-extensions:             [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
-volumes-v2-metadata:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
-volumes-v2-transfer:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
-volumes-v2-reserve:                [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
-volumes-v2-readonly:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [66]
+volumes-v2-create-delete:          [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
+volumes-v2-attach-detach:          [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [69]
+volumes-v2-snapshot-create-delete: [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
+volumes-v2-get:                    [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [69]
+volumes-v2-list:                   [1,0,0] [1,1,1] [1,1,0] [1,0,1] [1] [69]
+volumes-v2-update:                 [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
+volumes-v2-copy-image-to-volume:   [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
+volumes-v2-copy-volume-to-image:   [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
+volumes-v2-clone:                  [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
+volumes-v2-qos:                    [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
+volumes-v2-availability-zones:     [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
+volumes-v2-extensions:             [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
+volumes-v2-metadata:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
+volumes-v2-transfer:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
+volumes-v2-reserve:                [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
+volumes-v2-readonly:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
 
 Identity
 --------
-identity-v3-api-discovery:   [0,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [74]
+identity-v3-api-discovery:   [0,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [77]
