@@ -69,7 +69,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Every effort should be made to pass all of the required tests, but you
   will want to compare any lists of failed tests to the list of flagged tests.
-  http://git.openstack.org/cgit/openstack/defcore/tree/2015.05/2015.05.required.txt
+  http://git.openstack.org/cgit/openstack/defcore/tree/2015.05/2015.05.flagged.txt
 
 Known Issues and Recommendations
 --------------------------------
