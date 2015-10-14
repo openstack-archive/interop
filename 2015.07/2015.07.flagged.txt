@@ -1,0 +1,6 @@
+tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password[id-6158df09-4b82-4ab3-af6d-29cf36af858d]
+tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft[id-4640e3ef-a5df-482e-95a1-ceeeb0faa84d]
+tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_confirm[id-1499262a-9328-4eda-9068-db1ac57498d2]
+tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert[id-c03aab19-adb1-44f5-917d-c419577e9e68]
+tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_non_existent_flavor[id-ced1a1d7-2ab6-45c9-b90f-b27d87b30efd]
+tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_null_flavor[id-45436a7d-a388-4a35-a9d8-3adc5d0d940b]
