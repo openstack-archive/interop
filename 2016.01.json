@@ -1,10 +1,10 @@
 {
-  "id": "next",
+  "id": "2016.01",
   "schema": "1.3",
   "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.3.rst",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
-  "status": "draft",
-  "replaces": "2016.01",
+  "status": "review",
+  "replaces": "2015.07",
   "releases": ["juno", "kilo", "liberty"],
   "platform": {
     "required": ["compute", "object"],
@@ -68,7 +68,6 @@
         "volumes-v2-create-delete",
         "volumes-v2-attach-detach",
         "volumes-v2-snapshot-create-delete",
-        "volumes-v2-create-from-snapshot",
         "volumes-v2-get",
         "volumes-v2-list",
         "volumes-v2-update",
@@ -1374,7 +1373,7 @@
       "status": "deprecated",
       "description": "Auth operations within the Identity API",
       "project": "keystone",
-      "required-since": "",
+      "required-since": "2015.05",
       "tests": {
         "tempest.api.identity.v2.test_tokens.TokensTest.test_create_token": {
           "idempotent_id": "id-65ae3b78-91ff-467b-a705-f6678863b8ec"
@@ -2835,3 +2834,173 @@
           "trust API": {"description": "APIs for managing delegation (via trusts) of roles from one user/group to another user/group", "designated": true, "comment": "none provided"},
           "resource API": {"description": "APIs for managing resources (projects/tenants and/or domains)", "designated": true, "comment": "In the releases prior to Kilo this is covered by the assignment API"},
           "revoke API": {"description": "APIs for revocation event handling", "designated": false, "comment": "Highly recommended and required for Fernet (non-persistent) tokens"}
+
+        }
+      },
+      "glance": {
+        "guidance": "Designated sections are the API implementation code and domain model.",
+        "comment": "not given",
+        "sections": {
+          "http apis": { "description": "not provided", "designated": true, "comment": "API"},
+          "domain model": { "description": "not provided", "designated": true, "comment": "Shared"},
+          "stores": { "description": "the swift, filesystem, and http stores", "designated": false, "comment": "should be replaceable, vendor-specificddCross platform"},
+          "db driver": { "description": "not provided", "designated": false, "comment": "should be replaceable" },
+          "wsgi framework": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+        }
+      },
+      "cinder": {
+        "guidance": "Designated sections are the API implementation code",
+        "comment": "Historically, cinder has had plug-ins around schedulers and drivers.",
+        "sections": {
+          "api": { "description": "API section means actually the CODE that exposes the API, not just API-comparability", "designated": true, "comment": ""},
+          "drivers": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
+          "scheduler": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
+          "api extensions": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+        }
+      },
+      "swift" : {
+        "guidance": "Designated sections are proxy server, object server, container server, account server and select middleware",
+        "required": true,
+        "comment": "You should use the proxy and storage servers, and you can use your own DiskFile or add new middleware for the proxy or storage nodes.  Please review sections for specific middleware guidelines",
+        "sections": {
+          "proxy server": { "description": "the proxy server code and, if enabled, the functionality implemented by provided middleware (eg static large objects or signed urls or bulk requests",
+            "designated": true, "comment": ""},
+          "object server": { "description": "the object server code that calls a DiskFile implementation and updates container listings",
+            "designated": true, "comment": ""},
+          "container server": { "description": "the code that provides a list of objects in a container and container metadata",
+            "designated": true, "comment": ""},
+          "account server": { "description": "the code that provides a list of containers and account metadata",
+            "designated": true, "comment": ""},
+          "catch_errors": { "description": "not provided", "designated": true, "comment": "middleware"},
+          "healthcheck": { "description": "not provided", "designated": true, "comment": ""},
+          "bulk": { "description": "not provided", "designated": true, "comment": ""},
+          "slo": { "description": "not provided", "designated": true, "comment": ""},
+          "container-quotas": { "description": "not provided", "designated": true, "comment": ""},
+          "account-quotas": { "description": "not provided", "designated": true, "comment": ""},
+          "tempurl": { "description": "not provided", "designated": true, "comment": ""},
+          "replicators": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "auditors": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "updaters": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "account reaper": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "object expirer": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "ratelimit": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "recon": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "staticweb": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "formpost": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "domain_remap": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "crossdomain": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "cname_lookup": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "diskfile": { "description": "the part of the object server that actually persists the object data to a storage volume",
+            "designated": false, "comment": "replaceable"},
+          "cache": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "tempauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "keystoneauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "proxy-logging": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"}
+        }
+      }
+    },
+    "advisory" : {
+      "neutron" : {
+        "guidance": "By default, designated for all code backing required capabilities except plugable components such as plugins, drivers, and API extensions other than those listed below.",
+        "required": false,
+        "comment": "Intentionally replaceable code such as network plugins, ML2 drivers, IPAM drivers, schedulers are not designated.",
+        "sections": {
+          "Scheduler drivers": { "description": "Scheduler drivers", "designated": false, "comment": "none provided"},
+          "IPAM drivers": { "description": "IPAM drivers", "designated": false, "comment": "none provided"},
+          "Network plugins": { "description": "Network backend plugins", "designated": false, "comment": "none provided"},
+          "ML2 drivers": { "description": "ML2 type and mechanism drivers", "designated": false, "comment": "none provided"},
+          "Core API and server": { "description": "Core API and server", "designated": true, "comment": "none provided"},
+          "Core API quota extension": { "description": "Quota API", "designated": true, "comment": "none provided"},
+          "Core API security group extension": { "description": "Security group API", "designated": true, "comment": "none provided"},
+          "Core API L3 extension": { "description": "L3 API for floating IPs and routers", "designated": true, "comment": "none provided"},
+          "Agents": { "description": "Agents if used by relevant driver", "designated": true, "comment": "Some drivers require the use of community-developed agents to provide required Capabilities (such as L3 networking). If a product uses such agents, they are designated."},
+          "RPC": { "description": "RPC API", "designated": true, "comment": "none provided"}
+        }
+      }
+    },
+    "deprecated" : {},
+    "removed" : {},
+    "informational" : {
+      "heat": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      },
+      "horizon": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      },
+      "ceilometer": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      }
+    }
+  },
+  "criteria": {
+    "atomic": {
+        "Description": "Capabilities is unique and cannot be built out of other must-pass capabilities",
+        "name": "Atomic",
+        "weight": 8
+    },
+    "clients": {
+        "Description": "Candidates are widely used capabilities: Should be included if part of common libraries (Fog, Apache jclouds, etc)",
+        "name": "Used by Clients",
+        "weight": 8
+    },
+    "complete": {
+        "Description": "Where the code being tested has a designated area of alternate implementation (extension framework) as per the Core Principles, there should be parity in capability tested across extension implementations. This also implies that the capability test is not configuration specific or locked to non-open technology",
+        "name": "Complete",
+        "weight": 8
+    },
+    "deployed": {
+        "Description": "Candidates are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products",
+        "name": "Widely Deployed",
+        "weight": 8
+    },
+    "discover": {
+        "Description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection)",
+        "name": "Discoverable",
+        "weight": 8
+    },
+    "doc": {
+        "Description": "Should be well documented, particularly the expected behavior. This can be a very subjective measure and we expect to refine this definition over time",
+        "name": "Documented",
+        "weight": 8
+    },
+    "foundation": {
+        "Description": "Test capabilities that are required by other must-pass tests and/or depended on by many other capabilities",
+        "name": "Foundation",
+        "weight": 8
+    },
+    "future": {
+        "Description": "Should reflect future technical direction (from the project technical teams and the TC) and help manage deprecated capabilities",
+        "name": "Future Direction",
+        "weight": 9
+    },
+    "proximity": {
+        "Description": "Sometimes called a Test Cluster, selects for Capabilities that are related to Core Capabilities. This helps ensure that related capabilities are managed together",
+        "name": "Proximity",
+        "weight": 8
+    },
+    "stable": {
+        "Description": "Test is required stable for >2 releases because we don't want DefCore capabilities that do not have dependable APIs",
+        "name": "Stable",
+        "weight": 9
+    },
+    "sticky": {
+        "Description": "A test that is a must-pass test should stay a must-pass test. This makes DefCore capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
+        "name": "Core in Last Release",
+        "weight": 9
+    },
+    "tools": {
+        "Description": "Candidates are widely used capabilities:Should be included if supported by common tools (RightScale, Scalr, CloudForms, ...)",
+        "name": "Used by Tools",
+        "weight": 9
+    }
+  }
+}
