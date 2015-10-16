@@ -51,14 +51,21 @@
         "compute-servers-metadata-list",
         "compute-servers-metadata-set",
         "compute-servers-metadata-update"
-        ],
+      ],
       "advisory": [
         "networks-floating-ips-CRUD-and-associate",
         "networks-l3-router",
         "networks-l2-CRUD",
         "networks-l3-CRUD",
         "networks-security-groups-CRUD",
-        "compute-list-api-versions"
+        "compute-list-api-versions",
+        "images-v2-remove",
+        "images-v2-update",
+        "images-v2-share",
+        "images-v2-import",
+        "images-v2-list",
+        "images-v2-delete",
+        "images-v2-get"
       ],
       "deprecated": [
         "compute-servers-change"
@@ -1400,6 +1407,242 @@
       "tests": {
         "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params": {
           "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee"
+        }
+      }
+    },
+    "images-v2-delete": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image deletion tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_delete_image": {
+          "idempotent_id": "id-f848bb94-1c6e-45a4-8726-39e3a5b23535"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_delete_image_null_id": {
+          "idempotent_id": "id-32248db1-ab88-4821-9604-c7c369f1f88c"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_delete_non_existing_image": {
+          "idempotent_id": "id-6fe40f1c-57bd-4918-89cc-8500f850f3de"
+        },
+        "tempest.api.image.v2.test_images_tags_negative.ImagesTagsNegativeTest.test_delete_non_existing_tag": {
+          "idempotent_id": "id-39c023a2-325a-433a-9eea-649bf1414b19"
+        }
+      }
+    },
+    "images-v2-get": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image get tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.ListImagesTest.test_get_image_schema": {
+          "idempotent_id": "id-622b925c-479f-4736-860d-adeaf13bc371"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_get_images_schema": {
+          "idempotent_id": "id-25c8d7b2-df21-460f-87ac-93130bcdc684"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_member": {
+          "idempotent_id": "id-a6ee18b9-4378-465e-9ad9-9a6de58a3287"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_member_schema": {
+          "idempotent_id": "id-634dcc3f-f6e2-4409-b8fd-354a0bb25d83"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_members_schema": {
+          "idempotent_id": "id-6ae916ef-1052-4e11-8d36-b3ae14853cbb"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_delete_deleted_image": {
+          "idempotent_id": "id-e57fc127-7ba0-4693-92d7-1d8a05ebcba9"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_image_null_id": {
+          "idempotent_id": "id-ef45000d-0a72-4781-866d-4cb7bf2562ad"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_non_existent_image": {
+          "idempotent_id": "id-668743d5-08ad-4480-b2b8-15da34f81d9f"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_private_image": {
+          "idempotent_id": "id-cb961424-3f68-4d21-8e36-30ad66fb6bfb"
+        }
+      }
+    },
+    "images-v2-list": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image list tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_container_format": {
+          "idempotent_id": "id-9959ca1d-1aa7-4b7a-a1ea-0fff0499b37e"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_disk_format": {
+          "idempotent_id": "id-4a4735a7-f22f-49b6-b0d9-66e1ef7453eb"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_limit": {
+          "idempotent_id": "id-e914a891-3cc8-4b40-ad32-e0a39ffbddbb"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_min_max_size": {
+          "idempotent_id": "id-4ad8c157-971a-4ba8-aa84-ed61154b1e7f"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_size": {
+          "idempotent_id": "id-cf1b9a48-8340-480e-af7b-fe7e17690876"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_status": {
+          "idempotent_id": "id-7fc9e369-0f58-4d05-9aa5-0969e2d59d15"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_visibility": {
+          "idempotent_id": "id-7a95bb92-d99e-4b12-9718-7bc6ab73e6d2"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params": {
+          "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee"
+        }
+      }
+    },
+    "images-v2-import": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image registration tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_register_upload_get_image_file": {
+          "idempotent_id": "id-139b765e-7f3d-4b3d-8b37-3ca3876ee318"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_register_with_invalid_container_format": {
+          "idempotent_id": "id-292bd310-369b-41c7-a7a3-10276ef76753"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_register_with_invalid_disk_format": {
+          "idempotent_id": "id-70c6040c-5a97-4111-9e13-e73665264ce1"
+        }
+      }
+    },
+    "images-v2-remove": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image removal tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_remove_image_member": {
+          "idempotent_id": "id-72989bc7-2268-48ed-af22-8821e835c914"
+        }
+      }
+    },
+    "images-v2-share": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image sharing tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_image_share_accept": {
+          "idempotent_id": "id-5934c6ea-27dc-4d6e-9421-eeb5e045494a"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_image_share_reject": {
+          "idempotent_id": "id-d9e83e5f-3524-4b38-a900-22abcb26e90e"
+        },
+        "tempest.api.image.v2.test_images_member_negative.ImagesMemberNegativeTest.test_image_share_invalid_status": {
+          "idempotent_id": "id-b79efb37-820d-4cf0-b54c-308b00cf842c"
+        },
+        "tempest.api.image.v2.test_images_member_negative.ImagesMemberNegativeTest.test_image_share_owner_cannot_accept": {
+          "idempotent_id": "id-27002f74-109e-4a37-acd0-f91cd4597967"
+        }
+      }
+    },
+    "images-v2-update": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image update tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_update_image": {
+          "idempotent_id": "id-f66891a7-a35c-41a8-b590-a065c2a1caa6"
+        },
+        "tempest.api.image.v2.test_images_tags.ImagesTagsTest.test_update_delete_tags_for_image": {
+          "idempotent_id": "id-10407036-6059-4f95-a2cd-cbbbee7ed329"
+        },
+        "tempest.api.image.v2.test_images_tags_negative.ImagesTagsNegativeTest.test_update_tags_for_non_existing_image": {
+          "idempotent_id": "id-8cd30f82-6f9a-4c6e-8034-c1b51fba43d9"
         }
       }
     },
