@@ -1,7 +1,7 @@
 OpenStack DefCore Process 2015B
 ================================
 
-:Status: draft
+:Status: Approved
 :Replaces: 2015A
 
 This document describes the DefCore process required by the OpenStack

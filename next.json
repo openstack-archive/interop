@@ -1,0 +1,3007 @@
+{
+  "id": "2016.next",
+  "schema": "1.3",
+  "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.3.rst",
+  "source": "http://git.openstack.org/cgit/openstack/defcore/",
+  "status": "draft",
+  "replaces": "2015.05",
+  "releases": ["juno", "kilo", "liberty"],
+  "platform": {
+    "required": ["compute", "object"],
+    "advisory": [],
+    "deprecated": [],
+    "removed": []
+  },
+  "components": {
+    "compute": {
+      "required": [
+        "identity-v3-tokens-create",
+        "compute-auth-create",
+        "compute-auth-get",
+        "compute-auth-set",
+        "compute-images-create",
+        "compute-images-delete",
+        "compute-images-get",
+        "compute-images-list",
+        "compute-instance-actions-get",
+        "compute-instance-actions-list",
+        "compute-keypairs-create",
+        "compute-quotas-get",
+        "compute-servers-create",
+        "compute-servers-delete",
+        "compute-servers-get",
+        "compute-servers-host",
+        "compute-servers-invalid",
+        "compute-servers-list",
+        "compute-servers-lock",
+        "compute-servers-name",
+        "compute-servers-reboot",
+        "compute-servers-rebuild",
+        "compute-servers-resize",
+        "compute-servers-stop",
+        "compute-servers-update",
+        "compute-servers-verify",
+        "compute-volume-attach",
+        "compute-volume-get",
+        "compute-volume-list",
+        "images-v2-index",
+        "compute-servers-metadata-delete",
+        "compute-servers-metadata-get",
+        "compute-servers-metadata-list",
+        "compute-servers-metadata-set",
+        "compute-servers-metadata-update"
+      ],
+      "advisory": [
+        "networks-floating-ips-CRUD-and-associate",
+        "networks-l3-router",
+        "networks-l2-CRUD",
+        "networks-l3-CRUD",
+        "networks-security-groups-CRUD",
+        "compute-list-api-versions",
+        "images-v2-remove",
+        "images-v2-update",
+        "images-v2-share",
+        "images-v2-import",
+        "images-v2-list",
+        "images-v2-delete",
+        "images-v2-get",
+        "volumes-v2-create-delete",
+        "volumes-v2-attach-detach",
+        "volumes-v2-snapshot-create-delete",
+        "volumes-v2-create-from-snapshot",
+        "volumes-v2-get",
+        "volumes-v2-list",
+        "volumes-v2-update",
+        "volumes-v2-copy-image-to-volume",
+        "volumes-v2-copy-volume-to-image",
+        "volumes-v2-clone",
+        "volumes-v2-qos",
+        "volumes-v2-availability-zones",
+        "volumes-v2-extensions",
+        "volumes-v2-metadata",
+        "volumes-v2-transfer",
+        "volumes-v2-reserve",
+        "volumes-v2-readonly",
+        "identity-v3-api-discovery"
+      ],
+      "deprecated": [
+        "identity-v2-tokens-create",
+        "compute-servers-change"
+      ],
+      "removed": []
+    },
+    "object": {
+      "required": [
+        "objectstore-object-access",
+        "objectstore-object-copy",
+        "objectstore-object-create",
+        "objectstore-object-delete",
+        "objectstore-object-get",
+        "objectstore-object-put",
+        "objectstore-object-upload",
+        "objectstore-object-versioned",
+        "objectstore-temp-url-get",
+        "identity-v3-tokens-create"],
+      "advisory": [],
+      "deprecated": [
+        "identity-v2-tokens-create"
+      ],
+      "removed": []
+    }
+  },
+  "test-repositories": {
+    "tempest": {
+      "git-sha": "26149b612d",
+       "url": "https://git.openstack.org/cgit/openstack/tempest/"
+    }
+  },
+  "capabilities": {
+    "compute-list-api-versions": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "List supported versions of the Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.test_versions.TestVersions.test_list_api_versions": {
+          "idempotent_id": "id-6c0a0990-43b6-4529-9b61-5fd8daf7c55c"
+        }
+      }
+    },
+    "compute-auth-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Auth related tests using Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_fails_when_tenant_incorrect": {
+          "idempotent_id": "id-acf8724b-142b-4044-82c3-78d31a533f24",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image": {
+          "idempotent_id": "id-95d445f6-babc-4f2e-aea3-aa24ec5e7f0d",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        }
+      }
+    },
+    "compute-auth-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Auth related tests using Compute API, Generate, import, and delete SSH keys within Compute services",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_keypair_of_alt_account_fails": {
+          "idempotent_id": "id-85bcdd8f-56b4-4868-ae56-63fbf6f7e405",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_metadata_of_alt_account_server_fails": {
+          "idempotent_id": "id-dea1936a-473d-49f2-92ad-97bb7aded22e",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        }
+      }
+    },
+    "compute-auth-set": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Auth related tests using Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_set_metadata_of_alt_account_server_fails": {
+          "idempotent_id": "id-c5f52351-53d9-4fc9-83e5-917f7f5e3d71",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        }
+      }
+    },
+    "compute-images-create": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Image operations within the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.images.test_images_oneserver.ImagesOneServerTestJSON.test_create_delete_image": {
+          "idempotent_id": "id-3731d080-d4c5-4872-b41a-64d0d0021314"
+        },
+        "tempest.api.compute.images.test_images_oneserver.ImagesOneServerTestJSON.test_create_image_specify_multibyte_character_image_name": {
+          "idempotent_id": "id-3b7c6fe4-dfe7-477c-9243-b06359db51e6"
+        }
+      }
+    },
+    "compute-images-delete": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Image operations within the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.images.test_images.ImagesTestJSON.test_delete_saving_image": {
+          "idempotent_id": "id-aa06b52b-2db5-4807-b218-9441f75d74e3"
+        }
+      }
+    },
+    "compute-images-get": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Image operations within the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_get_image": {
+          "idempotent_id": "id-490d0898-e12a-463f-aef0-c50156b9f789"
+        }
+      }
+    },
+    "compute-images-list": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Image operations within the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_changes_since": {
+          "idempotent_id": "id-18bac3ae-da27-436c-92a9-b22474d13aab",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_name": {
+          "idempotent_id": "id-33163b73-79f5-4d07-a7ea-9213bcc468ff",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_id": {
+          "idempotent_id": "id-9f238683-c763-45aa-b848-232ec3ce3105",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_ref": {
+          "idempotent_id": "id-05a377b8-28cf-4734-a1e6-2ab5c38bf606",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_status": {
+          "idempotent_id": "id-a3f5b513-aeb3-42a9-b18e-f091ef73254d",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_type": {
+          "idempotent_id": "id-e3356918-4d3e-4756-81d5-abc4524ba29f",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_limit_results": {
+          "idempotent_id": "id-3a484ca9-67ba-451e-b494-7fcf28d32d62",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_changes_since": {
+          "idempotent_id": "id-7d439e18-ac2e-4827-b049-7e18004712c4",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_name": {
+          "idempotent_id": "id-644ea267-9bd9-4f3b-af9f-dffa02396a17",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_server_ref": {
+          "idempotent_id": "id-8c78f822-203b-4bf6-8bba-56ebd551cf84",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_status": {
+          "idempotent_id": "id-9b0ea018-6185-4f71-948a-a123a107988e",
+          "date": "2015-05-06",
+          "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+          "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_type": {
+          "idempotent_id": "id-888c0cc0-7223-43c5-9db0-b125fd0a393b",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_limit_results": {
+          "idempotent_id": "id-ba2fa9a9-b672-47cc-b354-3b4c0600e2cb",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_list_images": {
+          "idempotent_id": "id-fd51b7f4-d4a3-4331-9885-866658112a6f"
+        },
+        "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_list_images_with_detail": {
+          "idempotent_id": "id-9f94cb6b-7f10-48c5-b911-a0b84d7d4cd6"
+        }
+      }
+    },
+    "compute-instance-actions-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic support Compute API for server actions such as reboot, rebuild, resize",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_instance_actions.InstanceActionsTestJSON.test_get_instance_action": {
+          "idempotent_id": "id-aacc71ca-1d70-4aa5-bbf6-0ff71470e43c"
+        }
+      }
+    },
+    "compute-instance-actions-list": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic support Compute API for server actions such as reboot, rebuild, resize",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_instance_actions.InstanceActionsTestJSON.test_list_instance_actions": {
+          "idempotent_id": "id-77ca5cc5-9990-45e0-ab98-1de8fead201a"
+        }
+      }
+    },
+    "compute-keypairs-create": {
+      "achievements": [
+        "complete",
+        "doc",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Generate, import, and delete SSH keys within Compute services",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_specify_keypair": {
+          "idempotent_id": "id-f9e15296-d7f9-4e62-b53f-a04e89160833"
+        },
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_keypair_in_analt_user_tenant": {
+          "idempotent_id": "id-f03d1ded-7fd4-4d29-bc13-e2391f29c625",
+          "flag": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        }
+      }
+    },
+    "compute-quotas-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Quotas management in Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.test_quotas.QuotasTestJSON.test_get_default_quotas": {
+          "idempotent_id": "id-9bfecac7-b966-4f47-913f-1a9e2c12134a"
+        },
+        "tempest.api.compute.test_quotas.QuotasTestJSON.test_get_quotas": {
+          "idempotent_id": "id-f1ef0a97-dbbb-4cca-adc5-c9fbc4f76107"
+        }
+      }
+    },
+    "compute-servers-change": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "status": "deprecated",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password": {
+          "idempotent_id": "id-6158df09-4b82-4ab3-af6d-29cf36af858d",
+          "flagged": {
+            "reason": "[D400] This test is backend-specific (only works on one hypervisor)",
+            "action": "This test should be removed from future Guidelines.",
+            "date": "2015-08-20"
+          }
+        }
+      }
+    },
+    "compute-servers-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_server_with_admin_password": {
+          "idempotent_id": "id-b92d5ec7-b1dd-44a2-87e4-45e888c46ef0"
+        },
+        "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_with_existing_server_name": {
+          "idempotent_id": "id-8fea6be7-065e-47cf-89b8-496e6f96c699"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_numeric_server_name": {
+          "idempotent_id": "id-fd57f159-68d6-4c2a-902b-03070828a87e"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_server_metadata_exceeds_length_limit": {
+          "idempotent_id": "id-7fc74810-0bd2-4cd7-8244-4f33a9db865a"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_server_name_length_exceeds_256": {
+          "idempotent_id": "id-c3e0fb12-07fc-4d76-a22e-37409887afe8"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_with_invalid_flavor": {
+          "idempotent_id": "id-18f5227f-d155-4429-807c-ccb103887537"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_with_invalid_image": {
+          "idempotent_id": "id-fcba1052-0a50-4cf3-b1ac-fae241edf02f"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_with_invalid_network_uuid": {
+          "idempotent_id": "id-4e72dc2d-44c5-4336-9667-f7972e95c402"
+        }
+      }
+    },
+    "compute-servers-delete": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_a_server_of_another_tenant": {
+          "idempotent_id": "id-5c75009d-3eea-423e-bea3-61b09fd25f9c"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_server_pass_id_exceeding_length_limit": {
+          "idempotent_id": "id-f4d7279b-5fd2-4bf2-9ba4-ae35df0d18c5"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_server_pass_negative_id": {
+          "idempotent_id": "id-75f79124-277c-45e6-a373-a1d6803f4cc4"
+        }
+      }
+    },
+    "compute-servers-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_get_non_existent_server": {
+          "idempotent_id": "id-3436b02f-1b1e-4f03-881e-c6a602327439"
+        }
+      }
+    },
+    "compute-servers-host": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_host_name_is_same_as_server_name": {
+          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666"
+        },
+        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name": {
+          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666"
+        }
+      }
+    },
+    "compute-servers-invalid": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_invalid_ip_v6_address": {
+          "idempotent_id": "id-5226dd80-1e9c-4d8a-b5f9-b26ca4763fd0"
+        }
+      }
+    },
+    "compute-servers-list": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers": {
+          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f"
+        },
+        "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers_with_detail": {
+          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997"
+        },
+        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers": {
+          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f"
+        },
+        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers_with_detail": {
+          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_detailed_filter_by_flavor": {
+          "idempotent_id": "id-80c574cc-0925-44ba-8602-299028357dd9"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_detailed_filter_by_image": {
+          "idempotent_id": "id-b3304c3b-97df-46d2-8cd3-e2b6659724e7"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_detailed_filter_by_server_name": {
+          "idempotent_id": "id-f9eb2b70-735f-416c-b260-9914ac6181e4"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_detailed_filter_by_server_status": {
+          "idempotent_id": "id-de2612ab-b7dd-4044-b0b1-d2539601911f"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_detailed_limit_results": {
+          "idempotent_id": "id-67aec2d0-35fe-4503-9f92-f13272b867ed"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filter_by_flavor": {
+          "idempotent_id": "id-573637f5-7325-47bb-9144-3476d0416908"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filter_by_image": {
+          "idempotent_id": "id-05e8a8e7-9659-459a-989d-92c2f501f4ba"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filter_by_limit": {
+          "idempotent_id": "id-614cdfc1-d557-4bac-915b-3e67b48eee76"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filter_by_server_name": {
+          "idempotent_id": "id-9b067a7b-7fee-4f6a-b29c-be43fe18fc5a"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filter_by_server_status": {
+          "idempotent_id": "id-ca78e20e-fddb-4ce6-b7f7-bcbf8605e66e"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip": {
+          "idempotent_id": "id-43a1242e-7b31-48d1-88f2-3f72aa9f2077"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex": {
+          "idempotent_id": "id-a905e287-c35e-42f2-b132-d02b09f3654a"
+        },
+        "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_name_wildcard": {
+          "idempotent_id": "id-e9f624ee-92af-4562-8bec-437945a18dcb"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_changes_since_future_date": {
+          "idempotent_id": "id-74745ad8-b346-45b5-b9b8-509d7447fc1f"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_changes_since_invalid_date": {
+          "idempotent_id": "id-87d12517-e20a-4c9c-97b6-dd1628d6d6c9"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits": {
+          "idempotent_id": "id-12c80a9f-2dec-480e-882b-98ba15757659"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits_greater_than_actual_count": {
+          "idempotent_id": "id-d47c17fb-eebd-4287-8e95-f20a7e627b18"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits_pass_negative_value": {
+          "idempotent_id": "id-62610dd9-4713-4ee0-8beb-fd2c1aa7f950"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits_pass_string": {
+          "idempotent_id": "id-679bc053-5e70-4514-9800-3dfab1a380a6"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_non_existing_flavor": {
+          "idempotent_id": "id-5913660b-223b-44d4-a651-a0fbfd44ca75"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_non_existing_image": {
+          "idempotent_id": "id-ff01387d-c7ad-47b4-ae9e-64fa214638fe"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_non_existing_server_name": {
+          "idempotent_id": "id-e2c77c4a-000a-4af3-a0bd-629a328bde7c"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_detail_server_is_deleted": {
+          "idempotent_id": "id-93055106-2d34-46fe-af68-d9ddbf7ee570"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_status_non_existing": {
+          "idempotent_id": "id-fcdf192d-0f74-4d89-911f-1ec002b822c4"
+        },
+        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_with_a_deleted_server": {
+          "idempotent_id": "id-24a26f1a-1ddc-4eea-b0d7-a90cc874ad8f"
+        }
+      }
+    },
+    "compute-servers-lock": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_lock_unlock_server": {
+          "idempotent_id": "id-80a8094c-211e-440a-ab88-9e59d556c7ee"
+        }
+      }
+    },
+    "compute-servers-metadata-delete": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_metadata.ServerMetadataTestJSON.test_delete_server_metadata_item": {
+          "idempotent_id": "id-127642d6-4c7b-4486-b7cd-07265a378658"
+        }
+      }
+    },
+    "compute-servers-metadata-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_metadata.ServerMetadataTestJSON.test_get_server_metadata_item": {
+          "idempotent_id": "id-3043c57d-7e0e-49a6-9a96-ad569c265e6a"
+        }
+      }
+    },
+    "compute-servers-metadata-list": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_metadata.ServerMetadataTestJSON.test_list_server_metadata": {
+          "idempotent_id": "id-479da087-92b3-4dcf-aeb3-fd293b2d14ce"
+        }
+      }
+    },
+    "compute-servers-metadata-set": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_metadata.ServerMetadataTestJSON.test_set_server_metadata": {
+          "idempotent_id": "id-211021f6-21de-4657-a68f-908878cfe251"
+        },
+        "tempest.api.compute.servers.test_server_metadata.ServerMetadataTestJSON.test_set_server_metadata_item": {
+          "idempotent_id": "id-58c02d4f-5c67-40be-8744-d3fa5982eb1c"
+        }
+      }
+    },
+    "compute-servers-metadata-update": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_metadata.ServerMetadataTestJSON.test_update_server_metadata": {
+          "idempotent_id": "id-344d981e-0c33-4997-8a5d-6c1d803e4134"
+        }
+      }
+    },
+    "compute-servers-name": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_server_name_blank": {
+          "idempotent_id": "id-dbbfd247-c40c-449e-8f6c-d2aa7c7da7cf"
+        }
+      }
+    },
+    "compute-servers-reboot": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_hard": {
+          "idempotent_id": "id-2cb1baf6-ac8d-4429-bf0d-ba8a0ba53e32"
+        },
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft": {
+          "flag": {
+            "action": "Remove flag after Tempest bug is fixed (in progress).",
+            "date": "2015-03-24",
+            "reason": "Tempest bug for soft reboot of server (id 1014647)."
+          },
+          "idempotent_id": "id-4640e3ef-a5df-482e-95a1-ceeeb0faa84d"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_reboot_non_existent_server": {
+          "idempotent_id": "id-d4c023a0-9c55-4747-9dd5-413b820143c7"
+        }
+      }
+    },
+    "compute-servers-rebuild": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_rebuild_server": {
+          "idempotent_id": "id-aaa6cdf3-55a7-461a-add9-1c8596b9a07c"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_rebuild_non_existent_server": {
+          "idempotent_id": "id-d86141a7-906e-4731-b187-d64a2ea61422"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_rebuild_reboot_deleted_server": {
+          "idempotent_id": "id-98fa0458-1485-440f-873b-fe7f0d714930"
+        }
+      }
+    },
+    "compute-servers-resize": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_confirm": {
+          "flag": {
+            "action": "Fix resize upstream in Nova and remove flag.",
+            "date": "2015-05-07",
+            "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
+          },
+          "idempotent_id": "id-1499262a-9328-4eda-9068-db1ac57498d2"
+        },
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_resize_server_revert": {
+          "flag": {
+            "action": "Fix resize upstream in Nova and remove flag.",
+            "date": "2015-05-07",
+            "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
+          },
+          "idempotent_id": "id-c03aab19-adb1-44f5-917d-c419577e9e68"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_non_existent_flavor": {
+          "flag": {
+            "action": "Fix resize upstream in Nova and remove flag.",
+            "date": "2015-05-07",
+            "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
+          },
+          "idempotent_id": "id-ced1a1d7-2ab6-45c9-b90f-b27d87b30efd"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_null_flavor": {
+          "flag": {
+            "action": "Fix resize upstream in Nova and remove flag.",
+            "date": "2015-05-07",
+            "reason": "Resize capabilities use an insecure mechanism that may be disabled by vendors."
+          },
+          "idempotent_id": "id-45436a7d-a388-4a35-a9d8-3adc5d0d940b"
+        }
+      }
+    },
+    "compute-servers-stop": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_stop_start_server": {
+          "idempotent_id": "id-af8eafd4-38a7-4a4b-bdbc-75145a580560"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_stop_non_existent_server": {
+          "idempotent_id": "id-a31460a9-49e1-42aa-82ee-06e0bb7c2d03"
+        }
+      }
+    },
+    "compute-servers-update": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_servers.ServersTestJSON.test_update_access_server_address": {
+          "idempotent_id": "id-89b90870-bc13-4b73-96af-f9d4f2b70077"
+        },
+        "tempest.api.compute.servers.test_servers.ServersTestJSON.test_update_server_name": {
+          "idempotent_id": "id-5e6ccff8-349d-4852-a8b3-055df7988dd2"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_name_of_non_existent_server": {
+          "idempotent_id": "id-aa8eed43-e2cb-4ebf-930b-da14f6a21d81"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_server_name_length_exceeds_256": {
+          "idempotent_id": "id-5c8e244c-dada-4590-9944-749c455b431f"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_server_of_another_tenant": {
+          "idempotent_id": "id-543d84c1-dd2e-4c6d-8cb2-b9da0efaa384"
+        },
+        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_server_set_empty_name": {
+          "idempotent_id": "id-38204696-17c6-44da-9590-40f87fb5a899"
+        }
+      }
+    },
+    "compute-servers-verify": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic server operations in the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_created_server_vcpus": {
+          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b"
+        },
+        "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_server_details": {
+          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f"
+        },
+        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus": {
+          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b"
+        },
+        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_server_details": {
+          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f"
+        }
+      }
+    },
+    "compute-volume-attach": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Retrieve volume information through the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_attach_detach_volume": {
+          "idempotent_id": "id-52e9045a-e90d-4c0d-9087-79d657faffff"
+        },
+        "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_list_get_volume_attachments": {
+          "idempotent_id": "id-7fa563fe-f0f7-43eb-9e22-a1ece036b513"
+        }
+      }
+    },
+    "compute-volume-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Retrieve volume information through the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
+          "idempotent_id": "id-f01904f2-e975-4915-98ce-cb5fa27bde4f"
+        },
+        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id": {
+          "idempotent_id": "id-62bab09a-4c03-4617-8cca-8572bc94af9b"
+        }
+      }
+    },
+    "compute-volume-list": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Retrieve volume information through the Compute API",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list": {
+          "idempotent_id": "id-bc2dd1a0-15af-48e5-9990-f2e75a48325d"
+        },
+        "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_details": {
+          "idempotent_id": "id-bad0567a-5a4f-420b-851e-780b55bb867c"
+        }
+      }
+    },
+    "identity-v2-tokens-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "deprecated",
+      "description": "Auth operations within the Identity API",
+      "project": "keystone",
+      "required-since": "",
+      "tests": {
+        "tempest.api.identity.v2.test_tokens.TokensTest.test_create_token": {
+          "idempotent_id": "id-65ae3b78-91ff-467b-a705-f6678863b8ec"
+        }
+      }
+    },
+    "identity-v3-tokens-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Auth operations within the Identity API",
+      "project": "keystone",
+      "required-since": "2015.05",
+      "tests": {
+        "tempest.api.identity.v3.test_tokens.TokensV3Test.test_create_token": {
+          "idempotent_id": "id-6f8e4436-fc96-4282-8122-e41df57197a9"
+        }
+      }
+    },
+    "identity-v3-api-discovery": {
+        "achievements": [
+          "atomic",
+          "complete",
+          "deployed",
+          "discover",
+          "doc",
+          "foundation",
+          "future",
+          "proximity",
+          "stable"
+        ],
+        "admin": false,
+        "status": "advisory",
+        "description": "API discovery operations within the Identity v3 API",
+        "project": "keystone",
+        "required-since": "",
+        "tests": {
+            "tempest.api.identity.v3.TestApiDiscovery.test_api_version_resources": {
+                "idempotent_id": "b9232f5e-d9e5-4d97-b96c-28d3db4de1bd"
+            },
+            "tempest.api.identity.v3.TestApiDiscovery.test_api_media_types": {
+                "idempotent_id": "657c1970-4722-4189-8831-7325f3bc4265"
+            },
+            "tempest.api.identity.v3.TestApiDiscovery.test_api_version_statuses": {
+                "idempotent_id": "8879a470-abfb-47bb-bb8d-5a7fd279ad1e"
+            }
+        }
+    },
+    "images-v2-index": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "discover",
+        "future",
+        "atomic",
+        "stable"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "CRUD image operations in Images API v2",
+      "project": "nova",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params": {
+          "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee"
+        }
+      }
+    },
+    "images-v2-delete": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image deletion tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_delete_image": {
+          "idempotent_id": "id-f848bb94-1c6e-45a4-8726-39e3a5b23535"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_delete_image_null_id": {
+          "idempotent_id": "id-32248db1-ab88-4821-9604-c7c369f1f88c"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_delete_non_existing_image": {
+          "idempotent_id": "id-6fe40f1c-57bd-4918-89cc-8500f850f3de"
+        },
+        "tempest.api.image.v2.test_images_tags_negative.ImagesTagsNegativeTest.test_delete_non_existing_tag": {
+          "idempotent_id": "id-39c023a2-325a-433a-9eea-649bf1414b19"
+        }
+      }
+    },
+    "images-v2-get": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image get tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.ListImagesTest.test_get_image_schema": {
+          "idempotent_id": "id-622b925c-479f-4736-860d-adeaf13bc371"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_get_images_schema": {
+          "idempotent_id": "id-25c8d7b2-df21-460f-87ac-93130bcdc684"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_member": {
+          "idempotent_id": "id-a6ee18b9-4378-465e-9ad9-9a6de58a3287"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_member_schema": {
+          "idempotent_id": "id-634dcc3f-f6e2-4409-b8fd-354a0bb25d83"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_members_schema": {
+          "idempotent_id": "id-6ae916ef-1052-4e11-8d36-b3ae14853cbb"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_delete_deleted_image": {
+          "idempotent_id": "id-e57fc127-7ba0-4693-92d7-1d8a05ebcba9"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_image_null_id": {
+          "idempotent_id": "id-ef45000d-0a72-4781-866d-4cb7bf2562ad"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_non_existent_image": {
+          "idempotent_id": "id-668743d5-08ad-4480-b2b8-15da34f81d9f"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_private_image": {
+          "idempotent_id": "id-cb961424-3f68-4d21-8e36-30ad66fb6bfb"
+        }
+      }
+    },
+    "images-v2-list": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image list tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_container_format": {
+          "idempotent_id": "id-9959ca1d-1aa7-4b7a-a1ea-0fff0499b37e"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_disk_format": {
+          "idempotent_id": "id-4a4735a7-f22f-49b6-b0d9-66e1ef7453eb"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_limit": {
+          "idempotent_id": "id-e914a891-3cc8-4b40-ad32-e0a39ffbddbb"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_min_max_size": {
+          "idempotent_id": "id-4ad8c157-971a-4ba8-aa84-ed61154b1e7f"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_size": {
+          "idempotent_id": "id-cf1b9a48-8340-480e-af7b-fe7e17690876"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_status": {
+          "idempotent_id": "id-7fc9e369-0f58-4d05-9aa5-0969e2d59d15"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_visibility": {
+          "idempotent_id": "id-7a95bb92-d99e-4b12-9718-7bc6ab73e6d2"
+        },
+        "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params": {
+          "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee"
+        }
+      }
+    },
+    "images-v2-import": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image registration tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_register_upload_get_image_file": {
+          "idempotent_id": "id-139b765e-7f3d-4b3d-8b37-3ca3876ee318"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_register_with_invalid_container_format": {
+          "idempotent_id": "id-292bd310-369b-41c7-a7a3-10276ef76753"
+        },
+        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_register_with_invalid_disk_format": {
+          "idempotent_id": "id-70c6040c-5a97-4111-9e13-e73665264ce1"
+        }
+      }
+    },
+    "images-v2-remove": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image removal tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_remove_image_member": {
+          "idempotent_id": "id-72989bc7-2268-48ed-af22-8821e835c914"
+        }
+      }
+    },
+    "images-v2-share": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image sharing tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_image_share_accept": {
+          "idempotent_id": "id-5934c6ea-27dc-4d6e-9421-eeb5e045494a"
+        },
+        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_image_share_reject": {
+          "idempotent_id": "id-d9e83e5f-3524-4b38-a900-22abcb26e90e"
+        },
+        "tempest.api.image.v2.test_images_member_negative.ImagesMemberNegativeTest.test_image_share_invalid_status": {
+          "idempotent_id": "id-b79efb37-820d-4cf0-b54c-308b00cf842c"
+        },
+        "tempest.api.image.v2.test_images_member_negative.ImagesMemberNegativeTest.test_image_share_owner_cannot_accept": {
+          "idempotent_id": "id-27002f74-109e-4a37-acd0-f91cd4597967"
+        }
+      }
+    },
+    "images-v2-update": {
+      "achievements": [
+        "clients",
+        "complete",
+        "deployed",
+        "discover",
+        "doc",
+        "foundation",
+        "future",
+        "proximity",
+        "stable"
+      ],
+      "status": "advisory",
+      "admin": false,
+      "description": "Image update tests using the Glance v2 API",
+      "project": "glance",
+      "required-since": "",
+      "tests": {
+        "tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_update_image": {
+          "idempotent_id": "id-f66891a7-a35c-41a8-b590-a065c2a1caa6"
+        },
+        "tempest.api.image.v2.test_images_tags.ImagesTagsTest.test_update_delete_tags_for_image": {
+          "idempotent_id": "id-10407036-6059-4f95-a2cd-cbbbee7ed329"
+        },
+        "tempest.api.image.v2.test_images_tags_negative.ImagesTagsNegativeTest.test_update_tags_for_non_existing_image": {
+          "idempotent_id": "id-8cd30f82-6f9a-4c6e-8034-c1b51fba43d9"
+        }
+      }
+    },
+    "objectstore-object-access": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+      }
+    },
+    "objectstore-object-copy": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_2d_way": {
+          "idempotent_id": "id-06f90388-2d0e-40aa-934c-e9a8833e958a"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_across_containers": {
+          "idempotent_id": "id-aa467252-44f3-472a-b5ae-5b57c3c9c147"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_in_same_container": {
+          "idempotent_id": "id-1a9ab572-1b66-4981-8c21-416e2a5e6011"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_to_itself": {
+          "idempotent_id": "id-2248abba-415d-410b-9c30-22dff9cd6e67"
+        }
+      }
+    },
+    "objectstore-object-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_create_object": {
+          "idempotent_id": "id-5b4ce26f-3545-46c9-a2ba-5754358a4c62"
+        }
+      }
+    },
+    "objectstore-object-delete": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_delete_object": {
+          "idempotent_id": "id-17738d45-03bd-4d45-9e0b-7b2f58f98687"
+        }
+      }
+    },
+    "objectstore-object-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time": {
+          "idempotent_id": "id-fb024a42-37f3-4ba5-9684-4f40a7910b41"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object": {
+          "idempotent_id": "id-02610ba7-86b7-4272-9ed8-aa8d417cb3cd"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object_if_different": {
+          "idempotent_id": "id-50d01f12-526f-4360-9ac2-75dd508d7b68"
+        }
+      }
+    },
+    "objectstore-object-put": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_temp_url.ObjectTempUrlTest.test_put_object_using_temp_url": {
+          "idempotent_id": "id-9b08dade-3571-4152-8a4f-a4f2a873a735"
+        }
+      }
+    },
+    "objectstore-object-upload": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
+          "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
+        }
+      }
+    },
+    "objectstore-object-versioned": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_version.ContainerTest.test_versioned_container": {
+          "idempotent_id": "id-a151e158-dcbf-4a1f-a1e7-46cd65895a6f"
+        }
+      }
+    },
+    "objectstore-temp-url-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "status": "required",
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "2014.07",
+      "tests": {
+        "tempest.api.object_storage.test_object_temp_url.ObjectTempUrlTest.test_get_object_using_temp_url": {
+          "idempotent_id": "id-f91c96d4-1230-4bba-8eb9-84476d18d991"
+        }
+      }
+    },
+    "networks-floating-ips-CRUD-and-associate": {
+      "achievements": [
+          "complete",
+          "doc",
+          "proximity",
+          "clients",
+          "future",
+          "atomic",
+          "stable",
+          "tools",
+          "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Basic CRUD (and associate) operations on floating IP addresses",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_floating_ips_negative.FloatingIPNegativeTestJSON.test_associate_floatingip_port_ext_net_unreachable": {
+          "idempotent_id": "id-6b3b8797-6d43-4191-985c-c48b773eb429"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_floating_ip_specifying_a_fixed_ip_address": {
+          "idempotent_id": "id-36de4bd0-f09c-43e3-a8e1-1decc1ffd3a5"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_list_show_update_delete_floating_ip": {
+          "idempotent_id": "id-62595970-ab1c-4b7f-8fcc-fddfe55e8718"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_create_update_floatingip_with_port_multiple_ip_address": {
+          "idempotent_id": "id-45c4c683-ea97-41ef-9c51-5e9802f2f3d7"
+        },
+        "tempest.api.network.test_floating_ips_negative.FloatingIPNegativeTestJSON.test_create_floatingip_in_private_network": {
+          "idempotent_id": "id-50b9aeb4-9f0b-48ee-aa31-fa955a48ff54"
+        },
+        "tempest.api.network.test_floating_ips_negative.FloatingIPNegativeTestJSON.test_create_floatingip_with_port_ext_net_unreachable": {
+          "idempotent_id": "id-22996ea8-4a81-4b27-b6e1-fa5df92fa5e8"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_floating_ip_delete_port": {
+          "idempotent_id": "id-e1f6bffd-442f-4668-b30e-df13f2705e77"
+        },
+        "tempest.api.network.test_floating_ips.FloatingIPTestJSON.test_floating_ip_update_different_router": {
+          "idempotent_id": "id-1bb2f731-fe5a-4b8c-8409-799ade1bed4d"
+        }
+      }
+    },
+    "networks-l2-CRUD": {
+      "achievements": [
+          "foundation",
+          "complete",
+          "doc",
+          "proximity",
+          "clients",
+          "discover",
+          "future",
+          "atomic",
+          "stable",
+          "tools",
+          "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Basic CRUD operations on L2 networks and L2 network ports",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_all_attributes": {
+          "idempotent_id": "id-a4d9ec4c-0306-4111-a75c-db01a709030b"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_allocation_pools": {
+          "idempotent_id": "id-bec949c4-3147-4ba6-af5f-cd2306118404"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_dhcp_enabled": {
+          "idempotent_id": "id-94ce038d-ff0a-4a4c-a56b-09da3ca0b55d"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_gw": {
+          "idempotent_id": "id-9393b468-186d-496d-aa36-732348cd76e7"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_gw_and_allocation_pools": {
+          "idempotent_id": "id-8217a149-0c6c-4cfb-93db-0486f707d13f"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_host_routes_and_dns_nameservers": {
+          "idempotent_id": "id-d830de0a-be47-468f-8f02-1fd996118289"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_without_gateway": {
+          "idempotent_id": "id-d2d596e2-8e76-47a9-ac51-d4648009f4d3"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_create_update_delete_network_subnet": {
+          "idempotent_id": "id-0e269138-0da6-4efc-a46d-578161e7b221"
+        },
+        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_create_port_binding_ext_attr": {
+          "idempotent_id": "id-8e8569c1-9ac7-44db-8bc1-f5fb2814f29b"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_create_bulk_port": {
+          "idempotent_id": "id-67f1b811-f8db-43e2-86bd-72c074d4a42c"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_create_port_in_allowed_allocation_pools": {
+          "idempotent_id": "id-0435f278-40ae-48cb-a404-b8a087bc09b1"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_create_port_with_no_securitygroups": {
+          "idempotent_id": "id-4179dcb9-1382-4ced-84fe-1b91c54f5735"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_create_show_delete_port_user_defined_mac": {
+          "idempotent_id": "id-13e95171-6cbd-489c-9d7c-3f9c58215c18"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_create_update_delete_port": {
+          "idempotent_id": "id-c72c1c0c-2193-4aca-aaa4-b1442640f51c"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_create_update_port_with_second_ip": {
+          "idempotent_id": "id-63aeadd4-3b49-427f-a3b1-19ca81f06270"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_delete_network_with_subnet": {
+          "idempotent_id": "id-f04f61a9-b7f3-4194-90b2-9bcf660d1bfe"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_list_networks": {
+          "idempotent_id": "id-f7ffdeda-e200-4a7a-bcbe-05716e86bf43"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_list_networks_fields": {
+          "idempotent_id": "id-6ae6d24f-9194-4869-9c85-c313cb20e080"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_list_subnets": {
+          "idempotent_id": "id-db68ba48-f4ea-49e9-81d1-e367f6d0b20a"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_list_subnets_fields": {
+          "idempotent_id": "id-842589e3-9663-46b0-85e4-7f01273b0412"
+        },
+        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_list_ports_binding_ext_attr": {
+          "idempotent_id": "id-1c82a44a-6c6e-48ff-89e1-abe7eaf8f9f8"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_list_ports": {
+          "idempotent_id": "id-cf95b358-3e92-4a29-a148-52445e1ac50e"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_list_ports_fields": {
+          "idempotent_id": "id-ff7f117f-f034-4e0e-abff-ccef05c454b4"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_show_network": {
+          "idempotent_id": "id-2bf13842-c93f-4a69-83ed-717d2ec3b44e"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_show_network_fields": {
+          "idempotent_id": "id-867819bb-c4b6-45f7-acf9-90edcf70aa5e"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_show_subnet": {
+          "idempotent_id": "id-bd635d81-6030-4dd1-b3b9-31ba0cfdf6cc"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_show_subnet_fields": {
+          "idempotent_id": "id-270fff0b-8bfc-411f-a184-1e8fd35286f0"
+        },
+        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_show_port_binding_ext_attr": {
+          "idempotent_id": "id-b54ac0ff-35fc-4c79-9ca3-c7dbd4ea4f13"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_show_port": {
+          "idempotent_id": "id-c9a685bd-e83f-499c-939f-9f7863ca259f"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_show_port_fields": {
+          "idempotent_id": "id-45fcdaf2-dab0-4c13-ac6c-fcddfb579dbd"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_update_subnet_gw_dns_host_routes_dhcp": {
+          "idempotent_id": "id-3d3852eb-3009-49ec-97ac-5ce83b73010a"
+        },
+        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_update_port_binding_ext_attr": {
+          "idempotent_id": "id-6f6c412c-711f-444d-8502-0ac30fbf5dd5"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_security_group_and_extra_attributes": {
+          "idempotent_id": "id-58091b66-4ff4-4cc1-a549-05d60c7acd1a"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_two_security_groups_and_extra_attributes": {
+          "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d"
+        },
+        "tempest.api.network.test_networks.NetworksTestJSON.test_external_network_visibility": {
+          "idempotent_id": "id-af774677-42a9-4e4b-bb58-16fe6a5bc1ec"
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_port_list_filter_by_router_id": {
+          "idempotent_id": "id-5ad01ed0-0e6e-4c5d-8194-232801b15c72"
+        }
+      }
+    },
+    "networks-l3-CRUD": {
+      "achievements": [
+          "foundation",
+          "complete",
+          "doc",
+          "proximity",
+          "clients",
+          "discover",
+          "future",
+          "atomic",
+          "stable",
+          "tools",
+          "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Basic CRUD operations on L3 networks and L3 routers",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_routers.RoutersTest.test_add_multiple_router_interfaces": {
+          "idempotent_id": "id-802c73c9-c937-4cef-824b-2191e24a6aab"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_port_id": {
+          "idempotent_id": "id-2b7d2f37-6748-4d78-92e5-1d590234f0d5"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_add_remove_router_interface_with_subnet_id": {
+          "idempotent_id": "id-b42e6e39-2e37-49cc-a6f4-8467e940900a"
+        },
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_add_router_interfaces_on_overlapping_subnets_returns_400": {
+          "idempotent_id": "id-957751a3-3c68-4fa2-93b6-eb52ea10db6e"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_create_router_setting_tenant_id": {
+          "idempotent_id": "id-e54dd3a3-4352-4921-b09d-44369ae17397"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_create_router_with_default_snat_value": {
+          "idempotent_id": "id-847257cc-6afd-4154-b8fb-af49f5670ce8"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_create_router_with_snat_explicit": {
+          "idempotent_id": "id-ea74068d-09e9-4fd7-8995-9b6a1ace920f"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_create_show_list_update_delete_router": {
+          "idempotent_id": "id-f64403e2-8483-4b34-8ccd-b09a87bcc68c"
+        },
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_delete_non_existent_router_returns_404": {
+          "idempotent_id": "id-c7edc5ad-d09d-41e6-a344-5c0c31e2e3e4"
+        },
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_show_non_existent_router_returns_404": {
+          "idempotent_id": "id-c2a70d72-8826-43a7-8208-0209e6360c47"
+        },
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_show_non_existent_router_returns_404": {
+          "idempotent_id": "id-c2a70d72-8826-43a7-8208-0209e6360c47"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_update_extra_route": {
+          "idempotent_id": "id-c86ac3a8-50bd-4b00-a6b8-62af84a0765c"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_update_router_admin_state": {
+          "idempotent_id": "id-a8902683-c788-4246-95c7-ad9c6d63a4d9"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_update_router_reset_gateway_without_snat": {
+          "idempotent_id": "id-f2faf994-97f4-410b-a831-9bc977b64374"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway": {
+          "idempotent_id": "id-6cc285d8-46bf-4f36-9b1a-783e3008ba79"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_with_snat_explicit": {
+          "idempotent_id": "id-b386c111-3b21-466d-880c-5e72b01e1a33"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_without_snat": {
+          "idempotent_id": "id-96536bc7-8262-4fb2-9967-5c46940fa279"
+        },
+        "tempest.api.network.test_routers.RoutersTest.test_update_router_unset_gateway": {
+          "idempotent_id": "id-ad81b7ee-4f81-407b-a19c-17e623f763e8"
+        },
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_update_non_existent_router_returns_404": {
+          "idempotent_id": "id-b23d1569-8b0c-4169-8d4b-6abd34fad5c7"
+        }
+      }
+    },
+    "networks-l3-router": {
+      "achievements": [
+          "foundation",
+          "complete",
+          "doc",
+          "proximity",
+          "clients",
+          "discover",
+          "future",
+          "atomic",
+          "stable",
+          "tools",
+          "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Operations on L3 routers",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_router_add_gateway_invalid_network_returns_404": {
+          "idempotent_id": "id-37a94fc0-a834-45b9-bd23-9a81d2fd1e22"
+        },
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_router_add_gateway_net_not_external_returns_400": {
+          "idempotent_id": "id-11836a18-0b15-4327-a50b-f0d9dc66bddd"
+        },
+        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_router_remove_interface_in_use_returns_409": {
+          "idempotent_id": "id-04df80f9-224d-47f5-837a-bf23e33d1c20"
+        }
+      }
+    },
+    "networks-security-groups-CRUD": {
+      "achievements": [
+          "foundation",
+          "complete",
+          "doc",
+          "proximity",
+          "clients",
+          "discover",
+          "future",
+          "atomic",
+          "stable",
+          "tools",
+          "deployed"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Basic CRUD operations on security groups",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_security_groups.SecGroupTest.test_create_list_update_show_delete_security_group": {
+          "idempotent_id": "id-bfd128e5-3c92-44b6-9d66-7fe29d22c802"
+        },
+        "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_additional_args": {
+          "idempotent_id": "id-87dfbcf9-1849-43ea-b1e4-efa3eeae9f71"
+        },
+        "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_icmp_type_code": {
+          "idempotent_id": "id-c9463db8-b44d-4f52-b6c0-8dbda99f26ce"
+        },
+        "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_protocol_integer_value": {
+          "idempotent_id": "id-0a307599-6655-4220-bebc-fd70c64f2290"
+        },
+        "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_remote_group_id": {
+          "idempotent_id": "id-c2ed2deb-7a0c-44d8-8b4c-a5825b5c310b"
+        },
+        "tempest.api.network.test_security_groups.SecGroupTest.test_create_security_group_rule_with_remote_ip_prefix": {
+          "idempotent_id": "id-16459776-5da2-4634-bce4-4b55ee3ec188"
+        },
+        "tempest.api.network.test_security_groups.SecGroupTest.test_create_show_delete_security_group_rule": {
+          "idempotent_id": "id-cfb99e0e-7410-4a3d-8a0c-959a63ee77e9"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_additional_default_security_group_fails": {
+          "idempotent_id": "id-2323061e-9fbf-4eb0-b547-7e8fafc90849"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_duplicate_security_group_rule_fails": {
+          "idempotent_id": "id-8fde898f-ce88-493b-adc9-4e4692879fc5"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_bad_ethertype": {
+          "idempotent_id": "id-5666968c-fff3-40d6-9efc-df1c8bd01abb"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_bad_protocol": {
+          "idempotent_id": "id-981bdc22-ce48-41ed-900a-73148b583958"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_bad_remote_ip_prefix": {
+          "idempotent_id": "id-5f8daf69-3c5f-4aaa-88c9-db1d66f68679"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_invalid_ports": {
+          "idempotent_id": "id-0d9c7791-f2ad-4e2f-ac73-abf2373b0d2d"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_non_existent_remote_groupid": {
+          "idempotent_id": "id-4bf786fd-2f02-443c-9716-5b98e159a49a"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_create_security_group_rule_with_non_existent_security_group": {
+          "idempotent_id": "id-be308db6-a7cf-4d5c-9baf-71bafd73f35e"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_delete_non_existent_security_group": {
+          "idempotent_id": "id-1f1bb89d-5664-4956-9fcd-83ee0fa603df"
+        },
+        "tempest.api.network.test_security_groups.SecGroupTest.test_list_security_groups": {
+          "idempotent_id": "id-e30abd17-fef9-4739-8617-dc26da88e686"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_show_non_existent_security_group": {
+          "idempotent_id": "id-424fd5c3-9ddc-486a-b45f-39bf0c820fc6"
+        },
+        "tempest.api.network.test_security_groups_negative.NegativeSecGroupTest.test_show_non_existent_security_group_rule": {
+          "idempotent_id": "id-4c094c09-000b-4e41-8100-9617600c02a6"
+        }
+      }
+    },
+    "volumes-v2-create-delete": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume creation and deletion operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete": {
+          "idempotent_id": "id-27fb0e9f-fb64-41dd-8bdb-1ffa762f0d51,smoke"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_invalid_size": {
+          "idempotent_id": "id-1ed83a8a-682d-4dfb-a30e-ee63ffd6c049,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_source_volid": {
+          "idempotent_id": "id-47c73e08-4be8-45bb-bfdf-0c4e79b88344,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_volume_type": {
+          "idempotent_id": "id-10254ed8-3849-454e-862e-3ab8e6aa01d2,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_out_passing_size": {
+          "idempotent_id": "id-9387686f-334f-4d31-a439-33494b9e2683,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_negative": {
+          "idempotent_id": "id-8b472729-9eba-446e-a83b-916bdb34bef7,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_zero": {
+          "idempotent_id": "id-41331caa-eaf4-4001-869d-bc18c1869360,negative"
+        }
+      }
+    },
+    "volumes-v2-attach-detach": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume attach and detach operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_attach_detach_volume_to_instance": {
+          "idempotent_id": "id-fff42874-7db5-4487-a8e1-ddda5fb5288d"
+        },
+        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_get_volume_attachment": {
+            "idempotent_id": "id-9516a2c8-9135-488c-8dd6-5677a7e5f371"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_attach_volumes_with_nonexistent_volume_id": {
+            "idempotent_id": "id-f5e56b0a-5d02-43c1-a2a7-c9b792c2e3f6"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_detach_volumes_with_invalid_volume_id": {
+          "idempotent_id": "id-9f9c24e4-011d-46b5-b992-952140ce237a,negative"
+        }
+      }
+    },
+    "volumes-v2-snapshot-create-delete": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume snapshot creation/deletion operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata": {
+          "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c"
+        },
+        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata": {
+          "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1"
+        },
+        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item": {
+          "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed"
+        },
+        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
+          "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e"
+        },
+        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_with_volume_in_use" : {
+            "idempotent_id": "d-b467b54c-07a4-446d-a1cf-651dedcc3ff1"
+        },
+        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_details_with_params": {
+          "idempotent_id": "id-220a1022-1fcd-4a74-a7bd-6b859156cda2"
+        },
+        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_with_params": {
+          "idempotent_id": "id-59f41f43-aebf-48a9-ab5d-d76340fab32b"
+        },
+        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_volume_from_snapshot": {
+          "idempotent_id": "id-677863d1-3142-456d-b6ac-9924f667a7f4"
+        },
+        "tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id": {
+          "idempotent_id": "id-e3e466af-70ab-4f4b-a967-ab04e3532ea7,negative"
+        },
+        "tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id": {
+          "idempotent_id": "id-bb9da53e-d335-4309-9c15-7e76fd5e4d6d,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_snapshot_id": {
+          "idempotent_id": "id-0c36f6ae-4604-4017-b0a9-34fdc63096f9,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_invalid_volume_id": {
+          "idempotent_id": "id-1f035827-7c32-4019-9240-b4ec2dbd9dfd,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_volume_without_passing_volume_id": {
+          "idempotent_id": "id-441a1550-5d44-4b30-af0f-a6d402f52026,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_delete_nonexistent_volume_id": {
+          "idempotent_id": "id-555efa6e-efcd-44ef-8a3b-4a7ca4837a29,negative"
+        }
+      }
+    },
+    "volumes-v2-get": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume GET operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_invalid_volume_id": {
+          "idempotent_id": "id-30799cfd-7ee4-446c-b66c-45b383ed211b,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_volume_without_passing_volume_id": {
+          "idempotent_id": "id-c6c3db06-29ad-4e91-beb0-2ab195fe49e3,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_get_nonexistent_volume_id": {
+          "idempotent_id": "id-f131c586-9448-44a4-a8b0-54ca838aa43e,negative"
+        }
+      }
+    },
+    "volumes-v2-list": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume listing operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list": {
+          "idempotent_id": "id-0b6ddd39-b948-471f-8038-4787978747c4,smoke"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_by_name": {
+          "idempotent_id": "id-a28e8da4-0b56-472f-87a8-0f4d3f819c02"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_by_name": {
+          "idempotent_id": "id-2de3a6d4-12aa-403b-a8f2-fdeb42a89623"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_param_display_name_and_status": {
+          "idempotent_id": "id-777c87c1-2fc4-4883-8b8e-5c0b951d1ec8"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_display_name_and_status": {
+          "idempotent_id": "id-856ab8ca-6009-4c37-b691-be1065528ad4"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_metadata": {
+          "idempotent_id": "id-1ca92d3c-4a8e-4b43-93f5-e4c7fb3b291d"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_details": {
+          "idempotent_id": "id-adcbb5a7-5ad8-4b61-bd10-5380e111a877"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_param_metadata": {
+          "idempotent_id": "id-b5ebea1b-0603-40a0-bb41-15fcd0a53214"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_availability_zone": {
+          "idempotent_id": "id-c0cfa863-3020-40d7-b587-e35f597d5d87"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_status": {
+          "idempotent_id": "id-39654e13-734c-4dab-95ce-7613bf8407ce"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_availability_zone": {
+          "idempotent_id": "id-e1b80d13-94f0-4ba2-a40e-386af29f8db1"
+        },
+        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_status": {
+          "idempotent_id": "id-2943f712-71ec-482a-bf49-d5ca06216b9f"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_invalid_status": {
+          "idempotent_id": "id-ba94b27b-be3f-496c-a00e-0283b373fa75,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_nonexistent_name": {
+          "idempotent_id": "id-9ca17820-a0e7-4cbd-a7fa-f4468735e359,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_invalid_status": {
+          "idempotent_id": "id-143b279b-7522-466b-81be-34a87d564a7c,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_nonexistent_name": {
+          "idempotent_id": "id-0f4aa809-8c7b-418f-8fb3-84c7a5dfc52f,negative"
+        },
+        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_pagination": {
+          "idempotent_id": "id-e9138a2c-f67b-4796-8efa-635c196d01de"
+        },
+        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_with_multiple_params": {
+          "idempotent_id": "id-2a7064eb-b9c3-429b-b888-33928fc5edd3"
+        },
+        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_pagination": {
+          "idempotent_id": "id-af55e775-8e4b-4feb-8719-215c43b0238c"
+        }
+      }
+    },
+    "volumes-v2-update": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume update operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_empty_volume_id": {
+          "idempotent_id": "id-72aeca85-57a5-4c1f-9057-f320f9ea575b,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_invalid_volume_id": {
+          "idempotent_id": "id-e66e40d6-65e6-4e75-bdc7-636792fa152d,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-0186422c-999a-480e-a026-6a665744c30c,negative"
+        }
+      }
+    },
+    "volumes-v2-copy-image-to-volume": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Image copy-to-volume operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_from_image": {
+          "idempotent_id": "id-54a01030-c7fc-447c-86ee-c1182beae638,image,smoke"
+        },
+        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_bootable": {
+          "idempotent_id": "id-63e21b4c-0a0c-41f6-bfc3-7c2816815599"
+        }
+      }
+    },
+    "volumes-v2-copy-volume-to-image": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume copy-to-image operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+      }
+    },
+    "volumes-v2-clone": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume cloning operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_as_clone": {
+          "idempotent_id": "id-3f591b4a-7dc6-444c-bd51-77469506b3a1"
+        }
+      }
+    },
+    "volumes-v2-qos": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume Quality of Service (QOS) operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_back_end_consumer": {
+          "idempotent_id": "id-b115cded-8f58-4ee4-aab5-9192cfada08f"
+        },
+        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_both_consumer": {
+          "idempotent_id": "id-f88d65eb-ea0d-487d-af8d-71f4011575a4"
+        },
+        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_front_end_consumer": {
+          "idempotent_id": "id-7e15f883-4bef-49a9-95eb-f94209a1ced1"
+        },
+        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_associate_disassociate_qos": {
+          "idempotent_id": "id-1dd93c76-6420-485d-a771-874044c416ac"
+        },
+        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_get_qos": {
+          "idempotent_id": "id-7aa214cc-ac1a-4397-931f-3bb2e83bb0fd"
+        },
+        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_list_qos": {
+          "idempotent_id": "id-75e04226-bcf7-4595-a34b-fdf0736f38fc"
+        },
+        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_set_unset_qos_key": {
+          "idempotent_id": "id-ed00fd85-4494-45f2-8ceb-9e2048919aed"
+        }
+      }
+    },
+    "volumes-v2-availability-zones": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume service availability zoneoperations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_availability_zone.AvailabilityZoneV2TestJSON.test_get_availability_zone_list": {
+          "idempotent_id": "id-01f1ae88-eba9-4c6b-a011-6f7ace06b725"
+        }
+      }
+    },
+    "volumes-v2-extensions": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume service extension listing operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_extensions.ExtensionsV2TestJSON.test_list_extensions": {
+          "idempotent_id": "id-94607eb0-43a5-47ca-82aa-736b41bd2e2c"
+        }
+      }
+    },
+    "volumes-v2-metadata": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume metadata operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata": {
+          "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769"
+        },
+        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata": {
+          "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a"
+        },
+        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item": {
+          "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20"
+        }
+      }
+    },
+    "volumes-v2-transfer": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume ownership transfer operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volume_transfers.VolumesV2TransfersTest.test_create_get_list_accept_volume_transfer": {
+          "idempotent_id": "id-4d75b645-a478-48b1-97c8-503f64242f1a"
+        },
+        "tempest.api.volume.test_volume_transfers.VolumesV2TransfersTest.test_create_list_delete_volume_transfer": {
+          "idempotent_id": "id-ab526943-b725-4c07-b875-8e8ef87a2c30"
+        }
+      }
+    },
+    "volumes-v2-reserve": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Volume reservation operations with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume": {
+          "idempotent_id": "id-92c4ef64-51b2-40c0-9f7e-4749fbaaba33"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status": {
+          "idempotent_id": "id-449c4ed2-ecdd-47bb-98dc-072aeccf158c,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-ac6084c0-0546-45f9-b284-38a367e0e0e2,negative"
+        },
+        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-eb467654-3dc1-4a72-9b46-47c29d22654c,negative"
+        }
+      }
+    },
+    "volumes-v2-readonly": {
+      "achievements": [
+        "deployed",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "status": "advisory",
+      "description": "Verification of read-only status on volumes with the Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_readonly_update": {
+          "idempotent_id": "id-fff74e1e-5bd3-4b33-9ea9-24c103bc3f59"
+        }
+      }
+    }
+  },
+  "designated-sections" : {
+    "required" : {
+      "nova" : {
+        "guidance": "By default, designated except scheduler, filter, drivers, API extensions and networking.",
+        "comment": "All code except driver/plugins listed.  Even for replaceable drivers or plugins, we still expect use of the existing nova service that wraps those interfaces.",
+        "sections": {
+          "scheduler driver": { "description": "(Host and cell)", "designated": false, "comment": "none provided"},
+          "filter scheduler driver": { "description": "(Host and cell)  While the line above implies the entire driver is fair game, this case is incredibly common and worth mentioning specifically.", "designated": false, "comment": "none provided"},
+          "compute driver": { "description": "not provided", "designated": false, "comment": "none provided"},
+          "rest api extensions": { "description": "may be required for capabilities", "designated": false, "comment": "none provided"},
+          "nova networking components": { "description": "not provided", "designated": false, "comment": "none provided"},
+          "nova networking drivers": { "description": "not provided", "designated": false, "comment": "none provided"}
+        }
+      },
+      "keystone" : {
+        "guidance": "Designation is outlined per API grouping. Identity (user and group) management APIs will not be designated. API access (with exception of auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs include both v2.0 and v3 versions where applicable.",
+        "comment": "Specific Drivers/Plugins and Identity management code are not designated as many deployments have custom drivers and/or read-only, federated, or externally managed Identity information.",
+        "sections": {
+          "assignment API": {"description": "APIs for managing roles and assignment of roles to user(s)/group(s) for a given scope", "designated": true, "comment": "Some functionality for v2.0 is provided via the 'admin_crud' extension"},
+          "auth (v2.0) API": {"description": "'/v2.0/tokens' APIs used for v2.0 authentication and token validation/revocation/signing certificates (when PKI tokens are in use)", "designated": true, "comment": "This includes the catalog data provided as part of the token body."},
+          "auth (v3) API": {"description": "'/v3/auth' APIs used for v3 authentication and token validation/revocation", "designated": true, "comment": "This includes the catalog data provided as part of the token body and '/v3/auth/catalog'."},
+          "catalog API": {"description": "APIs for managing services, endpoints, and regions", "designated": false, "comment": "Catalog API is not designated due to the support of template catalog driver which cannot be updated via REST calls. The catalog in the token is considered part of the AUTH APIs."},
+          "credential API": {"description": "APIs for managing user credentials", "designated": false, "comment": "none provided"},
+          "drivers": {"description": "specific implementations for the keystone API backends (e.g. SQL, LDAP, etc)", "designated": false, "comment": "none provided"},
+          "ec2 API": {"description": "APIs for managing and utilizing ec2-style credentials", "designated": false, "comment": "May be required for some OpenStack features in non-keystone services"},
+          "federation API": {"description": "APIs for managing and consuming federated identity", "designated": false, "comment": "none provided"},
+          "identity API": {"description": "APIs for managing user(s) and group(s) in a read/write identity store", "designated": false, "comment": "Some functionality for v2.0 is provided via the 'admin_crud' and 'user_crud' extensions"},
+          "notifications": {"description": "CADF notifications for events (authentication, creation of resources, etc)", "designated": false, "comment": "Highly recommended and may be required for some features of OpenStack"},
+          "policy API": {"description": "APIs for managing centralized policy.json distribution for OpenStack services", "designated": false, "comment": "none provided"},
+          "trust API": {"description": "APIs for managing delegation (via trusts) of roles from one user/group to another user/group", "designated": true, "comment": "none provided"},
+          "resource API": {"description": "APIs for managing resources (projects/tenants and/or domains)", "designated": true, "comment": "In the releases prior to Kilo this is covered by the assignment API"},
+          "revoke API": {"description": "APIs for revocation event handling", "designated": false, "comment": "Highly recommended and required for Fernet (non-persistent) tokens"}
+
+        }
+      },
+      "glance": {
+        "guidance": "Designated sections are the API implementation code and domain model.",
+        "comment": "not given",
+        "sections": {
+          "http apis": { "description": "not provided", "designated": true, "comment": "API"},
+          "domain model": { "description": "not provided", "designated": true, "comment": "Shared"},
+          "stores": { "description": "the swift, filesystem, and http stores", "designated": false, "comment": "should be replaceable, vendor-specificddCross platform"},
+          "db driver": { "description": "not provided", "designated": false, "comment": "should be replaceable" },
+          "wsgi framework": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+        }
+      },
+      "cinder": {
+        "guidance": "Designated sections are the API implementation code",
+        "comment": "Historically, cinder has had plug-ins around schedulers and drivers.",
+        "sections": {
+          "api": { "description": "API section means actually the CODE that exposes the API, not just API-comparability", "designated": true, "comment": ""},
+          "drivers": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
+          "scheduler": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
+          "api extensions": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+        }
+      },
+      "swift" : {
+        "guidance": "Designated sections are proxy server, object server, container server, account server and select middleware",
+        "required": true,
+        "comment": "You should use the proxy and storage servers, and you can use your own DiskFile or add new middleware for the proxy or storage nodes.  Please review sections for specific middleware guidelines",
+        "sections": {
+          "proxy server": { "description": "the proxy server code and, if enabled, the functionality implemented by provided middleware (eg static large objects or signed urls or bulk requests",
+            "designated": true, "comment": ""},
+          "object server": { "description": "the object server code that calls a DiskFile implementation and updates container listings",
+            "designated": true, "comment": ""},
+          "container server": { "description": "the code that provides a list of objects in a container and container metadata",
+            "designated": true, "comment": ""},
+          "account server": { "description": "the code that provides a list of containers and account metadata",
+            "designated": true, "comment": ""},
+          "catch_errors": { "description": "not provided", "designated": true, "comment": "middleware"},
+          "healthcheck": { "description": "not provided", "designated": true, "comment": ""},
+          "bulk": { "description": "not provided", "designated": true, "comment": ""},
+          "slo": { "description": "not provided", "designated": true, "comment": ""},
+          "container-quotas": { "description": "not provided", "designated": true, "comment": ""},
+          "account-quotas": { "description": "not provided", "designated": true, "comment": ""},
+          "tempurl": { "description": "not provided", "designated": true, "comment": ""},
+          "replicators": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "auditors": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "updaters": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "account reaper": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "object expirer": { "description": "not provided", "designated": false, "comment": "recommended"},
+          "ratelimit": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "recon": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "staticweb": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "formpost": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "domain_remap": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "crossdomain": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "cname_lookup": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
+          "diskfile": { "description": "the part of the object server that actually persists the object data to a storage volume",
+            "designated": false, "comment": "replaceable"},
+          "cache": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "tempauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "keystoneauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
+          "proxy-logging": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"}
+        }
+      }
+    },
+    "advisory" : {
+      "neutron" : {
+        "guidance": "By default, designated for all code backing required capabilities except plugable components such as plugins, drivers, and API extensions other than those listed below.",
+        "required": false,
+        "comment": "Intentionally replaceable code such as network plugins, ML2 drivers, IPAM drivers, schedulers are not designated.",
+        "sections": {
+          "Scheduler drivers": { "description": "Scheduler drivers", "designated": false, "comment": "none provided"},
+          "IPAM drivers": { "description": "IPAM drivers", "designated": false, "comment": "none provided"},
+          "Network plugins": { "description": "Network backend plugins", "designated": false, "comment": "none provided"},
+          "ML2 drivers": { "description": "ML2 type and mechanism drivers", "designated": false, "comment": "none provided"},
+          "Core API and server": { "description": "Core API and server", "designated": true, "comment": "none provided"},
+          "Core API quota extension": { "description": "Quota API", "designated": true, "comment": "none provided"},
+          "Core API security group extension": { "description": "Security group API", "designated": true, "comment": "none provided"},
+          "Core API L3 extension": { "description": "L3 API for floating IPs and routers", "designated": true, "comment": "none provided"},
+          "Agents": { "description": "Agents if used by relevant driver", "designated": true, "comment": "Some drivers require the use of community-developed agents to provide required Capabilities (such as L3 networking). If a product uses such agents, they are designated."},
+          "RPC": { "description": "RPC API", "designated": true, "comment": "none provided"}
+        }
+      }
+    },
+    "deprecated" : {},
+    "removed" : {},
+    "informational" : {
+      "heat": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      },
+      "horizon": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      },
+      "ceilometer": {
+        "guidance": "Not a core capability, no position at this time",
+        "required": false,
+        "comment": "",
+        "sections": []
+      }
+    }
+  },
+  "criteria": {
+    "atomic": {
+        "Description": "Capabilities is unique and cannot be built out of other must-pass capabilities",
+        "name": "Atomic",
+        "weight": 8
+    },
+    "clients": {
+        "Description": "Candidates are widely used capabilities: Should be included if part of common libraries (Fog, Apache jclouds, etc)",
+        "name": "Used by Clients",
+        "weight": 8
+    },
+    "complete": {
+        "Description": "Where the code being tested has a designated area of alternate implementation (extension framework) as per the Core Principles, there should be parity in capability tested across extension implementations. This also implies that the capability test is not configuration specific or locked to non-open technology",
+        "name": "Complete",
+        "weight": 8
+    },
+    "deployed": {
+        "Description": "Candidates are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products",
+        "name": "Widely Deployed",
+        "weight": 8
+    },
+    "discover": {
+        "Description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection)",
+        "name": "Discoverable",
+        "weight": 8
+    },
+    "doc": {
+        "Description": "Should be well documented, particularly the expected behavior. This can be a very subjective measure and we expect to refine this definition over time",
+        "name": "Documented",
+        "weight": 8
+    },
+    "foundation": {
+        "Description": "Test capabilities that are required by other must-pass tests and/or depended on by many other capabilities",
+        "name": "Foundation",
+        "weight": 8
+    },
+    "future": {
+        "Description": "Should reflect future technical direction (from the project technical teams and the TC) and help manage deprecated capabilities",
+        "name": "Future Direction",
+        "weight": 9
+    },
+    "proximity": {
+        "Description": "Sometimes called a Test Cluster, selects for Capabilities that are related to Core Capabilities. This helps ensure that related capabilities are managed together",
+        "name": "Proximity",
+        "weight": 8
+    },
+    "stable": {
+        "Description": "Test is required stable for >2 releases because we don't want DefCore capabilities that do not have dependable APIs",
+        "name": "Stable",
+        "weight": 9
+    },
+    "sticky": {
+        "Description": "A test that is a must-pass test should stay a must-pass test. This makes DefCore capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
+        "name": "Core in Last Release",
+        "weight": 9
+    },
+    "tools": {
+        "Description": "Candidates are widely used capabilities:Should be included if supported by common tools (RightScale, Scalr, CloudForms, ...)",
+        "name": "Used by Tools",
+        "weight": 9
+    }
+  }
+}

@@ -1,8 +1,8 @@
 OpenStack DefCore Process 2015A
 ================================
 
-Status: Approved
-Replaces: none
+:Status: Superseded (by 2015B)
+:Replaces: none
 
 This document describes the DefCore process required by the OpenStack
 bylaws and approved by the OpenStack Technical Committee and Board.
