@@ -111,6 +111,11 @@ A4. DefCore Committee identifies required capabilities
      previous Guideline.
   6. Capabilities will not be added without being advisory in the previous
      Guideline.
+  7. For level of "widely deployed" adoption criteria, the size of the
+     pool being considered will match the scope of the community being
+     considered. Capabilities will be evaluated based on their use in their
+     component. Components will be evaluated based on their use in the
+     Platform.
 
 A5. Foundation Staff recommends OpenStack Components and OpenStack Platform
     Scope
@@ -119,6 +124,9 @@ A5. Foundation Staff recommends OpenStack Components and OpenStack Platform
      Component.
   2. Foundation Staff recommends which Components are required for
      the OpenStack Platform.
+  3. To support the Foundation recommendation, DefCore will apply the approved
+     scoring criteria to evaluate if a component should be included in the
+     platform (see A4).
 
 A6. Additional Capabilities and Tests
 
