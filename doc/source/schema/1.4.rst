@@ -3,6 +3,7 @@ JSON Schema v1.4
 
 Changes from v1.3
 
+:change: update the aliases field description
 :added: aliases field in test block
 :added: target_approval
 :removed: Status field in Capability blocks (as it duplicates the information
@@ -79,7 +80,7 @@ Changes from v1.2
         "tests" : {         # hash of tests (use unique names)
           "tempest.api.project.file.class.test_name" : {  # test ID
             "idempotent_id" : "id-123-456",  # internal test identifier to track changes if test is moved
-            "aliases" : [], # a list of other names used to identify the same test.  If a test's name is changed (for example, in Tempest), add the new name in this array
+            "aliases" : [], # A list of other names used to identify the same test, as sometimes test names change due to refactoring in Tempest. The name used as the key in the hash should be the name of the test as it was at the time the guideline was approved. Thus if this is a future guideline, move the old name here and put the new name as the hash key. If this is an approved guideline, then the new name goes in this list.
             "flagged" : {   # This section is required only if the test is flagged
               "reason" : "why this test was flagged",  # required to support flag request
               "action" : "proposed action to resolve", # required path to resolve flag
