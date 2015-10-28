@@ -11,6 +11,9 @@ NOTE: Changes to file requires approval of the DefCore committee chair(s).
 DefCore Process Documentation
 =============================
 
+Want to certify as a vendor?  Consult `OpenStack Interop
+<http://www.openstack.org/brand/interop/>`_.
+
 The /doc/source/process directory contains details about the DefCore process.
 
 The /doc/source/schema directory contains details about the JSON schema
