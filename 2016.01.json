@@ -3,7 +3,7 @@
   "schema": "1.4",
   "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.3.rst",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
-  "status": "review",
+  "status": "approved",
   "target_approval": "2016-01-27",
   "replaces": "2015.07",
   "releases": ["juno", "kilo", "liberty"],
