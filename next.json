@@ -1,11 +1,12 @@
 {
   "id": "next",
-  "schema": "1.3",
+  "schema": "1.4",
   "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.3.rst",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
   "status": "draft",
+  "target_approval": "2016-07-27",
   "replaces": "2016.01",
-  "releases": ["juno", "kilo", "liberty"],
+  "releases": ["kilo", "liberty", "mitaka"],
   "platform": {
     "required": ["compute", "object"],
     "advisory": [],
@@ -128,7 +129,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "List supported versions of the Compute API",
       "project": "nova",
       "required-since": "",
@@ -153,7 +153,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Auth related tests using Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -192,7 +191,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Auth related tests using Compute API, Generate, import, and delete SSH keys within Compute services",
       "project": "nova",
       "required-since": "2014.07",
@@ -230,7 +228,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Auth related tests using Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -258,7 +255,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -284,7 +280,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -307,7 +302,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -330,7 +324,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Image operations within the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -458,7 +451,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic support Compute API for server actions such as reboot, rebuild, resize",
       "project": "nova",
       "required-since": "2014.07",
@@ -481,7 +473,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic support Compute API for server actions such as reboot, rebuild, resize",
       "project": "nova",
       "required-since": "2014.07",
@@ -505,7 +496,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Generate, import, and delete SSH keys within Compute services",
       "project": "nova",
       "required-since": "2014.07",
@@ -539,7 +529,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Quotas management in Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -568,9 +557,7 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
-      "status": "deprecated",
       "project": "nova",
       "required-since": "",
       "tests": {
@@ -600,7 +587,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -647,7 +633,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -679,7 +664,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -705,7 +689,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -734,7 +717,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -760,7 +742,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -870,7 +851,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -896,7 +876,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -922,7 +901,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -948,7 +926,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -974,7 +951,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1003,7 +979,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1029,7 +1004,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1055,7 +1029,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1092,7 +1065,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1124,7 +1096,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1179,7 +1150,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1208,7 +1178,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1249,7 +1218,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic server operations in the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1284,7 +1252,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1313,7 +1280,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1342,7 +1308,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
       "required-since": "2014.07",
@@ -1371,7 +1336,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "deprecated",
       "description": "Auth operations within the Identity API",
       "project": "keystone",
       "required-since": "",
@@ -1397,7 +1361,6 @@
         "deployed"
       ],
       "admin": false,
-      "status": "required",
       "description": "Auth operations within the Identity API",
       "project": "keystone",
       "required-since": "2015.05",
@@ -1420,7 +1383,6 @@
           "stable"
         ],
         "admin": false,
-        "status": "advisory",
         "description": "API discovery operations within the Identity v3 API",
         "project": "keystone",
         "required-since": "",
@@ -1448,13 +1410,13 @@
         "stable"
       ],
       "admin": false,
-      "status": "required",
       "description": "CRUD image operations in Images API v2",
       "project": "nova",
       "required-since": "2014.07",
       "tests": {
-        "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params": {
-          "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee"
+        "tempest.api.image.v2.test_images.ListImagesTest.test_list_no_params": {
+          "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee",
+          "aliases": ["tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params"]
         }
       }
     },
@@ -1470,7 +1432,6 @@
         "proximity",
         "stable"
       ],
-      "status": "advisory",
       "admin": false,
       "description": "Image deletion tests using the Glance v2 API",
       "project": "glance",
@@ -1502,7 +1463,6 @@
         "proximity",
         "stable"
       ],
-      "status": "advisory",
       "admin": false,
       "description": "Image get tests using the Glance v2 API",
       "project": "glance",
@@ -1549,7 +1509,6 @@
         "proximity",
         "stable"
       ],
-      "status": "advisory",
       "admin": false,
       "description": "Image list tests using the Glance v2 API",
       "project": "glance",
@@ -1593,7 +1552,6 @@
         "proximity",
         "stable"
       ],
-      "status": "advisory",
       "admin": false,
       "description": "Image registration tests using the Glance v2 API",
       "project": "glance",
@@ -1622,7 +1580,6 @@
         "proximity",
         "stable"
       ],
-      "status": "advisory",
       "admin": false,
       "description": "Image removal tests using the Glance v2 API",
       "project": "glance",
@@ -1645,7 +1602,6 @@
         "proximity",
         "stable"
       ],
-      "status": "advisory",
       "admin": false,
       "description": "Image sharing tests using the Glance v2 API",
       "project": "glance",
@@ -1677,7 +1633,6 @@
         "proximity",
         "stable"
       ],
-      "status": "advisory",
       "admin": false,
       "description": "Image update tests using the Glance v2 API",
       "project": "glance",
@@ -1707,7 +1662,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1727,7 +1681,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1759,7 +1712,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1782,7 +1734,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1805,7 +1756,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1834,7 +1784,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1857,7 +1806,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1880,7 +1828,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1903,7 +1850,6 @@
         "tools"
       ],
       "admin": false,
-      "status": "required",
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
       "required-since": "2014.07",
@@ -1926,7 +1872,6 @@
           "deployed"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Basic CRUD (and associate) operations on floating IP addresses",
       "project": "neutron",
       "required-since": "",
@@ -1972,7 +1917,6 @@
           "deployed"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Basic CRUD operations on L2 networks and L2 network ports",
       "project": "neutron",
       "required-since": "",
@@ -2102,7 +2046,6 @@
           "deployed"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Basic CRUD operations on L3 networks and L3 routers",
       "project": "neutron",
       "required-since": "",
@@ -2181,7 +2124,6 @@
           "deployed"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Operations on L3 routers",
       "project": "neutron",
       "required-since": "",
@@ -2212,7 +2154,6 @@
           "deployed"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Basic CRUD operations on security groups",
       "project": "neutron",
       "required-since": "",
@@ -2289,7 +2230,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume creation and deletion operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2329,7 +2269,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume attach and detach operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2361,7 +2300,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume snapshot creation/deletion operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2422,7 +2360,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume GET operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2450,7 +2387,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume listing operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2527,7 +2463,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume update operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2556,7 +2491,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Image copy-to-volume operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2582,7 +2516,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume copy-to-image operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2602,7 +2535,6 @@
         "proximity"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume cloning operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2624,7 +2556,6 @@
         "atomic"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume Quality of Service (QOS) operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2664,7 +2595,6 @@
         "atomic"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume service availability zoneoperations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2686,7 +2616,6 @@
         "atomic"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume service extension listing operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2708,7 +2637,6 @@
         "atomic"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume metadata operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2736,7 +2664,6 @@
         "atomic"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume ownership transfer operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2761,7 +2688,6 @@
         "atomic"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Volume reservation operations with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
@@ -2792,7 +2718,6 @@
         "atomic"
       ],
       "admin": false,
-      "status": "advisory",
       "description": "Verification of read-only status on volumes with the Cinder v2 API",
       "project": "cinder",
       "required-since": "",
