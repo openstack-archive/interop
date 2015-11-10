@@ -74,7 +74,6 @@
         "volumes-v2-list",
         "volumes-v2-update",
         "volumes-v2-copy-image-to-volume",
-        "volumes-v2-copy-volume-to-image",
         "volumes-v2-clone",
         "volumes-v2-qos",
         "volumes-v2-availability-zones",
@@ -2501,25 +2500,6 @@
         "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_bootable": {
           "idempotent_id": "id-63e21b4c-0a0c-41f6-bfc3-7c2816815599"
         }
-      }
-    },
-    "volumes-v2-copy-volume-to-image": {
-      "achievements": [
-        "deployed",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "Volume copy-to-image operations with the Cinder v2 API",
-      "project": "cinder",
-      "required-since": "",
-      "tests": {
       }
     },
     "volumes-v2-clone": {
