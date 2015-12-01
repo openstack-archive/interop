@@ -10,7 +10,8 @@ Tempest can be run standalone, or under a test runner such as refstack-client
 or rally. If only testing against Defcore capabilities, you can use the
 --load-list argument and a file containing a list of the Defcore tests. If
 run with the refstack-client, test output will be parsed to list only
-passing tests in a json formatted file.
+passing tests in a json formatted file. We recommend running under
+refstack-client.
 
 The test names of the capabilities are derived from a recent release of
 Tempest, from the time of capabilitiy approval. Keep in mind that Tempest
@@ -39,7 +40,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Download the refstack client:
 
-  ``git clone https://git.openstack.org/stackforge/refstack-client``
+  ``git clone https://git.openstack.org/openstack/refstack-client``
 
 * In the refstack-client directory, install tempest and required dependencies.
   You may specify a specific tag of tempest with the -t option. refstack-client
@@ -56,21 +57,27 @@ or CentOS 7 have been verified) with administrator privileges.
   configuration guide at
   https://git.openstack.org/cgit/openstack/tempest/tree/doc/source/configuration.rst
 
-* Once you have a working config, run tempest. You can run within the refstack
-  client, or run tempest directly. For direct running, from the refstack-client
-  directory::
+* You can run within the refstack, from the refstack-client directory:
 
-    cd .tempest
-    ./run_tempest.sh -C <your_tempest.conf> -- --load-list 2015.07.required.txt
+  ./refstack-client test -c ~/tempest.conf -vv --test-list
+  http://git.openstack.org/cgit/openstack/defcore/plain/2015.07/2015.07.required.txt
 
-* Review the test results, and when you're satisfied, send them to
-  interop@openstack.org. The results are stored in a json file in the directory
+* Review the test results, and when you're satisfied, upload it to Refstack server
+  then send them to interop@openstack.org.
+
+  ./refstack-client upload <Path of results file>
+
+* The results are stored in a json file in the directory. You can also check your
+  result on the Refstack server https://refstack.openstack.org:
 
   ``.tempest/.testrepository``
 
 * Every effort should be made to pass all of the required tests, but you
   will want to compare any lists of failed tests to the list of flagged tests.
-  http://git.openstack.org/cgit/openstack/defcore/tree/2015.07/2015.07.required.txt
+  http://git.openstack.org/cgit/openstack/defcore/tree/2015.07/2015.07.flagged.txt
+
+  The refstack.openstack.org also gives you result where you can easily identify
+  exactly which tests still need to be passed.
 
 Known Issues and Recommendations
 --------------------------------
