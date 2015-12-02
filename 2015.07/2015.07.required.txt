@@ -112,6 +112,7 @@ tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_v
 tempest.api.identity.v2.test_tokens.TokensTest.test_create_token[id-65ae3b78-91ff-467b-a705-f6678863b8ec]
 tempest.api.identity.v3.test_tokens.TokensV3Test.test_create_token[id-6f8e4436-fc96-4282-8122-e41df57197a9]
 tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params[id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee]
+tempest.api.image.v2.test_images.ListImagesTest.test_list_no_params[id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee]
 tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time[id-fb024a42-37f3-4ba5-9684-4f40a7910b41]
 tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_2d_way[id-06f90388-2d0e-40aa-934c-e9a8833e958a]
 tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_across_containers[id-aa467252-44f3-472a-b5ae-5b57c3c9c147]
