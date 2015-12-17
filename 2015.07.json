@@ -928,7 +928,8 @@
           "idempotent_id": "id-d86141a7-906e-4731-b187-d64a2ea61422"
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_rebuild_reboot_deleted_server": {
-          "idempotent_id": "id-98fa0458-1485-440f-873b-fe7f0d714930"
+          "idempotent_id": "id-98fa0458-1485-440f-873b-fe7f0d714930",
+          "aliases": ["tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_rebuild_deleted_server"]
         }
       }
     },

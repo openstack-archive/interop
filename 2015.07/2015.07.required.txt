@@ -87,6 +87,7 @@ tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_i
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_reboot_non_existent_server[id-d4c023a0-9c55-4747-9dd5-413b820143c7]
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_rebuild_non_existent_server[id-d86141a7-906e-4731-b187-d64a2ea61422]
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_rebuild_reboot_deleted_server[id-98fa0458-1485-440f-873b-fe7f0d714930]
+tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_rebuild_deleted_server[id-98fa0458-1485-440f-873b-fe7f0d714930]
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_non_existent_flavor[id-ced1a1d7-2ab6-45c9-b90f-b27d87b30efd]
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_resize_server_with_null_flavor[id-45436a7d-a388-4a35-a9d8-3adc5d0d940b]
 tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_server_name_blank[id-dbbfd247-c40c-449e-8f6c-d2aa7c7da7cf]
