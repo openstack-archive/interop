@@ -61,7 +61,6 @@
         "images-v2-remove",
         "images-v2-update",
         "images-v2-share",
-        "images-v2-import",
         "images-v2-list",
         "images-v2-delete",
         "images-v2-get",
@@ -1536,34 +1535,6 @@
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params": {
           "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee"
-        }
-      }
-    },
-    "images-v2-import": {
-      "achievements": [
-        "clients",
-        "complete",
-        "deployed",
-        "discover",
-        "doc",
-        "foundation",
-        "future",
-        "proximity",
-        "stable"
-      ],
-      "admin": false,
-      "description": "Image registration tests using the Glance v2 API",
-      "project": "glance",
-      "required-since": "",
-      "tests": {
-        "tempest.api.image.v2.test_images.BasicOperationsImagesTest.test_register_upload_get_image_file": {
-          "idempotent_id": "id-139b765e-7f3d-4b3d-8b37-3ca3876ee318"
-        },
-        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_register_with_invalid_container_format": {
-          "idempotent_id": "id-292bd310-369b-41c7-a7a3-10276ef76753"
-        },
-        "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_register_with_invalid_disk_format": {
-          "idempotent_id": "id-70c6040c-5a97-4111-9e13-e73665264ce1"
         }
       }
     },
