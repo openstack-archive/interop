@@ -72,9 +72,9 @@ A2. Community Groups Tests into Capabilities
   4. Tests must have unique identifiers that are durable across releases
      and changes in grouping.
   5. Tests must be under OpenStack Technical Committee governance.
-  6. The DefCore committee will provide the test groupings in JSON format
+  6. The DefCore working group will provide the test groupings in JSON format
      for scoring.
-  7. The DefCore committee will provide a human-readable summary of
+  7. The DefCore working group will provide a human-readable summary of
      the Guideline generated from the JSON version.
 
 A3. DefCore Collects Recommendations for Designated Sections
@@ -172,11 +172,16 @@ B3. Changes to Guideline made by Gerrit Review Process
 
 B4. For Gerrit reviews, DefCore CoChairs act as joint PTLs
 
-  1. Board committee members of DefCore serve as "core" reviewers (+2).
+  1. DefCore CoChairs serve as "core" reviewers (+2).
   2. Requests for changes must be submitted as patches by the requesting
      party.
   3. DefCore Committee members may proxy change requests as long as the
      requesting party is explicitly acknowledged.
+  4. One DefCore CoChair needs to be Board member.
+  5. One DefCore CoChair needs to be elected by DefCore working group. Election
+     quorum is composed of attendees present during the election meeting.
+  6. Additional core reviewers (+2) can be appointed by CoChairs.
+  7. Election meetings must be posted at least one meeting prior.
 
 Community Review & Vendor Self-Test (C)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -186,7 +191,7 @@ Starting: S and continues past S+3
 C1. Vendor Self-Tests
 
   1. Vendors are responsible for executing tests identified by the
-     DefCore committee.
+     DefCore working group.
   2. The Foundation may, but is not required to, provide tooling for
      running tests.
   3. The Foundation may, but is not required to, define a required
@@ -209,10 +214,10 @@ C2. Vendor submits results to Foundation for review
 C3. Vendor Grievance Process
 
   1. Vendors may raise concerns with specific tests to the DefCore
-     committee.
-  2. The DefCore committee may choose to remove tests from a Guideline
+     working group.
+  2. The DefCore working group may choose to remove tests from a Guideline
      (known as flagging).
-  3. The DefCore committee will acknowledge vendor requests to flag tests
+  3. The DefCore working group will acknowledge vendor requests to flag tests
      within 30 days.
 
 C4. Results of Vendor Self-Tests will be open
@@ -232,7 +237,7 @@ C4. Results of Vendor Self-Tests will be open
 
 C5. API Usage Data Report
 
-  1. The Foundation will provide DefCore committee with an open report
+  1. The Foundation will provide DefCore working group with an open report
      about API usage based on self-tests.
   2. To the extent the data is available, capabilities beyond the DefCore
      list will be included in the report.
@@ -264,7 +269,7 @@ D1. Board will review and approve DefCore Guideline from draft
   2. The DefCore Committee will submit the human-readable summary of
      capabilities (see section A2[6]) to the Board for approval.
   3. By voting to approve the summary, the Board delegates responsibility
-     for maintaining test groupings to the DefCore committee subject to
+     for maintaining test groupings to the DefCore working group subject to
      the limitations described in section D2.
   4. Guidelines only apply to the identified releases (a.k.a. release
      tags).
