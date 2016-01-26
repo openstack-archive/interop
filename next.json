@@ -1035,14 +1035,6 @@
         "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_hard": {
           "idempotent_id": "id-2cb1baf6-ac8d-4429-bf0d-ba8a0ba53e32"
         },
-        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_reboot_server_soft": {
-          "flag": {
-            "action": "Remove flag after Tempest bug is fixed (in progress).",
-            "date": "2015-03-24",
-            "reason": "Tempest bug for soft reboot of server (id 1014647)."
-          },
-          "idempotent_id": "id-4640e3ef-a5df-482e-95a1-ceeeb0faa84d"
-        },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_reboot_non_existent_server": {
           "idempotent_id": "id-d4c023a0-9c55-4747-9dd5-413b820143c7"
         }
