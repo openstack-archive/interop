@@ -1328,7 +1328,7 @@
       "admin": false,
       "description": "Auth operations within the Identity API",
       "project": "keystone",
-      "required-since": "2015.05",
+      "required-since": "",
       "tests": {
         "tempest.api.identity.v2.test_tokens.TokensTest.test_create_token": {
           "idempotent_id": "id-65ae3b78-91ff-467b-a705-f6678863b8ec"
