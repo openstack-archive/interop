@@ -103,10 +103,20 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_fails_when_tenant_incorrect": {
-          "idempotent_id": "id-acf8724b-142b-4044-82c3-78d31a533f24"
+          "idempotent_id": "id-acf8724b-142b-4044-82c3-78d31a533f24",
+          "flagged": {
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/271467",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-03-06"
+          }
         },
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image": {
-          "idempotent_id": "id-95d445f6-babc-4f2e-aea3-aa24ec5e7f0d"
+          "idempotent_id": "id-95d445f6-babc-4f2e-aea3-aa24ec5e7f0d",
+          "flagged": {
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/271467",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-03-06"
+          }
         }
       }
     },
@@ -131,10 +141,20 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_keypair_of_alt_account_fails": {
-          "idempotent_id": "id-85bcdd8f-56b4-4868-ae56-63fbf6f7e405"
+          "idempotent_id": "id-85bcdd8f-56b4-4868-ae56-63fbf6f7e405",
+          "flagged": {
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/271467",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-03-06"
+          }
         },
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_metadata_of_alt_account_server_fails": {
-          "idempotent_id": "id-dea1936a-473d-49f2-92ad-97bb7aded22e"
+          "idempotent_id": "id-dea1936a-473d-49f2-92ad-97bb7aded22e",
+          "flagged": {
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/271467",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-03-06"
+          }
         }
       }
     },
@@ -160,9 +180,9 @@
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_set_metadata_of_alt_account_server_fails": {
           "idempotent_id": "id-c5f52351-53d9-4fc9-83e5-917f7f5e3d71",
           "flagged": {
-            "reason": "D400 This test may create a barrier for independent testing of public clouds",
-            "action": "This test should be changed to require only one tenant or removed if it requires tenant isolation",
-            "date": "2015-12-03"
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/271467",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-03-06"
           }
         }
       }
@@ -366,7 +386,12 @@
           "idempotent_id": "id-f9e15296-d7f9-4e62-b53f-a04e89160833"
         },
         "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_keypair_in_analt_user_tenant": {
-          "idempotent_id": "id-f03d1ded-7fd4-4d29-bc13-e2391f29c625"
+          "idempotent_id": "id-f03d1ded-7fd4-4d29-bc13-e2391f29c625",
+          "flagged": {
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/271467",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-03-06"
+          }
         }
       }
     },

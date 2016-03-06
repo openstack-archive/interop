@@ -104,3 +104,4 @@ Valid reasons for flagging a test are limited to the following:
 - [D404] Flag Not Found - Use this flag if none of the others fit.
 - [D405] The test reflects an implementation choice that is not widely
   deployed even if the Capability is widely deployed.
+- [D406] Test removed permanently from test suite.
