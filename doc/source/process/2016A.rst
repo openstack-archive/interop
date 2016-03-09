@@ -1,4 +1,4 @@
-OpenStack DefCore Process 2015B
+OpenStack DefCore Process 2016A
 ================================
 
 :Status: Draft
