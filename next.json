@@ -78,10 +78,23 @@
         "volumes-v2-readonly"
       ],
       "advisory": [
+        "networks-floating-ips-CRUD-and-associate",
         "networks-l3-router",
+        "networks-l2-CRUD",
         "networks-l3-CRUD",
+        "networks-security-groups-CRUD",
+        "compute-list-api-versions",
+        "images-v2-remove",
+        "images-v2-update",
+        "images-v2-share",
+        "images-v2-import",
+        "images-v2-list",
+        "images-v2-delete",
+        "images-v2-get",
+        "volumes-v2-upload",
         "volumes-v2-qos",
-        "volumes-v2-transfer"
+        "volumes-v2-transfer",
+        "identity-v3-api-discovery"
       ],
       "deprecated": [
       ],
@@ -2493,11 +2506,14 @@
     "volumes-v2-create-delete": {
       "achievements": [
         "deployed",
+        "tools",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic",
         "proximity"
@@ -2533,12 +2549,16 @@
     "volumes-v2-attach-detach": {
       "achievements": [
         "deployed",
+        "tools",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
+        "atomic",
         "proximity"
       ],
       "admin": false,
@@ -2563,11 +2583,14 @@
     "volumes-v2-snapshot-create-delete": {
       "achievements": [
         "deployed",
+        "tools",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic",
         "proximity"
@@ -2624,12 +2647,16 @@
     "volumes-v2-get": {
       "achievements": [
         "deployed",
+        "tools",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
+        "atomic",
         "proximity"
       ],
       "admin": false,
@@ -2651,12 +2678,16 @@
     "volumes-v2-list": {
       "achievements": [
         "deployed",
+        "tools",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
+        "atomic",
         "proximity"
       ],
       "admin": false,
@@ -2726,11 +2757,14 @@
     "volumes-v2-update": {
       "achievements": [
         "deployed",
+        "tools",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic",
         "proximity"
@@ -2759,6 +2793,7 @@
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic",
         "proximity"
@@ -2779,11 +2814,13 @@
     "volumes-v2-clone": {
       "achievements": [
         "deployed",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic",
         "proximity"
@@ -2801,11 +2838,13 @@
     "volumes-v2-qos": {
       "achievements": [
         "deployed",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic"
       ],
@@ -2845,6 +2884,7 @@
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic"
       ],
@@ -2861,12 +2901,11 @@
     "volumes-v2-extensions": {
       "achievements": [
         "deployed",
-        "future",
         "complete",
         "stable",
         "discover",
         "doc",
-        "foundation",
+        "sticky",
         "atomic"
       ],
       "admin": false,
@@ -2882,11 +2921,13 @@
     "volumes-v2-metadata": {
       "achievements": [
         "deployed",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic"
       ],
@@ -2914,6 +2955,7 @@
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic"
       ],
@@ -2938,6 +2980,7 @@
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic"
       ],
@@ -2963,11 +3006,13 @@
     "volumes-v2-readonly": {
       "achievements": [
         "deployed",
+        "clients",
         "future",
         "complete",
         "stable",
         "discover",
         "doc",
+        "sticky",
         "foundation",
         "atomic"
       ],
@@ -2978,6 +3023,29 @@
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_readonly_update": {
           "idempotent_id": "id-fff74e1e-5bd3-4b33-9ea9-24c103bc3f59"
+        }
+      }
+    },
+    "volumes-v2-upload": {
+      "achievements": [
+        "deployed",
+        "clients",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "sticky",
+        "foundation",
+        "atomic"
+      ],
+      "admin": false,
+      "description": "Upload volumes with Cinder v2 API",
+      "project": "cinder",
+      "required-since": "",
+      "tests": {
+        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload": {
+          "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d"
         }
       }
     }
