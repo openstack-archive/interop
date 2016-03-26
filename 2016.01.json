@@ -1378,13 +1378,16 @@
         "required-since": "",
         "tests": {
             "tempest.api.identity.v3.TestApiDiscovery.test_api_version_resources": {
-                "idempotent_id": "b9232f5e-d9e5-4d97-b96c-28d3db4de1bd"
+                "idempotent_id": "b9232f5e-d9e5-4d97-b96c-28d3db4de1bd",
+                "aliases": ["tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_resources"]
             },
             "tempest.api.identity.v3.TestApiDiscovery.test_api_media_types": {
-                "idempotent_id": "657c1970-4722-4189-8831-7325f3bc4265"
+                "idempotent_id": "657c1970-4722-4189-8831-7325f3bc4265",
+                "aliases": ["tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_media_types"]
             },
             "tempest.api.identity.v3.TestApiDiscovery.test_api_version_statuses": {
-                "idempotent_id": "8879a470-abfb-47bb-bb8d-5a7fd279ad1e"
+                "idempotent_id": "8879a470-abfb-47bb-bb8d-5a7fd279ad1e",
+                "aliases": ["tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_statuses"]
             }
         }
     },
@@ -1838,28 +1841,36 @@
       "required-since": "",
       "tests": {
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_all_attributes": {
-          "idempotent_id": "id-a4d9ec4c-0306-4111-a75c-db01a709030b"
+          "idempotent_id": "id-a4d9ec4c-0306-4111-a75c-db01a709030b",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_delete_subnet_all_attributes"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_allocation_pools": {
-          "idempotent_id": "id-bec949c4-3147-4ba6-af5f-cd2306118404"
+          "idempotent_id": "id-bec949c4-3147-4ba6-af5f-cd2306118404",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_delete_subnet_with_allocation_pools"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_dhcp_enabled": {
-          "idempotent_id": "id-94ce038d-ff0a-4a4c-a56b-09da3ca0b55d"
+          "idempotent_id": "id-94ce038d-ff0a-4a4c-a56b-09da3ca0b55d",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_delete_subnet_with_dhcp_enabled"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_gw": {
-          "idempotent_id": "id-9393b468-186d-496d-aa36-732348cd76e7"
+          "idempotent_id": "id-9393b468-186d-496d-aa36-732348cd76e7",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_delete_subnet_with_gw"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_gw_and_allocation_pools": {
-          "idempotent_id": "id-8217a149-0c6c-4cfb-93db-0486f707d13f"
+          "idempotent_id": "id-8217a149-0c6c-4cfb-93db-0486f707d13f",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_delete_subnet_with_gw_and_allocation_pools"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_with_host_routes_and_dns_nameservers": {
-          "idempotent_id": "id-d830de0a-be47-468f-8f02-1fd996118289"
+          "idempotent_id": "id-d830de0a-be47-468f-8f02-1fd996118289",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_delete_subnet_with_host_routes_and_dns_nameservers"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_delete_subnet_without_gateway": {
-          "idempotent_id": "id-d2d596e2-8e76-47a9-ac51-d4648009f4d3"
+          "idempotent_id": "id-d2d596e2-8e76-47a9-ac51-d4648009f4d3",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_delete_subnet_without_gateway"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_create_update_delete_network_subnet": {
-          "idempotent_id": "id-0e269138-0da6-4efc-a46d-578161e7b221"
+          "idempotent_id": "id-0e269138-0da6-4efc-a46d-578161e7b221",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_create_update_delete_network_subnet"]
         },
         "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_create_port_binding_ext_attr": {
           "idempotent_id": "id-8e8569c1-9ac7-44db-8bc1-f5fb2814f29b"
@@ -1883,19 +1894,24 @@
           "idempotent_id": "id-63aeadd4-3b49-427f-a3b1-19ca81f06270"
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_delete_network_with_subnet": {
-          "idempotent_id": "id-f04f61a9-b7f3-4194-90b2-9bcf660d1bfe"
+          "idempotent_id": "id-f04f61a9-b7f3-4194-90b2-9bcf660d1bfe",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_delete_network_with_subnet"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_list_networks": {
-          "idempotent_id": "id-f7ffdeda-e200-4a7a-bcbe-05716e86bf43"
+          "idempotent_id": "id-f7ffdeda-e200-4a7a-bcbe-05716e86bf43",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_list_networks"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_list_networks_fields": {
-          "idempotent_id": "id-6ae6d24f-9194-4869-9c85-c313cb20e080"
+          "idempotent_id": "id-6ae6d24f-9194-4869-9c85-c313cb20e080",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_list_networks_fields"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_list_subnets": {
-          "idempotent_id": "id-db68ba48-f4ea-49e9-81d1-e367f6d0b20a"
+          "idempotent_id": "id-db68ba48-f4ea-49e9-81d1-e367f6d0b20a",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_list_subnets"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_list_subnets_fields": {
-          "idempotent_id": "id-842589e3-9663-46b0-85e4-7f01273b0412"
+          "idempotent_id": "id-842589e3-9663-46b0-85e4-7f01273b0412",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_list_subnets_fields"]
         },
         "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_list_ports_binding_ext_attr": {
           "idempotent_id": "id-1c82a44a-6c6e-48ff-89e1-abe7eaf8f9f8"
@@ -1907,16 +1923,20 @@
           "idempotent_id": "id-ff7f117f-f034-4e0e-abff-ccef05c454b4"
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_show_network": {
-          "idempotent_id": "id-2bf13842-c93f-4a69-83ed-717d2ec3b44e"
+          "idempotent_id": "id-2bf13842-c93f-4a69-83ed-717d2ec3b44e",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_show_network"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_show_network_fields": {
-          "idempotent_id": "id-867819bb-c4b6-45f7-acf9-90edcf70aa5e"
+          "idempotent_id": "id-867819bb-c4b6-45f7-acf9-90edcf70aa5e",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_show_network_fields"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_show_subnet": {
-          "idempotent_id": "id-bd635d81-6030-4dd1-b3b9-31ba0cfdf6cc"
+          "idempotent_id": "id-bd635d81-6030-4dd1-b3b9-31ba0cfdf6cc",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_show_subnet"]
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_show_subnet_fields": {
-          "idempotent_id": "id-270fff0b-8bfc-411f-a184-1e8fd35286f0"
+          "idempotent_id": "id-270fff0b-8bfc-411f-a184-1e8fd35286f0",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_show_subnet_fields"]
         },
         "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_show_port_binding_ext_attr": {
           "idempotent_id": "id-b54ac0ff-35fc-4c79-9ca3-c7dbd4ea4f13"
@@ -1928,7 +1948,8 @@
           "idempotent_id": "id-45fcdaf2-dab0-4c13-ac6c-fcddfb579dbd"
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_update_subnet_gw_dns_host_routes_dhcp": {
-          "idempotent_id": "id-3d3852eb-3009-49ec-97ac-5ce83b73010a"
+          "idempotent_id": "id-3d3852eb-3009-49ec-97ac-5ce83b73010a",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_update_subnet_gw_dns_host_routes_dhcp"]
         },
         "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_update_port_binding_ext_attr": {
           "idempotent_id": "id-6f6c412c-711f-444d-8502-0ac30fbf5dd5"
@@ -1940,7 +1961,8 @@
           "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d"
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_external_network_visibility": {
-          "idempotent_id": "id-af774677-42a9-4e4b-bb58-16fe6a5bc1ec"
+          "idempotent_id": "id-af774677-42a9-4e4b-bb58-16fe6a5bc1ec",
+          "aliases": ["tempest.api.network.test_networks.NetworksTest.test_external_network_visibility"]
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_port_list_filter_by_router_id": {
           "idempotent_id": "id-5ad01ed0-0e6e-4c5d-8194-232801b15c72"
@@ -1979,7 +2001,8 @@
           "idempotent_id": "id-957751a3-3c68-4fa2-93b6-eb52ea10db6e"
         },
         "tempest.api.network.test_routers.RoutersTest.test_create_router_setting_tenant_id": {
-          "idempotent_id": "id-e54dd3a3-4352-4921-b09d-44369ae17397"
+          "idempotent_id": "id-e54dd3a3-4352-4921-b09d-44369ae17397",
+          "aliases": ["tempest.api.network.test_routers.RoutersTest.test_create_router_setting_project_id"]
         },
         "tempest.api.network.test_routers.RoutersTest.test_create_router_with_default_snat_value": {
           "idempotent_id": "id-847257cc-6afd-4154-b8fb-af49f5670ce8"
