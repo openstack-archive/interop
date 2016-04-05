@@ -45,6 +45,7 @@ network-extensions-provider-add:      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
 network-extensions-provider-create:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
 network-extensions-provider-delete:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
 network-extensions-provider-show:     [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
+network-subnet-pools:                 [1,0,0] [1,1,1] [1,1,0] [0,1,1] [1] [66]
 
 Notes:
   * DVR-related testcases (if any) will not be added until DVR gains wider
@@ -92,6 +93,13 @@ Notes:
       * networks-security-groups-router
       * networks-security-groups-show
       * networks-security-groups-update
+  * Subnet pools look like a good future candidate, but as of 2016.08
+    probably aren't quite ready.  Subnet pools were introduced in Kilo
+    (the first release covered by this Guideline) and had incomplete
+    support in Horizon.  A Heat resource for subnet pools wasn't added
+    until Mitaka.  Toolkits like jClouds, Fog, and libcloud do not yet
+    support subnet pools.  OpenStackClient added support late in the
+    Mitaka cycle (https://review.openstack.org/#/c/279918/).
 
 Compute
 -------
