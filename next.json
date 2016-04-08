@@ -2076,10 +2076,6 @@
         "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_add_router_interfaces_on_overlapping_subnets_returns_400": {
           "idempotent_id": "id-957751a3-3c68-4fa2-93b6-eb52ea10db6e"
         },
-        "tempest.api.network.test_routers.RoutersTest.test_create_router_setting_project_id": {
-          "idempotent_id": "id-e54dd3a3-4352-4921-b09d-44369ae17397",
-          "aliases": ["tempest.api.network.test_routers.RoutersTest.test_create_router_setting_tenant_id"]
-        },
         "tempest.api.network.test_routers.RoutersTest.test_create_router_with_default_snat_value": {
           "idempotent_id": "id-847257cc-6afd-4154-b8fb-af49f5670ce8"
         },
