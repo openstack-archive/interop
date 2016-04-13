@@ -52,9 +52,7 @@
         "compute-servers-metadata-set",
         "compute-servers-metadata-update",
         "networks-floating-ips-CRUD-and-associate",
-        "networks-l3-router",
         "networks-l2-CRUD",
-        "networks-l3-CRUD",
         "networks-security-groups-CRUD",
         "compute-list-api-versions",
         "images-v2-remove",
@@ -72,16 +70,18 @@
         "volumes-v2-update",
         "volumes-v2-copy-image-to-volume",
         "volumes-v2-clone",
-        "volumes-v2-qos",
         "volumes-v2-availability-zones",
         "volumes-v2-extensions",
         "volumes-v2-metadata",
-        "volumes-v2-transfer",
         "volumes-v2-reserve",
         "volumes-v2-readonly",
         "identity-v3-api-discovery"
       ],
       "advisory": [
+        "networks-l3-router",
+        "networks-l3-CRUD",
+        "volumes-v2-qos",
+        "volumes-v2-transfer",
       ],
       "deprecated": [
       ],
@@ -2059,10 +2059,10 @@
           "tools",
           "deployed"
       ],
-      "admin": false,
+      "admin": true,
       "description": "Basic CRUD operations on L3 networks and L3 routers",
       "project": "neutron",
-      "required-since": "2016.08",
+      "required-since": "",
       "tests": {
         "tempest.api.network.test_routers.RoutersTest.test_add_multiple_router_interfaces": {
           "idempotent_id": "id-802c73c9-c937-4cef-824b-2191e24a6aab"
@@ -2134,10 +2134,10 @@
           "tools",
           "deployed"
       ],
-      "admin": false,
+      "admin": true,
       "description": "Operations on L3 routers",
       "project": "neutron",
-      "required-since": "2016.08",
+      "required-since": "",
       "tests": {
         "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_router_add_gateway_invalid_network_returns_404": {
           "idempotent_id": "id-37a94fc0-a834-45b9-bd23-9a81d2fd1e22"
@@ -2547,10 +2547,10 @@
         "foundation",
         "atomic"
       ],
-      "admin": false,
+      "admin": true,
       "description": "Volume Quality of Service (QOS) operations with the Cinder v2 API",
       "project": "cinder",
-      "required-since": "2016.08",
+      "required-since": "",
       "tests": {
         "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_back_end_consumer": {
           "idempotent_id": "id-b115cded-8f58-4ee4-aab5-9192cfada08f"
@@ -2655,10 +2655,10 @@
         "foundation",
         "atomic"
       ],
-      "admin": false,
+      "admin": true,
       "description": "Volume ownership transfer operations with the Cinder v2 API",
       "project": "cinder",
-      "required-since": "2016.08",
+      "required-since": "",
       "tests": {
         "tempest.api.volume.test_volume_transfers.VolumesV2TransfersTest.test_create_get_list_accept_volume_transfer": {
           "idempotent_id": "id-4d75b645-a478-48b1-97c8-503f64242f1a"
