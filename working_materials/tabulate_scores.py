@@ -50,7 +50,7 @@ parser = argparse.ArgumentParser(
     formatter_class=CustomFormatter)
 parser.add_argument(
     '-j', '--json-file',
-    default='../2016.next.json',
+    default='../next.json',
     dest='json_file_name',
     help='Path to the Guideline JSON file to read weights and names from.')
 parser.add_argument(
@@ -93,12 +93,15 @@ buffer = []
 with open(args.score_file_name) as filehandle:
     # The line format we're expecting here is:
     #
-    # capability-name:  [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
+    # capability-name:  [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
     #
     # Where the values inside the brackets can be zero, one, or a
     # question mark.  The final column is one that will be
     # overwritten by this script and represents the total score
     # for the capability.  If present already, it's ignored.
+    # The optional asterisk on the end indicates that the total score
+    # is greater than or equal to the cutoff_score parsed from the JSON
+    # file and therefore the Capability warrants inclusion in the Guideline.
     pattern = re.compile('((\S+):\s+((\[\S,\S,\S\] ){4}\[\S\]))')
 
     # The scores in the tuples have the following meanings, in
@@ -172,16 +175,25 @@ with open(args.score_file_name) as filehandle:
             # wasn't complete.
             total = total * complete
 
+            # If the total score exceeds the cutoff_score listed in
+            # the JSON file, denote that it has scored high enough
+            # to be included in the Guideline with an asterisk.
+            if total >= int(json_data['cutoff_score']):
+                    meets_criteria = '*'
+            else:
+                    meets_criteria = ''
+
             # Now write the total score to a couple of places.
             # Put it in the tabulated file.
-            buffer.append("%s [%d]\n" % (raw.group(1), total))
+            buffer.append("%s [%d]%s\n" % (raw.group(1), total,
+                          meets_criteria))
 
             # Put in in the CSV for easy spreadsheet import.
-            csv_outfile.write("%s\n" % (total))
+            csv_outfile.write("%s%s\n" % (total, meets_criteria))
 
             # And stdout is useful for folks who are experimenting with
             # the effect of changing a score.
-            print "%s: %d" % (cap_name, total)
+            print "%s: %d%s" % (cap_name, total, meets_criteria)
 
 # Now we can write the text output file.
 with open(args.text_outfile_name, 'w') as outfile:

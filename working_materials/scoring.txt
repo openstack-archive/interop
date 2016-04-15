@@ -13,34 +13,43 @@ Capability Name: [Widely Deployed,Used By Tools,Used by Clients],
                  [TC Future Direction, Complete, Stable],
                  [Discoverable, Doc'd, Core in Last Release],
                  [Foundational, Atomic, Proximity],
-                 [Non-Admin]
+                 [Non-Admin] [Total]
 
 Possible scores: 0, 1, ? (not scored yet or needs discussion)
 
+The Total score is calculated by multiplying the score for each
+Criteria by the weight assigned to that Criteria in the Guideline
+JSON file.  It is not necessary to calculate the score by hand:
+use the tabulate_scores.py script found in this directory.  The
+script will also append an asterisk (*) to the end of the line if
+the total score is greater than or equal to the cutoff_score listed
+in the Guideline JSON file, indicating that the Capability
+has scored high enough to merit inclusion in the Guideline.
+
 Networking
 ----------
-network-floating-ips-associate:       [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
-network-floating-ips-create:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
-network-floating-ips-update:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
-network-floating-ips-delete:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]
-network-l2-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l2-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l2-external:                  [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l2-list:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l2-port:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l2-show:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l2-update:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l3-add:                       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-floating-ips-associate:       [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]*
+network-floating-ips-create:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]*
+network-floating-ips-update:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]*
+network-floating-ips-delete:          [1,1,1] [1,1,1] [0,1,0] [0,1,1] [1] [74]*
+network-l2-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l2-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l2-external:                  [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l2-list:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l2-port:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l2-show:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l2-update:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l3-add:                       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
 network-l3-convert:                   [0,0,0] [1,0,0] [0,0,0] [0,0,0] [1] [11]
-network-l3-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l3-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l3-router:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l3-show:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-l3-update:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-security-groups-create:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-security-groups-delete:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-security-groups-list:         [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-network-security-groups-show:         [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+network-l3-create:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l3-delete:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l3-router:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l3-show:                      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-l3-update:                    [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-security-groups-create:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-security-groups-delete:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-security-groups-list:         [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+network-security-groups-show:         [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
 network-extensions-provider-add:      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
 network-extensions-provider-create:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
 network-extensions-provider-delete:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [0] [0]
@@ -103,7 +112,7 @@ Notes:
 
 Compute
 -------
-compute-list-api-versions:             [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]
+compute-list-api-versions:             [1,0,0] [1,1,1] [1,1,0] [1,1,1] [1] [75]*
 
 Notes:
   * There has been some discussion that this capability is not widely
@@ -157,13 +166,13 @@ images-v1-shared-images-get:     [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 images-v1-shared-images-remove:  [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 images-v1-update:                [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 
-images-v2-remove:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
-images-v2-update:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
-images-v2-share:                 [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
-images-v2-import:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
-images-v2-list:                  [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
-images-v2-delete:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
-images-v2-get:                   [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]
+images-v2-remove:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-update:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-share:                 [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-import:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-list:                  [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-delete:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-get:                   [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
 
 Notes:
     * Image creation is captured under the register operation.
@@ -173,28 +182,28 @@ Notes:
 
 Volume
 ----------
-volumes-v2-create-delete:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-volumes-v2-attach-detach:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-volumes-v2-snapshot-create-delete: [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-volumes-v2-get:                    [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-volumes-v2-list:                   [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-volumes-v2-update:                 [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-volumes-v2-copy-image-to-volume:   [1,0,0] [1,1,1] [1,1,1] [1,1,1] [1] [84]
-volumes-v2-clone:                  [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]
-volumes-v2-qos:                    [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]
-volumes-v2-availability-zones:     [1,0,0] [1,1,1] [1,1,1] [1,1,0] [1] [76]
+volumes-v2-create-delete:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+volumes-v2-attach-detach:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+volumes-v2-snapshot-create-delete: [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+volumes-v2-get:                    [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+volumes-v2-list:                   [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+volumes-v2-update:                 [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+volumes-v2-copy-image-to-volume:   [1,0,0] [1,1,1] [1,1,1] [1,1,1] [1] [84]*
+volumes-v2-clone:                  [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
+volumes-v2-qos:                    [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]*
+volumes-v2-availability-zones:     [1,0,0] [1,1,1] [1,1,1] [1,1,0] [1] [76]*
 volumes-v2-extensions:             [1,0,0] [0,1,1] [1,1,1] [1,0,0] [1] [59]
-volumes-v2-metadata:               [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]
-volumes-v2-transfer:               [1,0,0] [1,1,1] [1,1,1] [1,1,0] [1] [76]
-volumes-v2-reserve:                [1,0,0] [1,1,1] [1,1,1] [1,1,0] [1] [76]
-volumes-v2-readonly:               [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]
-volumes-v2-extend:                 [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]
-volumes-v2-upload:                 [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]
+volumes-v2-metadata:               [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]*
+volumes-v2-transfer:               [1,0,0] [1,1,1] [1,1,1] [1,1,0] [1] [76]*
+volumes-v2-reserve:                [1,0,0] [1,1,1] [1,1,1] [1,1,0] [1] [76]*
+volumes-v2-readonly:               [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]*
+volumes-v2-extend:                 [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
+volumes-v2-upload:                 [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
 
 Identity
 --------
-identity-v3-api-discovery:       [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]
-identity-v3-catalog:             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]
+identity-v3-api-discovery:       [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
+identity-v3-catalog:             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
 identity-v3-list-projects:       [1,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [68]
 identity-v3-list-groups:         [1,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [68]
 
@@ -216,19 +225,19 @@ Notes:
 Object Store
 ------------
 
-objectstore-object-copy:        [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-objectstore-object-create:      [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-objectstore-object-delete:      [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-objectstore-object-get:         [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-objectstore-object-put:         [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-objectstore-object-upload:      [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-objectstore-object-versioned:   [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]
-objectstore-temp-url-get:       [1,1,1] [1,1,1] [1,1,1] [1,1,0] [1] [92]
+objectstore-object-copy:        [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+objectstore-object-create:      [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+objectstore-object-delete:      [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+objectstore-object-get:         [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+objectstore-object-put:         [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+objectstore-object-upload:      [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+objectstore-object-versioned:   [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+objectstore-temp-url-get:       [1,1,1] [1,1,1] [1,1,1] [1,1,0] [1] [92]*
 
-objectstore-account-quotas:     [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-objectstore-account-list:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-objectstore-container-acl:      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-objectstore-container-quotas:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-objectstore-container-create:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-objectstore-container-delete:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
-objectstore-container-list:     [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]
+objectstore-account-quotas:     [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+objectstore-account-list:       [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+objectstore-container-acl:      [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+objectstore-container-quotas:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+objectstore-container-create:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+objectstore-container-delete:   [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*
+objectstore-container-list:     [1,1,1] [1,1,1] [1,1,0] [1,1,1] [1] [91]*

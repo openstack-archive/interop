@@ -4,6 +4,7 @@
   "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.3.rst",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
   "status": "approved",
+  "cutoff_score": "74",
   "target_approval": "2016-01-27",
   "replaces": "2015.07",
   "releases": ["juno", "kilo", "liberty"],
