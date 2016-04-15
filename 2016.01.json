@@ -6,7 +6,7 @@
   "status": "approved",
   "target_approval": "2016-01-27",
   "replaces": "2015.07",
-  "releases": ["juno", "kilo", "liberty"],
+  "releases": ["juno", "kilo", "liberty", "mitaka"],
   "platform": {
     "required": ["compute", "object"],
     "advisory": [],
