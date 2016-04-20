@@ -17,6 +17,7 @@
     "compute": {
       "required": [
         "identity-v3-tokens-create",
+        "identity-v3-api-discovery",
         "compute-auth-create",
         "compute-auth-get",
         "compute-auth-set",
@@ -78,8 +79,7 @@
         "volumes-v2-metadata",
         "volumes-v2-transfer",
         "volumes-v2-reserve",
-        "volumes-v2-readonly",
-        "identity-v3-api-discovery"
+        "volumes-v2-readonly"
       ],
       "advisory": [
       ],
@@ -1367,6 +1367,7 @@
           "atomic",
           "complete",
           "deployed",
+	  "clients",
           "discover",
           "doc",
           "foundation",

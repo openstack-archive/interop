@@ -192,4 +192,22 @@ volumes-v2-readonly:               [1,0,0] [1,1,1] [1,1,0] [1,1,0] [1] [67]
 
 Identity
 --------
-identity-v3-api-discovery:   [0,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [77]
+identity-v3-api-discovery:       [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]
+identity-v3-catalog:             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]
+identity-v3-list-projects:       [1,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [68]
+identity-v3-list-groups:         [1,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [68]
+
+Notes:
+  * identity-v3-catalog is returned when the api for
+  identity-v3-tokens-create is called (GET /v3/auth/tokens). It is
+  important to consider it because end users may be relying on this
+  catalog for their apps (even though there are other API calls that
+  also show the catalog such as GET /v3/auth/catalog). There is one test
+  available for this capability but it is in the admin part of the test
+  suite, so not yet tested for non-admin users. Even though it scores enough
+  to be included as advisory, we cannot do this due to lack of non-admin
+  test case.
+  * identity-v3-list-projects and identity-v3-list-groups are here because
+  they deserve some visibility and some explicit test cases, which at the
+  moment they are lacking. It seems important for users to be able to
+  discriminate between projects and groups when running their apps.

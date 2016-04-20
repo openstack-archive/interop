@@ -59,4 +59,7 @@ volumes-v2-metadata,1,0,0,1,1,1,1,1,0,1,1,0,1,67
 volumes-v2-transfer,1,0,0,1,1,1,1,1,0,1,1,0,1,67
 volumes-v2-reserve,1,0,0,1,1,1,1,1,0,1,1,0,1,67
 volumes-v2-readonly,1,0,0,1,1,1,1,1,0,1,1,0,1,67
-identity-v3-api-discovery,0,0,1,1,1,1,1,1,0,1,1,1,1,77
+identity-v3-api-discovery,1,0,1,1,1,1,1,1,0,1,1,1,1,85
+identity-v3-catalog,1,0,1,1,1,1,1,1,0,1,1,1,1,85
+identity-v3-list-projects,1,0,1,1,1,1,1,1,0,0,1,0,1,68
+identity-v3-list-groups,1,0,1,1,1,1,1,1,0,0,1,0,1,68
