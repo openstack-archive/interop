@@ -43,7 +43,7 @@ SHOWS PROVEN USAGE
 
 * **"Used by Tools"** Candidates are widely used capabilities: Should be
   included if supported by common tools outside of the OpenStack community
-  (RightScale, Scalr, CloudForms, jClouds, Fog, etc...)
+  (RightScale, Scalr, CloudForms, jClouds, Fog, etc...).
 
 * **"Used by Clients"** Candidates are widely used capabilities: Should be
   included if called by common OpenStack clients (openstackclient,
@@ -72,24 +72,24 @@ PLAYS WELL WITH OTHERS
 ----------------------
 
 * **"Discoverable"** Capability being tested is Service Discoverable (can be
-  found in Keystone and via service introspection)
+  found in Keystone and via service introspection).
 
 * **"Doc'd"** Should be well documented, particularly the expected behavior.
   This can be a very subjective measure and we expect to refine this
   definition over time.
 
 * **"DefCore in Last Release"** A required capability should stay a required
-  capability. This make makes DefCore capabilities sticky
-  release per release. Leaving DefCore is disruptive to the ecosystem
+  capability. This makes DefCore capabilities sticky per release. Leaving
+  DefCore is disruptive to the ecosystem.
 
 TAKES A SYSTEM VIEW
 -------------------
 
 * **"Foundation"** Capabilities that are required by other required
-  capabilities and/or depended on by many other capabilities
+  capabilities and/or depended on by many other capabilities.
 
 * **"Atomic"** Capability is unique and cannot be built out of other
-  required capabilities
+  required capabilities.
 
 * **"Proximity"** (sometimes called a Capability Cluster) selects for
   capabilities that are related to DefCore capabilities. This helps ensure
