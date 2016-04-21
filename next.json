@@ -253,14 +253,6 @@
       "project": "nova",
       "required-since": "2014.07",
       "tests": {
-        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_set_metadata_of_alt_account_server_fails": {
-          "idempotent_id": "id-c5f52351-53d9-4fc9-83e5-917f7f5e3d71",
-          "flagged": {
-            "date": "2015-05-06",
-            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
-            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
-          }
-        }
       }
     },
     "compute-images-create": {
@@ -658,9 +650,6 @@
       "project": "nova",
       "required-since": "2014.07",
       "tests": {
-        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_a_server_of_another_tenant": {
-          "idempotent_id": "id-5c75009d-3eea-423e-bea3-61b09fd25f9c"
-        },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_server_pass_id_exceeding_length_limit": {
           "idempotent_id": "id-f4d7279b-5fd2-4bf2-9ba4-ae35df0d18c5"
         },
@@ -1206,9 +1195,6 @@
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_server_name_length_exceeds_256": {
           "idempotent_id": "id-5c8e244c-dada-4590-9944-749c455b431f"
-        },
-        "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_server_of_another_tenant": {
-          "idempotent_id": "id-543d84c1-dd2e-4c6d-8cb2-b9da0efaa384"
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_server_set_empty_name": {
           "idempotent_id": "id-38204696-17c6-44da-9590-40f87fb5a899"
