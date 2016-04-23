@@ -95,13 +95,13 @@
         "identity-v3-api-discovery"
       ],
       "deprecated": [
-      ],
-      "removed": [
-        "identity-v2-tokens-create",
-        "compute-servers-change",
         "compute-auth-create",
         "compute-auth-get",
         "compute-auth-set"
+      ],
+      "removed": [
+        "identity-v2-tokens-create",
+        "compute-servers-change"
       ]
     },
     "object": {
@@ -158,6 +158,102 @@
         "tempest.api.compute.test_versions.TestVersions.test_list_api_versions": {
           "idempotent_id": "id-6c0a0990-43b6-4529-9b61-5fd8daf7c55c"
         }
+      }
+    },
+    "compute-auth-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Auth related tests using Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_fails_when_tenant_incorrect": {
+          "idempotent_id": "id-acf8724b-142b-4044-82c3-78d31a533f24",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_create_server_with_unauthorized_image": {
+          "idempotent_id": "id-95d445f6-babc-4f2e-aea3-aa24ec5e7f0d",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        }
+      }
+    },
+    "compute-auth-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Auth related tests using Compute API, Generate, import, and delete SSH keys within Compute services",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_keypair_of_alt_account_fails": {
+          "idempotent_id": "id-85bcdd8f-56b4-4868-ae56-63fbf6f7e405",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.test_authorization.AuthorizationTestJSON.test_get_metadata_of_alt_account_server_fails": {
+          "idempotent_id": "id-dea1936a-473d-49f2-92ad-97bb7aded22e",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        }
+      }
+    },
+    "compute-auth-set": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Auth related tests using Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
       }
     },
     "compute-images-create": {
@@ -2010,6 +2106,25 @@
         "tempest.api.object_storage.test_container_services.ContainerTest.test_list_no_container_metadata": {
             "idempotent_id": "id-a2faf936-6b13-4f8d-92a2-c2278355821e"
         }
+      }
+    },
+    "objectstore-object-access": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "",
+      "tests": {
       }
     },
     "networks-floating-ips-CRUD-and-associate": {
