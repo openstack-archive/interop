@@ -7,7 +7,7 @@
   "cutoff_score": "74",
   "target_approval": "2016-08-23",
   "replaces": "2016.01",
-  "releases": ["kilo", "liberty", "mitaka"],
+  "releases": ["kilo", "liberty", "mitaka", "newton"],
   "platform": {
     "required": ["compute", "object"],
     "advisory": [],
