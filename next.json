@@ -3144,7 +3144,7 @@
         "weight": 6
     },
     "clients": {
-        "Description": "Candidates are widely used capabilities: Should be included if part of common libraries (Fog, Apache jclouds, etc)",
+        "Description": "Candidates are widely used capabilities: Should be included if called by common OpenStack clients (openstackclient, neutronclient, novaclient, etc) if necessary.  This Criteria pertains mostly to API versioning.  For example: if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' Criteria.",
         "name": "Used by Clients",
         "weight": 10
     },
@@ -3194,7 +3194,7 @@
         "weight": 9
     },
     "tools": {
-        "Description": "Candidates are widely used capabilities:Should be included if supported by common tools (RightScale, Scalr, CloudForms, ...)",
+        "Description": "Candidates are widely used capabilities: Should be included if supported by common tools outside of the OpenStack community (RightScale, Scalr, CloudForms, jClouds, Fog, etc...)",
         "name": "Used by Tools",
         "weight": 6
     }
