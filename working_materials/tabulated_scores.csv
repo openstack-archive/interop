@@ -55,7 +55,6 @@ volumes-v2-qos,1,0,1,1,1,1,1,1,1,1,1,0,1,86*
 volumes-v2-availability-zones,1,0,0,1,1,1,1,1,1,1,1,0,1,76*
 volumes-v2-extensions,1,0,0,0,1,1,1,1,1,1,0,0,1,59
 volumes-v2-metadata,1,0,1,1,1,1,1,1,1,1,1,0,1,86*
-volumes-v2-transfer,1,0,0,1,1,1,1,1,1,1,1,0,1,76*
 volumes-v2-reserve,1,0,0,1,1,1,1,1,1,1,1,0,1,76*
 volumes-v2-readonly,1,0,1,1,1,1,1,1,1,1,1,0,1,86*
 volumes-v2-extend,1,0,1,1,1,1,1,1,0,1,1,0,1,77*

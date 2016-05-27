@@ -85,8 +85,7 @@
         "images-v2-delete",
         "images-v2-get",
         "volumes-v2-upload",
-        "volumes-v2-qos",
-        "volumes-v2-transfer"
+        "volumes-v2-qos"
       ],
       "deprecated": [
         "compute-auth-create",
@@ -2890,31 +2889,6 @@
         },
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item": {
           "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20"
-        }
-      }
-    },
-    "volumes-v2-transfer": {
-      "achievements": [
-        "deployed",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic"
-      ],
-      "admin": true,
-      "description": "Volume ownership transfer operations with the Cinder v2 API",
-      "project": "cinder",
-      "required-since": "",
-      "tests": {
-        "tempest.api.volume.test_volume_transfers.VolumesV2TransfersTest.test_create_get_list_accept_volume_transfer": {
-          "idempotent_id": "id-4d75b645-a478-48b1-97c8-503f64242f1a"
-        },
-        "tempest.api.volume.test_volume_transfers.VolumesV2TransfersTest.test_create_list_delete_volume_transfer": {
-          "idempotent_id": "id-ab526943-b725-4c07-b875-8e8ef87a2c30"
         }
       }
     },

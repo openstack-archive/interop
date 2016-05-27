@@ -179,6 +179,8 @@ Notes:
     * No public image tests have explicit support for task API.
     * Scoring for v1 remains in place, but v2 is preferred interop
       standard (as reflected in worksheet).
+    * volumes-v2-transfer is by definition a multi-tenant capability,
+      and currently out of scope for DefCore capabilities.
 
 Volume
 ----------
