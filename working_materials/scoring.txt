@@ -181,6 +181,7 @@ Notes:
       standard (as reflected in worksheet).
     * volumes-v2-transfer is by definition a multi-tenant capability,
       and currently out of scope for DefCore capabilities.
+    * volumes-v2-qos is an admin-only capability
 
 Volume
 ----------
@@ -192,7 +193,6 @@ volumes-v2-list:                   [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 volumes-v2-update:                 [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 volumes-v2-copy-image-to-volume:   [1,0,0] [1,1,1] [1,1,1] [1,1,1] [1] [84]*
 volumes-v2-clone:                  [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
-volumes-v2-qos:                    [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]*
 volumes-v2-availability-zones:     [1,0,0] [1,1,1] [1,1,1] [1,1,0] [1] [76]*
 volumes-v2-extensions:             [1,0,0] [0,1,1] [1,1,1] [1,0,0] [1] [59]
 volumes-v2-metadata:               [1,0,1] [1,1,1] [1,1,1] [1,1,0] [1] [86]*

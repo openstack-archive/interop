@@ -84,8 +84,7 @@
         "images-v2-list",
         "images-v2-delete",
         "images-v2-get",
-        "volumes-v2-upload",
-        "volumes-v2-qos"
+        "volumes-v2-upload"
       ],
       "deprecated": [
         "compute-auth-create",
@@ -2777,47 +2776,6 @@
       "tests": {
         "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_as_clone": {
           "idempotent_id": "id-3f591b4a-7dc6-444c-bd51-77469506b3a1"
-        }
-      }
-    },
-    "volumes-v2-qos": {
-      "achievements": [
-        "deployed",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic"
-      ],
-      "admin": true,
-      "description": "Volume Quality of Service (QOS) operations with the Cinder v2 API",
-      "project": "cinder",
-      "required-since": "",
-      "tests": {
-        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_back_end_consumer": {
-          "idempotent_id": "id-b115cded-8f58-4ee4-aab5-9192cfada08f"
-        },
-        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_both_consumer": {
-          "idempotent_id": "id-f88d65eb-ea0d-487d-af8d-71f4011575a4"
-        },
-        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_front_end_consumer": {
-          "idempotent_id": "id-7e15f883-4bef-49a9-95eb-f94209a1ced1"
-        },
-        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_associate_disassociate_qos": {
-          "idempotent_id": "id-1dd93c76-6420-485d-a771-874044c416ac"
-        },
-        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_get_qos": {
-          "idempotent_id": "id-7aa214cc-ac1a-4397-931f-3bb2e83bb0fd"
-        },
-        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_list_qos": {
-          "idempotent_id": "id-75e04226-bcf7-4595-a34b-fdf0736f38fc"
-        },
-        "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_set_unset_qos_key": {
-          "idempotent_id": "id-ed00fd85-4494-45f2-8ceb-9e2048919aed"
         }
       }
     },
