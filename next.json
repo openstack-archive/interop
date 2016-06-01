@@ -18,9 +18,6 @@
     "compute": {
       "required": [
         "compute-images-create",
-        "compute-images-delete",
-        "compute-images-get",
-        "compute-images-list",
         "compute-instance-actions-get",
         "compute-instance-actions-list",
         "compute-keypairs-create",
@@ -39,14 +36,12 @@
         "compute-servers-stop",
         "compute-servers-update",
         "compute-servers-verify",
-        "compute-volume-attach",
-        "compute-volume-get",
-        "compute-volume-list",
         "compute-servers-metadata-delete",
         "compute-servers-metadata-get",
         "compute-servers-metadata-list",
         "compute-servers-metadata-set",
         "compute-servers-metadata-update",
+        "compute-volume-attach",
         "compute-list-api-versions",
         "identity-v3-api-discovery",
         "identity-v3-tokens-create",
@@ -82,7 +77,12 @@
       "deprecated": [
         "compute-auth-create",
         "compute-auth-get",
-        "compute-auth-set"
+        "compute-auth-set",
+        "compute-images-delete",
+        "compute-images-get",
+        "compute-images-list",
+        "compute-volume-get",
+        "compute-volume-list"
       ],
       "removed": [
         "identity-v2-tokens-create",
@@ -281,7 +281,7 @@
       "admin": false,
       "description": "Image operations within the Compute API",
       "project": "nova",
-      "required-since": "2014.07",
+      "required-since": "",
       "tests": {
         "tempest.api.compute.images.test_images.ImagesTestJSON.test_delete_saving_image": {
           "idempotent_id": "id-aa06b52b-2db5-4807-b218-9441f75d74e3"
@@ -303,7 +303,7 @@
       "admin": false,
       "description": "Image operations within the Compute API",
       "project": "nova",
-      "required-since": "2014.07",
+      "required-since": "",
       "tests": {
         "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_get_image": {
           "idempotent_id": "id-490d0898-e12a-463f-aef0-c50156b9f789"
@@ -325,7 +325,7 @@
       "admin": false,
       "description": "Image operations within the Compute API",
       "project": "nova",
-      "required-since": "2014.07",
+      "required-since": "",
       "tests": {
         "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_changes_since": {
           "idempotent_id": "id-18bac3ae-da27-436c-92a9-b22474d13aab",
@@ -1259,7 +1259,7 @@
       "admin": false,
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
-      "required-since": "2014.07",
+      "required-since": "",
       "tests": {
         "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
           "idempotent_id": "id-f01904f2-e975-4915-98ce-cb5fa27bde4f"
@@ -1287,7 +1287,7 @@
       "admin": false,
       "description": "Retrieve volume information through the Compute API",
       "project": "nova",
-      "required-since": "2014.07",
+      "required-since": "",
       "tests": {
         "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list": {
           "idempotent_id": "id-bc2dd1a0-15af-48e5-9990-f2e75a48325d"
