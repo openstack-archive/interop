@@ -43,28 +43,34 @@ or CentOS 7 have been verified) with administrator privileges.
   ``git clone https://git.openstack.org/openstack/refstack-client``
 
 * In the refstack-client directory, install tempest and required dependencies.
-  You may specify a specific tag of tempest with the -t option. refstack-client
-  defaults to '551e1a9' as of this writing.
+  You may specify a specific tag of tempest with the -t option.
 
   ``./setup_env``
 
-* Download a list of tests from the DefCore site:
-  http://git.openstack.org/cgit/openstack/defcore/tree/2016.01/2016.01.required.txt
+* Optionally, download a list of test from the RefStack site. We strongly
+  encourage you to run the full set of api tests, as this not only qualifies
+  you for the trademark but also gives the DefCore team feedback on
+  deployed capabilities to help us determine future guidelines.
+  https://refstack.openstack.org/api/v1/guidelines/2016.01/tests?type=required
 
 * Configure tempest.conf for your cloud. If you need assistance in common
-  parameters or settings contact interop@openstack.org. There is also a tempest
+  parameters or settings contact interop@openstack.org. The recommended
+  configuration is to use one non-admin account, defined in account.yaml
+  with dynamic credentials disabled. More information is available in the
   configuration guide at
-  https://git.openstack.org/cgit/openstack/tempest/tree/doc/source/configuration.rst
+  http://docs.openstack.org/developer/tempest/configuration.html
 
-* You can run within the RefStack, from the refstack-client directory:
+* You can run within the refstack, from the refstack-client directory either
+  against all api tests or against the downloaded test list.
 
-  ./refstack-client test -c ~/tempest.conf -v --test-list
-  http://git.openstack.org/cgit/openstack/defcore/plain/2016.01/2016.01.required.txt
+  ``./refstack-client test -c ~/tempest.conf``
+
+  ``./refstack-client test -c ~/tempest.conf --test-list <test-list-file-name>``
 
 * Review the test results, and when you're satisfied, upload it to RefStack server
   then send them to interop@openstack.org.
 
-  ./refstack-client upload <Path of results file>
+  ``./refstack-client upload <Path of results file>``
 
 * The results are stored in a JSON file in the directory. You can also check your
   result on the RefStack server https://refstack.openstack.org:
@@ -73,19 +79,5 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Every effort should be made to pass all of the required tests, but you
   will want to compare any lists of failed tests to the list of flagged tests.
-  http://git.openstack.org/cgit/openstack/defcore/tree/2016.01/2016.01.flagged.txt
-
-  The refstack.openstack.org also gives you result where you can easily identify
-  exactly which tests still need to be passed.
-
-Known Issues and Recommendations
---------------------------------
-
-Currently after failures modes Tempest does not clean up test resources. We
-strongly recommend that you run Tempest against a test OpenStack cloud
-rather than a production cloud. Successful tests against test deployments that
-are functionally equivalent to production clouds is acceptable for current
-capabilities assessment.
-
-You may find it useful to run Swift tests as a separate run, using the
-``accounts.yaml`` framework to specify users with Swift-specific roles.
+  The refstack server will automatically grade tests results, taking
+  into account flagged tests.

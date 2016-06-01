@@ -1,20 +1,20 @@
 2015.07 DefCore Testing
 =======================
 
-Testing against Defcore 2015.07 Capabilities
+Testing against DefCore 2015.07 Capabilities
 --------------------------------------------
 
 https://git.openstack.org/cgit/openstack/defcore/tree/2015.07.json
 
 Tempest can be run standalone, or under a test runner such as refstack-client
-or rally. If only testing against Defcore capabilities, you can use the
---load-list argument and a file containing a list of the Defcore tests. If
+or rally. If only testing against DefCore capabilities, you can use the
+--load-list argument and a file containing a list of the DefCore tests. If
 run with the refstack-client, test output will be parsed to list only
-passing tests in a json formatted file. We recommend running under
+passing tests in a JSON formatted file. We recommend running under
 refstack-client.
 
 The test names of the capabilities are derived from a recent release of
-Tempest, from the time of capabilitiy approval. Keep in mind that Tempest
+Tempest, from the time of capability approval. Keep in mind that Tempest
 is under active development, and tests may move. If you're not seeing
 full coverage, please consider reverting back to a Tempest sha that more
 closely matches the capability release date. Please contact Chris Hoge
@@ -32,61 +32,52 @@ in collecting data on which API tests are being passed by production clouds.
 This information will be very useful in determining which capabilities will be
 used to define future releases.
 
-Defcore Recommended Test Procedure
+DefCore Recommended Test Procedure
 
-The following procedure is recommended, but not required for testing Defcore.
+The following procedure is recommended, but not required for testing DefCore.
 This procedure assumes you're running a Linux test platform (Ubuntu 14.04
 or CentOS 7 have been verified) with administrator privileges.
 
-* Download the refstack client:
+* Download the RefStack client:
 
   ``git clone https://git.openstack.org/openstack/refstack-client``
 
 * In the refstack-client directory, install tempest and required dependencies.
-  You may specify a specific tag of tempest with the -t option. refstack-client
-  defaults to '98f62ee' as of this writing but the latest defcore requirement,
-  2015.07 at the time of this writing, requires '26149b612d'.
+  You may specify a specific tag of tempest with the -t option.
 
   ``./setup_env``
 
-* Download a list of tests from the Defcore site:
-  http://git.openstack.org/cgit/openstack/defcore/tree/2015.07/2015.07.required.txt
+* Optionally, download a list of test from the RefStack site. We strongly
+  encourage you to run the full set of api tests, as this not only qualifies
+  you for the trademark but also gives the DefCore team feedback on
+  deployed capabilities to help us determine future guidelines.
+  https://refstack.openstack.org/api/v1/guidelines/2015.07/tests?type=required
 
 * Configure tempest.conf for your cloud. If you need assistance in common
-  parameters or settings contact interop@openstack.org. There is also a tempest
+  parameters or settings contact interop@openstack.org. The recommended
+  configuration is to use one non-admin account, defined in account.yaml
+  with dynamic credentials disabled. More information is available in the
   configuration guide at
-  https://git.openstack.org/cgit/openstack/tempest/tree/doc/source/configuration.rst
+  http://docs.openstack.org/developer/tempest/configuration.html
 
-* You can run within the refstack, from the refstack-client directory:
+* You can run within the refstack, from the refstack-client directory either
+  against all api tests or against the downloaded test list.
 
-  ./refstack-client test -c ~/tempest.conf -vv --test-list
-  http://git.openstack.org/cgit/openstack/defcore/plain/2015.07/2015.07.required.txt
+  ``./refstack-client test -c ~/tempest.conf``
 
-* Review the test results, and when you're satisfied, upload it to Refstack server
+  ``./refstack-client test -c ~/tempest.conf --test-list <test-list-file-name>``
+
+* Review the test results, and when you're satisfied, upload it to RefStack server
   then send them to interop@openstack.org.
 
-  ./refstack-client upload <Path of results file>
+  ``./refstack-client upload <Path of results file>``
 
-* The results are stored in a json file in the directory. You can also check your
-  result on the Refstack server https://refstack.openstack.org:
+* The results are stored in a JSON file in the directory. You can also check your
+  result on the RefStack server https://refstack.openstack.org:
 
   ``.tempest/.testrepository``
 
 * Every effort should be made to pass all of the required tests, but you
   will want to compare any lists of failed tests to the list of flagged tests.
-  http://git.openstack.org/cgit/openstack/defcore/tree/2015.07/2015.07.flagged.txt
-
-  The refstack.openstack.org also gives you result where you can easily identify
-  exactly which tests still need to be passed.
-
-Known Issues and Recommendations
---------------------------------
-
-Currently after failures modes Tempest does not clean up test resources. We
-strongly recommend that you run Tempest against a test OpenStack cloud
-rather than a production cloud. Successful tests against test deployments that
-are functionally equivalent to production clouds is acceptable for current
-capabilities assessment.
-
-You may find it useful to run Swift tests as a separate run, using the
-``accounts.yaml`` framework to specify users with Swift-specific roles.
+  The refstack server will automatically grade tests results, taking
+  into account flagged tests.
