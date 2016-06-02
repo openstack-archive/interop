@@ -2170,9 +2170,6 @@
           "idempotent_id": "id-0e269138-0da6-4efc-a46d-578161e7b221",
           "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_create_update_delete_network_subnet"]
         },
-        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_create_port_binding_ext_attr": {
-          "idempotent_id": "id-8e8569c1-9ac7-44db-8bc1-f5fb2814f29b"
-        },
         "tempest.api.network.test_ports.PortsTestJSON.test_create_bulk_port": {
           "idempotent_id": "id-67f1b811-f8db-43e2-86bd-72c074d4a42c"
         },
@@ -2211,9 +2208,6 @@
           "idempotent_id": "id-842589e3-9663-46b0-85e4-7f01273b0412",
           "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_list_subnets_fields"]
         },
-        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_list_ports_binding_ext_attr": {
-          "idempotent_id": "id-1c82a44a-6c6e-48ff-89e1-abe7eaf8f9f8"
-        },
         "tempest.api.network.test_ports.PortsTestJSON.test_list_ports": {
           "idempotent_id": "id-cf95b358-3e92-4a29-a148-52445e1ac50e"
         },
@@ -2236,9 +2230,6 @@
           "idempotent_id": "id-270fff0b-8bfc-411f-a184-1e8fd35286f0",
           "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_show_subnet_fields"]
         },
-        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_show_port_binding_ext_attr": {
-          "idempotent_id": "id-b54ac0ff-35fc-4c79-9ca3-c7dbd4ea4f13"
-        },
         "tempest.api.network.test_ports.PortsTestJSON.test_show_port": {
           "idempotent_id": "id-c9a685bd-e83f-499c-939f-9f7863ca259f"
         },
@@ -2248,9 +2239,6 @@
         "tempest.api.network.test_networks.NetworksTest.test_update_subnet_gw_dns_host_routes_dhcp": {
           "idempotent_id": "id-3d3852eb-3009-49ec-97ac-5ce83b73010a",
           "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_update_subnet_gw_dns_host_routes_dhcp"]
-        },
-        "tempest.api.network.test_ports.PortsAdminExtendedAttrsTestJSON.test_update_port_binding_ext_attr": {
-          "idempotent_id": "id-6f6c412c-711f-444d-8502-0ac30fbf5dd5"
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_security_group_and_extra_attributes": {
           "idempotent_id": "id-58091b66-4ff4-4cc1-a549-05d60c7acd1a"

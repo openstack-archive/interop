@@ -109,6 +109,8 @@ Notes:
     until Mitaka.  Toolkits like jClouds, Fog, and libcloud do not yet
     support subnet pools.  OpenStackClient added support late in the
     Mitaka cycle (https://review.openstack.org/#/c/279918/).
+  * Extended port attribute tests were not considered because the capability
+    generally requires admin privileges.
 
 Compute
 -------
