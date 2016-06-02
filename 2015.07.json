@@ -1622,25 +1622,25 @@
         "guidance": "Not a core capability, no position at this time",
         "required": false,
         "comment": "Neutron was not ready for review.",
-        "sections": []
+        "sections": {}
       },
       "heat": {
         "guidance": "Not a core capability, no position at this time",
         "required": false,
         "comment": "",
-        "sections": []
+        "sections": {}
       },
       "horizon": {
         "guidance": "Not a core capability, no position at this time",
         "required": false,
         "comment": "",
-        "sections": []
+        "sections": {}
       },
       "ceilometer": {
         "guidance": "Not a core capability, no position at this time",
         "required": false,
         "comment": "",
-        "sections": []
+        "sections": {}
       }
     }
   },

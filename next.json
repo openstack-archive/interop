@@ -86,7 +86,7 @@
         "images-v2-get",
         "volumes-v2-upload",
         "volumes-v2-qos",
-        "volumes-v2-transfer",
+        "volumes-v2-transfer"
       ],
       "deprecated": [
         "compute-auth-create",
@@ -2315,9 +2315,6 @@
         "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_show_non_existent_router_returns_404": {
           "idempotent_id": "id-c2a70d72-8826-43a7-8208-0209e6360c47"
         },
-        "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_show_non_existent_router_returns_404": {
-          "idempotent_id": "id-c2a70d72-8826-43a7-8208-0209e6360c47"
-        },
         "tempest.api.network.test_routers.RoutersTest.test_update_extra_route": {
           "idempotent_id": "id-c86ac3a8-50bd-4b00-a6b8-62af84a0765c"
         },
@@ -3121,19 +3118,19 @@
         "guidance": "Not a core capability, no position at this time",
         "required": false,
         "comment": "",
-        "sections": []
+        "sections": {}
       },
       "horizon": {
         "guidance": "Not a core capability, no position at this time",
         "required": false,
         "comment": "",
-        "sections": []
+        "sections": {}
       },
       "ceilometer": {
         "guidance": "Not a core capability, no position at this time",
         "required": false,
         "comment": "",
-        "sections": []
+        "sections": {}
       }
     }
   },
