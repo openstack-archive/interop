@@ -89,6 +89,10 @@ Participant
 Platform
   The collection of components required to use the least restricted mark.
 
+Removed
+  Capabilities that are no longer required and are not included in the
+  current guideline.
+
 Self-test
   Process by which a vendor runs tests against their product or service
   without 3rd party observation.
