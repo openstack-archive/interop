@@ -1,17 +1,17 @@
-DefCore Scoring Worksheet
-=========================
+Interop Working Group Scoring Worksheet
+========================================
 
-This file is used to maintain capabilities scoring for DefCore.
+This file is used to maintain capabilities scoring.
 It is considered "working materials" under the 2016A process and
 is not an authoritative, Board-approved source of information
 as to which capabilities are required for a particular Guideline.
-Rather, it is a point-in-time listing used by DefCore Committee
-members while determining which capabilities may be included in
-a future Guideline.  Each line takes the following form:
+Rather, it is a point-in-time listing used by Interop
+Working Group members while determining which capabilities may be
+included in a future Guideline.  Each line takes the following form:
 
 Capability Name: [Widely Deployed,Used By Tools,Used by Clients],
                  [TC Future Direction, Complete, Stable],
-                 [Discoverable, Doc'd, Core in Last Release],
+                 [Discoverable, Doc'd, Required in Last Release],
                  [Foundational, Atomic, Proximity],
                  [Non-Admin] [Total]
 
@@ -74,9 +74,10 @@ Notes:
     For example, there are several tests for network creation, but only one or
     few for deletion, listing, and updating.  Combining these into a single
     "CRUD" group reduces the chance the chance of running into problems with
-    DefCore's 2015A process (specifically section C3(4)) in cases where there
-    is only a single test for a capability and the test needs to be flagged on
-    account of bugs or other valid reasons.  The combined groups are:
+    the Interop Working Group's 2015A process (specifically section
+    C3(4)) in cases where there is only a single test for a capability and the
+    test needs to be flagged on account of bugs or other valid reasons.  The
+    combined groups are:
     * networks-floating-ips-CRUD-and-associate
       * networks-floating-ips-associate
       * networks-floating-ips-create
@@ -112,7 +113,7 @@ Notes:
     pools advisory now, they could become required in 2017.08--in which
     the earliest release in the Guideline will be Mitaka.  Toolkits like
     jClouds, Fog, and libcloud do not yet support subnet pools that I see.
-    Subnet pools will be used by Neutron's upcoming get-me-a-network 
+    Subnet pools will be used by Neutron's upcoming get-me-a-network
     capability and Kuryr appears to have plans to use them as part of
     Kubernets integration.
   * Extended port attribute tests were not considered because the capability
@@ -128,6 +129,46 @@ compute-list-api-versions:             [1,0,0] [1,1,1] [1,1,1] [1,1,1] [1] [84]*
 compute-servers-suspend-resume:        [1,1,1] [1,1,1] [1,1,0] [0,1,1] [1] [82]*
 compute-flavors-list:                  [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
 compute-availability-zones-list:       [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+
+Notes:
+  * There has been some discussion that this capability is not widely
+    deployed [1].  However it appears that in most cases the API either:
+    * Is present and works, but only if a non-SSL endpoint is exposed.
+      SSL endpoints may have issues with redirects (which may actually
+      merely be configuration issues).
+    * Is accidentally blocked due to load balancer or API gateway
+      misconfiguration which is being remedied by affected providers.
+    Taking those situations into account, it is believed that it's actually
+    safe to call this "widely deployed".
+  * I'm having trouble finding evidence that tools actually support this
+    API (refer to [2] for information about what constitutes "tools").
+    Unlike most of the CRUD-like API's, this one lists information about
+    the API versions available instead of on end user actionable resources
+    (such as instances or security groups), and the need to do so is newish
+    with the advent of microversioning.  Hence, I think many tools may not
+    actually support this yet.  Please feel free to provide evidence to the
+    contrary; I'd love to be proven wrong.
+  * Similarly, I'm having trouble finding evidence that clients [3] like
+    jClouds or Fog support this API (yet?) as they tend to focus on actions.
+    Please feel free to provide evidence to the contrary; I'd love to be
+    proven wrong.
+  * I'm tentatively scoring this API as Proximate [4].  Generally this applies
+    to CRUD operations (e.g. the delete API is considered proximate to the
+    create API).  However I'm providing a 1 here on the grounds that due
+    to the shift to microversioning in the Nova API, this will be somewhat
+    proximate to everything going forward.
+  * The Interop Working Group is considering this capability for inclusion
+    in it's projected 2016.01 Guideline even though the test for it wasn't
+    developed until (narrowly) outside the normal window for identifying
+    new Capabilities on account of strong indications from the community
+    that such a Capability is important for API microversioning going
+    forward [5].
+
+[1] https://bugs.launchpad.net/python-novaclient/+bug/1491579
+[2] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n44
+[3] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n48
+[4] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n90
+[5] http://eavesdrop.openstack.org/meetings/defcore_flag_14/2015/defcore_flag_14.2015-09-09-15.03.log.html#l-13
 
 Image
 -----
@@ -155,7 +196,7 @@ Notes:
     * Scoring for v1 remains in place, but v2 is preferred interop
       standard (as reflected in worksheet).
     * images-v2-share inherently requires more than one credential,
-      and currently out of scope for DefCore capabilities.
+      and currently out of scope for required capabilities.
     * images-v2-remove has no test as of Auguest, 2016.
 
 Volume
@@ -272,4 +313,3 @@ https://gist.github.com/notmyname/102e4aba7084598638f47cee47f62bb1#file-defcore_
 objectstore-container-metadata used in Fog:
 https://github.com/fog/fog-openstack/blob/master/docs/storage.md#additional-parameters
 Also in jClouds: https://jclouds.apache.org/guides/openstack/#swift
-

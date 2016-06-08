@@ -184,7 +184,7 @@ latex_elements = {
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'defcore.tex', u'OpenStack DefCore Documentation',
+  ('index', 'defcore.tex', u'OpenStack Interop WG Documentation',
    u'OpenStack Foundation', 'manual'),
 ]
 

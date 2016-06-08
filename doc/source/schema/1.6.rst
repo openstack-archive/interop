@@ -1,5 +1,5 @@
-DefCore Schema v1.6 Change Log
-==============================
+Interop WG Schema v1.6 Change Log
+==================================
 
 Changes from v1.5
 

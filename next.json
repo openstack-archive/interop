@@ -3270,12 +3270,12 @@
         "weight": 8
     },
     "stable": {
-        "Description": "Test is required stable for >2 releases because we don't want DefCore capabilities that do not have dependable APIs",
+        "Description": "Test is required stable for >2 releases because we don't want Capabilities that do not have dependable APIs",
         "name": "Stable",
         "weight": 9
     },
     "sticky": {
-        "Description": "A test that is a must-pass test should stay a must-pass test. This makes DefCore capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
+        "Description": "A test that is a must-pass test should stay a must-pass test. This makes Capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
         "name": "Core in Last Release",
         "weight": 9
     },

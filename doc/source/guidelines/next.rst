@@ -1,9 +1,9 @@
-======================
-OpenStack DefCore next
-======================
+=========================================
+OpenStack Interoperability Guideline next
+=========================================
 
 :Status: draft
-:Replaces: 2016.01
+:Replaces: 2016.08
 :JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/next.json
 
 This document outlines the mandatory capabilities and designated
@@ -14,7 +14,7 @@ This document was generated from the `master JSON version <next.json>`_.
 
 Releases Covered
 ==============================
-Applies to Kilo, Liberty, Mitaka, Newton
+Applies to Liberty, Mitaka, Newton, Ocata
 
 Platform Components
 ==============================

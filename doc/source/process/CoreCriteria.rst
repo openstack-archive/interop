@@ -19,8 +19,8 @@ categories:
 :System: the capability integrates with other parts of OpenStack
 
 These categories summarize critical values that we want in OpenStack and so
-make sense to be the primary factors used when we select DefCore capabilities.
-While we strive to make the DefCore process objective and quantitive, we
+make sense to be the primary factors used when we select required Capabilities.
+While we strive to make the process objective and quantitive, we
 must recognize that these choices drive community behavior.
 
 .. figure:: ../images/Defcore_capabilities_criteria.png
@@ -60,11 +60,11 @@ ALIGNS WITH TECHNICAL DIRECTION
   capabilities.
 
 * **"Stable"** Capabilities are required to be stable for >2 releases because
-  we do not want DefCore capabilities that do not have dependable APIs.
+  we do not want required Capabilities that do not have dependable APIs.
 
 * **"Complete"** Where the code being tested has a designated area of alternate
-  implementation (extension framework) as per the DefCore Principles, there
-  should be parity in capability tested across extension implementations.
+  implementation (extension framework) as per the Interoperability Principles,
+  there should be parity in capability tested across extension implementations.
   This also implies that the capability test is not configuration specific
   or locked to non-open technology.
 
@@ -78,9 +78,9 @@ PLAYS WELL WITH OTHERS
   This can be a very subjective measure and we expect to refine this
   definition over time.
 
-* **"DefCore in Last Release"** A required capability should stay a required
-  capability. This makes DefCore capabilities sticky per release. Leaving
-  DefCore is disruptive to the ecosystem.
+* **"Required in Last Release"** A required capability should stay a required
+  capability. This makes Capabilities sticky per release. Leaving
+  the Interoperability Guidelines is disruptive to the ecosystem.
 
 TAKES A SYSTEM VIEW
 -------------------
@@ -92,11 +92,12 @@ TAKES A SYSTEM VIEW
   required capabilities.
 
 * **"Proximity"** (sometimes called a Capability Cluster) selects for
-  capabilities that are related to DefCore capabilities. This helps ensure
-  that related capabilities are managed together.
+  capabilities that are related to other required capabilities. This helps
+  ensure that related capabilities are managed together.
 
 NON-ADMIN
 ---------
 
 The original 13th "non-admin" criteria has been removed because Admin
-APIs cannot be used for interoperability and are not considered DefCore.
+APIs cannot be used for interoperability and are not considered for end
+users.

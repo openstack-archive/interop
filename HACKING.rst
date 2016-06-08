@@ -1,22 +1,23 @@
-DefCore Style Commandments
-==========================
+Interop Working Group Commandments
+===================================
 
 - Step 1: Read the OpenStack Style Commandments
   http://docs.openstack.org/developer/hacking/
-- Step 2: Read the following DefCore process documents in the following recommended order:
+- Step 2: Read the following Interop Working Group process
+  documents in the following recommended order:
 
   - `Core Definition <doc/source/process/CoreDefinition.rst>`_
-  - `OpenStack DefCore Process 2015A <doc/source/process/2015A.rst>`_
+  - `OpenStack Interop WG Process 2016A <doc/source/process/2016A.rst>`_
 
 - Step 3: Read on
 
-DefCore Specific Commandments
------------------------------
+Interop Working Group Specific Commandments
+--------------------------------------------
 
 - [D300] When adding tests to "flagged" lists, generally only the most
   current Board-approved .json file and the .next.json file should be
-  modified.  There is no need to modify older guidelines unless the most
-  current Board-approved guideline doesn't cover the OpenStack release
+  modified.  There is no need to modify older Guidelines unless the most
+  current Board-approved Guideline doesn't cover the OpenStack release
   you are concerned with.
 - [D301] The "tests" lists in the .json capabilities lists are immutable
   once approved by the Board.  Therefore if you desire to flag a test,
@@ -42,9 +43,9 @@ DefCore Specific Commandments
   field within newly required capabilities.  The patch should include the
   matching generated RST version of the JSON file.  This patch should be
   marked as -1 workflow until after approval.
-- [D305] DefCore guidelines generally cover the most recent three
-  releases of OpenStack, though the DefCore Committee has the power to
-  determine otherwise.  The "releases" section of the .next.json file
+- [D305] Interop Guidelines generally cover the most recent three
+  releases of OpenStack, though the Interop Working Group has the
+  power to determine otherwise.  The "releases" section of the .next.json file
   should generally be updated shortly after the Board approves a release
   so that contributors can see what releases the proposed Guideline
   targets.
@@ -62,7 +63,7 @@ DefCore Specific Commandments
 - [D309] The "reason" field of the "flagged" section must begin with the
   flag type. For example:
 
-  ``"reason" : "[D400] The Foo test doesn't meet DefCore criteria because ..."``
+  ``"reason" : "[D400] The Foo test doesn't meet Core Criteria because ..."``
 
 - [D310] If you believe a test needs to be flagged but the reason for doing
   so doesn't appear in the list below, you must do the following:
@@ -76,22 +77,23 @@ DefCore Specific Commandments
      file adding your proposed new flag to the list below.
   #. If at all possible, please include a link to code and/or test runs which
      demonstrate the reason a new flag type is needed.
-  #. The DefCore committee will discuss and consider the flagging proposal as
-     well as the proposed new reason. They may accept or decline either proposal.
+  #. The Interop Working Group will discuss and consider the flagging
+     proposal as well as the proposed new reason. They may accept or decline
+     either proposal.
 - [D311] Once a test has been flagged, it will remain flagged for that Guideline.
-- [D312] When a new guideline is proposed for Board approval, no flagged tests
-  will be included in the guideline. Flags will be added in subsequent patches.
+- [D312] When a new Guideline is proposed for Board approval, no flagged tests
+  will be included in the Guideline. Flags will be added in subsequent patches.
 
-DefCore Test Flagging Guidelines
---------------------------------
+Interop Working Group Test Flagging Guidelines
+-----------------------------------------------
 
-The DefCore Committee may "flag" tests to mark them as not required for a
-given Guideline. There are different flag types; each flag type indicates a
-fairly narrow category of reasons for flagging a given test.
+The Interoper Working Group may "flag" tests to mark them as not
+required for a given Guideline. There are different flag types; each flag
+type indicates a fairly narrow category of reasons for flagging a given test.
 
 Valid reasons for flagging a test are limited to the following:
 
-- [D400] The test is for a Capability that fails to meet DefCore Criteria
+- [D400] The test is for a Capability that fails to meet the Criteria
   as set out in the
   `Core Criteria document <doc/source/process/CoreCriteria.rst>`_.
 - [D401] The test fails or is skipped due to a bug in the test and the bug is
@@ -99,7 +101,7 @@ Valid reasons for flagging a test are limited to the following:
 - [D402] The test fails or is skipped due to a bug in the code that provides
   the Capability and the bug is accepted by the OpenStack project which
   maintains the Capability.
-- [D403] The test fails because other non-DefCore Capabilities are also
+- [D403] The test fails because other non-required Capabilities are also
   tested.
 - [D404] Flag Not Found - Use this flag if none of the others fit.
 - [D405] The test reflects an implementation choice that is not widely

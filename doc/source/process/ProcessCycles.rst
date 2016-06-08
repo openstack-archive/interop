@@ -5,9 +5,9 @@ Defining OpenStack Core is a long term process and we are doing the work
 in progressive cycles. For reference, we have named the cycles. This
 helps describe concrete deliverables for a cycle while allowing
 discussion of the broader long term issues. For example, we may say that
-"item X is important to DefCore but out of scope for Elephant." We have
-found that this approach to breaking down the problem is necessary to
-maintain community consensus because we are taking smaller bites of the
+"item X is important to interoperability but out of scope for Elephant."
+We have found that this approach to breaking down the problem is necessary
+to maintain community consensus because we are taking smaller bites of the
 larger challenge (aka eating the elephant).
 
 Spider (Fall 2013)
@@ -167,7 +167,7 @@ Meetings
 ~~~~~~~~
 Meeting information for the Flag cycle will be archived here once the cycle
 is complete.  During the cycle, please refer to the
-`DefCore Committee wiki page <https://wiki.openstack.org/wiki/Governance/DefCoreCommittee/>`_.
+`Interop WG wiki page <https://wiki.openstack.org/wiki/Governance/InteropWG/>`_.
 
 Future
 ------
