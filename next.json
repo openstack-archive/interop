@@ -54,7 +54,6 @@
         "images-v2-remove",
         "images-v2-update",
         "images-v2-share",
-        "images-v2-import",
         "images-v2-list",
         "images-v2-delete",
         "images-v2-get",
@@ -77,13 +76,7 @@
       "advisory": [
         "networks-l3-router",
         "networks-l3-CRUD",
-        "images-v2-remove",
-        "images-v2-update",
-        "images-v2-share",
         "images-v2-import",
-        "images-v2-list",
-        "images-v2-delete",
-        "images-v2-get",
         "volumes-v2-upload"
       ],
       "deprecated": [
