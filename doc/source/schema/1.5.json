@@ -274,6 +274,14 @@
               "pattern": "\\d{4}-\\d{2}-\\d{2}"
             }
           }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
         }
       }
     },
