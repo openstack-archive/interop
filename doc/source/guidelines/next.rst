@@ -1,20 +1,20 @@
-=========================
-OpenStack DefCore 2016.01
-=========================
+======================
+OpenStack DefCore next
+======================
 
-:Status: approved
-:Replaces: 2015.07
-:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/2016.01.json
+:Status: draft
+:Replaces: 2016.01
+:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/next.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to
 be eligible to use marks controlled by the OpenStack Foundation.
 
-This document was generated from the `master JSON version <2016.01.json>`_.
+This document was generated from the `master JSON version <next.json>`_.
 
 Releases Covered
 ==============================
-Applies to Juno, Kilo, Liberty, Mitaka
+Applies to Kilo, Liberty, Mitaka, Newton
 
 Platform Components
 ==============================
@@ -33,10 +33,6 @@ Compute Component Capabilities
 ==============================
 Required Capabilities
 -----------------------
-* identity-v3-tokens-create (Keystone)
-* compute-auth-create (Nova)
-* compute-auth-get (Nova)
-* compute-auth-set (Nova)
 * compute-images-create (Nova)
 * compute-images-delete (Nova)
 * compute-images-get (Nova)
@@ -62,26 +58,24 @@ Required Capabilities
 * compute-volume-attach (Nova)
 * compute-volume-get (Nova)
 * compute-volume-list (Nova)
-* images-v2-index (Nova)
 * compute-servers-metadata-delete (Nova)
 * compute-servers-metadata-get (Nova)
 * compute-servers-metadata-list (Nova)
 * compute-servers-metadata-set (Nova)
 * compute-servers-metadata-update (Nova)
-
-Advisory Capabilities
------------------------
-* networks-l3-router (Neutron)
-* networks-l2-CRUD (Neutron)
-* networks-l3-CRUD (Neutron)
-* networks-security-groups-CRUD (Neutron)
 * compute-list-api-versions (Nova)
+* identity-v3-api-discovery (Keystone)
+* identity-v3-tokens-create (Keystone)
+* images-v2-index (Nova)
 * images-v2-remove (Glance)
 * images-v2-update (Glance)
 * images-v2-share (Glance)
+* images-v2-import (Glance)
 * images-v2-list (Glance)
 * images-v2-delete (Glance)
 * images-v2-get (Glance)
+* networks-l2-CRUD (Neutron)
+* networks-security-groups-CRUD (Neutron)
 * volumes-v2-create-delete (Cinder)
 * volumes-v2-attach-detach (Cinder)
 * volumes-v2-snapshot-create-delete (Cinder)
@@ -89,25 +83,36 @@ Advisory Capabilities
 * volumes-v2-list (Cinder)
 * volumes-v2-update (Cinder)
 * volumes-v2-copy-image-to-volume (Cinder)
-* volumes-v2-copy-volume-to-image (Cinder)
 * volumes-v2-clone (Cinder)
-* volumes-v2-qos (Cinder)
 * volumes-v2-availability-zones (Cinder)
 * volumes-v2-extensions (Cinder)
 * volumes-v2-metadata (Cinder)
-* volumes-v2-transfer (Cinder)
 * volumes-v2-reserve (Cinder)
 * volumes-v2-readonly (Cinder)
-* identity-v3-api-discovery (Keystone)
+
+Advisory Capabilities
+-----------------------
+* networks-l3-router (Neutron)
+* networks-l3-CRUD (Neutron)
+* images-v2-remove (Glance)
+* images-v2-update (Glance)
+* images-v2-share (Glance)
+* images-v2-import (Glance)
+* images-v2-list (Glance)
+* images-v2-delete (Glance)
+* images-v2-get (Glance)
+* volumes-v2-upload (Cinder)
 
 Deprecated Capabilities
 -------------------------
-* identity-v2-tokens-create (Keystone)
-* compute-servers-change (Nova)
+* compute-auth-create (Nova)
+* compute-auth-get (Nova)
+* compute-auth-set (Nova)
 
 Removed Capabilities
 ----------------------
-None
+* identity-v2-tokens-create (Keystone)
+* compute-servers-change (Nova)
 
 
 
@@ -116,7 +121,6 @@ Object Component Capabilities
 =============================
 Required Capabilities
 -----------------------
-* objectstore-object-access (Swift)
 * objectstore-object-copy (Swift)
 * objectstore-object-create (Swift)
 * objectstore-object-delete (Swift)
@@ -129,15 +133,21 @@ Required Capabilities
 
 Advisory Capabilities
 -----------------------
-None
+* objectstore-account-quotas (Swift)
+* objectstore-account-list (Swift)
+* objectstore-container-acl (Swift)
+* objectstore-container-quotas (Swift)
+* objectstore-container-create (Swift)
+* objectstore-container-delete (Swift)
+* objectstore-container-list (Swift)
 
 Deprecated Capabilities
 -------------------------
-* identity-v2-tokens-create (Keystone)
+* objectstore-object-access (Swift)
 
 Removed Capabilities
 ----------------------
-None
+* identity-v2-tokens-create (Keystone)
 
 
 Designated Sections

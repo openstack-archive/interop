@@ -7,27 +7,45 @@ Process Documentation
 =====================
 
 .. toctree::
-   :glob:
    :maxdepth: 1
 
-   process/*
+   process/2016A.rst
 
 =====================
 Schema Documentation
 =====================
 
 .. toctree::
-   :glob:
    :maxdepth: 1
 
-   schema/*
+   schema/1.5.rst
 
-==========
-Guidelines
-==========
+=================
+Active Guidelines
+=================
 
 .. toctree::
-   :glob:
    :maxdepth: 1
 
-   guidelines/*
+   guidelines/2015.07.rst
+   guidelines/2016.01.rst
+
+==================
+Proposed Guideline
+==================
+
+.. toctree::
+   :maxdepth: 1
+
+   guidelines/next.rst
+
+===================
+Inactive Guidelines
+===================
+
+.. toctree::
+   :maxdepth: 1
+
+   guidelines/2015.03.rst
+   guidelines/2015.04.rst
+   guidelines/2015.05.rst
