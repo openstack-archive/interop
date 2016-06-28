@@ -76,13 +76,10 @@ Principles
    2. You are not OpenStack, if you pass all the tests but do not use the
       API framework
 
-   3. You are not OpenStack, if you pass all the tests but do not use the
-      API framework
-
-   4. This also surfaces bit-rot in alternate implementations to the larger
+   3. This also surfaces bit-rot in alternate implementations to the larger
       community
 
-   5. This behavior improves interoperability because there is more shared
+   4. This behavior improves interoperability because there is more shared
       code between implementation
 
 5. Projects must have an open reference implementation
