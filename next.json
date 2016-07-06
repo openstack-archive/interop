@@ -46,9 +46,7 @@
         "identity-v3-api-discovery",
         "identity-v3-tokens-create",
         "images-v2-index",
-        "images-v2-remove",
         "images-v2-update",
-        "images-v2-share",
         "images-v2-list",
         "images-v2-delete",
         "images-v2-get",
@@ -1468,15 +1466,6 @@
         "tempest.api.image.v2.test_images.ListImagesTest.test_get_images_schema": {
           "idempotent_id": "id-25c8d7b2-df21-460f-87ac-93130bcdc684"
         },
-        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_member": {
-          "idempotent_id": "id-a6ee18b9-4378-465e-9ad9-9a6de58a3287"
-        },
-        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_member_schema": {
-          "idempotent_id": "id-634dcc3f-f6e2-4409-b8fd-354a0bb25d83"
-        },
-        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_image_members_schema": {
-          "idempotent_id": "id-6ae916ef-1052-4e11-8d36-b3ae14853cbb"
-        },
         "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_delete_deleted_image": {
           "idempotent_id": "id-e57fc127-7ba0-4693-92d7-1d8a05ebcba9"
         },
@@ -1485,9 +1474,6 @@
         },
         "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_non_existent_image": {
           "idempotent_id": "id-668743d5-08ad-4480-b2b8-15da34f81d9f"
-        },
-        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_get_private_image": {
-          "idempotent_id": "id-cb961424-3f68-4d21-8e36-30ad66fb6bfb"
         }
       }
     },
@@ -1556,59 +1542,6 @@
         },
         "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_register_with_invalid_disk_format": {
           "idempotent_id": "id-70c6040c-5a97-4111-9e13-e73665264ce1"
-        }
-      }
-    },
-    "images-v2-remove": {
-      "achievements": [
-        "clients",
-        "complete",
-        "deployed",
-        "discover",
-        "doc",
-        "foundation",
-        "future",
-        "proximity",
-        "stable"
-      ],
-      "admin": false,
-      "description": "Image removal tests using the Glance v2 API",
-      "project": "glance",
-      "required-since": "2016.08",
-      "tests": {
-        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_remove_image_member": {
-          "idempotent_id": "id-72989bc7-2268-48ed-af22-8821e835c914"
-        }
-      }
-    },
-    "images-v2-share": {
-      "achievements": [
-        "clients",
-        "complete",
-        "deployed",
-        "discover",
-        "doc",
-        "foundation",
-        "future",
-        "proximity",
-        "stable"
-      ],
-      "admin": false,
-      "description": "Image sharing tests using the Glance v2 API",
-      "project": "glance",
-      "required-since": "2016.08",
-      "tests": {
-        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_image_share_accept": {
-          "idempotent_id": "id-5934c6ea-27dc-4d6e-9421-eeb5e045494a"
-        },
-        "tempest.api.image.v2.test_images_member.ImagesMemberTest.test_image_share_reject": {
-          "idempotent_id": "id-d9e83e5f-3524-4b38-a900-22abcb26e90e"
-        },
-        "tempest.api.image.v2.test_images_member_negative.ImagesMemberNegativeTest.test_image_share_invalid_status": {
-          "idempotent_id": "id-b79efb37-820d-4cf0-b54c-308b00cf842c"
-        },
-        "tempest.api.image.v2.test_images_member_negative.ImagesMemberNegativeTest.test_image_share_owner_cannot_accept": {
-          "idempotent_id": "id-27002f74-109e-4a37-acd0-f91cd4597967"
         }
       }
     },
