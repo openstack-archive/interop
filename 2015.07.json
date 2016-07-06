@@ -590,7 +590,8 @@
             "reason": "D400 This test may create a barrier for independent testing of public clouds",
             "action": "This test should be changed to require only one tenant or removed if it requires tenant isolation",
             "date": "2015-12-03"
-          }
+          },
+          "aliases": ["tempest.api.compute.servers.test_servers_negative.ServersNegativeTestMultiTenantJSON.test_delete_a_server_of_another_tenant"]
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_server_pass_id_exceeding_length_limit": {
           "idempotent_id": "id-f4d7279b-5fd2-4bf2-9ba4-ae35df0d18c5"
@@ -1158,7 +1159,8 @@
             "reason": "D400 This test may create a barrier for independent testing of public clouds",
             "action": "This test should be changed to require only one tenant or removed if it requires tenant isolation",
             "date": "2015-12-03"
-          }
+          },
+          "aliases": ["tempest.api.compute.servers.test_servers_negative.ServersNegativeTestMultiTenantJSON.test_update_server_of_another_tenant"]
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_update_server_set_empty_name": {
           "idempotent_id": "id-38204696-17c6-44da-9590-40f87fb5a899"
