@@ -2245,13 +2245,6 @@
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_two_security_groups_and_extra_attributes": {
           "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d"
-        },
-        "tempest.api.network.test_networks.NetworksTest.test_external_network_visibility": {
-          "idempotent_id": "id-af774677-42a9-4e4b-bb58-16fe6a5bc1ec",
-          "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_external_network_visibility"]
-        },
-        "tempest.api.network.test_ports.PortsTestJSON.test_port_list_filter_by_router_id": {
-          "idempotent_id": "id-5ad01ed0-0e6e-4c5d-8194-232801b15c72"
         }
       }
     },
@@ -2324,6 +2317,13 @@
         },
         "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_update_non_existent_router_returns_404": {
           "idempotent_id": "id-b23d1569-8b0c-4169-8d4b-6abd34fad5c7"
+        },
+        "tempest.api.network.test_networks.NetworksTest.test_external_network_visibility": {
+          "idempotent_id": "id-af774677-42a9-4e4b-bb58-16fe6a5bc1ec",
+          "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_external_network_visibility"]
+        },
+        "tempest.api.network.test_ports.PortsTestJSON.test_port_list_filter_by_router_id": {
+          "idempotent_id": "id-5ad01ed0-0e6e-4c5d-8194-232801b15c72"
         }
       }
     },
