@@ -779,7 +779,12 @@
           "idempotent_id": "id-ca78e20e-fddb-4ce6-b7f7-bcbf8605e66e"
         },
         "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip": {
-          "idempotent_id": "id-43a1242e-7b31-48d1-88f2-3f72aa9f2077"
+          "idempotent_id": "id-43a1242e-7b31-48d1-88f2-3f72aa9f2077",
+          "flagged": {
+            "date": "2016-06-13",
+            "reason": "[D401] This test is skipped by Tempest due to bug https://bugs.launchpad.net/tempest/+bug/1600349.",
+            "action": "Remove flag when Tempest fix is in place."
+          } 
         },
         "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip_regex": {
           "idempotent_id": "id-a905e287-c35e-42f2-b132-d02b09f3654a",
