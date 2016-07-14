@@ -2544,9 +2544,6 @@
         "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
           "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e"
         },
-        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_with_volume_in_use" : {
-            "idempotent_id": "d-b467b54c-07a4-446d-a1cf-651dedcc3ff1"
-        },
         "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_details_with_params": {
           "idempotent_id": "id-220a1022-1fcd-4a74-a7bd-6b859156cda2"
         },
