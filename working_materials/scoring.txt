@@ -111,6 +111,10 @@ Notes:
     Mitaka cycle (https://review.openstack.org/#/c/279918/).
   * Extended port attribute tests were not considered because the capability
     generally requires admin privileges.
+  * tempest.api.network.test_ports.PortsTestJSON.test_create_update_port_with_second_ip
+    was considered but was removed because not all Neutron plugins support
+    more than one IP per port (and some providers limit the number of
+    IP's per port for security reasons, e.g. spoofguard).
 
 Compute
 -------
