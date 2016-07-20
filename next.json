@@ -1527,9 +1527,6 @@
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_visibility": {
           "idempotent_id": "id-7a95bb92-d99e-4b12-9718-7bc6ab73e6d2"
-        },
-        "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params": {
-          "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee"
         }
       }
     },
