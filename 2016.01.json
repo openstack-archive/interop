@@ -1921,7 +1921,12 @@
           "idempotent_id": "id-c72c1c0c-2193-4aca-aaa4-b1442640f51c"
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_create_update_port_with_second_ip": {
-          "idempotent_id": "id-63aeadd4-3b49-427f-a3b1-19ca81f06270"
+          "idempotent_id": "id-63aeadd4-3b49-427f-a3b1-19ca81f06270",
+          "flagged": {
+             "reason": "[D400] Some Neutron drivers support only a one fixed IP per port.",
+             "action": "This test will be removed from future guidelines.",
+             "date": "2016-07-15"
+          }
         },
         "tempest.api.network.test_networks.NetworksTestJSON.test_delete_network_with_subnet": {
           "idempotent_id": "id-f04f61a9-b7f3-4194-90b2-9bcf660d1bfe",
