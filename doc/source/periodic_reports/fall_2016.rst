@@ -1,0 +1,460 @@
+===========================================================
+DefCore Committee Fall 2016 Interoperability Issues Report
+===========================================================
+
+.. contents:: Table of Contents
+
+About This Document
+--------------------
+OpenStack is tremendously flexible, feature-rich, powerful software that can be
+used to create clouds that fit a wide variety of use cases including software
+development, web services and e-commerce, network functions virtualization
+(NFV), video processing, and content delivery to name a few. Commercial
+offerings built on OpenStack are available as public clouds, installable
+software distributions, managed private clouds, appliances, and services.
+OpenStack can be deployed on thousands of combinations of underpinning storage,
+network, and compute hardware and software. Because of the incredible amount
+of flexibility OpenStack offers and the constraints of the many use cases it
+can address, interoperability between OpenStack clouds isn't always assured:
+due to various choices deployers make, different clouds may have some
+inconsistent behaviors.
+
+One of the goals of the DefCore Committee's work is to create strong
+interoperability standards so that end users of clouds can expect certain
+behaviors to be consistent between different OpenStack Powered clouds and
+products. As the DefCore Committee has gone about its work of defining
+Interoperability Guidelines over the past few years, it has encountered various
+barriers to interoperability among OpenStack Powered clouds. The DefCore
+Committee seeks to work with the rest of the OpenStack Community to reduce or
+eliminate these barriers and recognize work that is being done to promote
+interoperability for end users of OpenStack Powered clouds.
+
+To that end, the DefCore Committee has chosen to create a semi-annual report
+that highlights a few key interoperability challenges that the Committee has
+identified in the course of creating its
+`Interoperability Guidelines <../guidelines/>`_. This report is not intended
+to be a comprehensive listing of all barriers to interoperability among
+OpenStack clouds--rather, it seeks to call out a small, actionable subset
+of those barriers to highlight their importance and request the
+community's focus toward discussing and resolving them. This report is
+also not intended to be critical of the work of OpenStack developers: its
+intent is to communicate feedback that the DefCore Committee has received
+constructively so that the the issues are known to the Technical Committee
+and Project Teams and to enable discussion and improvement. The report also
+highlights known issues so that OpenStack deployers are aware of some choices
+they make when deploying OpenStack, and so that end users of OpenStack clouds
+are aware of some of the issues they may face when working with different
+OpenStack clouds.
+
+The issues highlighted in this report are listed in no particular order,
+as their importance varies for different users and use cases.  This report
+is intended to be periodically updated so that we can report on new issues
+that arise and progress being made on existing issues.
+
+This report is not intended to prescribe or mandate solutions to
+interoperability problems. Often, the resolution to interoperability issues
+may involve changes to the OpenStack software, and while the DefCore Committee
+is generally happy to engage in creating solutions, technical governance is
+not the domain of the DefCore Committee or the Board of Directors. Rather,
+this report is intended to inform the Technical Committee and Project Teams
+about issues so that they can take action as they see fit.
+
+Finally, the DefCore Committee would like to take this opportunity to thank
+the OpenStack community for its continued attention to interoperability
+issues. We congratulate OpenStack on its progress toward becoming "a
+ubiquitous Open Source Cloud Computing platform that is easy to use, simple
+to implement, interoperable between deployments, works well at all scales,
+and meets the needs of users and operators of both public and private clouds."
+
+About The DefCore Committee
+----------------------------
+The OpenStack DefCore Committee was formed during the OpenStack Icehouse Summit
+in Hong Kong by a Board of Directors Resolution on November 4, 2013. DefCore
+sets base requirements by defining 1) capabilities, 2) code, and 3) must-pass
+tests for all OpenStack products. This definition uses community resources
+and involvement to drive interoperability by creating the minimum standards
+for products labeled "OpenStack."  For more information about the DefCore
+Committee, please refer to the following resources:
+
+* The `Core Definition
+  <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreDefinition.rst>`_
+  document describes the DefCore Committee's guiding principals.
+* The `2016A Process document
+  <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/2016A.rst>`_
+  describes some of the DefCore Committee's operating procedures.
+* The `Core Criteria document
+  <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst>`_
+  describes the criteria the DefCore Committee uses to evaluate Capabilities
+  for inclusion in its Interoperability Guidelines.
+* The `DefCore Lexicon <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/Lexicon.rst>`_
+  defines some of the terminology the DefCore Committee uses, including some
+  terms that are used in this report.
+* The `OpenStack Interoperability page
+  <http://www.openstack.org/brand/interop/>`_ describes the logo/trademark
+  programs that the DefCore Committee's Interoperability Guidelines govern
+  admission to.
+
+You can communicate with the DefCore Committee via email at
+defcore-committee@lists.openstack.org, or on IRC in the #openstack-defcore
+channel on freednode.net.
+
+Issue 1: Testing Interoperability
+----------------------------------
+
+In order for OpenStack Powered clouds to prove that they behave consistently,
+the DefCore Committee requires that certain tests be successfully run against
+the cloud or product in question. These tests are listed in the DefCore
+Committee's Interoperability Guidelines. To date, all of the tests that the
+DefCore Committee has selected for its Guidelines are maintained by the
+OpenStack Community in Tempest [1]_. Since no formal interoperability program
+existed prior to the DefCore Committee's creation, in some sense the decision
+to use Tempest tests as the basis of interoperability testing put Tempest
+tests in the position of being "used in a new way" compared to the use cases
+they were originally written for. The introduction of a new way to use
+Tempest has surfaced some design choices that were made that are better
+suited to the "traditional" uses for Tempest (such as CI testing at the
+development gates) than for interoperability testing.
+
+One example of such an issue is implicit test requirements. For instance, a
+test might be written to test that Nova can boot an instance using the v2 API.
+In order to boot an instance, a user must first have an image stored in Glance
+to boot from. OpenStack provides several different ways to create a bootable
+image, not all of which may meet DefCore Criteria [2]_ for inclusion in an
+interoperability Guideline. For example, the Glance v1 API may not be
+available to all users of some clouds since although v1 is "SUPPORTED", v2 is
+the "CURRENT" version of the Glance API. [3]_  Some clouds may disallow
+uploading an image by policy and only allow users to use the Glance task API.
+If the test for booting an instance also attempts to create an image to boot
+using a method that doesn't meet DefCore Criteria, then passing the test
+effectively requires that a cloud support a Capability that the DefCore
+Committee did not intend to require.
+
+As a second example, Interoperability Guidelines may cover releases that are
+commonly deployed and used in commercial products but are no longer tested in
+the upstream CI gate due to the branches `having reached end-of-life
+<http://releases.openstack.org/>`_ in the development community. Because
+Tempest has traditionally focused its efforts on non-EOL branches, changes
+may be made to the tests that make them unusable with older releases. Since
+DefCore Criteria generally favor capabilities and APIs that are long-lived
+across multiple releases, this problem has not frequently manifested to date.
+However, there is potential for it to become more of an issue in the future.
+
+As a third example, DefCore has chosen to only include tests in its
+Guidelines that can be repeated by end users of clouds in order to ensure that
+end users can verify whether or not a cloud they're considering using is
+in fact interoperable with others. This constraint means that tests that
+require administrator credentials are unsuitable for Interoperability
+Guidelines, since end users of clouds typically don't have administrative
+privileges. Some tests use administrative credentials for reasons of code
+efficiency (for instance, a base class might use administrative credentials
+because some tests that use it may genuinely need them, while others do not).
+
+Because not all existing tests are suitable for inclusion in Interoperability
+Guidelines, the DefCore Committee has at times been unable to include
+a Capability in the Guidelines in spite of the Capability meeting the
+DefCore Criteria. As a result, users of OpenStack Powered clouds are unable
+to rely on those Capabilities to be present and functional.
+
+The DefCore Committee recognizes that using existing tests for a new purpose
+may sometimes require tests to be refined or even for new tests to be written.
+In order for good interoperability tests to be developed, the DefCore
+Committee has `created a specification
+<http://git.openstack.org/cgit/openstack/defcore/tree/working_materials/DefCoreSpec.rst>`_
+that discusses what traits we look for in a test that is suitable for inclusion
+in the Interoperability Guidelines. It is our hope that this listing will help
+foster awareness and understanding within the development community as tests
+are created, updated, or moved into Tempest over time.
+
+.. [1] Notably, in 2016 the Technical Committee passed
+    `a resolution
+    <https://governance.openstack.org/resolutions/20160504-defcore-test-location.html>`_
+    indicating its preference that the DefCore Committee use tests in
+    the Tempest source tree for its Guidelines.
+.. [2] Refer to the
+    `Core Criteria
+    <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst>`_
+    document for more details.
+.. [3] As of this writing. Refer to the
+    `OpenStack API Complete Reference <http://developer.openstack.org/api-ref.html>`_
+    for more information.
+
+
+Issue 2: Varying Models for API Evolution
+------------------------------------------
+
+APIs are a very important contact point between the OpenStack software and
+end users: whether they're using one of OpenStack's own clients, a third
+party management tool, or an SDK developed outside of the OpenStack community,
+they all end up using OpenStack's APIs in some way.
+
+OpenStack also has a very diverse community of projects under the Big Tent in
+various stages of development: some have been around since the beginning of
+OpenStack and have mature, fairly stable APIs. Others are new and evolving
+quickly and may iterate on their APIs faster. Some projects have moved to
+a microversioning model [4]_, others haven't. Some projects that have gone
+through major-version API changes over time have elected to continue supporting
+older versions of their API for long periods, while others have chosen to
+deprecate and remove older versions of their API relatively quickly. At times,
+announced plans to make modifications to which APIs are CURRENT, SUPPORTED,
+and DEPRECATED have changed, and feedback we've received indicates that
+communication around API changes isn't always clear and consistent to
+parties outside of the OpenStack ecosystem (for example: developers of third
+party SDKs and tools that don't regularly read posts on the high-volume
+openstack-dev@lists.openstack.org mailing list and may not regularly attend
+project IRC meetings). API transitions for projects that depend on one another
+within OpenStack aren't always handled uniformly: sometimes one project
+continues to call an older version of another project's API for quite some
+time after a newer version is released [5]_. Some "tribal knowledge" has
+also developed within OpenStack over time: for example, APIs that OpenStack
+developers themselves say should only be used internally by other OpenStack
+services and shouldn't be exposed to end users (documentation of which may
+be scant or non-existent).
+
+OpenStack has and wishes to maintain a rich ecosystem of tools that consume
+OpenStack's services but are developed outside of OpenStack itself, and
+many users of OpenStack clouds depend on this ecosystem [6]_ when developing
+applications for OpenStack clouds.
+
+Differences in how OpenStack projects handle API transitions and in how
+transitions and plans are communicated to the outside world at times make
+it difficult to know when external tools need to be updated. For example,
+some external toolkits may be surprised when an API becomes deprecated quickly
+for one project after observing another project maintain older versions of an
+API indefinitely. They may rely on an API version being exposed to end users
+that many clouds don't actually expose. Updating external tools and clients
+requires real time and effort from their maintainers, so some may be reluctant
+to move to a newer API version unless it's very clear to them that there is
+added value in doing so or that they absolutely need to because the version
+they're currently using is being removed.
+
+When APIs become inconsistently adopted either within OpenStack or among
+external tools, those inconsistencies are often reflected in certain
+capabilities failing to meet DefCore Criteria. For example, if many
+third party SDKs are split between supporting Glance v1 and Glance v2,
+those individual APIs may have trouble achieving the "Used by Tools"
+criteria. If OpenStack's own clients and other projects keep relying on
+an older API, the new API may be unable to achieve the "Used by Clients"
+and "Foundation" criteria. If APIs are iterated quickly between versions of
+OpenStack or only some clouds disable a particular version of an API from being
+consumed by end users, the API may be unable to achieve the "Widely Deployed"
+criteria. Failing to meet Criteria means that a capability can't be introduced
+into an Interoperability Guideline since it is not, in fact, interoperable.
+
+.. [4] For example, refer to
+    `Nova's Microversions documentation
+    <http://developer.openstack.org/api-guide/compute/microversions.html>`_.
+
+.. [5] As an example, the Glance v1 API was moved from CURRENT to SUPPORTED status
+    in the spring of 2015 in the Kilo release. Nova will continue to depend
+    on the v1 API until the Newton release in the fall of 2016. Refer to
+    the Nova `Add support for Glance v2 API Spec
+    <https://specs.openstack.org/openstack/nova-specs/specs/newton/approved/use-glance-v2-api.html>`_
+    for more information.
+
+.. [6] Refer to page 22 of the
+    `April 2016 User Survey
+    <https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf>`_
+    for examples, a few of which include libcloud, FOG, jclouds, Terraform,
+    and clients that users wrote themselves.
+
+Issue 3: External Network Connectivity
+---------------------------------------
+
+Networking is a complex topic by its very nature: different use cases or
+organizational constraints may demand different network models. OpenStack
+in turn provides a great deal of flexibility in networking, with several
+models available in Neutron. For many users of clouds, the ability to
+get a compute instance connected to the outside world is a particularly
+important capability. For example, a popular use case for OpenStack is
+"web services and e-commerce" [7]_. E-commerce platforms generally feature
+some webserver instances that need publicly routable IP addresses so that
+customers can reach the site. Another popular use case is
+"Software dev/test/QA and CI", and many continuous integration systems need to
+pull packages and software updates from repositories outside of their own
+networks.
+
+OpenStack provides many options for getting external connectivity to compute
+instances: in some cases, users create a private network and attach floating
+IP addresses to instances that need to be reachable from the Internet. In
+others, users must attach instances that they want to be reachable from the
+public Internet to a specific administratively-created provider network. In
+other cases, instances are booted onto a specific network that provides
+external reachability by default.
+
+Unfortunately, the differing network models that OpenStack provides for also
+introduce some complexity for clients and app developers: the method they use
+to get external reachability differs from cloud to cloud. Discovering the
+correct method can be complicated, and is often done by reading documentation
+provided by the cloud administrator rather than programmatically. Once the
+user discerns the correct methods for each cloud they want to use, they are
+still often forced to complicate their code with if/else loops or similar
+constructs because of the varying models in use:
+
+.. code:: python
+
+  if cloud == 'Cloud A':
+      # The IP address we were given at boot time is public; do nothing.
+  elif cloud == 'Cloud B':
+      attach_floating_ip_to_instance(myinstance)
+  elif cloud == 'Cloud C':
+      attach_instance_to_network('c8c43765-53cf-4030-a115-a89471ded2ed')
+
+
+Because making an instance externally reachable is such a common need and
+because the networking models used by deployers differ so greatly, this is
+a particularly challenging issue for end users.
+
+.. [7] Refer to page 35 of the
+    `April 2016 User Survey
+    <https://www.openstack.org/assets/survey/April-2016-User-Survey-Report.pdf>`_.
+
+Issue 4: API and Policy Discoverability
+----------------------------------------
+
+OpenStack frequently offers more than one method to accomplish a given end-user
+objective. For example: a user wishing to create an image might call Nova's
+API to make an image of a currently running instance, or they might upload an
+image through the Glance v1 API, the Glance v2 API, or they might use an import
+task. All of these methods create an image, but all are different API calls.
+Generally speaking, the mechanics are very different and are intended to
+address different use cases.  Sometimes the use cases are similar but the
+API calls are different (for example, using a similar API call to the v1
+endpoint vs the v2 endpoint). Further, most OpenStack projects offer policy
+controls that can be configured by cloud administrators: for example, a cloud
+administrator might disable the Glance v1 API for end users or might only
+allow image creation via the task API (or indeed may not allow image creation
+at all, and instead restrict users of the cloud to images created by
+administrators). Further still, some capabilities may be exposed to some users
+of clouds (for example, project administrators) but not others (project
+members).
+
+Discovering which capabilities and methods are available and accessible to
+end users can be a somewhat frustrating exercise that often amounts to trial
+and error:
+
+.. code:: python
+
+  def create_image(image, cloud)
+      '''Create an image in a cloud.'''
+      try:
+          create_image_via_glance_v1_upload(image, cloud)
+      except ApiNotAvailableError:
+          try:
+              create_image_via_glance_v2_upload(image, cloud)
+          except UnauthorizedError:
+              try:
+                  create_image_via_glance_import_task(image, cloud)
+              except:
+                  print "I can't or don't know how to create an image in this cloud"
+
+
+Some external tools and SDKs simply assume that certain capabilities are
+available to all users which causes frustration for users of clouds in
+which those capabilities are not available to them. The varying policy
+settings and API versions available among differing clouds coupled with the
+differing adoption of methods among clients may cause some Capabilities to not
+meet DefCore Criteria.
+
+In most cases, the versions of an API that are available are discoverable via
+a GET request to the root URL of an API endpoint (though in some cases a
+client may also need to check microversion headers if the project is known to
+use microversions). In some cases there is no test coverage for the
+discovery API in Tempest [8]_, which limits DefCore's ability to add tests
+for the discovery API to an Interoperability Guideline. Policy is often
+trickier to programmatically discover as policy files are only available
+to cloud administrators.
+
+The issue of discoverability also impacts what tests can be included in
+Interoperability Guidelines in another way: some tests assume that particular
+methods of accomplishing an end-user objective are available, and rely on
+them to set up for the capability they actually want to test. Drawing on
+the example above, a test for the ability to boot an instance in Nova might
+need to create an image to boot, and might assume that Glance v1 is both
+supported by the cloud and available to the unprivileged user running the test.
+As per Issue 1 described previously in this document, if that method isn't
+actually interoperable, the test for booting an instance may be excluded from
+an Interoperability Guideline even if booting an instance is actually
+an interoperable capability. If the test instead had a way to discover how the
+cloud allowed the user to create images and implemented that method as part of
+its fixture, the test would likely be more suitable for inclusion.
+
+.. [8] As an example, Neutron did not have a Tempest test for the "list API
+    versions" API until
+    `one was created <https://review.openstack.org/#/c/311747/>`_
+    in June 2016 after the gap was identified during capabilities scoring
+    activities for the 2016.08 Interoperability Guideline.
+
+Issue 5: Lack of Clarity on DefCore's Purpose and Abilities
+------------------------------------------------------------
+
+Although the DefCore Committee was initially created almost three years ago,
+the program has taken some time to evolve its operating procedures and develop
+Guidelines.  Some further time elapsed before Guidelines included enough
+required Capabilities to be genuinely useful as decision-making tools for
+many consumers of OpenStack clouds, vendors designing products or services
+built on OpenStack, prospective customers of those products and services, and
+the tooling ecosystem. Over that time, the role of the DefCore Committee has
+been a matter of many discussions within the community. For example, some
+feedback we've received indicates that there is some sentiment that the
+DefCore Committee can "bless" a capability by including it in an
+Interoperability Guideline based on whether or not the Committee members feel
+that all clouds should support the capability. In fact, most of the DefCore
+Criteria are trailing indicators of whether or not a capability has become
+widely adopted throughout the ecosystem. The DefCore Committee also does not
+mandate technical decisions for projects such as when an API should be
+deprecated, how or if a capability that has been deemed not interoperable must
+be improved or replaced, or how Tempest tests should be designed. Technical
+governance of OpenStack's development instead resides with the projects
+themselves and ultimately with the Technical Committee.
+
+The logo programs [9]_ that Interoperability Guidelines govern admission
+to are designed to be simple. They allow a product or service built on
+OpenStack to use a logo that indicates it is interoperable. The logo is a
+very easily recognizable mark that indicates some base level of interoperable
+functionality is available, and is thus easy for consumers of OpenStack clouds
+to look for. However, users must dig a bit further to really understand which
+Capabilities are actually interoperable. A list of Capabilities and required
+tests are published with each Guideline, but the tests may not easily map to
+particular APIs that users are interested in using. Users may also need to
+compare different Guidelines to determine differences in the Capabilities
+covered if they are concerned with clouds that have demonstrated compliance
+with different Guidelines. Even armed with a list of tests, users may require
+that some Capabilities not covered by the Guidelines be present in products
+that they choose to use--and there's currently no good way for them to
+determine which products support those Capabilities.
+
+.. [9] Refer to: http://www.openstack.org/brand/interop/
+
+
+Concluding Remarks and Acknowledgements
+----------------------------------------
+
+The DefCore Committee hopes that this report is informative and useful in
+directing attention to current interoperability challenges. We believe that
+focussing attention on these issues will ultimately lead to a more
+interoperable ecosystem for OpenStack users. We believe that the OpenStack
+ecosystem strongly desires interoperability among clouds, and congratulate
+OpenStack on progress already being made toward fostering greater
+interoperability among OpenStack clouds. We look forward to sharing updates
+on these issues and more in future reports.
+
+In particular, the DefCore Committee would like to gratefully acknowledge the
+feedback and engagement we've received from:
+
+* The OpenStack Foundation and its Board of Directors.
+* The Technical Committee.
+* The User Committee.
+* Providers of products and services built on OpenStack.
+* The RefStack project team.
+* PTLs and Project Teams who contributed to identifying interoperable
+  Capabilities and working to improve the interoperability of their projects.
+* The OpenStack QA team for its assistance in refining tests and working with
+  the DefCore Committee to expand and maintain interoperability tests.
+* End users of OpenStack who've provided feedback and frank conversation.
+
+Without the participation of such a broad swath of our community, this report
+and indeed most of the DefCore Committee's work would not be possible. **Thank
+you for your support.**
+
+If you wish to provide feedback or engage the DefCore Committee in other ways,
+please contact us at defcore-committee@lists.openstack.org.
