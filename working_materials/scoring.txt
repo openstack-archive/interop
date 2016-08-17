@@ -185,6 +185,9 @@ Notes:
     * No public image tests have explicit support for task API.
     * Scoring for v1 remains in place, but v2 is preferred interop
       standard (as reflected in worksheet).
+    * images-v2-share inherently requires more than one credential,
+      and currently out of scope for DefCore capabilities.
+    * images-v2-remove has no test as of Auguest, 2016.
 
 Volume
 ----------
