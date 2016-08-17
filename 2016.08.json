@@ -1,7 +1,7 @@
 {
   "id": "2016.08",
-  "schema": "1.5",
-  "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.5.json",
+  "schema": "1.6",
+  "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.6.json",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
   "status": "draft",
   "cutoff_score": "74",
@@ -2916,19 +2916,16 @@
     "informational" : {
       "heat": {
         "guidance": "Not a core capability, no position at this time",
-        "required": false,
         "comment": "",
         "sections": {}
       },
       "horizon": {
         "guidance": "Not a core capability, no position at this time",
-        "required": false,
         "comment": "",
         "sections": {}
       },
       "ceilometer": {
         "guidance": "Not a core capability, no position at this time",
-        "required": false,
         "comment": "",
         "sections": {}
       }
