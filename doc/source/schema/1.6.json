@@ -1,0 +1,325 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://git.openstack.org/cgit/openstack/defcore/doc/source/schema/1.6.json",
+  "type": "object",
+  "required": [
+    "id",
+    "schema",
+    "reference",
+    "source",
+    "status",
+    "replaces",
+    "target_approval",
+    "releases",
+    "platform",
+    "components",
+    "capabilities",
+    "designated-sections",
+    "criteria"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "string"
+    },
+    "reference": {
+      "type": "string"
+    },
+    "source": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [ "draft", "advisory", "approved", "superceded" ]
+    },
+    "replaces": {
+      "type": "string"
+    },
+    "target_approval": {
+      "type": "string",
+      "pattern": "\\d{4}-\\d{2}-\\d{2}"
+    },
+    "releases": {
+      "type": "array",
+      "items": {
+          "type": "string",
+          "minItems": 1,
+          "uniqueItems": true
+      }
+    },
+    "platform": {
+      "type": "object",
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advisory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deprecated": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "removed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "components": {
+      "type": "object",
+      "patternProperties": {
+        "^\\w+$": {
+          "$ref": "#/definitions/component"
+        }
+      }
+    },
+    "capabilities": {
+      "type": "object",
+      "patternProperties": {
+        "^\\w+$": {
+          "$ref": "#/definitions/capabilty"
+        }
+      }
+    },
+    "designated-sections": {
+      "type": "object",
+      "required": [ "required", "advisory", "deprecated", "removed", "informational" ],
+      "properties": {
+        "required": {
+          "type": "object",
+          "patternProperties": {
+            "^\\w+$": {
+              "$ref": "#/definitions/designated-section"
+            }
+         }
+        },
+        "advisory": {
+          "type": "object",
+          "patternProperties": {
+            "^\\w+$": {
+              "$ref": "#/definitions/designated-section"
+            }
+          }
+        },
+        "deprecated": {
+          "type": "object",
+          "patternProperties": {
+            "^\\w+$": {
+              "$ref": "#/definitions/designated-section"
+            }
+          }
+        },
+        "removed": {
+          "type": "object",
+          "patternProperties": {
+            "^\\w+$": {
+              "$ref": "#/definitions/designated-section"
+            }
+          }
+        },
+        "informational": {
+          "type": "object",
+          "patternProperties": {
+            "^\\w+$": {
+              "$ref": "#/definitions/designated-section"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "criteria": {
+      "type": "object",
+      "patternProperties": {
+        "^\\w+$": {
+          "$ref": "#/definitions/criteria"
+        }
+      }
+    },
+    "additionalProperties": false
+  },
+  "definitions": {
+    "component": {
+      "type": "object",
+      "required": [ "required", "advisory", "deprecated", "removed" ],
+      "properties": {
+        "required": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "advisory": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "deprecated": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "removed": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "capability": {
+      "type": "object",
+      "required": [ "achievements",
+        "admin",
+        "description",
+        "project",
+        "require-since",
+        "tests"
+      ],
+      "properties": {
+        "achievements": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "foundation",
+              "complete",
+              "proximity",
+              "clients",
+              "discover",
+              "sticky",
+              "future",
+              "atomic",
+              "stable",
+              "tools",
+              "deployed",
+              "TODO ADD LAST ITEM HERE"
+            ],
+            "uniqueItems": true
+          }
+        },
+        "admin": {
+          "type": "boolean"
+        },
+        "description": {
+          "type": "string"
+        },
+        "project": {
+          "type": "string"
+        },
+        "required-since": {
+          "type": "string",
+          "pattern": "[^$|^\\d{4}-\\d{2}-\\d{2}$]"
+        },
+        "tests": {
+          "type": "object",
+          "patternProperties": {
+            "^\\w+$": {
+              "$ref": "#/definitions/test"
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "criteria": {
+      "type": "object",
+      "required": [ "Description", "name", "weight" ],
+      "properties": {
+        "Description": {
+          "type": "string"
+        },
+        "name":  {
+          "type": "string"
+        },
+        "weight": {
+          "type": "integer"
+        }
+      },
+      "additionalProperties": false
+    },
+    "test": {
+      "type": "object",
+      "required": [ "idempotent_id" ],
+      "properties": {
+        "idempotent_id": {
+          "type": "string"
+        },
+        "flagged": {
+          "type": "object",
+          "required": [ "reason", "action", "date" ],
+          "properties": {
+            "reason": {
+              "type": "string",
+              "pattern": "^D\\d{3} \\w+"
+            },
+            "action": {
+              "type": "string"
+            },
+            "date": {
+              "type": "string",
+              "pattern": "\\d{4}-\\d{2}-\\d{2}"
+            }
+          }
+        },
+        "aliases": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "uniqueItems": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "designated-section": {
+      "type": "object",
+      "required": [ "guidance", "comment", "sections" ],
+      "properties": {
+        "guidance": {
+          "type": "string"
+        },
+        "comment": {
+          "type": "string"
+        },
+        "sections": {
+          "type": "object",
+          "patternProperties": {
+            "^\\w+$": {
+              "type": "object",
+              "required": [ "description", "designated", "comment" ],
+              "properties": {
+                "description": {
+                  "type": "string"
+                },
+                "designated": {
+                  "type": "boolean"
+                },
+                "comment": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
