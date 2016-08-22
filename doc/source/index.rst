@@ -49,3 +49,12 @@ Inactive Guidelines
    guidelines/2015.03.rst
    guidelines/2015.04.rst
    guidelines/2015.05.rst
+
+================================
+Interoperability Issues Reports
+================================
+
+.. toctree::
+   :maxdepth: 1
+
+   periodic_reports/fall_2016.rst
