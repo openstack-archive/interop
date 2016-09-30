@@ -595,6 +595,9 @@
       "project": "nova",
       "required-since": "2014.07",
       "tests": {
+        "tempest.api.compute.servers.test_delete_server.DeleteServersTestJSON.test_delete_active_server": {
+          "idempotent_id": "925fdfb4-5b13-47ea-ac8a-c36ae6fddb05"
+        },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_server_pass_id_exceeding_length_limit": {
           "idempotent_id": "id-f4d7279b-5fd2-4bf2-9ba4-ae35df0d18c5"
         },
