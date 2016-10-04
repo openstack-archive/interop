@@ -792,7 +792,8 @@
           "idempotent_id": "id-9b067a7b-7fee-4f6a-b29c-be43fe18fc5a"
         },
         "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filter_by_server_status": {
-          "idempotent_id": "id-ca78e20e-fddb-4ce6-b7f7-bcbf8605e66e"
+          "idempotent_id": "id-ca78e20e-fddb-4ce6-b7f7-bcbf8605e66e",
+          "aliases": ["tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filter_by_active_status"]
         },
         "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip": {
           "idempotent_id": "id-43a1242e-7b31-48d1-88f2-3f72aa9f2077",
