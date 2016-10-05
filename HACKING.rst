@@ -105,3 +105,61 @@ Valid reasons for flagging a test are limited to the following:
 - [D405] The test reflects an implementation choice that is not widely
   deployed even if the Capability is widely deployed.
 - [D406] Test removed permanently from test suite.
+
+To file a flag request for a test, follow these steps:
+
+#. Make sure you have a development environment set up accoring to the
+   `Developer's Guide
+   <http://docs.openstack.org/infra/manual/developers.html>`_.
+
+#. Clone the defcore repo by running:
+
+   .. code-block:: console
+
+      $ git clone https://git.openstack.org/openstack/defcore.git
+
+#. Open the relevant Guideline or Guidelines in your favorite text
+   editor and locate the tests you want to flag.
+
+#. Add a flag block to the test using the rationale above.  For
+   example, if I want to flag this test:
+
+   .. code-block:: json
+
+      "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip": {
+         "idempotent_id": "id-43a1242e-7b31-48d1-88f2-3f72aa9f2077"
+      },
+
+   I might modify the section to read:
+
+   .. code-block:: json
+
+      "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_filtered_by_ip": {
+         "idempotent_id": "id-43a1242e-7b31-48d1-88f2-3f72aa9f2077",
+         "flagged": {
+           "date": "2016-06-13",
+           "reason": "[D401] This test is skipped by Tempest due to bug https://bugs.launchpad.net/tempest/+bug/1600349.",
+           "action": "Remove flag when Tempest fix is in place."
+         }
+      },
+
+#. Once you've saved your changes, commit the chage locally:
+
+   .. code-block:: console
+
+     $ git commit -a
+
+   Be sure to write a useful commit message explaning your change.
+
+#. Push the change to gerrit, where your request can be reviewed:
+
+   .. code-block:: console
+
+     $ git review
+
+Please note that if you're having trouble setting up a development
+environment, you can also talk to the OpenStack Foundation's
+Interoperability Engineer <interop@openstack.org> or contact the
+Interop Working Group (formerly DefCore Committee) via email
+<defcore-committee@lists.openstack.org>.  We'll be happy to try to
+assist you or help file a request on your behalf.

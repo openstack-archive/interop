@@ -1,14 +1,14 @@
-2016.01 DefCore Testing
-=======================
+2016.08 Interoperability Guideline Testing
+==========================================
 
-Testing against DefCore 2016.01 Capabilities
---------------------------------------------
+Testing against 2016.08 Capabilities
+-------------------------------------
 
-https://git.openstack.org/cgit/openstack/defcore/tree/2016.01.json
+https://git.openstack.org/cgit/openstack/defcore/tree/2016.08.json
 
 Tempest can be run standalone, or under a test runner such as refstack-client
-or rally. If only testing against DefCore capabilities, you can use the
---load-list argument and a file containing a list of the DefCore tests. If
+or rally. If only testing against required capabilities, you can use the
+--load-list argument and a file containing a list of the required tests. If
 run with the refstack-client, test output will be parsed to list only
 passing tests in a JSON formatted file. We recommend running under
 refstack-client.
@@ -47,9 +47,9 @@ reasons to flag a test and how to file a flag request.  Results from
 modified tests cannot be accpeted as valid for trademark licensing
 purposes.
 
-DefCore Recommended Test Procedure
+Recommended Test Procedure
 
-The following procedure is recommended, but not required for testing DefCore.
+The following procedure is recommended, but not required for testing.
 This procedure assumes you're running a Linux test platform (Ubuntu 14.04
 or CentOS 7 have been verified) with administrator privileges.
 
@@ -64,9 +64,10 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Optionally, download a list of test from the RefStack site. We strongly
   encourage you to run the full set of api tests, as this not only qualifies
-  you for the trademark but also gives the DefCore team feedback on
-  deployed capabilities to help us determine future guidelines.
-  https://refstack.openstack.org/api/v1/guidelines/2016.01/tests?type=required
+  you for the trademark but also gives the Interop Working Group (formerly
+  the DefCore Committee) feedback on deployed capabilities to help us
+  determine future guidelines.
+  https://refstack.openstack.org/api/v1/guidelines/2016.08/tests?type=required
 
 * Configure tempest.conf for your cloud. If you need assistance in common
   parameters or settings contact interop@openstack.org. The recommended
