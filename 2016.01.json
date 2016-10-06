@@ -1404,15 +1404,15 @@
         "required-since": "",
         "tests": {
             "tempest.api.identity.v3.TestApiDiscovery.test_api_version_resources": {
-                "idempotent_id": "b9232f5e-d9e5-4d97-b96c-28d3db4de1bd",
+                "idempotent_id": "id-b9232f5e-d9e5-4d97-b96c-28d3db4de1bd",
                 "aliases": ["tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_resources"]
             },
             "tempest.api.identity.v3.TestApiDiscovery.test_api_media_types": {
-                "idempotent_id": "657c1970-4722-4189-8831-7325f3bc4265",
+                "idempotent_id": "id-657c1970-4722-4189-8831-7325f3bc4265",
                 "aliases": ["tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_media_types"]
             },
             "tempest.api.identity.v3.TestApiDiscovery.test_api_version_statuses": {
-                "idempotent_id": "8879a470-abfb-47bb-bb8d-5a7fd279ad1e",
+                "idempotent_id": "id-8879a470-abfb-47bb-bb8d-5a7fd279ad1e",
                 "aliases": ["tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_statuses"]
             }
         }
@@ -2329,7 +2329,7 @@
           "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e"
         },
         "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_with_volume_in_use" : {
-            "idempotent_id": "d-b467b54c-07a4-446d-a1cf-651dedcc3ff1",
+            "idempotent_id": "id-b467b54c-07a4-446d-a1cf-651dedcc3ff1",
             "flagged": {
                "reason": "D400: Snapshotting in-use volumes requires the --force flag which wasn't introduced until Liberty (and may create corrupt snapshots, so some clouds may not wish to offer it).",
                "action": "This test will be removed from future guidelines.",

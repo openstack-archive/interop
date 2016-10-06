@@ -596,7 +596,7 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_delete_server.DeleteServersTestJSON.test_delete_active_server": {
-          "idempotent_id": "925fdfb4-5b13-47ea-ac8a-c36ae6fddb05"
+          "idempotent_id": "id-925fdfb4-5b13-47ea-ac8a-c36ae6fddb05"
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_delete_server_pass_id_exceeding_length_limit": {
           "idempotent_id": "id-f4d7279b-5fd2-4bf2-9ba4-ae35df0d18c5"
@@ -1348,15 +1348,15 @@
         "required-since": "2016.08",
         "tests": {
             "tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_resources": {
-                "idempotent_id": "b9232f5e-d9e5-4d97-b96c-28d3db4de1bd",
+                "idempotent_id": "id-b9232f5e-d9e5-4d97-b96c-28d3db4de1bd",
                 "aliases": ["tempest.api.identity.v3.TestApiDiscovery.test_api_version_resources"]
             },
             "tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_media_types": {
-                "idempotent_id": "657c1970-4722-4189-8831-7325f3bc4265",
+                "idempotent_id": "id-657c1970-4722-4189-8831-7325f3bc4265",
                 "aliases": ["tempest.api.identity.v3.TestApiDiscovery.test_api_media_types"]
             },
             "tempest.api.identity.v3.test_api_discovery.TestApiDiscovery.test_api_version_statuses": {
-                "idempotent_id": "8879a470-abfb-47bb-bb8d-5a7fd279ad1e",
+                "idempotent_id": "id-8879a470-abfb-47bb-bb8d-5a7fd279ad1e",
                 "aliases": ["tempest.api.identity.v3.TestApiDiscovery.test_api_version_statuses"]
             }
         }
