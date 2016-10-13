@@ -27,7 +27,10 @@ network-extensions-provider-create,0
 network-extensions-provider-delete,0
 network-extensions-provider-show,0
 networks-subnet-pools-CRUD,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
-compute-list-api-versions,1,0,0,1,1,1,1,1,0,1,1,1,1,75*
+compute-list-api-versions,1,0,0,1,1,1,1,1,1,1,1,1,1,84*
+compute-servers-suspend-resume,1,1,1,1,1,1,1,1,0,0,1,1,1,82*
+compute-flavors-list,1,1,1,1,1,1,1,1,0,0,1,0,1,74*
+compute-availability-zones-list,1,1,1,1,1,1,1,1,0,0,1,0,1,74*
 images-v1-delete,0,1,1,0,1,1,0,1,0,1,0,1,1,58
 images-v1-index,0,1,1,0,1,1,0,1,0,1,0,1,1,58
 images-v1-list,0,1,1,0,1,1,0,1,0,1,0,1,1,58
