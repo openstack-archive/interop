@@ -1301,7 +1301,12 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
-          "idempotent_id": "id-f01904f2-e975-4915-98ce-cb5fa27bde4f"
+          "idempotent_id": "id-f01904f2-e975-4915-98ce-cb5fa27bde4f",
+          "flagged": {
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/381359",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-10-17"
+          }
         },
         "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id": {
           "idempotent_id": "id-62bab09a-4c03-4617-8cca-8572bc94af9b"
