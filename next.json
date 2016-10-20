@@ -1243,8 +1243,8 @@
       "project": "nova",
       "required-since": "",
       "tests": {
-        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
-          "idempotent_id": "id-f01904f2-e975-4915-98ce-cb5fa27bde4f"
+        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id": {
+          "idempotent_id": "id-c03ea686-905b-41a2-8748-9635154b7c57"
         },
         "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id": {
           "idempotent_id": "id-62bab09a-4c03-4617-8cca-8572bc94af9b"
