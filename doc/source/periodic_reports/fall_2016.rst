@@ -92,7 +92,13 @@ Committee, please refer to the following resources:
 * The `OpenStack Interoperability page
   <http://www.openstack.org/brand/interop/>`_ describes the logo/trademark
   programs that the DefCore Committee's Interoperability Guidelines govern
-  admission to.
+  admission to.  As of this writing, some 38 OpenStack Powered products have
+  verified that they meet the program requirements and are listed in the
+  `OpenStack Marketplace <http://www.openstack.org/marketplace>`_,
+  including
+  `7 public clouds <http://www.openstack.org/marketplace/public-clouds/>`_,
+  `27 distributions and appliances <http://www.openstack.org/marketplace/distros/>`_,
+  and `4 hosted private clouds <http://www.openstack.org/marketplace/hosted-private-clouds/>`_.
 
 You can communicate with the DefCore Committee via email at
 defcore-committee@lists.openstack.org, or on IRC in the #openstack-defcore
