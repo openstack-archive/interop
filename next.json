@@ -69,6 +69,8 @@
       "advisory": [
         "networks-l3-router",
         "networks-l3-CRUD",
+        "networks-list-api-versions",
+        "networks-subnet-pools-CRUD",
         "volumes-v2-upload"
       ],
       "deprecated": [
@@ -2324,6 +2326,51 @@
         }
       }
     },
+    "networks-list-api-verions": {
+      "achievements": [
+        "deployed",
+        "clients",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "description": "List supported versions of the Networks API",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_versions.NetworksApiDiscovery.test_api_version_resources": {
+          "idempotent_id": "id-cac8a836-c2e0-4304-b556-cd299c7281d1"
+        }
+      }
+    },
+    "networks-subnet-pools-CRUD": {
+      "achievements": [
+        "deployed",
+        "clients",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "description": "CRUD operations on subnet pools.",
+      "project": "neutron",
+      "required-since": "",
+      "tests": {
+        "tempest.api.network.test_subnetpools_extension.SubnetPoolsTestJSON.test_create_list_show_update_delete_subnetpools": {
+          "idempotent_id": "id-62595970-ab1c-4b7f-8fcc-fddfe55e9811"
+        }
+      }
+    },
     "volumes-v2-create-delete": {
       "achievements": [
         "deployed",
@@ -2911,7 +2958,8 @@
           "Core API security group extension": { "description": "Security group API", "designated": true, "comment": "none provided"},
           "Core API L3 extension": { "description": "L3 API for floating IPs and routers", "designated": true, "comment": "none provided"},
           "Agents": { "description": "Agents if used by relevant driver", "designated": true, "comment": "Some drivers require the use of community-developed agents to provide required Capabilities (such as L3 networking). If a product uses such agents, they are designated."},
-          "RPC": { "description": "RPC API", "designated": true, "comment": "none provided"}
+          "RPC": { "description": "RPC API", "designated": true, "comment": "none provided"},
+          "neutron-lib": { "description": "Library code imported in several parts of Neutron's core", "designated": true, "comment": "none provided"}
         }
       }
     },
