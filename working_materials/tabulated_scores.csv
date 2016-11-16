@@ -68,8 +68,7 @@ objectstore-object-copy,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 objectstore-object-create,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 objectstore-object-delete,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 objectstore-object-get,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
-objectstore-object-put,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
-objectstore-object-upload,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
+objectstore-temp-url-put,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 objectstore-object-versioned,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 objectstore-temp-url-get,1,1,1,1,1,1,1,1,1,1,1,0,1,92*
 objectstore-account-quotas,1,1,1,1,1,1,1,1,0,1,1,1,1,91*
@@ -79,3 +78,9 @@ objectstore-container-quotas,1,1,1,1,1,1,1,1,0,1,1,1,1,91*
 objectstore-container-create,1,1,1,1,1,1,1,1,0,1,1,1,1,91*
 objectstore-container-delete,1,1,1,1,1,1,1,1,0,1,1,1,1,91*
 objectstore-container-list,1,1,1,1,1,1,1,1,0,1,1,1,1,91*
+objectstore-bulk-operations,1,0,0,1,1,1,1,1,0,0,1,0,1,58
+objectstore-info-request,1,1,1,1,1,1,1,1,0,1,1,1,1,91*
+objectstore-container-metadata,1,1,1,1,1,1,1,1,0,1,1,1,1,91*
+objectstore-staticweb,1,0,0,1,1,1,0,1,0,0,1,1,1,58
+objectstore-crossdomain,1,0,0,1,1,1,0,1,0,0,1,1,1,58
+objectstore-healthcheck,1,0,0,1,1,1,0,1,0,0,1,1,1,58

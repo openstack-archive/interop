@@ -91,29 +91,29 @@
     },
     "object": {
       "required": [
-        "objectstore-object-copy",
-        "objectstore-object-create",
-        "objectstore-object-delete",
-        "objectstore-object-get",
-        "objectstore-object-put",
-        "objectstore-object-upload",
-        "objectstore-object-versioned",
-        "objectstore-temp-url-get",
-        "identity-v3-tokens-create"
-      ],
-      "advisory": [
         "objectstore-account-quotas",
         "objectstore-account-list",
         "objectstore-container-acl",
         "objectstore-container-quotas",
         "objectstore-container-create",
         "objectstore-container-delete",
-        "objectstore-container-list"],
-      "deprecated": [
-        "objectstore-object-access"
+        "objectstore-container-list",
+        "objectstore-info-request",
+        "objectstore-object-copy",
+        "objectstore-object-create",
+        "objectstore-object-delete",
+        "objectstore-object-get",
+        "objectstore-object-versioned",
+        "objectstore-temp-url-get",
+        "objectstore-temp-url-put",
+        "identity-v3-tokens-create"
       ],
+      "advisory": [
+        "objectstore-container-metadata"
+      ],
+      "deprecated" : [],
       "removed": [
-        "identity-v2-tokens-create"
+        "objectstore-object-access"
       ]
     }
   },
@@ -1453,6 +1453,9 @@
       "tests": {
         "tempest.api.object_storage.test_object_services.ObjectTest.test_create_object": {
           "idempotent_id": "id-5b4ce26f-3545-46c9-a2ba-5754358a4c62"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
+          "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
         }
       }
     },
@@ -1512,7 +1515,7 @@
         }
       }
     },
-    "objectstore-object-put": {
+    "objectstore-temp-url-put": {
       "achievements": [
         "deployed",
         "tools",
@@ -1534,31 +1537,6 @@
       "tests": {
         "tempest.api.object_storage.test_object_temp_url.ObjectTempUrlTest.test_put_object_using_temp_url": {
           "idempotent_id": "id-9b08dade-3571-4152-8a4f-a4f2a873a735"
-        }
-      }
-    },
-    "objectstore-object-upload": {
-      "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "Basic object operations in Object Storage API",
-      "project": "swift",
-      "required-since": "2014.07",
-      "tests": {
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
-          "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
         }
       }
     },
@@ -1584,6 +1562,43 @@
       "tests": {
         "tempest.api.object_storage.test_object_version.ContainerTest.test_versioned_container": {
           "idempotent_id": "id-a151e158-dcbf-4a1f-a1e7-46cd65895a6f"
+        }
+      }
+    },
+    "objectstore-container-metadata": {
+      "achievements": [
+        "deployed",
+        "tools",
+        "clients",
+        "future",
+        "complete",
+        "stable",
+        "discover",
+        "doc",
+        "sticky",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "description": "Basic container metadata operations in Object Storage API",
+      "project": "swift",
+      "required-since": "",
+      "tests": {
+        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_and_delete_metadata": {
+          "idempotent_id": "id-cf19bc0b-7e16-4a5a-aaed-cb0c2fe8deef"
+        },
+        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_metadata": {
+          "idempotent_id": "id-2ae5f295-4bf1-4e04-bfad-21e54b62cec5"
+        },
+        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_delete_metadata": {
+          "idempotent_id": "id-3a5ce7d4-6e4b-47d0-9d87-7cd42c325094"
+        },
+        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_metadata_key": {
+          "idempotent_id": "id-31f40a5f-6a52-4314-8794-cd89baed3040"
+        },
+        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_delete_metadata_key": {
+          "idempotent_id": "id-a2e36378-6f1f-43f4-840a-ffd9cfd61914"
         }
       }
     },
@@ -1628,7 +1643,7 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_account_quotas.AccountQuotasTest.test_upload_valid_object": {
           "idempotent_id": "id-a22ef352-a342-4587-8f47-3bbdb5b039c4"
@@ -1658,7 +1673,7 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers": {
           "idempotent_id": "id-3499406a-ae53-4f8c-b43a-133d4dc6fe3f"
@@ -1715,7 +1730,7 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_container_acl.ObjectTestACLs.test_read_object_with_rights": {
           "idempotent_id": "id-a3270f3f-7640-4944-8448-c7ea783ea5b6"
@@ -1742,7 +1757,7 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_large_object": {
           "idempotent_id": "id-22eeeb2b-3668-4160-baef-44790f65a5a0"
@@ -1772,7 +1787,7 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_container_services.ContainerTest.test_create_container": {
           "idempotent_id": "id-92139d73-7819-4db1-85f8-3f2f22a8d91f"
@@ -1799,7 +1814,7 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_container_services.ContainerTest.test_delete_container": {
           "idempotent_id": "id-95d3a249-b702-4082-a2c4-14bb860cf06a"
@@ -1823,7 +1838,7 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents": {
           "idempotent_id": "id-312ff6bd-5290-497f-bda1-7c5fec6697ab"
@@ -1860,23 +1875,29 @@
         }
       }
     },
-    "objectstore-object-access": {
+    "objectstore-info-request": {
       "achievements": [
-        "foundation",
-        "complete",
-        "doc",
-        "proximity",
+        "deployed",
+        "tools",
         "clients",
         "future",
-        "atomic",
+        "complete",
         "stable",
-        "tools"
+        "discover",
+        "doc",
+        "sticky",
+        "foundation",
+        "atomic",
+        "proximity"
       ],
       "admin": false,
-      "description": "Basic object operations in Object Storage API",
+      "description": "",
       "project": "swift",
-      "required-since": "",
+      "required-since": "2017.01",
       "tests": {
+        "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
+          "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58"
+        }
       }
     },
     "networks-l2-CRUD": {
