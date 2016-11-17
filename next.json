@@ -67,6 +67,7 @@
         "volumes-v2-readonly"
       ],
       "advisory": [
+        "identity-v3-list-projects",
         "networks-l3-router",
         "networks-l3-CRUD",
         "networks-list-api-versions",
@@ -1362,6 +1363,29 @@
                 "aliases": ["tempest.api.identity.v3.TestApiDiscovery.test_api_version_statuses"]
             }
         }
+    },
+    "identity-v3-list-projects": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "clients",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "List projects a user belongs to",
+      "project": "keystone",
+      "required-since": "",
+      "tests": {
+        "tempest.api.identity.v3.test_list_projects_returns_only_authorized_projects": {
+          "idempotent_id": "id-86128d46-e170-4644-866a-cc487f699e1d"
+        }
+      }
     },
     "images-v2-index": {
       "achievements": [
