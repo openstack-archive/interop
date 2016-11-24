@@ -2264,7 +2264,8 @@
           "idempotent_id": "id-10254ed8-3849-454e-862e-3ab8e6aa01d2,negative"
         },
         "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_out_passing_size": {
-          "idempotent_id": "id-9387686f-334f-4d31-a439-33494b9e2683,negative"
+          "idempotent_id": "id-9387686f-334f-4d31-a439-33494b9e2683,negative",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_without_passing_size"]
         },
         "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_negative": {
           "idempotent_id": "id-8b472729-9eba-446e-a83b-916bdb34bef7,negative"
