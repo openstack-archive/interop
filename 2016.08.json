@@ -2720,7 +2720,8 @@
       "required-since": "2016.08",
       "tests": {
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata": {
-          "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769"
+          "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769",
+          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_crud_volume_metadata"]
         },
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata": {
           "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a"
