@@ -2470,7 +2470,8 @@
       "required-since": "2016.08",
       "tests": {
         "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata": {
-          "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c"
+          "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c",
+          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"]
         },
         "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata": {
           "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1"
