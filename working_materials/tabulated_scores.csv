@@ -62,8 +62,8 @@ volumes-v2-extend,1,0,1,1,1,1,1,1,0,1,1,0,1,77*
 volumes-v2-upload,1,0,1,1,1,1,1,1,0,1,1,0,1,77*
 identity-v3-api-discovery,1,0,1,1,1,1,1,1,0,1,1,1,1,85*
 identity-v3-catalog,1,0,1,1,1,1,1,1,0,1,1,1,1,85*
-identity-v3-list-projects,1,0,1,1,1,1,1,1,0,0,1,0,1,68
-identity-v3-list-groups,1,0,1,1,1,1,1,1,0,0,1,0,1,68
+identity-v3-list-projects,1,1,1,1,1,1,1,1,0,0,1,0,1,74*
+identity-v3-list-groups,1,1,1,1,1,1,1,1,0,0,1,0,1,74*
 objectstore-object-copy,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 objectstore-object-create,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 objectstore-object-delete,1,1,1,1,1,1,1,1,1,1,1,1,1,100*

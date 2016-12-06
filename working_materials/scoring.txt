@@ -227,8 +227,8 @@ Identity
 --------
 identity-v3-api-discovery:       [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
 identity-v3-catalog:             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
-identity-v3-list-projects:       [1,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [68]
-identity-v3-list-groups:         [1,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [68]
+identity-v3-list-projects:       [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-list-groups:         [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
 
 Notes:
   * identity-v3-catalog is returned when the api for
@@ -240,10 +240,18 @@ Notes:
   suite, so not yet tested for non-admin users. Even though it scores enough
   to be included as advisory, we cannot do this due to lack of non-admin
   test case.
-  * identity-v3-list-projects and identity-v3-list-groups are here because
-  they deserve some visibility and some explicit test cases, which at the
-  moment they are lacking. It seems important for users to be able to
-  discriminate between projects and groups when running their apps.
+  * identity-v3-list-projects and identity-v3-list-groups didn't have usable
+  tests in the past, but one was added for identity-v3-list-projects last year.
+  Providers like Fog.io
+  now actually use the /v3/users/{user_id}/[projects|groups] API's:
+  https://git.io/vX9S6
+  https://git.io/vX9SP
+  * identity-v3-change-password was considered here but it's applicability is
+  a bit hard to gauge: many systems using third-party authentication (such as
+  an LDAP/AD server, an external oauth system, etc) require password changes
+  to be done on the backend system.  It probably needs further study to see
+  if it's really interoperable, but it seems unlikely at this point (I also
+  don't see it being supported by many external tools, etc).
 
 Object Store
 ------------
