@@ -2324,9 +2324,6 @@
           "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c",
           "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"]
         },
-        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata": {
-          "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1"
-        },
         "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item": {
           "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed"
         },
@@ -2618,9 +2615,6 @@
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_crud_volume_metadata": {
           "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769",
           "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata"]
-        },
-        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata": {
-          "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a"
         },
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item": {
           "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20"

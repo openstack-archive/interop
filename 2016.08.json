@@ -2429,7 +2429,12 @@
           "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"]
         },
         "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata": {
-          "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1"
+          "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1",
+          "flagged": {
+            "reason": "D406 As this test is merged in test_crud_snapshot_metadata, test is removed from Tempest https://review.openstack.org/#/c/396159",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-12-01"
+          }
         },
         "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item": {
           "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed"
@@ -2724,7 +2729,12 @@
           "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_crud_volume_metadata"]
         },
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata": {
-          "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a"
+          "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a",
+          "flagged": {
+            "reason": "D406 As this test is merged in test_crud_volume_metadata, test is removed from Tempest https://review.openstack.org/#/c/396159",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-12-01"
+          }
         },
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item": {
           "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20"
