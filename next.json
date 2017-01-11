@@ -67,6 +67,9 @@
         "volumes-v2-readonly"
       ],
       "advisory": [
+        "compute-availability-zones-list",
+        "compute-flavors-list",
+        "compute-servers-suspend-resume",
         "identity-v3-list-projects",
         "networks-l3-router",
         "networks-l3-CRUD",
@@ -90,18 +93,14 @@
 
       ],
       "deprecated": [
+      ],
+      "removed": [
+        "identity-v2-tokens-create",
         "compute-auth-create",
         "compute-auth-get",
         "compute-auth-set",
         "compute-volume-get",
         "compute-volume-list"
-      ],
-      "removed": [
-        "identity-v2-tokens-create",
-        "compute-servers-change",
-        "compute-images-delete",
-        "compute-images-get",
-        "compute-images-list"
       ]
     },
     "object": {
@@ -160,36 +159,13 @@
         }
       }
     },
-    "compute-auth-create": {
+    "compute-availability-zones-list": {
       "achievements": [
-        "foundation",
-        "complete",
-        "proximity",
-        "clients",
-        "discover",
-        "sticky",
-        "future",
-        "atomic",
-        "stable",
-        "tools",
-        "deployed"
-      ],
-      "admin": false,
-      "description": "Auth related tests using Compute API",
-      "project": "nova",
-      "required-since": "",
-      "tests": {
-      }
-    },
-    "compute-auth-get": {
-      "achievements": [
-        "foundation",
         "complete",
         "doc",
         "proximity",
         "clients",
         "discover",
-        "sticky",
         "future",
         "atomic",
         "stable",
@@ -197,20 +173,21 @@
         "deployed"
       ],
       "admin": false,
-      "description": "Auth related tests using Compute API, Generate, import, and delete SSH keys within Compute services",
+      "description": "List Compute service availability zones with the Compute API",
       "project": "nova",
       "required-since": "",
       "tests": {
+        "tempest.api.compute.servers.test_availability_zone.AZV2TestJSON.test_get_availability_zone_list_with_non_admin_user": {
+          "idempotent_id": "id-a8333aa2-205c-449f-a828-d38c2489bf25"
+        }
       }
     },
-    "compute-auth-set": {
+    "compute-flavors-list": {
       "achievements": [
-        "foundation",
         "complete",
-        "proximity",
+        "doc",
         "clients",
         "discover",
-        "sticky",
         "future",
         "atomic",
         "stable",
@@ -218,10 +195,16 @@
         "deployed"
       ],
       "admin": false,
-      "description": "Auth related tests using Compute API",
+      "description": "List Flavors within the Compute API",
       "project": "nova",
       "required-since": "",
       "tests": {
+        "tempest.api.compute.flavors.test_flavors.FlavorsV2TestJSON.test_list_flavors": {
+          "idempotent_id": "id-e36c0eaa-dff5-4082-ad1f-3f9a80aa3f59"
+        },
+        "tempest.api.compute.flavors.test_flavors.FlavorsV2TestJSON.test_list_flavors_with_detail": {
+          "idempotent_id": "id-6e85fde4-b3cd-4137-ab72-ed5f418e8c24"
+        }
       }
     },
     "compute-images-create": {
@@ -341,36 +324,6 @@
         },
         "tempest.api.compute.test_quotas.QuotasTestJSON.test_get_quotas": {
           "idempotent_id": "id-f1ef0a97-dbbb-4cca-adc5-c9fbc4f76107"
-        }
-      }
-    },
-    "compute-servers-change": {
-      "achievements": [
-        "foundation",
-        "complete",
-        "doc",
-        "proximity",
-        "clients",
-        "discover",
-        "sticky",
-        "future",
-        "atomic",
-        "stable",
-        "tools",
-        "deployed"
-      ],
-      "admin": false,
-      "description": "Basic server operations in the Compute API",
-      "project": "nova",
-      "required-since": "",
-      "tests": {
-        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_change_server_password": {
-          "idempotent_id": "id-6158df09-4b82-4ab3-af6d-29cf36af858d",
-          "flagged": {
-            "reason": "[D400] This test is backend-specific (only works on one hypervisor)",
-            "action": "This test should be removed from future Guidelines.",
-            "date": "2015-08-20"
-          }
         }
       }
     },
@@ -941,6 +894,29 @@
         }
       }
     },
+    "compute-servers-suspend-resume": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Suspend/Resume server within the Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.servers.test_server_actions.ServerActionsTestJSON.test_suspend_resume_server": {
+          "idempotent_id": "id-0d8ee21e-b749-462d-83da-b85b41c86c7f"
+        }
+      }
+    },
     "compute-servers-stop": {
       "achievements": [
         "foundation",
@@ -1065,62 +1041,6 @@
         },
         "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_list_get_volume_attachments": {
           "idempotent_id": "id-7fa563fe-f0f7-43eb-9e22-a1ece036b513"
-        }
-      }
-    },
-    "compute-volume-get": {
-      "achievements": [
-        "foundation",
-        "complete",
-        "doc",
-        "proximity",
-        "clients",
-        "discover",
-        "sticky",
-        "future",
-        "atomic",
-        "stable",
-        "tools",
-        "deployed"
-      ],
-      "admin": false,
-      "description": "Retrieve volume information through the Compute API",
-      "project": "nova",
-      "required-since": "",
-      "tests": {
-        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id": {
-          "idempotent_id": "id-c03ea686-905b-41a2-8748-9635154b7c57"
-        },
-        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id": {
-          "idempotent_id": "id-62bab09a-4c03-4617-8cca-8572bc94af9b"
-        }
-      }
-    },
-    "compute-volume-list": {
-      "achievements": [
-        "foundation",
-        "complete",
-        "doc",
-        "proximity",
-        "clients",
-        "discover",
-        "sticky",
-        "future",
-        "atomic",
-        "stable",
-        "tools",
-        "deployed"
-      ],
-      "admin": false,
-      "description": "Retrieve volume information through the Compute API",
-      "project": "nova",
-      "required-since": "",
-      "tests": {
-        "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list": {
-          "idempotent_id": "id-bc2dd1a0-15af-48e5-9990-f2e75a48325d"
-        },
-        "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_details": {
-          "idempotent_id": "id-bad0567a-5a4f-420b-851e-780b55bb867c"
         }
       }
     },
