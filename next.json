@@ -5,7 +5,7 @@
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
   "status": "draft",
   "cutoff_score": "74",
-  "target_approval": "2017-01-26",
+  "target_approval": "2017-01-24",
   "replaces": "2016.08",
   "releases": ["liberty", "mitaka", "newton", "ocata"],
   "platform": {
@@ -1041,31 +1041,6 @@
         },
         "tempest.api.compute.volumes.test_attach_volume.AttachVolumeTestJSON.test_list_get_volume_attachments": {
           "idempotent_id": "id-7fa563fe-f0f7-43eb-9e22-a1ece036b513"
-        }
-      }
-    },
-    "identity-v2-tokens-create": {
-      "achievements": [
-        "foundation",
-        "complete",
-        "doc",
-        "proximity",
-        "clients",
-        "discover",
-        "sticky",
-        "future",
-        "atomic",
-        "stable",
-        "tools",
-        "deployed"
-      ],
-      "admin": false,
-      "description": "Auth operations within the Identity API",
-      "project": "keystone",
-      "required-since": "",
-      "tests": {
-        "tempest.api.identity.v2.test_tokens.TokensTest.test_create_token": {
-          "idempotent_id": "id-65ae3b78-91ff-467b-a705-f6678863b8ec"
         }
       }
     },
@@ -2133,7 +2108,7 @@
         }
       }
     },
-    "networks-list-api-verions": {
+    "networks-list-api-versions": {
       "achievements": [
         "deployed",
         "clients",
