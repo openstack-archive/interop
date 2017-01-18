@@ -1137,7 +1137,7 @@
       ],
       "admin": false,
       "description": "CRUD image operations in Images API v2",
-      "project": "nova",
+      "project": "glance",
       "required-since": "2014.07",
       "tests": {
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_no_params": {
