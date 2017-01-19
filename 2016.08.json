@@ -2103,10 +2103,20 @@
           "idempotent_id": "id-0435f278-40ae-48cb-a404-b8a087bc09b1"
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_create_port_with_no_securitygroups": {
-          "idempotent_id": "id-4179dcb9-1382-4ced-84fe-1b91c54f5735"
+          "idempotent_id": "id-4179dcb9-1382-4ced-84fe-1b91c54f5735",
+          "flagged": {
+            "date": "2017-01-19",
+            "reason": "[D405] The test reflects an implementation choice that is not widely deployed even if the Capability is widely deployed.",
+            "action": "Remove test from future guidelines"
+          }
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_create_show_delete_port_user_defined_mac": {
-          "idempotent_id": "id-13e95171-6cbd-489c-9d7c-3f9c58215c18"
+          "idempotent_id": "id-13e95171-6cbd-489c-9d7c-3f9c58215c18",
+          "flagged": {
+            "date": "2017-01-19",
+            "reason": "[D405] The test reflects an implementation choice that is not widely deployed even if the Capability is widely deployed.",
+            "action": "Remove test from future guidelines"
+          }
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_create_update_delete_port": {
           "idempotent_id": "id-c72c1c0c-2193-4aca-aaa4-b1442640f51c"
