@@ -45,7 +45,7 @@ follows.
                               # Schema description
     "source": "http://git.openstack.org/cgit/openstack/defcore/",
                               # git repo for files
-    "status": "approved",     # can be draft, review, approved or superseded [see 2015B C6.3]
+    "status": "approved",     # can be draft, advisory, approved or superseded [see 2015B C6.3]
     "cutoff_score": "74",     # the minimum score a Capability must achieve to be required in this Guideline
     "target_approval": "2016-01-27",
                               # Target date for BoD to approve Guideline
