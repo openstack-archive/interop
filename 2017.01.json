@@ -95,10 +95,12 @@
       "deprecated": [
       ],
       "removed": [
-        "identity-v2-tokens-create",
         "compute-auth-create",
         "compute-auth-get",
         "compute-auth-set",
+        "compute-images-delete",
+        "compute-images-get",
+        "compute-images-list",
         "compute-volume-get",
         "compute-volume-list"
       ]
@@ -156,6 +158,243 @@
       "tests": {
         "tempest.api.compute.test_versions.TestVersions.test_list_api_versions": {
           "idempotent_id": "id-6c0a0990-43b6-4529-9b61-5fd8daf7c55c"
+        }
+      }
+    },
+    "compute-auth-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Auth related tests using Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+      }
+    },
+    "compute-auth-get": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Auth related tests using Compute API, Generate, import, and delete SSH keys within Compute services",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+      }
+    },
+    "compute-auth-set": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Auth related tests using Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+      }
+    },
+    "compute-images-delete": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Image operations within the Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.images.test_images.ImagesTestJSON.test_delete_saving_image": {
+          "idempotent_id": "id-aa06b52b-2db5-4807-b218-9441f75d74e3"
+        }
+      }
+    },
+    "compute-images-get": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Image operations within the Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_get_image": {
+          "idempotent_id": "id-490d0898-e12a-463f-aef0-c50156b9f789"
+        }
+      }
+    },
+    "compute-images-list": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Image operations within the Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_changes_since": {
+          "idempotent_id": "id-18bac3ae-da27-436c-92a9-b22474d13aab",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_name": {
+          "idempotent_id": "id-33163b73-79f5-4d07-a7ea-9213bcc468ff",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_id": {
+          "idempotent_id": "id-9f238683-c763-45aa-b848-232ec3ce3105",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_server_ref": {
+          "idempotent_id": "id-05a377b8-28cf-4734-a1e6-2ab5c38bf606",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_status": {
+          "idempotent_id": "id-a3f5b513-aeb3-42a9-b18e-f091ef73254d",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_filter_by_type": {
+          "idempotent_id": "id-e3356918-4d3e-4756-81d5-abc4524ba29f",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_limit_results": {
+          "idempotent_id": "id-3a484ca9-67ba-451e-b494-7fcf28d32d62",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_changes_since": {
+          "idempotent_id": "id-7d439e18-ac2e-4827-b049-7e18004712c4",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_name": {
+          "idempotent_id": "id-644ea267-9bd9-4f3b-af9f-dffa02396a17",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_server_ref": {
+          "idempotent_id": "id-8c78f822-203b-4bf6-8bba-56ebd551cf84",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_status": {
+          "idempotent_id": "id-9b0ea018-6185-4f71-948a-a123a107988e",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_filter_by_type": {
+          "idempotent_id": "id-888c0cc0-7223-43c5-9db0-b125fd0a393b",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_image_filters.ListImageFiltersTestJSON.test_list_images_with_detail_limit_results": {
+          "idempotent_id": "id-ba2fa9a9-b672-47cc-b354-3b4c0600e2cb",
+          "flagged": {
+            "date": "2015-05-06",
+            "reason": "D405 Test implicitly depends on Glance v1 API, which is a SUPPORTED but not the CURRENT version. Vendors may have Glance v1 disabled in favor of Glance v2.",
+            "action": "Implement v2 support for Glance v2 API in Nova. Fix implicit dependency on Glance v1 in test."
+          }
+        },
+        "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_list_images": {
+          "idempotent_id": "id-fd51b7f4-d4a3-4331-9885-866658112a6f"
+        },
+        "tempest.api.compute.images.test_list_images.ListImagesTestJSON.test_list_images_with_detail": {
+          "idempotent_id": "id-9f94cb6b-7f10-48c5-b911-a0b84d7d4cd6"
         }
       }
     },
@@ -1044,7 +1283,7 @@
         }
       }
     },
-    "identity-v2-tokens-create": {
+    "compute-volume-get": {
       "achievements": [
         "foundation",
         "complete",
@@ -1060,12 +1299,48 @@
         "deployed"
       ],
       "admin": false,
-      "description": "Auth operations within the Identity API",
-      "project": "keystone",
+      "description": "Retrieve volume information through the Compute API",
+      "project": "nova",
       "required-since": "",
       "tests": {
-        "tempest.api.identity.v2.test_tokens.TokensTest.test_create_token": {
-          "idempotent_id": "id-65ae3b78-91ff-467b-a705-f6678863b8ec"
+        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
+          "idempotent_id": "id-f01904f2-e975-4915-98ce-cb5fa27bde4f",
+          "flagged": {
+            "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/381359",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2016-10-17"
+          }
+        },
+        "tempest.api.compute.volumes.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id": {
+          "idempotent_id": "id-62bab09a-4c03-4617-8cca-8572bc94af9b"
+        }
+      }
+    },
+    "compute-volume-list": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Retrieve volume information through the Compute API",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list": {
+          "idempotent_id": "id-bc2dd1a0-15af-48e5-9990-f2e75a48325d"
+        },
+        "tempest.api.compute.volumes.test_volumes_list.VolumesTestJSON.test_volume_list_with_details": {
+          "idempotent_id": "id-bad0567a-5a4f-420b-851e-780b55bb867c"
         }
       }
     },
@@ -1808,6 +2083,25 @@
         "tempest.api.object_storage.test_container_services.ContainerTest.test_list_no_container_metadata": {
             "idempotent_id": "id-a2faf936-6b13-4f8d-92a2-c2278355821e"
         }
+      }
+    },
+    "objectstore-object-access": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "future",
+        "atomic",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Basic object operations in Object Storage API",
+      "project": "swift",
+      "required-since": "",
+      "tests": {
       }
     },
     "objectstore-info-request": {
