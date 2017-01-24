@@ -114,12 +114,14 @@ None
 
 Removed Capabilities
 ----------------------
-* identity-v2-tokens-create (Keystone)
-* compute-auth-create
-* compute-auth-get
-* compute-auth-set
-* compute-volume-get
-* compute-volume-list
+* compute-auth-create (Nova)
+* compute-auth-get (Nova)
+* compute-auth-set (Nova)
+* compute-images-delete (Nova)
+* compute-images-get (Nova)
+* compute-images-list (Nova)
+* compute-volume-get (Nova)
+* compute-volume-list (Nova)
 
 
 
@@ -155,7 +157,7 @@ None
 
 Removed Capabilities
 ----------------------
-* objectstore-object-access
+* objectstore-object-access (Swift)
 
 
 Designated Sections
