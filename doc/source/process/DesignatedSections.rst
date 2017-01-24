@@ -16,9 +16,9 @@ Designated Sections Selection Guidance
 
    _Approved 2014 Dec 2_
 
-There DefCore committee identified 10 selection criteria. The first seven are
-technical from the TC and last three allow the Board to resolve issues without
-needed a technical judgement.
+The Interop Working Group identified 10 selection criteria. The first
+seven are technical from the TC and last three allow the Board to resolve
+issues without needing a technical judgement.
 
 1. Designated if the code provides the project external REST API
 
@@ -64,13 +64,13 @@ needed a technical judgement.
 
     2. The goal is guidance on where we want upstream contributions not a
        code inspection police state. Guidance will be revised per release
-       as part of the DefCore process.
+       as part of the Interop Working Group process.
 
 Designated Sections
 ===================
 
 Effective April 2015, approved Designated Sections are maintained
-in the Board approved DefCore Guidelines.  The 2015.03 Guideline
+in the Board approved Interoperability Guidelines.  The 2015.03 Guideline
 was set to match the Board action of 2014 December 2.
 
 Please see the current Guidelines to determine which Designated

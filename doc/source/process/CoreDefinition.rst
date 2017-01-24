@@ -19,8 +19,8 @@ suggest changes to the by-laws to clarify the definition of core.
 Implementation
 ==============
 
-* The `Governance/DefCoreCommittee
-  <https://wiki.openstack.org/wiki/Governance/DefCoreCommittee/>`_ is
+* The `Governance/InteropWG
+  <https://wiki.openstack.org/wiki/Governance/InteropWG/>`_ is
   working to manage this.
 * Meetings and agendas will be posted to that page, hosted on Google
   Hangouts and (generally) open to the community.

@@ -64,7 +64,7 @@ with open(outFileName, "w") as outFile:
         print 'Make sure there is a valid id'
         sys.exit(1)
 
-    line01 = "OpenStack DefCore %s" % data["id"]
+    line01 = "OpenStack Interoperability Guideline %s" % data["id"]
 
     outFile.write('=' * len(line01) + '\n')
     outFile.write(line01 + '\n')
@@ -78,7 +78,7 @@ with open(outFileName, "w") as outFile:
     # Correct Source
     if data.get('source') != \
        'http://git.openstack.org/cgit/openstack/defcore/':
-        print "The expected DefCore source not found"
+        print "The expected interoperability guideline source not found"
         sys.exit(1)
 
     outFile.write("""

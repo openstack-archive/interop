@@ -31,7 +31,7 @@ parser = argparse.ArgumentParser(
     description=textwrap.dedent("""\
     Tabulate capability scores and write them to files.
 
-    This utility script tabulates scores from a DefCore scoring
+    This utility script tabulates scores from an Interop WG scoring
     worksheet based on the weights from a given Guideline JSON file.
     It writes the scores in three formats:
 

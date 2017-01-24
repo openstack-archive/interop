@@ -3,8 +3,9 @@ Feature Description
 ======================
 
 This test specification describes interoperability testing as it is understood
-by the DefCore Committee. An important goal of interoperability is that end users
-of OpenStack should be able to expect certain APIs to be reliable across clouds.
+by the Interop Working Group. An important goal of interoperability is that
+end users of OpenStack should be able to expect certain APIs to be reliable
+across clouds.
 
 The spec aims to define how interoperability should be tested for OpenStack.
 It provides guidelines for evaluating current tests and the need for new test

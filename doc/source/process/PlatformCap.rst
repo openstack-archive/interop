@@ -9,13 +9,13 @@ Platform and Program Capabilities
 
    The following was approved by the OpenStack Board.
 
-Extend the DefCore principles to allow for multiple levels: programs and
+Extend the Interop WG principles to allow for multiple levels: programs and
 platforms. Programs represent subsections of the overall platform. In some
 cases, it is acceptable for a program identified without being included in
 the platform. New programs are added at Foundation recommendation via board
 approval. Programs are added to the platform via board approval.
 
-The initial programs will be Compute & Object. The DefCore platform will
+The initial programs will be Compute & Object. The Platform will
 require the Compute program, Object program and additional capabilities.
 
 Havana Approved: The Compute Program will consist of the following
