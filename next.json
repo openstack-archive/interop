@@ -5,9 +5,9 @@
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
   "status": "draft",
   "cutoff_score": "74",
-  "target_approval": "2017-01-24",
-  "replaces": "2016.08",
-  "releases": ["liberty", "mitaka", "newton", "ocata"],
+  "target_approval": "2017-08-23",
+  "replaces": "2017.01",
+  "releases": ["mitaka", "newton", "ocata", "pike"],
   "platform": {
     "required": ["compute", "object"],
     "advisory": [],

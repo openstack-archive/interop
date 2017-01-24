@@ -2,7 +2,7 @@
 OpenStack Interoperability Guideline 2017.01
 ============================================
 
-:Status: review
+:Status: approved
 :Replaces: 2016.08
 :JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/2017.01.json
 

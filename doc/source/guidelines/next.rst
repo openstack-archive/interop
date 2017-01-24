@@ -3,7 +3,7 @@ OpenStack Interoperability Guideline next
 =========================================
 
 :Status: draft
-:Replaces: 2016.08
+:Replaces: 2017.01
 :JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/next.json
 
 This document outlines the mandatory capabilities and designated
@@ -14,7 +14,7 @@ This document was generated from the `master JSON version <next.json>`_.
 
 Releases Covered
 ==============================
-Applies to Liberty, Mitaka, Newton, Ocata
+Applies to Mitaka, Newton, Ocata, Pike
 
 Platform Components
 ==============================
