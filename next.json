@@ -95,12 +95,6 @@
       "deprecated": [
       ],
       "removed": [
-        "identity-v2-tokens-create",
-        "compute-auth-create",
-        "compute-auth-get",
-        "compute-auth-set",
-        "compute-volume-get",
-        "compute-volume-list"
       ]
     },
     "object": {
@@ -127,7 +121,6 @@
       ],
       "deprecated" : [],
       "removed": [
-        "objectstore-object-access"
       ]
     }
   },
