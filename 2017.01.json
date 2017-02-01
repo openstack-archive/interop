@@ -1442,7 +1442,10 @@
       "tests": {
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_no_params": {
           "idempotent_id": "id-1e341d7a-90a9-494c-b143-2cdf2aeb6aee",
-          "aliases": ["tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params"]
+          "aliases": [
+             "tempest.api.image.v2.test_images.ListImagesTest.test_index_no_params",
+             "tempest.api.image.v2.test_images.ListUserImagesTest.test_list_no_params"
+          ]
         }
       }
     },
@@ -1495,10 +1498,12 @@
       "required-since": "2016.08",
       "tests": {
         "tempest.api.image.v2.test_images.ListImagesTest.test_get_image_schema": {
-          "idempotent_id": "id-622b925c-479f-4736-860d-adeaf13bc371"
+          "idempotent_id": "id-622b925c-479f-4736-860d-adeaf13bc371",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_get_image_schema"]
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_get_images_schema": {
-          "idempotent_id": "id-25c8d7b2-df21-460f-87ac-93130bcdc684"
+          "idempotent_id": "id-25c8d7b2-df21-460f-87ac-93130bcdc684",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_get_images_schema"]
         },
         "tempest.api.image.v2.test_images_negative.ImagesNegativeTest.test_get_delete_deleted_image": {
           "idempotent_id": "id-e57fc127-7ba0-4693-92d7-1d8a05ebcba9"
@@ -1529,25 +1534,32 @@
       "required-since": "2016.08",
       "tests": {
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_container_format": {
-          "idempotent_id": "id-9959ca1d-1aa7-4b7a-a1ea-0fff0499b37e"
+          "idempotent_id": "id-9959ca1d-1aa7-4b7a-a1ea-0fff0499b37e",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_list_images_param_container_format"]
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_disk_format": {
-          "idempotent_id": "id-4a4735a7-f22f-49b6-b0d9-66e1ef7453eb"
+          "idempotent_id": "id-4a4735a7-f22f-49b6-b0d9-66e1ef7453eb",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_list_images_param_disk_format"]
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_limit": {
-          "idempotent_id": "id-e914a891-3cc8-4b40-ad32-e0a39ffbddbb"
+          "idempotent_id": "id-e914a891-3cc8-4b40-ad32-e0a39ffbddbb",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_list_images_param_limit"]
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_min_max_size": {
-          "idempotent_id": "id-4ad8c157-971a-4ba8-aa84-ed61154b1e7f"
+          "idempotent_id": "id-4ad8c157-971a-4ba8-aa84-ed61154b1e7f",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_list_images_param_min_max_size"]
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_size": {
-          "idempotent_id": "id-cf1b9a48-8340-480e-af7b-fe7e17690876"
+          "idempotent_id": "id-cf1b9a48-8340-480e-af7b-fe7e17690876",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_list_images_param_size"]
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_status": {
-          "idempotent_id": "id-7fc9e369-0f58-4d05-9aa5-0969e2d59d15"
+          "idempotent_id": "id-7fc9e369-0f58-4d05-9aa5-0969e2d59d15",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_list_images_param_status"]
         },
         "tempest.api.image.v2.test_images.ListImagesTest.test_list_images_param_visibility": {
-          "idempotent_id": "id-7a95bb92-d99e-4b12-9718-7bc6ab73e6d2"
+          "idempotent_id": "id-7a95bb92-d99e-4b12-9718-7bc6ab73e6d2",
+          "aliases": ["tempest.api.image.v2.test_images.ListUserImagesTest.test_list_images_param_visibility"]
         }
       }
     },
