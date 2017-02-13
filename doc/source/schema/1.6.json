@@ -148,8 +148,7 @@
           "$ref": "#/definitions/criteria"
         }
       }
-    },
-    "additionalProperties": false
+    }
   },
   "definitions": {
     "component": {
