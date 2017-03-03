@@ -26,6 +26,7 @@ class CustomFormatter(argparse.ArgumentDefaultsHelpFormatter,
                       argparse.RawDescriptionHelpFormatter):
     pass
 
+
 # Set up command line arguments.
 parser = argparse.ArgumentParser(
     description=textwrap.dedent("""\
