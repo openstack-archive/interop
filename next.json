@@ -1617,9 +1617,6 @@
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_marker_and_end_marker": {
           "idempotent_id": "id-ac8502c2-d4e4-4f68-85a6-40befea2ef5e"
         },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
-          "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58"
-        },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_account_metadata": {
           "idempotent_id": "id-b904c2e3-24c2-4dba-ad7d-04e90a761be5"
         }

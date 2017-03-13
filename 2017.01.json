@@ -1933,7 +1933,12 @@
           "idempotent_id": "id-ac8502c2-d4e4-4f68-85a6-40befea2ef5e"
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
-          "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58"
+          "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58",
+          "flagged": {
+            "reason": "D404 This test has already been included in the objectstore-info-request capability",
+            "action": "This test should be removed in the future",
+            "date": "2017-03-13"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_account_metadata": {
           "idempotent_id": "id-b904c2e3-24c2-4dba-ad7d-04e90a761be5"
