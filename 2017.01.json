@@ -1868,7 +1868,12 @@
       "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_account_quotas.AccountQuotasTest.test_upload_valid_object": {
-          "idempotent_id": "id-a22ef352-a342-4587-8f47-3bbdb5b039c4"
+          "idempotent_id": "id-a22ef352-a342-4587-8f47-3bbdb5b039c4",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_quotas_negative.AccountQuotasNegativeTest.test_upload_large_object": {
           "idempotent_id": "id-cf9e21f5-3aa4-41b1-9462-28ac550d8d3f",
@@ -1876,10 +1881,15 @@
             "reason": "D406 Test removed from Tempest https://review.openstack.org/#/c/354873/",
             "action": "This test will be removed from future guidelines.",
             "date": "2017-01-31"
-          }          
+          }
         },
         "tempest.api.object_storage.test_account_quotas_negative.AccountQuotasNegativeTest.test_user_modify_quota": {
-          "idempotent_id": "id-d1dc5076-555e-4e6d-9697-28f1fe976324"
+          "idempotent_id": "id-d1dc5076-555e-4e6d-9697-28f1fe976324",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         }
       }
     },
@@ -1903,34 +1913,84 @@
       "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers": {
-          "idempotent_id": "id-3499406a-ae53-4f8c-b43a-133d4dc6fe3f"
+          "idempotent_id": "id-3499406a-ae53-4f8c-b43a-133d4dc6fe3f",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_containers": {
-          "idempotent_id": "id-884ec421-fbad-4fcc-916b-0580f2699565"
+          "idempotent_id": "id-884ec421-fbad-4fcc-916b-0580f2699565",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_end_marker": {
-          "idempotent_id": "id-5ca164e4-7bde-43fa-bafb-913b53b9e786"
+          "idempotent_id": "id-5ca164e4-7bde-43fa-bafb-913b53b9e786",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_format_json": {
-          "idempotent_id": "id-1c7efa35-e8a2-4b0b-b5ff-862c7fd83704"
+          "idempotent_id": "id-1c7efa35-e8a2-4b0b-b5ff-862c7fd83704",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit": {
-          "idempotent_id": "id-5cfa4ab2-4373-48dd-a41f-a532b12b08b2"
+          "idempotent_id": "id-5cfa4ab2-4373-48dd-a41f-a532b12b08b2",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_end_marker": {
-          "idempotent_id": "id-888a3f0e-7214-4806-8e50-5e0c9a69bb5e"
+          "idempotent_id": "id-888a3f0e-7214-4806-8e50-5e0c9a69bb5e",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_marker": {
-          "idempotent_id": "id-f7064ae8-dbcc-48da-b594-82feef6ea5af"
+          "idempotent_id": "id-f7064ae8-dbcc-48da-b594-82feef6ea5af",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_marker_and_end_marker": {
-          "idempotent_id": "id-8cf98d9c-e3a0-4e44-971b-c87656fdddbd"
+          "idempotent_id": "id-8cf98d9c-e3a0-4e44-971b-c87656fdddbd",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_marker": {
-          "idempotent_id": "id-638f876d-6a43-482a-bbb3-0840bca101c6"
+          "idempotent_id": "id-638f876d-6a43-482a-bbb3-0840bca101c6",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_marker_and_end_marker": {
-          "idempotent_id": "id-ac8502c2-d4e4-4f68-85a6-40befea2ef5e"
+          "idempotent_id": "id-ac8502c2-d4e4-4f68-85a6-40befea2ef5e",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
           "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58",
@@ -1941,7 +2001,12 @@
           }
         },
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_account_metadata": {
-          "idempotent_id": "id-b904c2e3-24c2-4dba-ad7d-04e90a761be5"
+          "idempotent_id": "id-b904c2e3-24c2-4dba-ad7d-04e90a761be5",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         }
       }
     },
@@ -1965,10 +2030,20 @@
       "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_container_acl.ObjectTestACLs.test_read_object_with_rights": {
-          "idempotent_id": "id-a3270f3f-7640-4944-8448-c7ea783ea5b6"
+          "idempotent_id": "id-a3270f3f-7640-4944-8448-c7ea783ea5b6",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         },
         "tempest.api.object_storage.test_container_acl.ObjectTestACLs.test_write_object_with_rights": {
-          "idempotent_id": "id-aa58bfa5-40d9-4bc3-82b4-d07f4a9e392a"
+          "idempotent_id": "id-aa58bfa5-40d9-4bc3-82b4-d07f4a9e392a",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         }
       }
     },
@@ -2147,7 +2222,12 @@
       "required-since": "2017.01",
       "tests": {
         "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
-          "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58"
+          "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58",
+          "flagged": {
+            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
+            "action": "This test should be removed or changed to require only one user if possible in the future",
+            "date": "2017-02-03"
+          }
         }
       }
     },
