@@ -31,6 +31,7 @@ def printHelpArrays(input):
 
     return output[0:-2]
 
+
 wrapper = textwrap.TextWrapper(width=79, subsequent_indent='  ')
 
 inFileName = "NONE"

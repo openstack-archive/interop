@@ -45,7 +45,7 @@ def show_outcome(stream, test):
     global RESULTS
     status = test['status']
     if status == 'exists':
-        returnmime
+        return
     if status == 'fail':
         for raw_name in test['details']:
             name = raw_name.split(':')[0]
@@ -72,6 +72,7 @@ def show_outcome(stream, test):
         SUCCESS.append(test)
     elif status == 'skip':
         SKIPS.append(test)
+
 
 stream = subunit.ByteStreamToStreamResult(
     sys.stdin, non_subunit_name='stdout')
