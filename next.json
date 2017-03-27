@@ -1112,7 +1112,7 @@
       "project": "keystone",
       "required-since": "",
       "tests": {
-        "tempest.api.identity.v3.test_list_projects_returns_only_authorized_projects": {
+        "tempest.api.identity.v3.test_projects.IdentityV3ProjectsTest.test_list_projects_returns_only_authorized_projects": {
           "idempotent_id": "id-86128d46-e170-4644-866a-cc487f699e1d"
         }
       }
@@ -1885,7 +1885,7 @@
             "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
             "action": "This test should be removed or changed to require only one user if possible in the future",
             "date": "2017-02-03"
-          }  
+          }
         }
       }
     },

@@ -1420,7 +1420,10 @@
       "required-since": "",
       "tests": {
         "tempest.api.identity.v3.test_list_projects_returns_only_authorized_projects": {
-          "idempotent_id": "id-86128d46-e170-4644-866a-cc487f699e1d"
+          "idempotent_id": "id-86128d46-e170-4644-866a-cc487f699e1d",
+          "aliases": [
+             "tempest.api.identity.v3.test_projects.IdentityV3ProjectsTest.test_list_projects_returns_only_authorized_projects"
+          ]
         }
       }
     },
