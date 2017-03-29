@@ -183,12 +183,12 @@ images-v1-shared-images-remove:  [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 images-v1-update:                [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 
 images-v2-remove:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
-images-v2-update:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-update:                [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
 images-v2-share:                 [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
-images-v2-import:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
-images-v2-list:                  [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
-images-v2-delete:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
-images-v2-get:                   [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
+images-v2-import:                [0,0,0] [1,0,0] [0,0,0] [1,0,1] [1] [28]
+images-v2-list:                  [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
+images-v2-delete:                [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
+images-v2-get:                   [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
 
 Notes:
     * Image creation is captured under the register operation.
@@ -196,8 +196,12 @@ Notes:
     * Scoring for v1 remains in place, but v2 is preferred interop
       standard (as reflected in worksheet).
     * images-v2-share inherently requires more than one credential,
-      and currently out of scope for required capabilities.
-    * images-v2-remove has no test as of Auguest, 2016.
+      and currently out of scope for required capabilities. Additionally,
+      this capability may not be exposed at all. For more detail on why,
+      see https://wiki.openstack.org/wiki/OSSN/OSSN-0065#Recommended_Actions
+    * images-v2-remove has no test as of August, 2016. This was most recently
+      defined in the 2016.01 guideline.
+    * images-v2-import capability not delivered in Ocata.
 
 Volume
 ----------
