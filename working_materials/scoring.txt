@@ -125,12 +125,40 @@ Notes:
 
 Compute
 -------
-compute-list-api-versions:             [1,0,0] [1,1,1] [1,1,1] [1,1,1] [1] [84]*
-compute-servers-suspend-resume:        [1,1,1] [1,1,1] [1,1,0] [0,1,1] [1] [82]*
-compute-flavors-list:                  [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
-compute-availability-zones-list:       [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+
+compute-availability-zones-list: [1,1,1] [1,1,1] [1,1,0] [0,1,1] [1] [82]*
+compute-flavors-list:            [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+compute-images-create:           [0,1,1] [0,1,1] [1,1,1] [0,1,1] [1] [72]
+compute-instance-actions-get:    [1,1,1] [1,1,1] [1,0,0] [1,1,0] [1] [75]*
+compute-instance-actions-list:   [1,1,1] [1,1,1] [1,0,0] [1,1,0] [1] [75]*
+compute-keypairs-create:         [1,1,1] [1,1,1] [1,1,1] [0,1,0] [1] [83]*
+compute-list-api-versions:       [1,0,0] [1,1,1] [1,0,1] [1,1,1] [1] [76]*
+compute-quotas-get:              [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-create:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-delete:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-get:             [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-host:            [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-invalid:         [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-list:            [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-lock:            [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-metadata-delete: [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-metadata-get:    [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-metadata-list:   [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-metadata-set:    [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-metadata-update: [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-name:            [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-reboot:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-rebuild:         [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-resize:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-stop:            [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-suspend-resume:  [0,1,1] [1,0,1] [1,1,0] [0,1,1] [1] [66]
+compute-servers-update:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-verify:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-volume-attach:           [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 
 Notes:
+  * compute-servers-suspend-resume is not widely supported by
+    different hypervisors, and is not recommended as a capability.
   * There has been some discussion that this capability is not widely
     deployed [1].  However it appears that in most cases the API either:
     * Is present and works, but only if a non-SSL endpoint is exposed.
