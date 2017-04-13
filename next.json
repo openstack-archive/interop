@@ -46,6 +46,7 @@
         "compute-servers-metadata-update",
         "compute-volume-attach",
         "identity-v3-api-discovery",
+        "identity-v3-list-projects",
         "identity-v3-tokens-create",
         "images-v2-index",
         "images-v2-update",
@@ -71,7 +72,6 @@
         "volumes-v2-upload"
       ],
       "advisory": [
-        "identity-v3-list-projects",
         "networks-l3-router",
         "networks-l3-CRUD",
         "networks-list-api-versions",
@@ -3155,18 +3155,17 @@
         }
       },
       "keystone" : {
-        "guidance": "Designation is outlined per API grouping. Identity (user and group) management APIs will not be designated. API access (with exception of auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs include both v2.0 and v3 versions where applicable.",
+        "guidance": "Designation is outlined per API grouping. Identity (user and group) management APIs will not be designated. API access (with exception of auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs include v3 version where applicable.",
         "comment": "Specific Drivers/Plugins and Identity management code are not designated as many deployments have custom drivers and/or read-only, federated, or externally managed Identity information.",
         "sections": {
-          "assignment API": {"description": "APIs for managing roles and assignment of roles to user(s)/group(s) for a given scope", "designated": true, "comment": "Some functionality for v2.0 is provided via the 'admin_crud' extension"},
-          "auth (v2.0) API": {"description": "'/v2.0/tokens' APIs used for v2.0 authentication and token validation/revocation/signing certificates (when PKI tokens are in use)", "designated": true, "comment": "This includes the catalog data provided as part of the token body."},
+          "assignment API": {"description": "APIs for managing roles and assignment of roles to user(s)/group(s) for a given scope", "designated": true, "comment": "Some functionality is provided via the 'user_crud' extension"},
           "auth (v3) API": {"description": "'/v3/auth' APIs used for v3 authentication and token validation/revocation", "designated": true, "comment": "This includes the catalog data provided as part of the token body and '/v3/auth/catalog'."},
           "catalog API": {"description": "APIs for managing services, endpoints, and regions", "designated": false, "comment": "Catalog API is not designated due to the support of template catalog driver which cannot be updated via REST calls. The catalog in the token is considered part of the AUTH APIs."},
           "credential API": {"description": "APIs for managing user credentials", "designated": false, "comment": "none provided"},
           "drivers": {"description": "specific implementations for the keystone API backends (e.g. SQL, LDAP, etc)", "designated": false, "comment": "none provided"},
           "ec2 API": {"description": "APIs for managing and utilizing ec2-style credentials", "designated": false, "comment": "May be required for some OpenStack features in non-keystone services"},
           "federation API": {"description": "APIs for managing and consuming federated identity", "designated": false, "comment": "none provided"},
-          "identity API": {"description": "APIs for managing user(s) and group(s) in a read/write identity store", "designated": false, "comment": "Some functionality for v2.0 is provided via the 'admin_crud' and 'user_crud' extensions"},
+          "identity API": {"description": "APIs for managing user(s) and group(s) in a read/write identity store", "designated": false, "comment": "Some functionality is provided via 'user_crud' extensions"},
           "notifications": {"description": "CADF notifications for events (authentication, creation of resources, etc)", "designated": false, "comment": "Highly recommended and may be required for some features of OpenStack"},
           "policy API": {"description": "APIs for managing centralized policy.json distribution for OpenStack services", "designated": false, "comment": "none provided"},
           "trust API": {"description": "APIs for managing delegation (via trusts) of roles from one user/group to another user/group", "designated": true, "comment": "none provided"},
@@ -3253,7 +3252,15 @@
       }
     },
     "advisory" : {},
-    "deprecated" : {},
+    "deprecated" : {
+      "keystone" : {
+        "guidance": "Designation is outlined per API grouping.",
+        "comment": "Removing section related to  auth V2.0 since it is deprecated.",
+        "sections": {
+          "auth (v2.0) API": {"description": "'/v2.0/tokens' APIs used for v2.0 authentication and token validation/revocation/signing certificates (when PKI tokens are in use)", "designated": true, "comment": "This includes the catalog data provided as part of the token body."}
+        }
+      }
+    },
     "removed" : {},
     "informational" : {
       "heat": {
