@@ -64,7 +64,8 @@
         "volumes-v2-extensions",
         "volumes-v2-metadata",
         "volumes-v2-reserve",
-        "volumes-v2-readonly"
+        "volumes-v2-readonly",
+        "volumes-v2-upload"
       ],
       "advisory": [
         "compute-availability-zones-list",
@@ -76,7 +77,6 @@
         "networks-list-api-versions",
         "networks-subnet-pools-CRUD",
         "volumes-list-api-versions",
-        "volumes-v2-upload",
         "volumes-v3-create-delete",
         "volumes-v3-attach-detach",
         "volumes-v3-snapshot-create-delete",
@@ -2716,7 +2716,7 @@
       "admin": false,
       "description": "Upload volumes with Cinder v2 API",
       "project": "cinder",
-      "required-since": "",
+      "required-since": "2017.08",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload": {
           "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d"
