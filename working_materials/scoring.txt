@@ -122,6 +122,9 @@ Notes:
     was considered but was removed because not all Neutron plugins support
     more than one IP per port (and some providers limit the number of
     IP's per port for security reasons, e.g. spoofguard).
+  * The new trunk port API extension for the vlan-aware VM's feature may be
+    interesting to consider in the future, but didn't land until Newton and is
+    not yet sufficiently well adopted.
 
 Compute
 -------
