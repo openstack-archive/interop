@@ -2363,10 +2363,20 @@
           "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_update_subnet_gw_dns_host_routes_dhcp"]
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_security_group_and_extra_attributes": {
-          "idempotent_id": "id-58091b66-4ff4-4cc1-a549-05d60c7acd1a"
+          "idempotent_id": "id-58091b66-4ff4-4cc1-a549-05d60c7acd1a",
+          "flagged": {
+            "date": "2017-04-27",
+            "reason": "[D401] The test fails or is skipped due to a bug in the test and the bug is accepted by the OpenStack project which maintains the test.",
+            "action": "Remove flag when Tempest fix is in place"
+          }
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_two_security_groups_and_extra_attributes": {
-          "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d"
+          "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d",
+          "flagged": {
+            "date": "2017-04-27",
+            "reason": "[D401] The test fails or is skipped due to a bug in the test and the bug is accepted by the OpenStack project which maintains the test.",
+            "action": "Remove flag when Tempest fix is in place"
+          }
         }
       }
     },
