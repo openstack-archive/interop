@@ -2411,7 +2411,8 @@
           "idempotent_id": "id-c2a70d72-8826-43a7-8208-0209e6360c47"
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_extra_route": {
-          "idempotent_id": "id-c86ac3a8-50bd-4b00-a6b8-62af84a0765c"
+          "idempotent_id": "id-c86ac3a8-50bd-4b00-a6b8-62af84a0765c",
+          "aliases": ["tempest.api.network.test_routers.RoutersTest.test_update_delete_extra_route"]
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_admin_state": {
           "idempotent_id": "id-a8902683-c788-4246-95c7-ad9c6d63a4d9"
