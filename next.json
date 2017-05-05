@@ -54,6 +54,7 @@
         "images-v2-get",
         "networks-l2-CRUD",
         "networks-security-groups-CRUD",
+        "networks-subnet-pools-CRUD",
         "volumes-v2-create-delete",
         "volumes-v2-attach-detach",
         "volumes-v2-snapshot-create-delete",
@@ -74,7 +75,6 @@
         "networks-l3-router",
         "networks-l3-CRUD",
         "networks-list-api-versions",
-        "networks-subnet-pools-CRUD",
         "volumes-list-api-versions",
         "volumes-v3-create-delete",
         "volumes-v3-attach-detach",
@@ -2196,7 +2196,7 @@
       "admin": false,
       "description": "CRUD operations on subnet pools.",
       "project": "neutron",
-      "required-since": "",
+      "required-since": "2017.08",
       "tests": {
         "tempest.api.network.test_subnetpools_extensions.SubnetPoolsTestJSON.test_create_list_show_update_delete_subnetpools": {
           "idempotent_id": "id-62595970-ab1c-4b7f-8fcc-fddfe55e9811"
