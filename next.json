@@ -53,7 +53,6 @@
         "networks-l2-CRUD",
         "networks-security-groups-CRUD",
         "volumes-v2-create-delete",
-        "volumes-v2-attach-detach",
         "volumes-v2-snapshot-create-delete",
         "volumes-v2-get",
         "volumes-v2-list",
@@ -78,7 +77,6 @@
         "networks-subnet-pools-CRUD",
         "volumes-list-api-versions",
         "volumes-v3-create-delete",
-        "volumes-v3-attach-detach",
         "volumes-v3-snapshot-create-delete",
         "volumes-v3-get",
         "volumes-v3-list",
@@ -93,6 +91,8 @@
 
       ],
       "deprecated": [
+        "volumes-v2-attach-detach",
+        "volumes-v3-attach-detach"
       ],
       "removed": [
       ]
@@ -2291,40 +2291,7 @@
         }
       }
     },
-    "volumes-v2-attach-detach": {
-      "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "Volume attach and detach operations with the Cinder v2 API",
-      "project": "cinder",
-      "required-since": "2016.08",
-      "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_attach_detach_volume_to_instance": {
-          "idempotent_id": "id-fff42874-7db5-4487-a8e1-ddda5fb5288d"
-        },
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_get_volume_attachment": {
-            "idempotent_id": "id-9516a2c8-9135-488c-8dd6-5677a7e5f371"
-        },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_attach_volumes_with_nonexistent_volume_id": {
-            "idempotent_id": "id-f5e56b0a-5d02-43c1-a2a7-c9b792c2e3f6"
-        },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_detach_volumes_with_invalid_volume_id": {
-          "idempotent_id": "id-9f9c24e4-011d-46b5-b992-952140ce237a"
-        }
-      }
-    },
+
     "volumes-v2-snapshot-create-delete": {
       "achievements": [
         "deployed",
@@ -2763,36 +2730,7 @@
         }
       }
     },
-    "volumes-v3-attach-detach": {
-      "achievements": [
-        "deployed",
-        "future",
-        "complete",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "Volume attach and detach operations with the Cinder v3 API. This is being added as advisory to highlight the transitition from  v2 to v3.",
-      "project": "cinder",
-      "required-since": "",
-      "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_attach_detach_volume_to_instance": {
-          "idempotent_id": "id-fff42874-7db5-4487-a8e1-ddda5fb5288d"
-        },
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_get_volume_attachment": {
-            "idempotent_id": "id-9516a2c8-9135-488c-8dd6-5677a7e5f371"
-        },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_attach_volumes_with_nonexistent_volume_id": {
-            "idempotent_id": "id-f5e56b0a-5d02-43c1-a2a7-c9b792c2e3f6"
-        },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_detach_volumes_with_invalid_volume_id": {
-          "idempotent_id": "id-9f9c24e4-011d-46b5-b992-952140ce237a"
-        }
-      }
-    },
+
     "volumes-v3-snapshot-create-delete": {
       "achievements": [
         "deployed",
