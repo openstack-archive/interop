@@ -562,9 +562,6 @@
         "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_changes_since_invalid_date": {
           "idempotent_id": "id-87d12517-e20a-4c9c-97b6-dd1628d6d6c9"
         },
-        "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits": {
-          "idempotent_id": "id-12c80a9f-2dec-480e-882b-98ba15757659"
-        },
         "tempest.api.compute.servers.test_list_servers_negative.ListServersNegativeTestJSON.test_list_servers_by_limits_greater_than_actual_count": {
           "idempotent_id": "id-d47c17fb-eebd-4287-8e95-f20a7e627b18"
         },
