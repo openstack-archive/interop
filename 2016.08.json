@@ -2499,16 +2499,36 @@
       "required-since": "2016.08",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_attach_detach_volume_to_instance": {
-          "idempotent_id": "id-fff42874-7db5-4487-a8e1-ddda5fb5288d"
+          "idempotent_id": "id-fff42874-7db5-4487-a8e1-ddda5fb5288d",
+          "flagged": {
+            "reason": "D400 The test is for a Capability that fails to meet the Criteria as set out in the Core Criteria document",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2017-05-05"
+          }
         },
         "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_get_volume_attachment": {
-            "idempotent_id": "id-9516a2c8-9135-488c-8dd6-5677a7e5f371"
+            "idempotent_id": "id-9516a2c8-9135-488c-8dd6-5677a7e5f371",
+          "flagged": {
+            "reason": "D400 The test is for a Capability that fails to meet the Criteria as set out in the Core Criteria document",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2017-05-05"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_attach_volumes_with_nonexistent_volume_id": {
-            "idempotent_id": "id-f5e56b0a-5d02-43c1-a2a7-c9b792c2e3f6"
+            "idempotent_id": "id-f5e56b0a-5d02-43c1-a2a7-c9b792c2e3f6",
+          "flagged": {
+            "reason": "D400 The test is for a Capability that fails to meet the Criteria as set out in the Core Criteria document",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2017-05-05"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_detach_volumes_with_invalid_volume_id": {
-          "idempotent_id": "id-9f9c24e4-011d-46b5-b992-952140ce237a"
+          "idempotent_id": "id-9f9c24e4-011d-46b5-b992-952140ce237a",
+          "flagged": {
+            "reason": "D400 The test is for a Capability that fails to meet the Criteria as set out in the Core Criteria document",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2017-05-05"
+          }
         }
       }
     },
