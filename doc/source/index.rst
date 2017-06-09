@@ -27,8 +27,8 @@ Active Guidelines
 .. toctree::
    :maxdepth: 1
 
-   guidelines/2016.01.rst
-   guidelines/2016.08.rst
+   guidelines/2017.01.rst
+   guidelines/2017.08.rst
 
 ==================
 Proposed Guideline
@@ -50,6 +50,8 @@ Inactive Guidelines
    guidelines/2015.04.rst
    guidelines/2015.05.rst
    guidelines/2015.07.rst
+   guidelines/2016.01.rst
+   guidelines/2016.08.rst
 
 ================================
 Interoperability Issues Reports
