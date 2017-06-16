@@ -14,8 +14,6 @@
 #    License for the specific language governing permissions and limitations
 #    under the License.
 #
-#   This was build for python 2.7, The print statements are failing with
-#   Python 3.X
 
 import json
 import sys
@@ -23,8 +21,8 @@ import textwrap
 
 
 def printHelpArrays(input):
-    if(len(input) == 0):
-        return 'None'
+    if not input:
+        return None
     output = ""
     for i in input:
         output = output + i.capitalize() + ', '
@@ -32,38 +30,40 @@ def printHelpArrays(input):
     return output[0:-2]
 
 
+def print_error(msg):
+    print(msg)
+    sys.exit(1)
+
+
 wrapper = textwrap.TextWrapper(width=79, subsequent_indent='  ')
 
-inFileName = "NONE"
+inFileName = None
 for potentialFile in sys.argv:
     if ".json" in potentialFile:
         inFileName = potentialFile
 
-if inFileName is "NONE":
-    print "Please pass the JSON file"
-    sys.exit(1)
+if not inFileName:
+    print_error("Please pass the JSON file")
 
-print "reading from", inFileName
+print("Reading from: " + inFileName)
 
 
 with open(inFileName) as f:
     data = json.load(f)
 
 if not isinstance(data, dict):
-    print 'Make sure this is a valid file'
-    sys.exit(1)
+    print_error('Make sure this is a valid file')
 
 outFileName = 'doc/source/guidelines/' + inFileName.replace("json", "rst")
 
 
-print "writing to", outFileName
+print ("Writing to: " + outFileName)
 
 
 # intro
 with open(outFileName, "w") as outFile:
     if data.get('id') is None:
-        print 'Make sure there is a valid id'
-        sys.exit(1)
+        print_error('Make sure there is a valid id')
 
     line01 = "OpenStack Interoperability Guideline %s" % data["id"]
 
@@ -73,19 +73,18 @@ with open(outFileName, "w") as outFile:
 
     # Nonlooping
     if data.get('platform') is None:
-        print "The platform section is not found"
-        sys.exit(1)
+        print_error("The platform section is not found")
 
     # Correct Source
-    if data.get('source') != \
-       'http://git.openstack.org/cgit/openstack/defcore/':
-        print "The expected interoperability guideline source not found"
-        sys.exit(1)
+    if data.get('source') not in (
+      'http://git.openstack.org/cgit/openstack/defcore/',
+      'http://git.openstack.org/cgit/openstack/interop/'):
+        print_error("The expected interoperability guideline source not found")
 
     outFile.write("""
 :Status: {status}
 :Replaces: {replaces}
-:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/{id}.json
+:JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/{id}.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to
@@ -117,8 +116,7 @@ Platform Components
 
     # looping
     if data.get('components') is None:
-        print "No components found"
-        sys.exit(1)
+        print_error("No components found")
 
     components = sorted(data["components"].keys())
     order = ["required", "advisory", "deprecated", "removed"]
@@ -150,8 +148,7 @@ Platform Components
     # Designated -Sections
 
     if 'designated-sections' not in data:
-        print "designated-sections not in json file"
-        sys.exit(1)
+        print_error("designated-sections not in json file")
 
     outFile.write("""
 
