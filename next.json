@@ -71,6 +71,7 @@
         "volumes-v2-upload"
       ],
       "advisory": [
+        "identity-v3-tokens-validate",
         "networks-l3-router",
         "networks-l3-CRUD",
         "networks-list-api-versions",
@@ -1010,31 +1011,6 @@
         }
       }
     },
-    "identity-v3-tokens-create": {
-      "achievements": [
-        "foundation",
-        "complete",
-        "doc",
-        "proximity",
-        "clients",
-        "discover",
-        "sticky",
-        "future",
-        "atomic",
-        "stable",
-        "tools",
-        "deployed"
-      ],
-      "admin": false,
-      "description": "Auth operations within the Identity API",
-      "project": "keystone",
-      "required-since": "2015.05",
-      "tests": {
-        "tempest.api.identity.v3.test_tokens.TokensV3Test.test_create_token": {
-          "idempotent_id": "id-6f8e4436-fc96-4282-8122-e41df57197a9"
-        }
-      }
-    },
     "identity-v3-api-discovery": {
         "achievements": [
           "atomic",
@@ -1083,10 +1059,57 @@
       "admin": false,
       "description": "List projects a user belongs to",
       "project": "keystone",
-      "required-since": "",
+      "required-since": "2017.08",
       "tests": {
         "tempest.api.identity.v3.test_projects.IdentityV3ProjectsTest.test_list_projects_returns_only_authorized_projects": {
           "idempotent_id": "id-86128d46-e170-4644-866a-cc487f699e1d"
+        }
+      }
+    },
+    "identity-v3-tokens-create": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "sticky",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Auth operations within the Identity API",
+      "project": "keystone",
+      "required-since": "2015.05",
+      "tests": {
+        "tempest.api.identity.v3.test_tokens.TokensV3Test.test_create_token": {
+          "idempotent_id": "id-6f8e4436-fc96-4282-8122-e41df57197a9"
+        }
+      }
+    },
+    "identity-v3-tokens-validate": {
+      "achievements": [
+        "deployed",
+        "tools",
+        "clients",
+        "future",
+        "stable",
+        "complete",
+        "discover",
+        "doc",
+        "atomic"
+      ],
+      "admin": false,
+      "description": "Validate and show token information",
+      "project": "keystone",
+      "required-since": "",
+      "tests": {
+        "tempest.api.identity.v3.test_tokens.TokensV3Test.test_validate_token": {
+          "idempotent_id": "id-a9512ac3-3909-48a4-b395-11f438e16260"
         }
       }
     },
