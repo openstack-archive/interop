@@ -14,7 +14,6 @@
 #    under the License.
 
 import argparse
-import fileinput
 import os
 import subprocess
 import tempfile
@@ -41,7 +40,7 @@ beforehand.
 
 After replacing these values, the script then retabulates the scores based
 on the new data.
-"""), add_help=True, formatter_class=CustomFormatter)
+"""), add_help=True, formatter_class=argparse.ArgumentDefaultsHelpFormatter)
 parser.add_argument("--file", "-f", metavar='f', type=str, action="store",
                     dest="filename", default="tabulated_scores.csv")
 result = parser.parse_args()

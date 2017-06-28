@@ -77,8 +77,8 @@ with open(outFileName, "w") as outFile:
 
     # Correct Source
     if data.get('source') not in (
-      'http://git.openstack.org/cgit/openstack/defcore/',
-      'http://git.openstack.org/cgit/openstack/interop/'):
+       'http://git.openstack.org/cgit/openstack/defcore/',
+       'http://git.openstack.org/cgit/openstack/interop/'):
         print_error("The expected interoperability guideline source not found")
 
     outFile.write("""
