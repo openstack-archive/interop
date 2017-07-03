@@ -2940,7 +2940,10 @@
         },
         "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item": {
           "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20",
-          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata_item"]
+          "aliases": [
+            "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata_item",
+            "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_show_volume_metadata_item"
+          ]
         }
       }
     },
