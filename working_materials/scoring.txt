@@ -288,7 +288,7 @@ identity-v3-api-discovery:       [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
 identity-v3-catalog:             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
 identity-v3-list-projects:       [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
 identity-v3-list-groups:         [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
-identity-v3-validate-token:      [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-tokens-validate:     [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
 
 Notes:
   * identity-v3-catalog is returned when the api for
@@ -312,12 +312,9 @@ Notes:
   to be done on the backend system.  It probably needs further study to see
   if it's really interoperable, but it seems unlikely at this point (I also
   don't see it being supported by many external tools, etc).
-  * identity-v3-validate-token A given user can validate its own token. An
+  * identity-v3-tokens-validate A given user can validate its own token. An
   admin user is able to validate any token. This is enought for capability to
   be considered non admin.
-  At the time of scoring, there is no non-admin test case in Tempest. Patch
-  https://review.openstack.org/#/c/467493 will add the test case but due to 
-  timing, capability won't be added in this cycle - not until TC is available.
 
 Object Store
 ------------

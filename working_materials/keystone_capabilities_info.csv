@@ -19,7 +19,7 @@ identity-v3-get-role,platform/compute,,GET,/v3/roles/{role_id},,no,,,admin requi
 identity-v3-list-domains,platform/compute,,GET,/v3/domains,,no,,,admin required,
 identity-v3-get-domain,platform/compute,,GET,/v3/domains/{domain_id},,no,,,admin required,
 ,,,,,,,,,,
-identity-v3-validate-token,platform/compute,,GET,/v3/auth/tokens,,yes,Token to be validated is passed in the X-Subject-Token header,,,"This sounds backwards to me, need to check with steve, shouldn't it be POST for validating and GET for getting a token?"
+identity-v3-tokens-validate,platform/compute,,GET,/v3/auth/tokens,,yes,Token to be validated is passed in the X-Subject-Token header,,,"This sounds backwards to me, need to check with steve, shouldn't it be POST for validating and GET for getting a token?"
 identity-v3-revoke-token,platform/compute,,DELETE,/v3/auth/tokens,1,yes,Token to be revoked is passed in the X-Subject-Token header,keystone.keystone.tests.unit.test_revoke{test_revoke_by_user},,
 identity-v3-get-catalog,platform/compute/object,,GET,/v3/auth/catalog,0,yes,,,"couldn't find a test specific for this, there are some tests related in keystone.tests.unit.test_v3_auth.py",
 identity-v3-get-auth-projects,platform/compute,,GET,/v3/auth/projects,0,yes,,,"equivalent as far as I can tell to identity-v3-list-projects. couldn't find a test specific for this, there are some tests related in keystone.tests.unit.test_v3_auth.py",
