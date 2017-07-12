@@ -2335,9 +2335,12 @@
              "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"
           ]
         },
-        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata_item": {
+        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item": {
           "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed",
-          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item"]
+          "aliases": [
+            "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item",
+            "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata_item"
+          ]
         },
         "tempest.api.volume.test_volumes_snapshots.VolumesSnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
           "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e",
@@ -2846,9 +2849,11 @@
           "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1",
           "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata"]
         },
-        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata_item": {
+        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item": {
           "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed",
-          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item"]
+          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item",
+            "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata_item"
+          ]
         },
         "tempest.api.volume.test_volumes_snapshots.VolumesSnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
           "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e",
