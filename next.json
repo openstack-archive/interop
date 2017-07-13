@@ -71,6 +71,7 @@
         "volumes-v2-upload"
       ],
       "advisory": [
+        "identity-v3-catalog",
         "identity-v3-tokens-validate",
         "networks-l3-router",
         "networks-l3-CRUD",
@@ -1042,6 +1043,29 @@
                 "aliases": ["tempest.api.identity.v3.TestApiDiscovery.test_api_version_statuses"]
             }
         }
+    },
+    "identity-v3-catalog": {
+      "achievements": [
+        "deployed",
+        "clients",
+        "future",
+        "stable",
+        "complete",
+        "discover",
+        "doc",
+        "foundation",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "description": "Get service catalog",
+      "project": "keystone",
+      "required-since": "",
+      "tests": {
+        "tempest.api.identity.v3.test_catalog.IdentityCatalogTest.test_catalog_standardization": {
+          "idempotent_id": "id-56b57ced-22b8-4127-9b8a-565dfb0207e2"
+        }
+      }
     },
     "identity-v3-list-projects": {
       "achievements": [

@@ -295,11 +295,7 @@ Notes:
   identity-v3-tokens-create is called (GET /v3/auth/tokens). It is
   important to consider it because end users may be relying on this
   catalog for their apps (even though there are other API calls that
-  also show the catalog such as GET /v3/auth/catalog). There is one test
-  available for this capability but it is in the admin part of the test
-  suite, so not yet tested for non-admin users. Even though it scores enough
-  to be included as advisory, we cannot do this due to lack of non-admin
-  test case.
+  also show the catalog such as GET /v3/auth/catalog).
   * identity-v3-list-projects and identity-v3-list-groups didn't have usable
   tests in the past, but one was added for identity-v3-list-projects last year.
   Providers like Fog.io
