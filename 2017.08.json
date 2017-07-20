@@ -1975,10 +1975,20 @@
           "aliases": ["tempest.api.network.test_networks.NetworksTestJSON.test_update_subnet_gw_dns_host_routes_dhcp"]
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_security_group_and_extra_attributes": {
-          "idempotent_id": "id-58091b66-4ff4-4cc1-a549-05d60c7acd1a"
+          "idempotent_id": "id-58091b66-4ff4-4cc1-a549-05d60c7acd1a",
+          "flagged": {
+            "date": "2017-04-27",
+            "reason": "[D401] The test fails or is skipped due to a bug in the test and the bug is accepted by the OpenStack project which maintains the test.",
+            "action": "Remove flag when Tempest fix is in place"
+          }
         },
         "tempest.api.network.test_ports.PortsTestJSON.test_update_port_with_two_security_groups_and_extra_attributes": {
-          "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d"
+          "idempotent_id": "id-edf6766d-3d40-4621-bc6e-2521a44c257d",
+          "flagged": {
+            "date": "2017-04-27",
+            "reason": "[D401] The test fails or is skipped due to a bug in the test and the bug is accepted by the OpenStack project which maintains the test.",
+            "action": "Remove flag when Tempest fix is in place"
+          }
         }
       }
     },
@@ -2241,27 +2251,36 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete": {
-          "idempotent_id": "id-27fb0e9f-fb64-41dd-8bdb-1ffa762f0d51"
+        "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete": {
+          "idempotent_id": "id-27fb0e9f-fb64-41dd-8bdb-1ffa762f0d51",
+          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_invalid_size": {
-          "idempotent_id": "id-1ed83a8a-682d-4dfb-a30e-ee63ffd6c049"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_invalid_size": {
+          "idempotent_id": "id-1ed83a8a-682d-4dfb-a30e-ee63ffd6c049",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_invalid_size"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_source_volid": {
-          "idempotent_id": "id-47c73e08-4be8-45bb-bfdf-0c4e79b88344"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_source_volid": {
+          "idempotent_id": "id-47c73e08-4be8-45bb-bfdf-0c4e79b88344",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_source_volid"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_volume_type": {
-          "idempotent_id": "id-10254ed8-3849-454e-862e-3ab8e6aa01d2"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_volume_type": {
+          "idempotent_id": "id-10254ed8-3849-454e-862e-3ab8e6aa01d2",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_volume_type"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_out_passing_size": {
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_without_passing_size": {
           "idempotent_id": "id-9387686f-334f-4d31-a439-33494b9e2683",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_without_passing_size"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_out_passing_size",
+             "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_without_passing_size"
+          ]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_negative": {
-          "idempotent_id": "id-8b472729-9eba-446e-a83b-916bdb34bef7"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_negative": {
+          "idempotent_id": "id-8b472729-9eba-446e-a83b-916bdb34bef7",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_negative"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_zero": {
-          "idempotent_id": "id-41331caa-eaf4-4001-869d-bc18c1869360"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_zero": {
+          "idempotent_id": "id-41331caa-eaf4-4001-869d-bc18c1869360",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_zero"]
         }
       }
     },
@@ -2339,44 +2358,65 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata": {
+        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_crud_snapshot_metadata": {
           "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c",
-          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"]
+          "aliases": [
+             "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata",
+             "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"
+          ]
         },
-        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item": {
-          "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed"
+        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item": {
+          "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed",
+          "aliases": [
+            "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item",
+            "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata_item"
+          ]
         },
-        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
-          "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e"
+        "tempest.api.volume.test_volumes_snapshots.VolumesSnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
+          "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_get_list_update_delete"]
         },
-        "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_details_with_params": {
+        "tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_details_with_params":{
           "idempotent_id": "id-220a1022-1fcd-4a74-a7bd-6b859156cda2",
-          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_details_with_params"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_details_with_params",
+             "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_details_with_params"
+          ]
         },
-        "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_with_params": {
+        "tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_with_params":{
           "idempotent_id": "id-59f41f43-aebf-48a9-ab5d-d76340fab32b",
-          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_with_params"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_with_params",
+             "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_with_params"
+          ]
         },
-        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_volume_from_snapshot": {
-          "idempotent_id": "id-677863d1-3142-456d-b6ac-9924f667a7f4"
+        "tempest.api.volume.test_volumes_snapshots.VolumesSnapshotTestJSON.test_volume_from_snapshot": {
+          "idempotent_id": "id-677863d1-3142-456d-b6ac-9924f667a7f4",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_volume_from_snapshot"]
         },
-        "tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id": {
-          "idempotent_id": "id-e3e466af-70ab-4f4b-a967-ab04e3532ea7"
+        "tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id": {
+          "idempotent_id": "id-e3e466af-70ab-4f4b-a967-ab04e3532ea7",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id"]
         },
-        "tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id": {
-          "idempotent_id": "id-bb9da53e-d335-4309-9c15-7e76fd5e4d6d"
+        "tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id": {
+          "idempotent_id": "id-bb9da53e-d335-4309-9c15-7e76fd5e4d6d",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_snapshot_id": {
-          "idempotent_id": "id-0c36f6ae-4604-4017-b0a9-34fdc63096f9"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_snapshot_id": {
+          "idempotent_id": "id-0c36f6ae-4604-4017-b0a9-34fdc63096f9",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_snapshot_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_invalid_volume_id": {
-          "idempotent_id": "id-1f035827-7c32-4019-9240-b4ec2dbd9dfd"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_invalid_volume_id": {
+          "idempotent_id": "id-1f035827-7c32-4019-9240-b4ec2dbd9dfd",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_invalid_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_volume_without_passing_volume_id": {
-          "idempotent_id": "id-441a1550-5d44-4b30-af0f-a6d402f52026"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_volume_without_passing_volume_id": {
+          "idempotent_id": "id-441a1550-5d44-4b30-af0f-a6d402f52026",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_volume_without_passing_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_delete_nonexistent_volume_id": {
-          "idempotent_id": "id-555efa6e-efcd-44ef-8a3b-4a7ca4837a29"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_delete_nonexistent_volume_id": {
+          "idempotent_id": "id-555efa6e-efcd-44ef-8a3b-4a7ca4837a29",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_delete_nonexistent_volume_id"]
         }
       }
     },
@@ -2400,14 +2440,17 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_invalid_volume_id": {
-          "idempotent_id": "id-30799cfd-7ee4-446c-b66c-45b383ed211b"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
+          "idempotent_id": "id-30799cfd-7ee4-446c-b66c-45b383ed211b",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_invalid_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_volume_without_passing_volume_id": {
-          "idempotent_id": "id-c6c3db06-29ad-4e91-beb0-2ab195fe49e3"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id": {
+          "idempotent_id": "id-c6c3db06-29ad-4e91-beb0-2ab195fe49e3",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_volume_without_passing_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_get_nonexistent_volume_id": {
-          "idempotent_id": "id-f131c586-9448-44a4-a8b0-54ca838aa43e"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id": {
+          "idempotent_id": "id-f131c586-9448-44a4-a8b0-54ca838aa43e",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_get_nonexistent_volume_id"]
         }
       }
     },
@@ -2431,62 +2474,81 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list": {
-          "idempotent_id": "id-0b6ddd39-b948-471f-8038-4787978747c4"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list": {
+          "idempotent_id": "id-0b6ddd39-b948-471f-8038-4787978747c4",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_by_name": {
-          "idempotent_id": "id-a28e8da4-0b56-472f-87a8-0f4d3f819c02"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_name": {
+          "idempotent_id": "id-a28e8da4-0b56-472f-87a8-0f4d3f819c02",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_by_name"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_by_name": {
-          "idempotent_id": "id-2de3a6d4-12aa-403b-a8f2-fdeb42a89623"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_name": {
+          "idempotent_id": "id-2de3a6d4-12aa-403b-a8f2-fdeb42a89623",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_by_name"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_param_display_name_and_status": {
-          "idempotent_id": "id-777c87c1-2fc4-4883-8b8e-5c0b951d1ec8"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_param_display_name_and_status": {
+          "idempotent_id": "id-777c87c1-2fc4-4883-8b8e-5c0b951d1ec8",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_param_display_name_and_status"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_display_name_and_status": {
-          "idempotent_id": "id-856ab8ca-6009-4c37-b691-be1065528ad4"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_display_name_and_status": {
+          "idempotent_id": "id-856ab8ca-6009-4c37-b691-be1065528ad4",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_display_name_and_status"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_metadata": {
-          "idempotent_id": "id-1ca92d3c-4a8e-4b43-93f5-e4c7fb3b291d"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_metadata": {
+          "idempotent_id": "id-1ca92d3c-4a8e-4b43-93f5-e4c7fb3b291d",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_metadata"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_details": {
-          "idempotent_id": "id-adcbb5a7-5ad8-4b61-bd10-5380e111a877"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_details": {
+          "idempotent_id": "id-adcbb5a7-5ad8-4b61-bd10-5380e111a877",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_details"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_param_metadata": {
-          "idempotent_id": "id-b5ebea1b-0603-40a0-bb41-15fcd0a53214"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_param_metadata": {
+          "idempotent_id": "id-b5ebea1b-0603-40a0-bb41-15fcd0a53214",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_param_metadata"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_availability_zone": {
-          "idempotent_id": "id-c0cfa863-3020-40d7-b587-e35f597d5d87"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_availability_zone": {
+          "idempotent_id": "id-c0cfa863-3020-40d7-b587-e35f597d5d87",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_by_availability_zone"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_status": {
-          "idempotent_id": "id-39654e13-734c-4dab-95ce-7613bf8407ce"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_status": {
+          "idempotent_id": "id-39654e13-734c-4dab-95ce-7613bf8407ce",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_by_status"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_availability_zone": {
-          "idempotent_id": "id-e1b80d13-94f0-4ba2-a40e-386af29f8db1"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_availability_zone": {
+          "idempotent_id": "id-e1b80d13-94f0-4ba2-a40e-386af29f8db1",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_by_availability_zone"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_status": {
-          "idempotent_id": "id-2943f712-71ec-482a-bf49-d5ca06216b9f"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_status": {
+          "idempotent_id": "id-2943f712-71ec-482a-bf49-d5ca06216b9f",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_by_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_invalid_status": {
-          "idempotent_id": "id-ba94b27b-be3f-496c-a00e-0283b373fa75"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_invalid_status": {
+          "idempotent_id": "id-ba94b27b-be3f-496c-a00e-0283b373fa75",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_invalid_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_nonexistent_name": {
-          "idempotent_id": "id-9ca17820-a0e7-4cbd-a7fa-f4468735e359"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_nonexistent_name": {
+          "idempotent_id": "id-9ca17820-a0e7-4cbd-a7fa-f4468735e359",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_nonexistent_name"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_invalid_status": {
-          "idempotent_id": "id-143b279b-7522-466b-81be-34a87d564a7c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_invalid_status": {
+          "idempotent_id": "id-143b279b-7522-466b-81be-34a87d564a7c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_invalid_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_nonexistent_name": {
-          "idempotent_id": "id-0f4aa809-8c7b-418f-8fb3-84c7a5dfc52f"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_nonexistent_name": {
+          "idempotent_id": "id-0f4aa809-8c7b-418f-8fb3-84c7a5dfc52f",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_nonexistent_name"]
         },
-        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_pagination": {
-          "idempotent_id": "id-e9138a2c-f67b-4796-8efa-635c196d01de"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_pagination": {
+          "idempotent_id": "id-e9138a2c-f67b-4796-8efa-635c196d01de",
+          "aliases": ["tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_pagination"]
         },
-        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_with_multiple_params": {
-          "idempotent_id": "id-2a7064eb-b9c3-429b-b888-33928fc5edd3"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_with_multiple_params": {
+          "idempotent_id": "id-2a7064eb-b9c3-429b-b888-33928fc5edd3",
+          "aliases": ["tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_with_multiple_params"]
         },
-        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_pagination": {
-          "idempotent_id": "id-af55e775-8e4b-4feb-8719-215c43b0238c"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_pagination": {
+          "idempotent_id": "id-af55e775-8e4b-4feb-8719-215c43b0238c",
+          "aliases": ["tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_pagination"]
         }
       }
     },
@@ -2510,14 +2572,17 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_empty_volume_id": {
-          "idempotent_id": "id-72aeca85-57a5-4c1f-9057-f320f9ea575b"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_empty_volume_id": {
+          "idempotent_id": "id-72aeca85-57a5-4c1f-9057-f320f9ea575b",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_empty_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_invalid_volume_id": {
-          "idempotent_id": "id-e66e40d6-65e6-4e75-bdc7-636792fa152d"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_invalid_volume_id": {
+          "idempotent_id": "id-e66e40d6-65e6-4e75-bdc7-636792fa152d",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_invalid_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_nonexistent_volume_id": {
-          "idempotent_id": "id-0186422c-999a-480e-a026-6a665744c30c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-0186422c-999a-480e-a026-6a665744c30c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_nonexistent_volume_id"]
         }
       }
     },
@@ -2539,11 +2604,13 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_from_image": {
-          "idempotent_id": "id-54a01030-c7fc-447c-86ee-c1182beae638"
+        "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_from_image": {
+          "idempotent_id": "id-54a01030-c7fc-447c-86ee-c1182beae638",
+          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_from_image"]
         },
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_bootable": {
-          "idempotent_id": "id-63e21b4c-0a0c-41f6-bfc3-7c2816815599"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_bootable": {
+          "idempotent_id": "id-63e21b4c-0a0c-41f6-bfc3-7c2816815599",
+          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2ActionsTest.test_volume_bootable"]
         }
       }
     },
@@ -2566,8 +2633,9 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_as_clone": {
-          "idempotent_id": "id-3f591b4a-7dc6-444c-bd51-77469506b3a1"
+        "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_as_clone": {
+          "idempotent_id": "id-3f591b4a-7dc6-444c-bd51-77469506b3a1",
+          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_as_clone"]
         }
       }
     },
@@ -2588,8 +2656,9 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_availability_zone.AvailabilityZoneV2TestJSON.test_get_availability_zone_list": {
-          "idempotent_id": "id-01f1ae88-eba9-4c6b-a011-6f7ace06b725"
+        "tempest.api.volume.test_availability_zone.AvailabilityZoneTestJSON.test_get_availability_zone_list": {
+          "idempotent_id": "id-01f1ae88-eba9-4c6b-a011-6f7ace06b725",
+          "aliases": ["tempest.api.volume.test_availability_zone.AvailabilityZoneV2TestJSON.test_get_availability_zone_list"]
         }
       }
     },
@@ -2608,8 +2677,9 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_extensions.ExtensionsV2TestJSON.test_list_extensions": {
-          "idempotent_id": "id-94607eb0-43a5-47ca-82aa-736b41bd2e2c"
+        "tempest.api.volume.test_extensions.ExtensionsTestJSON.test_list_extensions": {
+          "idempotent_id": "id-94607eb0-43a5-47ca-82aa-736b41bd2e2c",
+          "aliases": ["tempest.api.volume.test_extensions.ExtensionsV2TestJSON.test_list_extensions"]
         }
       }
     },
@@ -2631,12 +2701,19 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_crud_volume_metadata": {
+        "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_crud_volume_metadata": {
           "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769",
-          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata"]
+          "aliases": [
+             "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata",
+             "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_crud_volume_metadata"
+          ]
         },
-        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item": {
-          "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20"
+        "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_show_volume_metadata_item": {
+          "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20",
+          "aliases": [
+            "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item",
+            "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata_item"
+          ]
         }
       }
     },
@@ -2657,17 +2734,21 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume": {
-          "idempotent_id": "id-92c4ef64-51b2-40c0-9f7e-4749fbaaba33"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_reserve_unreserve_volume": {
+          "idempotent_id": "id-92c4ef64-51b2-40c0-9f7e-4749fbaaba33",
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status": {
-          "idempotent_id": "id-449c4ed2-ecdd-47bb-98dc-072aeccf158c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_negative_volume_status": {
+          "idempotent_id": "id-449c4ed2-ecdd-47bb-98dc-072aeccf158c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id": {
-          "idempotent_id": "id-ac6084c0-0546-45f9-b284-38a367e0e0e2"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-ac6084c0-0546-45f9-b284-38a367e0e0e2",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id": {
-          "idempotent_id": "id-eb467654-3dc1-4a72-9b46-47c29d22654c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_unreserve_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-eb467654-3dc1-4a72-9b46-47c29d22654c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id"]
         }
       }
     },
@@ -2689,8 +2770,9 @@
       "project": "cinder",
       "required-since": "2016.08",
       "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_readonly_update": {
-          "idempotent_id": "id-fff74e1e-5bd3-4b33-9ea9-24c103bc3f59"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_readonly_update": {
+          "idempotent_id": "id-fff74e1e-5bd3-4b33-9ea9-24c103bc3f59",
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_readonly_update"]
         }
       }
     },
@@ -2712,8 +2794,9 @@
       "project": "cinder",
       "required-since": "2017.08",
       "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload": {
-          "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_upload": {
+          "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload"]
         }
       }
     },
@@ -2733,27 +2816,38 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete": {
-          "idempotent_id": "id-27fb0e9f-fb64-41dd-8bdb-1ffa762f0d51"
+        "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete": {
+          "idempotent_id": "id-27fb0e9f-fb64-41dd-8bdb-1ffa762f0d51",
+          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_invalid_size": {
-          "idempotent_id": "id-1ed83a8a-682d-4dfb-a30e-ee63ffd6c049"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_invalid_size": {
+          "idempotent_id": "id-1ed83a8a-682d-4dfb-a30e-ee63ffd6c049",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_invalid_size"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_source_volid": {
-          "idempotent_id": "id-47c73e08-4be8-45bb-bfdf-0c4e79b88344"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_source_volid": {
+          "idempotent_id": "id-47c73e08-4be8-45bb-bfdf-0c4e79b88344",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_source_volid"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_volume_type": {
-          "idempotent_id": "id-10254ed8-3849-454e-862e-3ab8e6aa01d2"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_volume_type": {
+          "idempotent_id": "id-10254ed8-3849-454e-862e-3ab8e6aa01d2",
+          "aliases": [
+             "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_volume_type"
+          ]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_out_passing_size": {
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_without_passing_size": {
           "idempotent_id": "id-9387686f-334f-4d31-a439-33494b9e2683",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_without_passing_size"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_out_passing_size",
+             "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_without_passing_size"
+          ]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_negative": {
-          "idempotent_id": "id-8b472729-9eba-446e-a83b-916bdb34bef7"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_negative": {
+          "idempotent_id": "id-8b472729-9eba-446e-a83b-916bdb34bef7",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_negative"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_zero": {
-          "idempotent_id": "id-41331caa-eaf4-4001-869d-bc18c1869360"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_size_zero": {
+          "idempotent_id": "id-41331caa-eaf4-4001-869d-bc18c1869360",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_size_zero"]
         }
       }
     },
@@ -2823,47 +2917,68 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata": {
+        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_crud_snapshot_metadata": {
           "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c",
-          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"]
+          "aliases": [
+             "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata",
+             "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"
+          ]
         },
-        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata": {
-          "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1"
+        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata": {
+          "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1",
+          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata"]
         },
-        "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item": {
-          "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed"
+        "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item": {
+          "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed",
+          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata_item",
+            "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata_item"
+          ]
         },
-        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
-          "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e"
+        "tempest.api.volume.test_volumes_snapshots.VolumesSnapshotTestJSON.test_snapshot_create_get_list_update_delete": {
+          "idempotent_id": "id-2a8abbe4-d871-46db-b049-c41f5af8216e",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshot_create_get_list_update_delete"]
         },
-        "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_details_with_params": {
+        "tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_details_with_params": {
           "idempotent_id": "id-220a1022-1fcd-4a74-a7bd-6b859156cda2",
-          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_details_with_params"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_details_with_params",
+             "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_details_with_params"
+          ]
         },
-        "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_with_params": {
+        "tempest.api.volume.test_volumes_snapshots_list.VolumesSnapshotListTestJSON.test_snapshots_list_with_params": {
           "idempotent_id": "id-59f41f43-aebf-48a9-ab5d-d76340fab32b",
-          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_with_params"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_with_params",
+             "tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_with_params"
+          ]
         },
-        "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_volume_from_snapshot": {
-          "idempotent_id": "id-677863d1-3142-456d-b6ac-9924f667a7f4"
+        "tempest.api.volume.test_volumes_snapshots.VolumesSnapshotTestJSON.test_volume_from_snapshot": {
+          "idempotent_id": "id-677863d1-3142-456d-b6ac-9924f667a7f4",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_volume_from_snapshot"]
         },
-        "tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id": {
-          "idempotent_id": "id-e3e466af-70ab-4f4b-a967-ab04e3532ea7"
+        "tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id": {
+          "idempotent_id": "id-e3e466af-70ab-4f4b-a967-ab04e3532ea7",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_with_nonexistent_volume_id"]
         },
-        "tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id": {
-          "idempotent_id": "id-bb9da53e-d335-4309-9c15-7e76fd5e4d6d"
+        "tempest.api.volume.test_volumes_snapshots_negative.VolumesSnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id": {
+          "idempotent_id": "id-bb9da53e-d335-4309-9c15-7e76fd5e4d6d",
+          "aliases": ["tempest.api.volume.test_volumes_snapshots_negative.VolumesV2SnapshotNegativeTestJSON.test_create_snapshot_without_passing_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_snapshot_id": {
-          "idempotent_id": "id-0c36f6ae-4604-4017-b0a9-34fdc63096f9"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_create_volume_with_nonexistent_snapshot_id": {
+          "idempotent_id": "id-0c36f6ae-4604-4017-b0a9-34fdc63096f9",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_create_volume_with_nonexistent_snapshot_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_invalid_volume_id": {
-          "idempotent_id": "id-1f035827-7c32-4019-9240-b4ec2dbd9dfd"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_invalid_volume_id": {
+          "idempotent_id": "id-1f035827-7c32-4019-9240-b4ec2dbd9dfd",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_invalid_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_volume_without_passing_volume_id": {
-          "idempotent_id": "id-441a1550-5d44-4b30-af0f-a6d402f52026"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_delete_volume_without_passing_volume_id": {
+          "idempotent_id": "id-441a1550-5d44-4b30-af0f-a6d402f52026",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_delete_volume_without_passing_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_delete_nonexistent_volume_id": {
-          "idempotent_id": "id-555efa6e-efcd-44ef-8a3b-4a7ca4837a29"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_delete_nonexistent_volume_id": {
+          "idempotent_id": "id-555efa6e-efcd-44ef-8a3b-4a7ca4837a29",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_delete_nonexistent_volume_id"]
         }
       }
     },
@@ -2883,14 +2998,17 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_invalid_volume_id": {
-          "idempotent_id": "id-30799cfd-7ee4-446c-b66c-45b383ed211b"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
+          "idempotent_id": "id-30799cfd-7ee4-446c-b66c-45b383ed211b",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_invalid_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_volume_without_passing_volume_id": {
-          "idempotent_id": "id-c6c3db06-29ad-4e91-beb0-2ab195fe49e3"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_volume_without_passing_volume_id": {
+          "idempotent_id": "id-c6c3db06-29ad-4e91-beb0-2ab195fe49e3",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_get_volume_without_passing_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_get_nonexistent_volume_id": {
-          "idempotent_id": "id-f131c586-9448-44a4-a8b0-54ca838aa43e"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_volume_get_nonexistent_volume_id": {
+          "idempotent_id": "id-f131c586-9448-44a4-a8b0-54ca838aa43e",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_volume_get_nonexistent_volume_id"]
         }
       }
     },
@@ -2910,62 +3028,81 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list": {
-          "idempotent_id": "id-0b6ddd39-b948-471f-8038-4787978747c4"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list": {
+          "idempotent_id": "id-0b6ddd39-b948-471f-8038-4787978747c4",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_by_name": {
-          "idempotent_id": "id-a28e8da4-0b56-472f-87a8-0f4d3f819c02"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_name": {
+          "idempotent_id": "id-a28e8da4-0b56-472f-87a8-0f4d3f819c02",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_by_name"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_by_name": {
-          "idempotent_id": "id-2de3a6d4-12aa-403b-a8f2-fdeb42a89623"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_name": {
+          "idempotent_id": "id-2de3a6d4-12aa-403b-a8f2-fdeb42a89623",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_by_name"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_param_display_name_and_status": {
-          "idempotent_id": "id-777c87c1-2fc4-4883-8b8e-5c0b951d1ec8"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_param_display_name_and_status": {
+          "idempotent_id": "id-777c87c1-2fc4-4883-8b8e-5c0b951d1ec8",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_param_display_name_and_status"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_display_name_and_status": {
-          "idempotent_id": "id-856ab8ca-6009-4c37-b691-be1065528ad4"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_display_name_and_status": {
+          "idempotent_id": "id-856ab8ca-6009-4c37-b691-be1065528ad4",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_display_name_and_status"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_metadata": {
-          "idempotent_id": "id-1ca92d3c-4a8e-4b43-93f5-e4c7fb3b291d"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_detail_param_metadata": {
+          "idempotent_id": "id-1ca92d3c-4a8e-4b43-93f5-e4c7fb3b291d",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_detail_param_metadata"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_details": {
-          "idempotent_id": "id-adcbb5a7-5ad8-4b61-bd10-5380e111a877"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_details": {
+          "idempotent_id": "id-adcbb5a7-5ad8-4b61-bd10-5380e111a877",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_details"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_param_metadata": {
-          "idempotent_id": "id-b5ebea1b-0603-40a0-bb41-15fcd0a53214"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_with_param_metadata": {
+          "idempotent_id": "id-b5ebea1b-0603-40a0-bb41-15fcd0a53214",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_with_param_metadata"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_availability_zone": {
-          "idempotent_id": "id-c0cfa863-3020-40d7-b587-e35f597d5d87"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_availability_zone": {
+          "idempotent_id": "id-c0cfa863-3020-40d7-b587-e35f597d5d87",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_availability_zone"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_status": {
-          "idempotent_id": "id-39654e13-734c-4dab-95ce-7613bf8407ce"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_status": {
+          "idempotent_id": "id-39654e13-734c-4dab-95ce-7613bf8407ce",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_status"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_availability_zone": {
-          "idempotent_id": "id-e1b80d13-94f0-4ba2-a40e-386af29f8db1"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_availability_zone": {
+          "idempotent_id": "id-e1b80d13-94f0-4ba2-a40e-386af29f8db1",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_availability_zone"]
         },
-        "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_status": {
-          "idempotent_id": "id-2943f712-71ec-482a-bf49-d5ca06216b9f"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_status": {
+          "idempotent_id": "id-2943f712-71ec-482a-bf49-d5ca06216b9f",
+          "aliases": ["tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_invalid_status": {
-          "idempotent_id": "id-ba94b27b-be3f-496c-a00e-0283b373fa75"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_invalid_status": {
+          "idempotent_id": "id-ba94b27b-be3f-496c-a00e-0283b373fa75",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_invalid_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_nonexistent_name": {
-          "idempotent_id": "id-9ca17820-a0e7-4cbd-a7fa-f4468735e359"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_detail_with_nonexistent_name": {
+          "idempotent_id": "id-9ca17820-a0e7-4cbd-a7fa-f4468735e359",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_nonexistent_name"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_invalid_status": {
-          "idempotent_id": "id-143b279b-7522-466b-81be-34a87d564a7c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_invalid_status": {
+          "idempotent_id": "id-143b279b-7522-466b-81be-34a87d564a7c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_invalid_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_nonexistent_name": {
-          "idempotent_id": "id-0f4aa809-8c7b-418f-8fb3-84c7a5dfc52f"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_list_volumes_with_nonexistent_name": {
+          "idempotent_id": "id-0f4aa809-8c7b-418f-8fb3-84c7a5dfc52f",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_with_nonexistent_name"]
         },
-        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_pagination": {
-          "idempotent_id": "id-e9138a2c-f67b-4796-8efa-635c196d01de"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_pagination": {
+          "idempotent_id": "id-e9138a2c-f67b-4796-8efa-635c196d01de",
+          "aliases": ["tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_pagination"]
         },
-        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_with_multiple_params": {
-          "idempotent_id": "id-2a7064eb-b9c3-429b-b888-33928fc5edd3"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_with_multiple_params": {
+          "idempotent_id": "id-2a7064eb-b9c3-429b-b888-33928fc5edd3",
+          "aliases": ["tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_details_with_multiple_params"]
         },
-        "tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_pagination": {
-          "idempotent_id": "id-af55e775-8e4b-4feb-8719-215c43b0238c"
+        "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_pagination": {
+          "idempotent_id": "id-af55e775-8e4b-4feb-8719-215c43b0238c",
+          "aliases": ["tempest.api.volume.v2.test_volumes_list.VolumesV2ListTestJSON.test_volume_list_pagination"]
         }
       }
     },
@@ -2985,14 +3122,17 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_empty_volume_id": {
-          "idempotent_id": "id-72aeca85-57a5-4c1f-9057-f320f9ea575b"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_empty_volume_id": {
+          "idempotent_id": "id-72aeca85-57a5-4c1f-9057-f320f9ea575b",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_empty_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_invalid_volume_id": {
-          "idempotent_id": "id-e66e40d6-65e6-4e75-bdc7-636792fa152d"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_invalid_volume_id": {
+          "idempotent_id": "id-e66e40d6-65e6-4e75-bdc7-636792fa152d",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_invalid_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_nonexistent_volume_id": {
-          "idempotent_id": "id-0186422c-999a-480e-a026-6a665744c30c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-0186422c-999a-480e-a026-6a665744c30c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_update_volume_with_nonexistent_volume_id"]
         }
       }
     },
@@ -3012,11 +3152,13 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_from_image": {
-          "idempotent_id": "id-54a01030-c7fc-447c-86ee-c1182beae638"
+        "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_from_image": {
+          "idempotent_id": "id-54a01030-c7fc-447c-86ee-c1182beae638",
+          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_from_image"]
         },
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_bootable": {
-          "idempotent_id": "id-63e21b4c-0a0c-41f6-bfc3-7c2816815599"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_bootable": {
+          "idempotent_id": "id-63e21b4c-0a0c-41f6-bfc3-7c2816815599",
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_bootable"]
         }
       }
     },
@@ -3036,8 +3178,9 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_as_clone": {
-          "idempotent_id": "id-3f591b4a-7dc6-444c-bd51-77469506b3a1"
+        "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_as_clone": {
+          "idempotent_id": "id-3f591b4a-7dc6-444c-bd51-77469506b3a1",
+          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2GetTest.test_volume_create_get_update_delete_as_clone"]
         }
       }
     },
@@ -3056,8 +3199,9 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_availability_zone.AvailabilityZoneV2TestJSON.test_get_availability_zone_list": {
-          "idempotent_id": "id-01f1ae88-eba9-4c6b-a011-6f7ace06b725"
+        "tempest.api.volume.test_availability_zone.AvailabilityZoneTestJSON.test_get_availability_zone_list": {
+          "idempotent_id": "id-01f1ae88-eba9-4c6b-a011-6f7ace06b725",
+          "aliases": ["tempest.api.volume.test_availability_zone.AvailabilityZoneV2TestJSON.test_get_availability_zone_list"]
         }
       }
     },
@@ -3074,8 +3218,9 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_extensions.ExtensionsV2TestJSON.test_list_extensions": {
-          "idempotent_id": "id-94607eb0-43a5-47ca-82aa-736b41bd2e2c"
+        "tempest.api.volume.test_extensions.ExtensionsTestJSON.test_list_extensions": {
+          "idempotent_id": "id-94607eb0-43a5-47ca-82aa-736b41bd2e2c",
+          "aliases": ["tempest.api.volume.test_extensions.ExtensionsV2TestJSON.test_list_extensions"]
         }
       }
     },
@@ -3094,14 +3239,17 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata": {
-          "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769"
+        "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_create_get_delete_volume_metadata": {
+          "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769",
+          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata"]
         },
-        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata": {
-          "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a"
+        "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata": {
+          "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a",
+          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata"]
         },
-        "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item": {
-          "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20"
+        "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata_item": {
+          "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20",
+          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item"]
         }
       }
     },
@@ -3120,17 +3268,21 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume": {
-          "idempotent_id": "id-92c4ef64-51b2-40c0-9f7e-4749fbaaba33"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_reserve_unreserve_volume": {
+          "idempotent_id": "id-92c4ef64-51b2-40c0-9f7e-4749fbaaba33",
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status": {
-          "idempotent_id": "id-449c4ed2-ecdd-47bb-98dc-072aeccf158c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_negative_volume_status": {
+          "idempotent_id": "id-449c4ed2-ecdd-47bb-98dc-072aeccf158c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id": {
-          "idempotent_id": "id-ac6084c0-0546-45f9-b284-38a367e0e0e2"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-ac6084c0-0546-45f9-b284-38a367e0e0e2",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id"]
         },
-        "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id": {
-          "idempotent_id": "id-eb467654-3dc1-4a72-9b46-47c29d22654c"
+        "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_unreserve_volume_with_nonexistent_volume_id": {
+          "idempotent_id": "id-eb467654-3dc1-4a72-9b46-47c29d22654c",
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id"]
         }
       }
     },
@@ -3149,8 +3301,9 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_readonly_update": {
-          "idempotent_id": "id-fff74e1e-5bd3-4b33-9ea9-24c103bc3f59"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_readonly_update": {
+          "idempotent_id": "id-fff74e1e-5bd3-4b33-9ea9-24c103bc3f59",
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_readonly_update"]
         }
       }
     },
@@ -3171,8 +3324,9 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload": {
-          "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d"
+        "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_upload": {
+          "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload"]
         }
       }
     }
