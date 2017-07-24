@@ -74,7 +74,7 @@ or CentOS 7 have been verified) with administrator privileges.
   configuration is to use one non-admin account, defined in account.yaml
   with dynamic credentials disabled. More information is available in the
   configuration guide at
-  http://docs.openstack.org/developer/tempest/configuration.html
+  https://docs.openstack.org/tempest/latest/configuration.html
 
 * You can run within the refstack, from the refstack-client directory either
   against all api tests or against the downloaded test list.
