@@ -2,7 +2,7 @@ Interop Working Group Commandments
 ===================================
 
 - Step 1: Read the OpenStack Style Commandments
-  http://docs.openstack.org/developer/hacking/
+  https://docs.openstack.org/hacking/latest/
 - Step 2: Read the following Interop Working Group process
   documents in the following recommended order:
 
