@@ -1,0 +1,342 @@
+====================================================
+The OpenStack Interoperability Guideline Format v2.0
+====================================================
+
+The following document describes the organization and formatting of each
+section and subsection of the guideline format.
+
+
+metadata
+--------
+Information about the schema version, the id, scoring, board approval
+process, and other information.
+
+id
+~~
+The string identifier of guideline. Typically for the OpenStack Interop
+Working group it refers to the date and month of approval (for example
+`2017.08`), and `next` for the current proposed working guideline.
+
+schema
+~~~~~~
+A reference to the schema used to validate the guideline.
+
+reference
+~~~~~~~~~
+The URL of the guideline.
+
+source
+~~~~~~
+The URL of the repository where the guideline is hosted.
+
+scoring
+~~~~~~~
+An optional section that described the criteria used to score the
+capabilities.
+
+cutoff_score
+````````````
+The minimum score a capability needs to be considered for inclusion into
+the interoperability standard.
+
+criteria
+````````
+A list of the criteria, with each criteria made up of a:
+
+name
+  The name of the criteria
+
+description
+  A short description of the criteria
+
+weight
+  An integer weight to assign the criteria
+
+os_trademark_approval
+~~~~~~~~~~~~~~~~~~~~~
+Information related to board approval of guidelines for the OpenStack
+Powered Trademark Program. Required for board-approved guidelines,
+optional and not required for independent guidelines. Consists of:
+
+target_approval
+  The target approval date for the guideline.
+
+replaces
+  The ID of the guidelines this guideline replaces
+
+releases
+  An array of OpenStack release names the guideline covers.
+
+status
+  The current approval status of the guideline.
+
+platforms
+---------
+A dictionary of all of the Platform objects that are defined in this
+guideline.  A Platform is a standalone collection of components that
+provides some major set of services. For example, OpenStack Powered
+Platform offers all of the core OpenStack services: identity, compute,
+networking, image storage, block storage, and object storage.
+
+description
+~~~~~~~~~~~
+An optional description of the platform.
+
+components
+~~~~~~~~~~
+A list of all of the components that belong in this platform. Each
+component is an object with the following two fields:
+
+name
+  The name of the component, should match the name of the component
+  defined in this document or in the optional source field.
+
+source
+  Optional, a reference to the guideline where the component is
+  defined.
+
+extensions
+----------
+A dictionary of all of the Extension objects that are defined in this
+guideline. Extensions are collections of capabilities that provide
+additional services and functionality on top of an existing platform.
+An example might be orchestration on top of OpenStack Powered
+Platform. In addition to defining what capabilities make up the
+extension, components that are required to be present for the program
+to run may be specified. In this way, implicit compatibility with
+multiple platforms can be established. For example, a DNS extension
+might require a compute component to work, but not a storage
+component. This would make that particular extension implicitly
+compatible with OpenStack Powered Platform and OpenStack Powered
+compute, but not OpenStack Powered Storage.
+
+description
+~~~~~~~~~~~
+An optional description of the extension.
+
+components
+~~~~~~~~~~
+A list of all of the components that belong in this extension. Each
+component is an object with the following two fields:
+
+name
+  The name of the component, should match the name of the component
+  defined in this document or in the optional source field.
+
+source
+  Optional, a reference to the guideline where the component is
+  defined.
+
+required_platform_components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A list of all of the components that are required to be present in the
+host platform for the extension. Each component is an object with the
+following two fields:
+
+name
+  The name of the component, should match the name of the component
+  defined in this document or in the optional source field.
+
+source
+  Optional, a reference to the guideline where the component is
+  defined.
+
+optional_platform_components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A list of all of the components that, if present in the host platform,
+is compatible with this extension. Each component is an object with the
+following two fields:
+
+name
+  The name of the component, should match the name of the component
+  defined in this document or in the optional source field.
+
+source
+  Optional, a reference to the guideline where the component is
+  defined.
+
+components
+----------
+A component is a collection of capabilities and designated sections,
+that is used to constuct a complete set of services. For
+example, the `storage` component may collect a full set of capabilities
+needed to run Swift Object Storage, including capabilities from both
+the Swift project and the Keystone project (for identity services).
+
+capabilities
+~~~~~~~~~~~~
+An object with lists of capabilities, classified according to their
+approval status. The capability names must appear in this guideline,
+or in another referred guideline.
+
+required
+  An array of capabilities that are required to be present for
+  interoperability according to the guideline.
+
+advisory
+  An array of capabilities that are being considered for inclusion in
+  the next guideline release.
+
+deprecated
+  An array of capabilities that may be present within an interoperable
+  product, but should not be depended on, may not work, and will be
+  removed.
+
+removed
+  An array of capabilities that were required or deprecated in the
+  former guideline, but have not been removed.
+
+designated_sections
+~~~~~~~~~~~~~~~~~~~
+An object with lists of designated sections, classified according to
+their approval status. The designated section names must appear in
+this guideline or in another referred guideline.
+
+required
+  An array of  that are required to be present for
+  interoperability according to the guideline.
+
+advisory
+  An array of  that are being considered for inclusion in
+  the next guideline release.
+
+deprecated
+  An array of  that may be present within an interoperable
+  product, but should not be depended on, may not work, and will be
+  removed.
+
+removed
+  An array of  that were required or deprecated in the
+  former guideline, but have not been removed.
+
+capabilities
+------------
+A collection of capability definitions, indexed by the capability name.
+This section describes the content of a capability definition.
+
+achievements
+~~~~~~~~~~~~
+A list of criteria, defined in the scoring section of this guideline,
+that this capability meets.
+
+admin
+~~~~~
+A boolean that indicates if the capability requires administrator
+access.
+
+required_since
+~~~~~~~~~~~~~~
+An optional field that references the id of the guideline of when this
+capability was first required.
+
+description
+~~~~~~~~~~~
+A description of the capability.
+
+project
+~~~~~~~
+A reference to the project in the designated section for which the code
+that provides this capability can be found.
+
+tests
+~~~~~
+An dictionary of tests that the a product must pass to be considered to
+have this capability available. All tests that aren't flagged must
+be passed. Each test is indexed by its fully qualified test name.
+
+test definition
+```````````````
+A test an object that can identify the location of a test, even if that
+test has moved in a code repository. It has:
+
+idempotent_id
+  A UUID attached to the test that will not change, even if the test is
+  moved during refactoring.
+
+aliases
+  An optional array of fully qualified test names. Used to locate tests
+  different versions of the same test suite, in case of test
+  refactoring
+
+flag
+  An object that if present, indicates a problem with the test that
+  changes its status from must-pass to optional-pass.
+
+flag
+^^^^
+A flag has the following fields:
+
+date
+  When the flag was added to the test.
+
+reason
+  A reason for why the test was flagged.
+
+action
+  What action will be taken to resolve the flag, including but not
+  limited to fixing the test in the upstream test suite, or removing
+  it from the capability in a future guideline.
+
+
+designated_sections
+-------------------
+A dictionary of designated sections, indexed by project name, that
+describe what code must be present for a product to be considered
+an OpenStack project. Within the project object, there is further
+indexing broken down by the section status, which is one of the
+following values:
+
+required
+  The code is required to be in the product.
+
+advisory
+  The code is scheduled to be required in the next release.
+
+deprecated
+  The code will not be required in a future release.
+
+removed
+  The code was previously required, is no longer required
+
+informational
+  The code is not required, with commentary on why.
+
+Each section status object has the following fields, and also
+a collection if sections indexed by name.
+
+guidance
+  Information on what the code does.
+
+comment
+  Optional additional commentary on the project code.
+
+section
+~~~~~~~
+A section has the following fields:
+
+description
+  A description of the code section.
+
+designated
+  A boolean, true if the code must be present. A section is generally
+  not made designated if there is a choice of upstream or third party
+  providers for that capability.
+
+comment
+  Optional additional commentary on the section.
+
+test_repositories
+-----------------
+A dictionary of test repositories that provide the tests for the
+capabilities, indexed by name. A test repository object has the
+following fields:
+
+repository
+  The URL of the repository where the tests are located.
+
+reference
+  A reference to the release name, branch, or sha that the guideline
+  was developed against.
+
+description
+  An optional description of the repository.
