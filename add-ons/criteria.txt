@@ -1,0 +1,63 @@
+add-on Criteria
+==================
+
+add-on Specific Criteria
+---------------------------
+Additional criteria, outside of the Interop Core criteria, that is
+used for scoring capabilities.
+
+Core Criteria
+-------------
+Interop Core Criteria, applied to add-on program.
+
+Atomic (atomic)
+~~~~~~~~~~~~~~~
+The capabilities are unique and cannot be built out of other must-pass capabilities.
+
+Capability In Last Release (sticky)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A capability whose API was present in the previous guideline release. Discourages the disruption of replacing the API a capability uses, or removing a capability from core.
+
+Complete (complete)
+~~~~~~~~~~~~~~~~~~~
+Where the code being tested has a designated area of alternate implementation (add-on framework) as per the Core Principles, there should be parity in capability tested across add-on implementations. This also implies that the capability test is not configuration specific or locked to non-open technology.
+
+Discoverable (discover)
+~~~~~~~~~~~~~~~~~~~~~~~
+Capability being tested is Service Discoverable (can be found in Keystone and via service introspection).
+
+Documented (doc)
+~~~~~~~~~~~~~~~~
+The capability is well documented, including both the interface and the expected behavior.
+
+Future Direction (future)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The capability reflects the future technical direction as defined by the project technical teams and the Technical Committee.
+
+Stable (stable)
+~~~~~~~~~~~~~~~
+A capability that whose API has changed in more than two releases. Meant to select for capabilities that are stable and not under active development.
+
+Used By Clients (clients)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+The capabilities are widely used by common OpenStack clients, including the openstack client, nova client, neutron client, and so on. This criterion pertains mostly to API versioning. For example, if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' criterion.
+
+Used By Tools (tools)
+~~~~~~~~~~~~~~~~~~~~~
+Capabilities that are widely used outside of the OpenStack client ecosystem. Example tools include GopherCloud, jClouds, Fog, and so on.
+
+Core Criteria Not Considered
+----------------------------
+
+Foundation (foundation)
+~~~~~~~~~~~~~~~~~~~~~~~
+The capability is a fundamental requirement for must-pass tests, or is depended on by other capabilities. add-ons are additions to core capabilities, and by definition will not in general be foundational for other capabilities.
+
+Proximity Cluster (proximity)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A capability that is related to another set of core capabilitity. The intent is to ensure that related capabilities are selected for and managed together. add-ons are standable sets, and will not relate to other capabilities
+
+Widely Deployed (deployed)
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+The capabilities are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products. This capability was not considered, as by their nature add-on programs are optional and may not be widely deployed across clouds.
+

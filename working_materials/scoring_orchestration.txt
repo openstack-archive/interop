@@ -1,0 +1,31 @@
+Orchestration (Heat) Scoring Worksheet
+======================================
+
+Criteria in *Name* are not considered for this add-on program
+
+Capability Name: [*Widely Deployed*, Used By Tools, Used by Clients],
+                 [TC Future Direction, Complete, Stable],
+                 [Discoverable, Doc'd, Required in Last Release],
+                 [*Foundation*, Atomic, *Proximity*],
+                 [Non-Admin] [Total]
+
+Possible scores: 0, 1, ? (not scored yet or needs discussion), * (not considered)
+
+Orchestration
+-------------
+stack-create:                   [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-delete:                   [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-environment-parameter:    [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-get-output:               [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-list-resource-types:      [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-list-template-functions:  [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-list-template-versions:   [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-mark-resource-unhealthy:  [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-resource-type-template:   [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-show:                     [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-show-resource:            [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-show-resource-type:       [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-show-unhealthy-resource:  [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-signal-resource:          [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-list:                     [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+stack-validate-template:        [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]

@@ -1,0 +1,495 @@
+{
+  "metadata": {
+    "id": "orchestration.next",
+    "schema": "2.0",
+    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
+    "source": "http://git.openstack.org/cgit/openstack/interop/",
+    "scoring": {
+      "cutoff_score": 60,
+      "criteria": {
+        "atomic": {
+          "name": "Atomic",
+          "description": "The capabilities are unique and cannot be built out of other must-pass capabilities.",
+          "weight": 6
+        },
+        "clients": {
+          "name": "Used By Clients",
+          "description": "The capabilities are widely used by common OpenStack clients, including the openstack client, nova client, neutron client, and so on. This criterion pertains mostly to API versioning. For example, if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' criterion.",
+          "weight": 10
+        },
+        "complete": {
+          "name": "Complete",
+          "description": "Where the code being tested has a designated area of alternate implementation (add-on framework) as per the Core Principles, there should be parity in capability tested across add-on implementations. This also implies that the capability test is not configuration specific or locked to non-open technology.",
+          "weight": 8
+        },
+        "discover": {
+          "name": "Discoverable",
+          "description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection).",
+          "weight": 8
+        },
+        "doc": {
+          "name": "Documented",
+          "description": "The capability is well documented, including both the interface and the expected behavior.",
+          "weight": 8
+        },
+        "future": {
+          "name": "Future Direction",
+          "description": "The capability reflects the future technical direction as defined by theproject technical teams and the Technical Committee.",
+          "weight": 11
+        },
+        "stable": {
+          "name": "Stable",
+          "description": "A capability that whose API has changed in more than two releases. Meant to select for capabilities that are stable and not under active development.",
+          "weight": 9
+        },
+        "sticky": {
+          "name": "Core In Last Release",
+          "description": "A capability whose API was present in the previous guideline release. Discourages the disruption of replacing the API a capability uses, or removing a capability from core.",
+          "weight": 9
+        },
+        "tools": {
+          "name": "Used By Tools",
+          "description": "Capabilities that are widely used outside of the OpenStack client ecosystem. Example tools include GopherCloud, jClouds, Fog, and so on.",
+          "weight": 6
+        }
+      }
+    },
+    "os_trademark_approval": {
+      "target_approval": "2018.01",
+      "releases": ["mitaka", "newton", "ocata", "pike"],
+      "status": "draft"
+    }
+  },
+  "add-ons": {
+    "Orchestration": {
+      "description": "OpenStack Powered with Orchestration",
+      "components": [
+        { "name": "os_powered_orchestration" }
+      ],
+      "required_platform_components": [
+        {
+          "name": "os_powered_compute",
+          "source": "http://git.openstack.org/cgit/openstack/interop/next.json"
+        }
+      ]
+    }
+  },
+  "components": {
+    "os_powered_orchestration": {
+      "capabilities": {
+        "required": [
+        ],
+        "advisory": [
+          "stack-create",
+          "stack-delete",
+          "stack-environment-parameter",
+          "stack-get-output",
+          "stack-list",
+          "stack-list-resource-types",
+          "stack-list-template-functions",
+          "stack-list-template-versions",
+          "stack-mark-resource-unhealthy",
+          "stack-resource-type-template",
+          "stack-show",
+          "stack-show-resource",
+          "stack-show-resource-type",
+          "stack-show-unhealthy-resource",
+          "stack-signal-resource",
+          "stack-validate-template"
+        ],
+        "deprecated": [
+        ],
+        "removed": [
+        ]
+      },
+      "designated_sections": {
+        "required": [
+          "heat"
+        ]
+      }
+    }
+  },
+  "capabilities": {
+    "stack-create": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Create new stacks.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.stacks_create_empty_stack.test_request": {
+          "idempotent_id": ""
+        },
+        "heat_integrationtests.api.test_heat_api.resources_create_stack_with_resources.test_request": {
+          "idempotent_id": ""
+        },
+        "heat_integrationtests.scenario.test_base_resources.BasicResourcesTest.test_base_resources_integration": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-delete": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Delete stacks.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.stacks_delete_empty_stack.test_request": {
+          "idempotent_id": ""
+        },
+        "heat_integrationtests.api.test_heat_api.environments_delete_envstack.test_request": {
+          "idempotent_id": ""
+        },
+        "heat_integrationtests.api.test_heat_api.resources_delete_stack_with_resources.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-environment-parameter": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Create an environment with parameters.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.environments_environment_with_parameter.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-get-output": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Get the output of a stack.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.environments_get_stack_output.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-list": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List stacks.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.stacks_stack_list.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-list-resources": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List available resources.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resources_list_filtered_resources.test_request": {
+          "idempotent_id": ""
+        },
+        "heat_integrationtests.api.test_heat_api.resources_list_resources.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-list-resource-types": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List available resource types.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resourcetypes_list_resource_types.test_request": {
+          "idempotent_id": ""
+         }
+      }
+    },
+    "stack-list-template-versions": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List template versions.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.templates_list_template_versions.test_request": {
+          "idempotent_id": ""
+         }
+      }
+    },
+    "stack-list-template-functions": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List template functions.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.templates_list_template_functions.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-mark-resource-unhealthy": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Mark a resource as unhealthy.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resources_mark_resource_unhealthy.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-resource-type-template": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show resource type template.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resourcetypes_resource_type_template.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-show": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show the empty stack.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.stacks_show_empty_stack.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-show-resource": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show a resource.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resources_show_resource.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-show-resource-type": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show a resource type.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resourcetypes_show_resource_type.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-show-unhealthy-resource": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show unhealthy resources.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resources_show_unhealthy_resource.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-signal-resource": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Send a signal to a resource.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.resources_signal_resource.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    },
+    "stack-validate-template": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Validate templates.",
+      "project": "heat",
+      "tests": {
+        "heat_integrationtests.api.test_heat_api.templates_template_validate.test_request": {
+          "idempotent_id": ""
+        }
+      }
+    }
+  },
+  "designated_sections": {
+    "heat": {
+      "required": {
+        "guidance": "Must at a minimum include resources for OpenStack Powered Compute components.",
+        "comment": "As a templating language, some clouds may include more or less code depending on offered resources.",
+        "sections": {
+          "resource class": {
+            "description": "Must include class 'Resource', as it is the basis for all resources.",
+            "designated": true
+          },
+          "template versions": {
+            "description": "Must contain corresponding hot template versions (and make it up to date with your OpenStack release) which code entry lists in 'heat.templates' under setup.cfg of heat repo. And make sure hot template functionality for versions are compatible with the corresponding versions.",
+            "designated": true
+          }
+        }
+      }
+    }
+  },
+  "test_repositories": {
+    "heat": {
+      "repository": "https://github.com/openstack/heat/tree/master/heat_integrationtests",
+      "reference": "master",
+      "description": "OpenStack Heat Repository"
+    }
+  }
+}
+
