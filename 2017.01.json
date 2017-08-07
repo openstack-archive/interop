@@ -2903,19 +2903,31 @@
         },
         "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_availability_zone": {
           "idempotent_id": "id-c0cfa863-3020-40d7-b587-e35f597d5d87",
-          "aliases": ["tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_availability_zone"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_availability_zone",
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_availability_zone"
+          ]
         },
         "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_by_status": {
           "idempotent_id": "id-39654e13-734c-4dab-95ce-7613bf8407ce",
-          "aliases": ["tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_status"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_by_status",
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_by_status"
+          ]
         },
         "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_availability_zone": {
           "idempotent_id": "id-e1b80d13-94f0-4ba2-a40e-386af29f8db1",
-          "aliases": ["tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_availability_zone"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_availability_zone",
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_availability_zone"
+          ]
         },
         "tempest.api.volume.test_volumes_list.VolumesV2ListTestJSON.test_volumes_list_details_by_status": {
           "idempotent_id": "id-2943f712-71ec-482a-bf49-d5ca06216b9f",
-          "aliases": ["tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_status"]
+          "aliases": [
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list_details_by_status",
+             "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volumes_list_details_by_status"
+          ]
         },
         "tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_list_volumes_detail_with_invalid_status": {
           "idempotent_id": "id-ba94b27b-be3f-496c-a00e-0283b373fa75",
