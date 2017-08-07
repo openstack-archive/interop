@@ -2610,7 +2610,7 @@
         },
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_bootable": {
           "idempotent_id": "id-63e21b4c-0a0c-41f6-bfc3-7c2816815599",
-          "aliases": ["tempest.api.volume.test_volumes_get.VolumesV2ActionsTest.test_volume_bootable"]
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_bootable"]
         }
       }
     },
