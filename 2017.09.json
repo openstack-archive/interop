@@ -2800,7 +2800,7 @@
       "required-since": "2017.09",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_upload": {
-          "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
+          "idempotent_id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
           "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload"]
         }
       }
@@ -3330,7 +3330,7 @@
       "required-since": "",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_upload": {
-          "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
+          "idempotent_id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
           "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_volume_upload"]
         }
       }
