@@ -1,0 +1,17 @@
+DNS (Designate) Scoring Worksheet
+=================================
+
+Criteria in *Name* are not considered for this add-on program
+
+Capability Name: [*Widely Deployed*, Used By Tools, Used by Clients],
+                 [TC Future Direction, Complete, Stable],
+                 [Discoverable, Doc'd, Required in Last Release],
+                 [*Foundation*, Atomic, *Proximity*],
+                 [Non-Admin] [Total]
+
+Possible scores: 0, 1, ? (not scored yet or needs discussion), * (not considered)
+
+DNS
+---
+dns-zone-crud:   [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]
+dns-record-crud: [*,1,1][1,1,1][1,1,0][*,1,*][1] [64]

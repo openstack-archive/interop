@@ -1,0 +1,188 @@
+{
+  "metadata": {
+    "id": "dns.next",
+    "schema": "2.0",
+    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
+    "source": "http://git.openstack.org/cgit/openstack/interop/add-ons/dns.next.json",
+    "scoring": {
+      "cutoff_score": 60,
+      "criteria": {
+       "atomic": {
+          "name": "Atomic",
+          "description": "The capabilities are unique and cannot be built out of other must-pass capabilities.",
+          "weight": 6
+        },
+        "clients": {
+          "name": "Used By Clients",
+          "description": "The capabilities are widely used by common OpenStack clients, including the openstack client, nova client, neutron client, and so on. This criterion pertains mostly to API versioning. For example, if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' criterion.",
+          "weight": 10
+        },
+        "complete": {
+          "name": "Complete",
+          "description": "Where the code being tested has a designated area of alternate implementation (add-on framework) as per the Core Principles, there should be parity in capability tested across add-on implementations. This also implies that the capability test is not configuration specific or locked to non-open technology.",
+          "weight": 8
+        },
+        "discover": {
+          "name": "Discoverable",
+          "description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection).",
+          "weight": 8
+        },
+        "doc": {
+          "name": "Documented",
+          "description": "The capability is well documented, including both the interface and the expected behavior.",
+          "weight": 8
+        },
+        "future": {
+          "name": "Future Direction",
+          "description": "The capability reflects the future technical direction as defined by theproject technical teams and the Technical Committee.",
+          "weight": 11
+        },
+        "stable": {
+          "name": "Stable",
+          "description": "A capability that whose API has changed in more than two releases. Meant to select for capabilities that are stable and not under active development.",
+          "weight": 9
+        },
+        "sticky": {
+          "name": "Core In Last Release",
+          "description": "A capability whose API was present in the previous guideline release. Discourages the disruption of replacing the API a capability uses, or removing a capability from core.",
+          "weight": 9
+        },
+        "tools": {
+          "name": "Used By Tools",
+          "description": "Capabilities that are widely used outside of the OpenStack client ecosystem. Example tools include GopherCloud, jClouds, Fog, and so on.",
+          "weight": 6
+        }
+      }
+    },
+    "os_trademark_approval": {
+      "target_approval": "2018.01",
+      "releases": ["mitaka", "newton", "ocata", "pike"],
+      "status": "draft"
+    }
+  },
+  "add-ons": {
+    "DNS": {
+      "description": "OpenStack Powered with DNS",
+      "components": [
+        { "name": "os_powered_dns" }
+      ],
+      "required_platform_components": [
+        {
+          "name": "os_powered_compute",
+          "source": "http://git.openstack.org/cgit/openstack/interop/next.json"
+        }
+      ]
+    }
+  },
+  "components": {
+    "os_powered_dns": {
+      "capabilities": {
+        "required": [
+        ],
+        "advisory": [
+          "dns-record-crud",
+          "dns-zone-crud"
+        ],
+        "deprecated": [
+        ],
+        "removed": [
+        ]
+      },
+      "designated_sections": {
+        "advisory": [
+          "designate"
+        ]
+      }
+    }
+  },
+  "capabilities": {
+    "dns-record-crud": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Operations to create, update, and delete dns records.",
+      "project": "designate",
+      "tests": {
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_create_all_recordset_types": {
+          "idempotent_id": "d03b69a5-5052-43bc-a38a-b511b6b34304"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_delete_recordset ": {
+          "idempotent_id": "855399c1-8806-4ae5-aa31-cb8a6f35e218"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_list_recordsets ": {
+          "idempotent_id": "5964f730-5546-46e6-9105-5030e9c492b2"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_show_recordsets ": {
+          "idempotent_id": "84c13cb2-9020-4c1e-aeb0-c348d9a70caa"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_update_recordset ": {
+          "idempotent_id": "8d41c85f-09f9-48be-a202-92d1bdf5c796"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_update_recordset_one_field ": {
+          "idempotent_id": "60904cc5-148b-4e3b-a0c6-35656dc8d44c"
+        }
+      }
+    },
+    "dns-zone-crud": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Operations to create, update, and delete zones.",
+      "project": "designate",
+      "tests": {
+        "designate_tempest_plugin.tests.scenario.v2.test_zones.ZonesTest.test_create_and_delete_zone": {
+          "idempotent_id": "d0648f53-4114-45bd-8792-462a82f69d32"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_zones.ZonesTest.test_show_zone": {
+          "idempotent_id": "02ca5d6a-86ce-4f02-9d94-9e5db55c3055"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_zones.ZonesTest.test_list_zone": {
+          "idempotent_id": "5bfa3cfe-5bc8-443b-bf48-cfba44cbb247"
+        },
+        "designate_tempest_plugin.tests.api.v2.test_zones.ZonesTest.test_update_zone": {
+          "idempotent_id": "123f51cb-19d5-48a9-aacc-476742c02141"
+        }
+      }
+    }
+  },
+  "designated_sections": {
+    "designate": {
+      "required": {
+        "guidance": "API and Central code, allowing for plugins and excluding storage and scheduler filters",
+        "sections": {
+          "api": {
+            "description": "The designate API, allowing for plugins",
+            "designated": true
+          },
+          "central": {
+            "description": "Designate central code, excluding storage and scheduler filters",
+            "designated": true
+          }
+        }
+      }
+    }
+  },
+  "test_repositories": {
+    "designate-tempest-plugin": {
+      "repository": "http://git.openstack.org/cgit/openstack/designate-tempest-plugin/",
+      "reference": "master",
+      "description": "OpenStack Designate Test Plugin Repository"
+    }
+  }
+}
