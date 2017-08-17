@@ -1,16 +1,16 @@
 ============================================
-OpenStack Interoperability Guideline 2017.08
+OpenStack Interoperability Guideline 2017.09
 ============================================
 
 :Status: advisory
 :Replaces: 2017.01
-:JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/2017.08.json
+:JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/2017.09.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to
 be eligible to use marks controlled by the OpenStack Foundation.
 
-This document was generated from the `master JSON version <2017.08.json>`_.
+This document was generated from the `master JSON version <2017.09.json>`_.
 
 Releases Covered
 ==============================

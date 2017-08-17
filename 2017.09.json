@@ -1,11 +1,11 @@
 {
-  "id": "2017.08",
+  "id": "2017.09",
   "schema": "1.6",
   "reference": "https://git.openstack.org/cgit/openstack/interop/schema/1.6.json",
   "source": "http://git.openstack.org/cgit/openstack/interop/",
   "status": "advisory",
   "cutoff_score": "74",
-  "target_approval": "2017-08-22",
+  "target_approval": "2017-09-10",
   "replaces": "2017.01",
   "releases": ["mitaka", "newton", "ocata", "pike"],
   "platform": {
@@ -167,7 +167,7 @@
       "admin": false,
       "description": "List Compute service availability zones with the Compute API",
       "project": "nova",
-      "required-since": "2017.08",
+      "required-since": "2017.09",
       "tests": {
         "tempest.api.compute.servers.test_availability_zone.AZV2TestJSON.test_get_availability_zone_list_with_non_admin_user": {
           "idempotent_id": "id-a8333aa2-205c-449f-a828-d38c2489bf25"
@@ -189,7 +189,7 @@
       "admin": false,
       "description": "List Flavors within the Compute API",
       "project": "nova",
-      "required-since": "2017.08",
+      "required-since": "2017.09",
       "tests": {
         "tempest.api.compute.flavors.test_flavors.FlavorsV2TestJSON.test_list_flavors": {
           "idempotent_id": "id-e36c0eaa-dff5-4082-ad1f-3f9a80aa3f59"
@@ -1083,7 +1083,7 @@
       "admin": false,
       "description": "List projects a user belongs to",
       "project": "keystone",
-      "required-since": "2017.08",
+      "required-since": "2017.09",
       "tests": {
         "tempest.api.identity.v3.test_projects.IdentityV3ProjectsTest.test_list_projects_returns_only_authorized_projects": {
           "idempotent_id": "id-86128d46-e170-4644-866a-cc487f699e1d"
@@ -1471,7 +1471,7 @@
       "admin": false,
       "description": "Basic container metadata operations in Object Storage API",
       "project": "swift",
-      "required-since": "2017.08",
+      "required-since": "2017.09",
       "tests": {
         "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_and_delete_metadata": {
           "idempotent_id": "id-cf19bc0b-7e16-4a5a-aaed-cb0c2fe8deef"
@@ -2203,7 +2203,7 @@
       "admin": false,
       "description": "CRUD operations on subnet pools.",
       "project": "neutron",
-      "required-since": "2017.08",
+      "required-since": "2017.09",
       "tests": {
         "tempest.api.network.test_subnetpools_extensions.SubnetPoolsTestJSON.test_create_list_show_update_delete_subnetpools": {
           "idempotent_id": "id-62595970-ab1c-4b7f-8fcc-fddfe55e9811"
@@ -2792,7 +2792,7 @@
       "admin": false,
       "description": "Upload volumes with Cinder v2 API",
       "project": "cinder",
-      "required-since": "2017.08",
+      "required-since": "2017.09",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_upload": {
           "idempotent-id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",

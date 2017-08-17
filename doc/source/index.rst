@@ -28,7 +28,7 @@ Active Guidelines
    :maxdepth: 1
 
    guidelines/2017.01.rst
-   guidelines/2017.08.rst
+   guidelines/2017.09.rst
 
 ==================
 Proposed Guideline
