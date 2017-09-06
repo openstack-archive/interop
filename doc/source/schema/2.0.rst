@@ -95,28 +95,28 @@ source
   Optional, a reference to the guideline where the component is
   defined.
 
-extensions
+add-ons
 ----------
-A dictionary of all of the Extension objects that are defined in this
-guideline. Extensions are collections of capabilities that provide
+A dictionary of all of the add-on objects that are defined in this
+guideline. add-ons are collections of capabilities that provide
 additional services and functionality on top of an existing platform.
 An example might be orchestration on top of OpenStack Powered
 Platform. In addition to defining what capabilities make up the
-extension, components that are required to be present for the program
+add-on, components that are required to be present for the program
 to run may be specified. In this way, implicit compatibility with
-multiple platforms can be established. For example, a DNS extension
+multiple platforms can be established. For example, a DNS add-on
 might require a compute component to work, but not a storage
-component. This would make that particular extension implicitly
+component. This would make that particular add-on implicitly
 compatible with OpenStack Powered Platform and OpenStack Powered
 compute, but not OpenStack Powered Storage.
 
 description
 ~~~~~~~~~~~
-An optional description of the extension.
+An optional description of the add-on.
 
 components
 ~~~~~~~~~~
-A list of all of the components that belong in this extension. Each
+A list of all of the components that belong in this add-on. Each
 component is an object with the following two fields:
 
 name
@@ -130,7 +130,7 @@ source
 required_platform_components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A list of all of the components that are required to be present in the
-host platform for the extension. Each component is an object with the
+host platform for the add-on. Each component is an object with the
 following two fields:
 
 name
@@ -144,7 +144,7 @@ source
 optional_platform_components
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 A list of all of the components that, if present in the host platform,
-is compatible with this extension. Each component is an object with the
+is compatible with this add-on. Each component is an object with the
 following two fields:
 
 name
