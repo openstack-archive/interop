@@ -2,7 +2,7 @@
 OpenStack Interoperability Guideline 2017.09
 ============================================
 
-:Status: advisory
+:Status: approved
 :Replaces: 2017.01
 :JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/2017.09.json
 

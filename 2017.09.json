@@ -3,7 +3,7 @@
   "schema": "1.6",
   "reference": "https://git.openstack.org/cgit/openstack/interop/schema/1.6.json",
   "source": "http://git.openstack.org/cgit/openstack/interop/",
-  "status": "advisory",
+  "status": "approved",
   "cutoff_score": "74",
   "target_approval": "2017-09-10",
   "replaces": "2017.01",
