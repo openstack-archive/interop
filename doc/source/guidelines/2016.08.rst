@@ -1,10 +1,10 @@
-=========================
-OpenStack DefCore 2016.08
-=========================
+============================================
+OpenStack Interoperability Guideline 2016.08
+============================================
 
-:Status: approved
+:Status: superceded
 :Replaces: 2016.01
-:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/2016.08.json
+:JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/2016.08.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to
@@ -61,7 +61,7 @@ Required Capabilities
 * compute-volume-attach (Nova)
 * identity-v3-api-discovery (Keystone)
 * identity-v3-tokens-create (Keystone)
-* images-v2-index (Nova)
+* images-v2-index (Glance)
 * images-v2-update (Glance)
 * images-v2-list (Glance)
 * images-v2-delete (Glance)
