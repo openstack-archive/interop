@@ -2,7 +2,7 @@
 OpenStack DefCore 2015.03
 =========================
 
-:Status: superceded
+:Status: superseded
 :Replaces: 2014.07
 :JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/2015.03.json
 

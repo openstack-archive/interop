@@ -2,7 +2,7 @@
   "id": "2015.04",
   "schema": "1.2",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
-  "status": "superceded",
+  "status": "superseded",
   "replaces": "2015.03",
   "releases": ["havana", "icehouse", "juno"],
   "platform": {

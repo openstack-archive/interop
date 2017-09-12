@@ -70,7 +70,7 @@
               "uniqueItems": true
             },
             "status": {
-              "enum": ["draft", "advisory", "approved", "superceded"]
+              "enum": ["draft", "advisory", "approved", "superseded"]
             }
           },
           "required": [

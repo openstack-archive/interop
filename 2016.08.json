@@ -3,7 +3,7 @@
   "schema": "1.6",
   "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.6.json",
   "source": "http://git.openstack.org/cgit/openstack/defcore/",
-  "status": "superceded",
+  "status": "superseded",
   "cutoff_score": "74",
   "target_approval": "2016-08-23",
   "replaces": "2016.01",

@@ -31,7 +31,7 @@
       "type": "string"
     },
     "status": {
-      "enum": [ "draft", "advisory", "approved", "superceded" ]
+      "enum": [ "draft", "advisory", "approved", "superseded" ]
     },
     "replaces": {
       "type": "string"
