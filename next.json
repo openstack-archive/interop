@@ -119,6 +119,8 @@
         "identity-v3-tokens-create"
       ],
       "advisory": [
+        "objectstore-dlo-support",
+        "objectstore-slo-support"
       ],
       "deprecated" : [],
       "removed": [
@@ -1776,6 +1778,67 @@
         },
         "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_valid_object": {
           "idempotent_id": "id-9a0fb034-86af-4df0-86fa-f8bd7db21ae0"
+        }
+      }
+    },
+    "objectstore-slo-support": {
+      "acheivements": [
+        "deployed",
+        "clients",
+        "future",
+        "complete",
+        "stable",
+        "discoverable",
+        "doc",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "description": "",
+      "project": "swift",
+      "required-since": "",
+      "tests": {
+        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_delete_large_object": {
+          "idempotent_id": "id-87b6dfa1-abe9-404d-8bf0-6c3751e6aa77"
+        },
+        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_list_large_object_metadata": {
+          "idempotent_id": "id-e69ad766-e1aa-44a2-bdd2-bf62c09c1456"
+        },
+        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_retrieve_large_object": {
+          "idempotent_id": "id-49bc49bc-dd1b-4c0f-904e-d9f10b830ee8"
+        },
+        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_upload_manifest": {
+            "idempotent_id": "id-2c3f24a6-36e8-4711-9aa2-800ee1fc7b5b"
+        }
+      }
+    },
+    "objectstore-dlo-support": {
+      "acheivements": [
+        "deployed",
+        "tools",
+        "clients",
+        "future",
+        "complete",
+        "stable",
+        "discoverable",
+        "doc",
+       "foundation",
+       "atomic",
+       "proximity"
+      ],
+      "admin": false,
+      "description": "",
+      "project": "swift",
+      "required-since": "",
+      "tests": {
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
+         "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object_with_x_object_manifest": {
+         "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
+        },
+        "tempest.api.object_storage.test_object_services.ObjectTest.test_list_object_metadata_with_x_object_manifest" : {
+          "idempotent_id": "id-23a3674c-d6de-46c3-86af-ff92bfc8a3da"
         }
       }
     },
