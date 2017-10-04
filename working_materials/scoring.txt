@@ -288,20 +288,19 @@ identity-v3-api-discovery:       [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
 identity-v3-catalog:             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
 identity-v3-list-projects:       [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
 identity-v3-list-groups:         [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-tokens-create:       [1,1,1] [1,1,1] [1,1,1] [1,1,0] [1] [92]*
 identity-v3-tokens-validate:     [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
 
 Notes:
-  * identity-v3-catalog is returned when the api for
-  identity-v3-tokens-create is called (GET /v3/auth/tokens). It is
-  important to consider it because end users may be relying on this
-  catalog for their apps (even though there are other API calls that
-  also show the catalog such as GET /v3/auth/catalog).
   * identity-v3-list-projects and identity-v3-list-groups didn't have usable
   tests in the past, but one was added for identity-v3-list-projects last year.
   Providers like Fog.io
   now actually use the /v3/users/{user_id}/[projects|groups] API's:
   https://git.io/vX9S6
   https://git.io/vX9SP
+  Capability became required 2017.09 but the only TC available was flagged
+  since it requires two sets of credentials. Capability needs additional TCs
+  or existing test should be changed to require only one set of credentials.
   * identity-v3-change-password was considered here but it's applicability is
   a bit hard to gauge: many systems using third-party authentication (such as
   an LDAP/AD server, an external oauth system, etc) require password changes
