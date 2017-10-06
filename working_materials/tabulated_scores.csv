@@ -33,6 +33,7 @@ compute-images-create,0,1,1,0,1,1,1,1,1,0,1,1,1,72
 compute-instance-actions-get,1,1,1,1,1,1,1,0,0,1,1,0,1,75*
 compute-instance-actions-list,1,1,1,1,1,1,1,0,0,1,1,0,1,75*
 compute-keypairs-create,1,1,1,1,1,1,1,1,1,0,1,0,1,83*
+compute-keypairs-create-type,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
 compute-list-api-versions,1,0,0,1,1,1,1,0,1,1,1,1,1,76*
 compute-quotas-get,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 compute-servers-create,1,1,1,1,1,1,1,1,1,1,1,1,1,100*

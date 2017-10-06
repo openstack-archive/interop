@@ -71,6 +71,7 @@
         "volumes-v2-upload"
       ],
       "advisory": [
+        "compute-keypairs-create-type",
         "identity-v3-catalog",
         "identity-v3-tokens-validate",
         "networks-l3-router",
@@ -290,6 +291,28 @@
       "tests": {
         "tempest.api.compute.servers.test_servers.ServersTestJSON.test_create_specify_keypair": {
           "idempotent_id": "id-f9e15296-d7f9-4e62-b53f-a04e89160833"
+        }
+      }
+    },
+    "compute-keypairs-create-type": {
+      "achievements": [
+        "deployed",
+        "clients",
+        "future",
+        "stable",
+        "complete",
+        "discover",
+        "doc",
+        "atomic",
+        "proximity"
+      ],
+      "admin": false,
+      "description": "Generate, import, and delete SSH or x509 keys within Compute services",
+      "project": "nova",
+      "required-since": "",
+      "tests": {
+        "tempest.api.compute.keypairs.test_keypairs_v22.KeyPairsV22TestJSON.test_keypairsv22_create_list_show_with_type": {
+          "idempotent_id": "id-89d59d43-f735-441a-abcf-0601727f47b6"
         }
       }
     },
