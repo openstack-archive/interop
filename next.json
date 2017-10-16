@@ -3284,8 +3284,8 @@
   "designated-sections" : {
     "required" : {
       "nova" : {
-        "guidance": "By default, designated except scheduler, filter, drivers, API extensions and networking. Additional properties allowed on Nova 2.0 API responses.",
-        "comment": "All code except driver/plugins listed.  Even for replaceable drivers or plugins, we still expect use of the existing nova service that wraps those interfaces. Additional properties may be returned on Nova 2.0 API responses. Endpoints with additional response data must be reported. The Nova 2.1 and greater API must return complete and unmodified responses.",
+        "guidance": "By default, designated except scheduler, filter, drivers, API extensions and networking. Additional properties on responses are not allowed.",
+        "comment": "All code except driver/plugins listed.  Even for replaceable drivers or plugins, we still expect use of the existing nova service that wraps those interfaces. Additional properties may not be returned on Nova 2.0 API responses. The Nova 2.1 and greater API must return complete and unmodified responses.",
         "sections": {
           "scheduler driver": { "description": "(Host and cell)", "designated": false, "comment": "none provided"},
           "filter scheduler driver": { "description": "(Host and cell)  While the line above implies the entire driver is fair game, this case is incredibly common and worth mentioning specifically.", "designated": false, "comment": "none provided"},
