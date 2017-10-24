@@ -2,6 +2,9 @@
 Additional Properties Waiver
 ============================
 
+THE ADDITIONAL PROPERTIES WAIVER IS NO LONGER ALLOWED AS OF THE
+2018.01 GUIDELINE.
+
 In mid-2015, the OpenStack QA team implemented strict response
 checking as an implementation detail and enforcement of Nova
 microversions. Microversions, in development since the Kilo release of
