@@ -102,6 +102,7 @@ volumes-v3-metadata,1,0,1,1,1,1,1,1,0,1,1,0,1,77*
 volumes-v3-reserve,1,0,1,1,1,1,1,1,0,1,1,0,1,77*
 volumes-v3-readonly,1,0,1,1,1,1,1,1,0,1,1,0,1,77*
 volumes-v3-upload,1,0,1,1,1,1,1,1,0,1,1,0,1,77*
+volumes-v3-snapshot-revert,1,0,0,1,1,1,1,1,0,0,1,1,1,66
 identity-v3-api-discovery,1,0,1,1,1,1,1,1,1,1,1,1,1,94*
 identity-v3-catalog,1,0,1,1,1,1,1,1,0,1,1,1,1,85*
 identity-v3-list-projects,1,1,1,1,1,1,1,1,0,0,1,0,1,74*

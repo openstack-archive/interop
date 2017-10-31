@@ -271,6 +271,7 @@ volumes-v3-metadata:               [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
 volumes-v3-reserve:                [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
 volumes-v3-readonly:               [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
 volumes-v3-upload:                 [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
+volumes-v3-snapshot-revert:        [1,0,0] [1,1,1] [1,1,0] [0,1,1] [1] [66]
 
 Notes:
     * 2017.01
@@ -287,6 +288,12 @@ Notes:
     * 2017.08
         * All v2 APIs are being marked down for TC Future direction because of the
           deprecation of the v2 API in favor of the backward compatible v3
+    * 2018.01
+        * considered making the addition of groups replication a new cluster of capabilities,
+          but it is an admin-only set of functionalities, so it isn't a viable candidate for
+          becoming a new capability
+        * reversion to the latest snapshot will not be added as a new capability this cycle, given
+          its low score, but will be a viable new capability if it becomes accessible via the cli.
 
 Identity
 --------
