@@ -1,0 +1,126 @@
+NFV Vertical Scoring Worksheet
+==============================
+
+Capability Name: [Widely Deployed, Used By Tools, Used by Clients],
+                 [TC Future Direction, Complete, Stable],
+                 [Discoverable, Doc'd, Required in Last Release],
+                 [Foundation, Atomic, Proximity],
+                 [Non-Admin] [Total]
+
+Possible scores: 0, 1, ? (not scored yet or needs discussion)
+
+Networking - trunk ports
+------------------------
+
+networking-trunk-port-crud:          [1,0,1] [1,1,1] [1,1,0] [0,1,1] [1] [76]*
+networking-trunk-subport-crud:       [1,0,1] [1,1,1] [1,1,0] [0,1,1] [1] [76]*
+networking-trunk-show-trunk-details: [1,0,1] [1,1,1] [1,1,0] [0,1,1] [1] [76]*
+
+
+Notes:
+  * In line with established practice in the main programs, typical sets of
+    operations have been combined into CRUD groups:
+    * network-trunk-port-crud
+       * networking-trunk-port-create
+       * networking-trunk-port-list
+       * networking-trunk-port-update
+       * networking-trunk-port-show
+       * networking-trunk-port-delete
+    * network-trunk-subport-crud
+       * networking-trunk-add-subport
+       * networking-trunk-delete-subport
+       * networking-trunk-list-subport
+  * I scored the 'widely deployed' criterion with 1 in the context of NFV
+    deployments. Since these deployments are typically private clouds, it is
+    hard to determine actual availability.
+  * The 'discoverable' capability has been scored with a 1 despite a peculiar
+    corner case. In general, the trunk port feature is discoverable as part of
+    the regular Neutron extension discovery mechanism. However, there exists a
+    corner case, which is created by a specific order of API calls. Whether or
+    not the API calls in this specific order succeed is backend dependent, but
+    this backend capability is not discoverable.
+    Details:
+    - Documented order of API calls which always succeed
+        i) create Neutron port
+       ii) convert port to a trunk port
+      iii) boot VM with trunk port
+    - Order of API calls with backend-dependent success
+        i) create Neutron port
+       ii) boot VM with Neutron port
+      iii) convert Neutron port to trunk port
+      In this order, the last step only succeeds on specific backends. Whether
+      or not the backend in use supports this order of API calls is not
+      discoverable.
+    The official documentation describes a workflow corresponding to the first
+    order of API calls. Hence, users of the trunk ports very likely only follow
+    the recommended workflow, thereby not encountering the particular corner
+    case.
+  * vlan-transparent networks is related to VLAN trunk ports and equally
+    important. There are no tempest tests for this feature, though.
+
+
+
+
+NFV-feature candidates for inclusion in first release:
+------------------------------------------------------
+
+  * OpenStack Powered Compute
+
+  * Heat add-on
+
+  * EPA support (NUMA awareness, huge page support, CPU pinning)
+
+  * SR-IOV support
+
+  * (subset of) telemetry services
+
+  * MPLS VPNs (networking-bpg)
+
+
+
+NFV-feature candidates for inclusion in later releases:
+-------------------------------------------------------
+  * Designate add-on
+    - DNS service not used in NFV context
+
+  * heat-translator project
+
+  * Nova placement API
+
+  * multi-queue support
+    - multi-queue support important for performance but current implementation
+      not usable by legacy VNFs
+
+  * support for dynamic queue size configuration
+    - under development
+
+  * Neutron SFC
+    - no industry alignment yet between IETF model and Neutron SFC model 
+
+  * LBaaS
+    - legacy VNFs typically perform internal load-balancing and do not rely on
+      infrastructure services
+
+  * Neutron FWaaS
+    - VNFs use multiple networks: the majority are VNF-internal networks which
+      are isolated by design. External networks are typically isolated within
+      operator network. Shared network use cases which require firewalling
+      not very common.
+
+  * Pysical function pass-through
+    - complementary to SR-IOV, under development
+
+  * QoS
+
+  * bandwidth-based scheduling
+
+  * Tacker as orchestration tool
+
+  * Masakari (VM HA)
+    - relatively new project, not yet widely deployed
+
+  * tap-as-a-service
+
+  * DPDK dataplane support
+
+  * hardware acceleration (SmartNICs)

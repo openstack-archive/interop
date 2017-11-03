@@ -1,0 +1,4 @@
+Capability,Widely Deployed,Used by Tools,Used by Clients,Future Direction,Complete,Stable,Discoverable,Documented,Core in Last Release,Foundation,Atomic,Proximity,Non-Admin,Total
+networking-trunk-port-crud,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
+networking-trunk-subport-crud,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
+networking-trunk-show-trunk-details,1,0,1,1,1,1,1,1,0,0,1,1,1,76*

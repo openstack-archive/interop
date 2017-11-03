@@ -1,0 +1,596 @@
+{
+  "metadata": {
+    "id": "nfv.next",
+    "schema": "2.0",
+    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
+    "source": "http://git.openstack.org/cgit/openstack/interop/",
+    "scoring": {
+      "cutoff_score": 74,
+      "criteria": {
+        "atomic": {
+          "name": "Atomic",
+          "description": "The capabilities are unique and cannot be built out of other must-pass capabilities.",
+          "weight": 6
+        },
+        "clients": {
+          "name": "Used By Clients",
+          "description": "The capabilities are widely used by common OpenStack clients, including the openstack client, nova client, neutron client, and so on. This criterion pertains mostly to API versioning. For example, if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' criterion.",
+          "weight": 10
+        },
+        "complete": {
+          "name": "Complete",
+          "description": "Where the code being tested has a designated area of alternate implementation (extension framework) as per the Core Principles, there should be parity in capability tested across extension implementations. This also implies that the capability test is not configuration specific or locked to non-open technology.",
+          "weight": 8
+        },
+        "deployed": {
+          "name": "Widely Deployed",
+          "description": "The capabilities are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products.",
+          "weight": 8
+        },
+        "discover": {
+          "name": "Discoverable",
+          "description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection).",
+          "weight": 8
+        },
+        "doc": {
+          "name": "Documented",
+          "description": "The capability is well documented, including both the interface and the expected behavior.",
+          "weight": 8
+        },
+        "foundation": {
+          "name": "Foundation",
+          "description": "The capability is a fundamental requirement for must-pass tests, or is depended on by other capabilities.",
+          "weight": 9
+        },
+        "future": {
+          "name": "Future Direction",
+          "description": "The capability reflects the future technical direction as defined by theproject technical teams and the Technical Committee.",
+          "weight": 11
+        },
+        "proximity": {
+          "name": "Proximity Cluster",
+          "description": "A capability that is related to another set of core capabilitity. The intent is to ensure that related capabilities are selected for and managed together.",
+          "weight": 8
+        },
+        "stable": {
+          "name": "Stable",
+          "description": "A capability whose API has not changed in more than two releases. Meant to select for capabilities that are stable and not under active development.",
+          "weight": 9
+        },
+        "sticky": {
+          "name": "Core In Last Release",
+          "description": "A capability whose API was present in the previous guideline release. Discourages the disruption of replacing the API a capability uses, or removing a capability from core.",
+          "weight": 9
+        },
+        "tools": {
+          "name": "Used By Tools",
+          "description": "Capabilities that are widely used outside of the OpenStack client ecosystem. Example tools include GopherCloud, jClouds, Fog, and so on.",
+          "weight": 6
+        }
+      }
+    },
+    "os_trademark_approval": {
+      "target_approval": "2018.02",
+      "releases": ["newton", "ocata", "pike", "queens"],
+      "status": "draft"
+    }
+  },
+  "platforms": {
+    "OpenStack Powered NFV Platform": {
+      "description": "OpenStack services targeting NFV use cases including identity, compute, networking, block storage, and NFV capabilities.",
+      "components": [
+        {
+          "name": "os_powered_nfv_platform"
+	},
+        {
+          "name": "os_powered_compute",
+          "source": "https://git.openstack.org/cgit/openstack/interop/tree/2017.09.json"
+        }
+      ]
+    }
+  },
+  "components": {
+    "os_powered_nfv_platform": {
+      "capabilities": {
+        "required": [
+        ],
+        "advisory": [
+          "networking-trunk-port-crud",
+          "networking-trunk-subport-crud",
+          "networking-trunk-show-trunk-details"
+        ],
+        "deprecated": [
+        ],
+        "removed": [
+        ]
+      },
+      "designated_sections": {
+        "required": [
+          "nova",
+          "keystone",
+          "glance",
+          "neutron",
+          "cinder"
+        ]
+      }
+    }
+  },
+  "capabilities": {
+    "networking-trunk-port-crud": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "CRUD operations for VLAN trunk ports",
+      "project": "neutron",
+      "tests": {
+        "neutron.tests.tempest.api.test_trunk.test_create_trunk_empty_subports_list": {
+          "idempotent_id": "id-e1a6355c-4768-41f3-9bf8-0f1d192bd501"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_create_trunk_subports_not_specified": {
+          "idempotent_id": "id-382dfa39-ca03-4bd3-9a1c-91e36d2e3796"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_create_show_delete_trunk": {
+          "idempotent_id": "id-7de46c22-e2b6-4959-ac5a-0e624632ab32"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_create_update_trunk": {
+          "idempotent_id": "id-4ce46c22-a2b6-4659-bc5a-0ef2463cab32"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_create_update_trunk_with_description": {
+          "idempotent_id": "id-5ff46c22-a2b6-5559-bc5a-0ef2463cab32"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_list_trunks": {
+          "idempotent_id": "id-73365f73-bed6-42cd-960b-ec04e0c99d85"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_delete_trunk_with_subport_is_allowed": {
+          "idempotent_id": "id-ee5fcead-1abf-483a-bce6-43d1e06d6aa0"
+        }
+      }
+    },
+    "networking-trunk-subport-crud": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "CRUD operations for VLAN trunk subports",
+      "project": "neutron",
+      "tests": {
+        "neutron.tests.tempest.api.test_trunk.test_add_subport": {
+          "idempotent_id": "id-bb5fcead-09b5-484a-bbe6-46d1e06d6cc0"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_remove_subport": {
+          "idempotent_id": "id-96eea398-a03c-4c3e-a99e-864392c2ca53"
+        },
+        "neutron.tests.tempest.api.test_trunk.test_get_subports": {
+          "idempotent_id": "id-bb5fcaad-09b5-484a-dde6-4cd1ea6d6ff0"
+        }
+      }
+    },
+    "networking-trunk-show-trunk-details": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Retrieve trunk_details extension attribute when showing a port resource that participates in a trunk as parent",
+      "project": "neutron",
+      "tests": {
+        "neutron.tests.tempest.api.test_trunk_details.test_port_resource_trunk_details_no_subports": {
+          "idempotent_id": "id-f0bed24f-d36a-498b-b4e7-0d66e3fb7308"
+        },
+        "neutron.tests.tempest.api.test_trunk_details.test_port_resource_trunk_details_with_subport": {
+          "idempotent_id": "id-544bcaf2-86fb-4930-93ab-ece1c3cc33df"
+        },
+        "neutron.tests.tempest.api.test_trunk_details.test_port_resource_empty_trunk_details": {
+          "idempotent_id": "id-fe6d865f-1d5c-432e-b65d-904157172f24"
+        }
+      }
+    }
+  },
+  "designated_sections": {
+    "nova": {
+      "required": {
+        "guidance": "By default, designated except scheduler, filter, drivers, API extensions and networking. Additional properties on responses are not allowed.",
+        "comment": "All code except driver/plugins listed.  Even for replaceable drivers or plugins, we still expect use of the existing nova service that wraps those interfaces. Additional properties may not be returned on Nova API responses. The Nova API must return complete and unmodified responses.",
+        "sections": {
+          "scheduler driver": {
+            "description": "(Host and cell)",
+            "designated": false
+          },
+          "filter scheduler driver": {
+            "description": "(Host and cell)  While the line above implies the entire driver is fair game, this case is incredibly common and worth mentioning specifically.",
+            "designated": false
+          },
+          "compute driver": {
+            "description": "not provided",
+            "designated": false
+          },
+          "rest api extensions": {
+            "description": "may be required for capabilities",
+            "designated": false
+          },
+          "nova networking components": {
+            "description": "not provided",
+            "designated": false
+          },
+          "nova networking drivers": {
+            "description": "not provided",
+            "designated": false
+          }
+        }
+      }
+    },
+    "keystone": {
+      "required": {
+        "guidance": "Designation is outlined per API grouping. Identity (user and group) management APIs will not be designated. API access (with exception of auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs include both v2.0 and v3 versions where applicable.",
+        "comment": "Specific Drivers/Plugins and Identity management code are not designated as many deployments have custom drivers and/or read-only, federated, or externally managed Identity information.",
+        "sections": {
+          "assignment API": {
+            "description": "APIs for managing roles and assignment of roles to user(s)/group(s) for a given scope",
+            "designated": true,
+            "comment": "Some functionality for v2.0 is provided via the 'admin_crud' extension"
+          },
+          "auth (v2.0) API": {
+            "description": "'/v2.0/tokens' APIs used for v2.0 authentication and token validation/revocation/signing certificates (when PKI tokens are in use)",
+            "designated": true,
+            "comment": "This includes the catalog data provided as part of the token body."
+          },
+          "auth (v3) API": {
+            "description": "'/v3/auth' APIs used for v3 authentication and token validation/revocation",
+            "designated": true,
+            "comment": "This includes the catalog data provided as part of the token body and '/v3/auth/catalog'."
+          },
+          "catalog API": {
+            "description": "APIs for managing services, endpoints, and regions",
+            "designated": false,
+            "comment": "Catalog API is not designated due to the support of template catalog driver which cannot be updated via REST calls. The catalog in the token is considered part of the AUTH APIs."
+          },
+          "credential API": {
+            "description": "APIs for managing user credentials",
+            "designated": false
+          },
+          "drivers": {
+            "description": "specific implementations for the keystone API backends (e.g. SQL, LDAP, etc)",
+            "designated": false
+          },
+          "ec2 API": {
+            "description": "APIs for managing and utilizing ec2-style credentials",
+            "designated": false,
+            "comment": "May be required for some OpenStack features in non-keystone services"
+          },
+          "federation API": {
+            "description": "APIs for managing and consuming federated identity",
+            "designated": false
+          },
+          "identity API": {
+            "description": "APIs for managing user(s) and group(s) in a read/write identity store",
+            "designated": false,
+            "comment": "Some functionality for v2.0 is provided via the 'admin_crud' and 'user_crud' extensions"
+          },
+          "notifications": {
+            "description": "CADF notifications for events (authentication, creation of resources, etc)",
+            "designated": false,
+            "comment": "Highly recommended and may be required for some features of OpenStack"
+          },
+          "policy API": {
+            "description": "APIs for managing centralized policy.json distribution for OpenStack services",
+            "designated": false
+          },
+          "trust API": {
+            "description": "APIs for managing delegation (via trusts) of roles from one user/group to another user/group",
+            "designated": true
+          },
+          "resource API": {
+            "description": "APIs for managing resources (projects/tenants and/or domains)",
+            "designated": true,
+            "comment": "In the releases prior to Kilo this is covered by the assignment API"
+          },
+          "revoke API": {
+            "description": "APIs for revocation event handling",
+            "designated": false,
+            "comment": "Highly recommended and required for Fernet (non-persistent) tokens"
+          }
+        }
+      }
+    },
+    "glance": {
+      "required": {
+        "guidance": "Designated sections are the API implementation code and domain model.",
+        "sections": {
+          "http apis": {
+            "description": "API",
+            "designated": true
+          },
+          "domain model": {
+            "description": "Shared",
+            "designated": true
+          },
+          "stores": {
+            "description": "the swift, filesystem, and http stores",
+            "designated": false,
+            "comment": "should be replaceable, vendor-specificddCross platform"
+          },
+          "db driver": {
+            "description": "Database driver for the Glance service",
+            "designated": false,
+            "comment": "should be replaceable"
+          },
+          "wsgi framework": {
+            "description": "application delivery framework",
+            "designated": false,
+            "comment": "should be replaceable"
+          }
+        }
+      }
+    },
+    "cinder": {
+      "required": {
+        "guidance": "Designated sections are the API implementation code",
+        "comment": "Historically, cinder has had plug-ins around schedulers and drivers.",
+        "sections": {
+          "api": {
+            "description": "API section means actually the CODE that exposes the API, not just API-comparability",
+            "designated": true
+          },
+          "drivers": {
+            "description": "Volume storage drivers",
+            "designated": false,
+            "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"
+          },
+          "scheduler": {
+            "description": "Scheduler for the volume storage service",
+            "designated": false,
+            "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"
+          },
+          "api extensions": {
+            "description": "Implementation of volume API extensions",
+            "designated": false,
+            "comment": "should be replaceable"
+          }
+        }
+      }
+    },
+    "swift": {
+      "required": {
+        "guidance": "Designated sections are proxy server, object server, container server, account server and select middleware",
+        "comment": "You should use the proxy and storage servers, and you can use your own DiskFile or add new middleware for the proxy or storage nodes.  Please review sections for specific middleware guidelines",
+        "sections": {
+          "proxy server": {
+            "description": "the proxy server code and, if enabled, the functionality implemented by provided middleware (eg static large objects or signed urls or bulk requests",
+            "designated": true
+          },
+          "object server": {
+            "description": "the object server code that calls a DiskFile implementation and updates container listings",
+            "designated": true
+          },
+          "container server": {
+            "description": "the code that provides a list of objects in a container and container metadata",
+            "designated": true
+          },
+          "account server": {
+            "description": "the code that provides a list of containers and account metadata",
+            "designated": true
+          },
+          "catch_errors": {
+            "description": "error handling code",
+            "designated": true,
+            "comment": "middleware"
+          },
+          "healthcheck": {
+            "description": "health check code",
+            "designated": true,
+            "comment": ""
+          },
+          "bulk": {
+            "description": "not provided",
+            "designated": true
+          },
+          "slo": {
+            "description": "not provided",
+            "designated": true
+          },
+          "container-quotas": {
+            "description": "not provided",
+            "designated": true
+          },
+          "account-quotas": { "description": "not provided",
+           "designated": true
+          },
+          "tempurl": { "description": "not provided",
+           "designated": true
+          },
+          "replicators": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "auditors": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "updaters": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "account reaper": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "object expirer": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "ratelimit": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "recon": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "staticweb": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "formpost": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "domain_remap": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "crossdomain": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "cname_lookup": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "diskfile": {
+            "description": "the part of the object server that actually persists the object data to a storage volume",
+            "designated": false,
+            "comment": "replaceable"
+          },
+          "cache": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          },
+          "tempauth": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          },
+          "keystoneauth": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          },
+          "proxy-logging": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          }
+        }
+      }
+    },
+    "neutron": {
+      "required": {
+        "guidance": "By default, designated for all code backing required capabilities except pluggable components such as plugins, drivers, and API extensions other than those listed below.",
+        "comment": "Intentionally replaceable code such as network plugins, ML2 drivers, IPAM drivers, schedulers are not designated.",
+        "sections": {
+          "Scheduler drivers": {
+            "description": "Scheduler drivers",
+            "designated": false
+          },
+          "IPAM drivers": {
+            "description": "IPAM drivers",
+            "designated": false
+          },
+          "Network plugins": {
+            "description": "Network backend plugins",
+            "designated": false
+          },
+          "ML2 drivers": {
+            "description": "ML2 type and mechanism drivers",
+            "designated": false
+          },
+          "Core API and server": {
+            "description": "Core API and server",
+            "designated": true
+          },
+          "Core API quota extension": {
+            "description": "Quota API",
+            "designated": true
+          },
+          "Core API security group extension": {
+            "description": "Security group API",
+            "designated": true
+          },
+          "Core API L3 extension": {
+            "description": "L3 API for floating IPs and routers",
+            "designated": true
+          },
+          "Agents": {
+            "description": "Agents if used by relevant driver",
+            "designated": true,
+            "comment": "Some drivers require the use of community-developed agents to provide required Capabilities (such as L3 networking). If a product uses such agents, they are designated."
+          },
+          "RPC": {
+            "description": "RPC API",
+            "designated": true
+          },
+          "neutron-lib": {
+            "description": "Library code imported in several parts of Neutron's core",
+            "designated": true
+          },
+          "Trunk port API extension": {
+            "description": "Extension for trunk port API",
+            "designated": true
+          }
+        }
+      }
+    },
+    "heat": {
+      "informational": {
+        "guidance": "Not a core capability, no position at this time",
+        "sections": {}
+      }
+    },
+    "horizon": {
+      "informational": {
+        "guidance": "Clients not considerd core capabilities at this time",
+        "sections": {}
+      }
+    },
+    "ceilometer": {
+      "informational": {
+        "guidance": "Not a core capability, no position at this time",
+        "sections": {}
+      }
+    }
+  },
+  "test_repositories": {
+    "neutron": {
+      "repository": "https://git.openstack.org/cgit/openstack/neutron/",
+      "reference": "e971f0c317",
+      "description": "OpenStack Neutron project reposoritory containing API and scenario tests"
+    }
+  }
+}
