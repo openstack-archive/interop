@@ -2,3 +2,6 @@ Capability,Widely Deployed,Used by Tools,Used by Clients,Future Direction,Comple
 networking-trunk-port-crud,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
 networking-trunk-subport-crud,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
 networking-trunk-show-trunk-details,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
+networking-bgpvpn-bgpvpn-crud,0
+networking-bgpvpn-net-assoc-crud,1,1,1,1,1,1,1,1,0,0,1,1,1,82*
+networking-bgpvpn-router-assoc-crud,1,1,1,1,1,1,1,1,0,0,1,1,1,82*

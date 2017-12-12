@@ -16,7 +16,6 @@ networking-trunk-port-crud:          [1,0,1] [1,1,1] [1,1,0] [0,1,1] [1] [76]*
 networking-trunk-subport-crud:       [1,0,1] [1,1,1] [1,1,0] [0,1,1] [1] [76]*
 networking-trunk-show-trunk-details: [1,0,1] [1,1,1] [1,1,0] [0,1,1] [1] [76]*
 
-
 Notes:
   * In line with established practice in the main programs, typical sets of
     operations have been combined into CRUD groups:
@@ -60,6 +59,24 @@ Notes:
 
 
 
+BGP/MPLS VPNs - networking-bgpvpn
+---------------------------------
+
+networking-bgpvpn-bgpvpn-crud:          [1,1,1] [1,1,1] [1,1,0] [0,1,1] [0] [0]
+networking-bgpvpn-net-assoc-crud:       [1,1,1] [1,1,1] [1,1,0] [0,1,1] [1] [82]*
+networking-bgpvpn-router-assoc-crud:    [1,1,1] [1,1,1] [1,1,0] [0,1,1] [1] [82]*
+
+
+Notes:
+  * creating VPNs is an admin API. The non-admin API criterion should be relaxed
+    for the NFV program
+  * missing (non-negative) test cases for
+    - list, show, delete VPNs
+    - list, show networking associations
+    - list, show router associations
+  * consider using scenario tests as well
+
+
 
 NFV-feature candidates for inclusion in first release:
 ------------------------------------------------------
@@ -73,8 +90,6 @@ NFV-feature candidates for inclusion in first release:
   * SR-IOV support
 
   * (subset of) telemetry services
-
-  * MPLS VPNs (networking-bpg)
 
 
 

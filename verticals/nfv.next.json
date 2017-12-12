@@ -81,7 +81,7 @@
       "components": [
         {
           "name": "os_powered_nfv_platform"
-	},
+        },
         {
           "name": "os_powered_compute",
           "source": "https://git.openstack.org/cgit/openstack/interop/tree/2017.09.json"
@@ -97,7 +97,10 @@
         "advisory": [
           "networking-trunk-port-crud",
           "networking-trunk-subport-crud",
-          "networking-trunk-show-trunk-details"
+          "networking-trunk-show-trunk-details",
+          "networking-bgpvpn-bgpvpn-crud",
+          "networking-bgpvpn-net-assoc-crud",
+          "networking-bgpvpn-router-assoc-crud"
         ],
         "deprecated": [
         ],
@@ -206,6 +209,126 @@
         },
         "neutron.tests.tempest.api.test_trunk_details.test_port_resource_empty_trunk_details": {
           "idempotent_id": "id-fe6d865f-1d5c-432e-b65d-904157172f24"
+        }
+      }
+    },
+    "networking-bgpvpn-bgpvpn-crud": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": true,
+      "description": "CRUD operations for BGP VPNs",
+      "project": "networking-bgpvpn",
+      "tests": {
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_create_bgpvpn": {
+          "idempotent_id": "id-4f90deb2-eb8e-4e7d-9d68-c5b5cc657f7e"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_create_bgpvpn_as_non_admin_fail": {
+          "idempotent_id": "id-0a911d61-d908-4c21-a11e-e403ac0d8e38"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_create_bgpvpn_with_invalid_routetargets": {
+          "idempotent_id": "id-464ca6f9-86e4-4ee3-9c65-f1edae93223d"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_delete_bgpvpn": {
+          "idempotent_id": "id-709b23b0-9719-47df-9f53-b0812a5d5a48"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_delete_bgpvpn_as_non_admin_fail": {
+          "idempotent_id": "id-596abfc2-fd89-491d-863d-25459db1df4b"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_show_bgpvpn_as_non_owner_fail": {
+          "idempotent_id": "id-b20110bb-393b-4342-8b30-6486cd2b4fc6"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_list_bgpvpn": {
+          "idempotent_id": "id-7a7feca2-1c24-4f5d-ad4b-b0e5a712adb1"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_list_bgpvpn_as_non_owner_fail": {
+          "idempotent_id": "id-4875e65d-0b65-40c0-9efd-309420686ab4"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_show_bgpvpn": {
+          "idempotent_id": "id-9fa29db8-35d0-4beb-a986-23c369499ab1"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_update_route_target": {
+          "idempotent_id": "id-559013fd-1e34-4fde-9599-f8aafe9ae716"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_update_route_target_non_admin_fail": {
+          "idempotent_id": "id-e35eb9be-fe1f-406c-b36b-fc1879328313"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_update_bgpvpn_invalid_routetargets": {
+          "idempotent_id": "id-7d4e9b87-e1ab-47a7-a8d6-9d179365556a"
+        }
+      }
+    },
+    "networking-bgpvpn-net-assoc-crud": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "CRUD operations for associating BGP VPNs with Neutron networks",
+      "project": "networking-bgpvpn",
+      "tests": {
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_associate_disassociate_network": {
+          "idempotent_id": "id-51e1b079-aefa-4c37-8b1a-0567b3ef7954"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_associate_invalid_network": {
+          "idempotent_id": "id-f049ce21-d239-47c0-b13f-fb57a2a558ce"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_disassociate_invalid_network": {
+          "idempotent_id": "id-078b2660-4adb-4c4c-abf0-b77bf0bface5"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_list_show_network_association": {
+          "idempotent_id": "id-096281da-356d-4c04-bd55-784a26bb1b0c"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_list_netassoc_as_non_owner_fail": {
+          "idempotent_id": "id-2cbb10af-bf9c-4b32-b6a6-4066de783758"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_show_netassoc_as_non_owner_fail": {
+          "idempotent_id": "id-57b0da93-8e37-459f-9aaf-f903acc36025"
+        }
+      }
+    },
+    "networking-bgpvpn-router-assoc-crud": {
+      "achievements": [
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "tools",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "CRUD operations for BGP VPNs with Neutron routers",
+      "project": "networking-bgpvpn",
+      "tests": {
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_associate_disassociate_router": {
+          "idempotent_id": "id-de8d94b0-0239-4a48-9574-c3a4a4f7cacb"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_list_show_router_association": {
+          "idempotent_id": "id-3ae91755-b1b6-4c62-a699-a44eeb4ee522"
+        },
+        "networking_bgpvpn_tempest.tests.api.test_bgpvpn.test_attach_associated_subnet_to_associated_router": {
+          "idempotent_id": "id-4be1f073-fe57-4858-b7b9-9a189e90b770"
         }
       }
     }
@@ -584,6 +707,26 @@
         "guidance": "Not a core capability, no position at this time",
         "sections": {}
       }
+    },
+    "networking-bgpvpn": {
+      "advisory": {
+        "guidance": "Designated sections are the networking-bgpvpn Neutron service plugin and Neutron API extensions.",
+        "comment": "The backend drivers are intentially not designated sections.",
+        "sections": {
+          "Backend drivers": {
+            "description": "Service plugin drivers for different backends, such as bagpipe, OpenDaylight, and OpenContrail.",
+            "designated": false
+          },
+          "Service plugin": {
+            "description": "The service plugin for managing BGP VPNs",
+            "designated": true
+          },
+          "API extension": {
+            "description": "Neutron API extension for managing BGP VPNs.",
+            "designated": true
+          }
+        }
+      }
     }
   },
   "test_repositories": {
@@ -591,6 +734,11 @@
       "repository": "https://git.openstack.org/cgit/openstack/neutron/",
       "reference": "e971f0c317",
       "description": "OpenStack Neutron project reposoritory containing API and scenario tests"
+    },
+    "networking-bgpvpn": {
+      "repository": "https://git.openstack.org/cgit/openstack/networking-bgpvpn",
+      "reference": "c5575c657f",
+      "description": "OpenStack networking-bgpvpn project repository containing API and scenario tests"
     }
   }
 }
