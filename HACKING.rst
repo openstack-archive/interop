@@ -112,7 +112,7 @@ To file a flag request for a test, follow these steps:
 
 #. Make sure you have a development environment set up accoring to the
    `Developer's Guide
-   <http://docs.openstack.org/infra/manual/developers.html>`_.
+   <https://docs.openstack.org/infra/manual/developers.html>`_.
 
 #. Clone the defcore repo by running:
 

@@ -14,7 +14,7 @@ Interop Working Group Process Documentation
 
 Are you a vendor who wants to get a license to use the OpenStack trademark
 and logo?  Consult `OpenStack Interop
-<http://www.openstack.org/brand/interop/>`_.
+<https://www.openstack.org/brand/interop/>`_.
 
 The /doc/source/process directory contains details about the
 Interop Working Group process.
