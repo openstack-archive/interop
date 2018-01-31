@@ -1,134 +1,231 @@
 {
-  "id": "next",
-  "schema": "1.6",
-  "reference": "https://git.openstack.org/cgit/openstack/interop/schema/1.6.json",
-  "source": "http://git.openstack.org/cgit/openstack/interop/",
-  "status": "draft",
-  "cutoff_score": "74",
-  "target_approval": "2018-08-18",
-  "replaces": "2018.02",
-  "releases": ["ocata", "pike", "queens", "rocky"],
-  "platform": {
-    "required": ["compute", "object"],
-    "advisory": [],
-    "deprecated": [],
-    "removed": []
+  "metadata": {
+    "id": "next",
+    "schema": "2.0",
+    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
+    "source": "http://git.openstack.org/cgit/openstack/interop/add-ons/dns.next.json",
+    "scoring": {
+      "cutoff_score": "74",
+      "criteria": {
+        "atomic": {
+            "Description": "Capabilities is unique and cannot be built out of other must-pass capabilities",
+            "name": "Atomic",
+            "weight": 6
+        },
+        "clients": {
+            "Description": "Candidates are widely used capabilities: Should be included if called by common OpenStack clients (openstackclient, neutronclient, novaclient, etc) if necessary.  This Criteria pertains mostly to API versioning.  For example: if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' Criteria.",
+            "name": "Used by Clients",
+            "weight": 10
+        },
+        "complete": {
+            "Description": "Where the code being tested has a designated area of alternate implementation (extension framework) as per the Core Principles, there should be parity in capability tested across extension implementations. This also implies that the capability test is not configuration specific or locked to non-open technology",
+            "name": "Complete",
+            "weight": 8
+        },
+        "deployed": {
+            "Description": "Candidates are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products",
+            "name": "Widely Deployed",
+            "weight": 8
+        },
+        "discover": {
+            "Description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection)",
+            "name": "Discoverable",
+            "weight": 8
+        },
+        "doc": {
+            "Description": "Should be well documented, particularly the expected behavior. This can be a very subjective measure and we expect to refine this definition over time",
+            "name": "Documented",
+            "weight": 8
+        },
+        "foundation": {
+            "Description": "Test capabilities that are required by other must-pass tests and/or depended on by many other capabilities",
+            "name": "Foundation",
+            "weight": 9
+        },
+        "future": {
+            "Description": "Should reflect future technical direction (from the project technical teams and the TC) and help manage deprecated capabilities",
+            "name": "Future Direction",
+            "weight": 11
+        },
+        "proximity": {
+            "Description": "Sometimes called a Test Cluster, selects for Capabilities that are related to Core Capabilities. This helps ensure that related capabilities are managed together",
+            "name": "Proximity",
+            "weight": 8
+        },
+        "stable": {
+            "Description": "Test is required stable for >2 releases because we don't want Capabilities that do not have dependable APIs",
+            "name": "Stable",
+            "weight": 9
+        },
+        "sticky": {
+            "Description": "A test that is a must-pass test should stay a must-pass test. This makes Capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
+            "name": "Core in Last Release",
+            "weight": 9
+        },
+        "tools": {
+            "Description": "Candidates are widely used capabilities: Should be included if supported by common tools outside of the OpenStack community (RightScale, Scalr, CloudForms, jClouds, Fog, etc...)",
+            "name": "Used by Tools",
+            "weight": 6
+        }
+      }
+    },
+    "os_trademark_approval": {
+      "target_approval": "2018.02",
+      "replaces": "2017.09",
+      "releases": ["newton", "ocata", "pike", "queens"],
+      "status": "advisory",
+      "additionalProperties": false
+    }
   },
-  "components": {
-    "compute": {
-      "required": [
-        "compute-availability-zones-list",
-        "compute-flavors-list",
-        "compute-images-create",
-        "compute-instance-actions-get",
-        "compute-instance-actions-list",
-        "compute-keypairs-create",
-        "compute-keypairs-create-type",
-        "compute-list-api-versions",
-        "compute-quotas-get",
-        "compute-servers-create",
-        "compute-servers-delete",
-        "compute-servers-get",
-        "compute-servers-host",
-        "compute-servers-invalid",
-        "compute-servers-list",
-        "compute-servers-lock",
-        "compute-servers-name",
-        "compute-servers-reboot",
-        "compute-servers-rebuild",
-        "compute-servers-resize",
-        "compute-servers-stop",
-        "compute-servers-update",
-        "compute-servers-verify",
-        "compute-servers-metadata-delete",
-        "compute-servers-metadata-get",
-        "compute-servers-metadata-list",
-        "compute-servers-metadata-set",
-        "compute-servers-metadata-update",
-        "compute-volume-attach",
-        "identity-v3-api-discovery",
-        "identity-v3-catalog",
-        "identity-v3-list-projects",
-        "identity-v3-tokens-create",
-        "identity-v3-tokens-validate",
-        "images-v2-index",
-        "images-v2-update",
-        "images-v2-list",
-        "images-v2-delete",
-        "images-v2-get",
-        "networks-l2-CRUD",
-        "networks-l3-router",
-        "networks-l3-CRUD",
-        "networks-list-api-versions",
-        "networks-security-groups-CRUD",
-        "networks-subnet-pools-CRUD",
-        "volumes-list-api-versions",
-        "volumes-v2-create-delete",
-        "volumes-v2-snapshot-create-delete",
-        "volumes-v2-get",
-        "volumes-v2-list",
-        "volumes-v2-update",
-        "volumes-v2-copy-image-to-volume",
-        "volumes-v2-clone",
-        "volumes-v2-availability-zones",
-        "volumes-v2-extensions",
-        "volumes-v2-metadata",
-        "volumes-v2-reserve",
-        "volumes-v2-readonly",
-        "volumes-v2-upload",
-        "volumes-v3-create-delete",
-        "volumes-v3-snapshot-create-delete",
-        "volumes-v3-get",
-        "volumes-v3-list",
-        "volumes-v3-update",
-        "volumes-v3-copy-image-to-volume",
-        "volumes-v3-clone",
-        "volumes-v3-availability-zones",
-        "volumes-v3-extensions",
-        "volumes-v3-metadata",
-        "volumes-v3-reserve",
-        "volumes-v3-readonly"
-      ],
-      "advisory": [
-      ],
-      "deprecated": [
-      ],
-      "removed": [
+  "platforms": {
+    "OpenStack Powered Platform": {
+      "description": "Core OpenStack services including identity, compute, networking, block storage, and object storage.",
+      "components": [
+        { "name": "os_powered_compute" },
+        { "name": "os_powered_storage" }
       ]
     },
-    "object": {
-      "required": [
-        "objectstore-account-quotas",
-        "objectstore-account-list",
-        "objectstore-container-acl",
-        "objectstore-container-quotas",
-        "objectstore-container-create",
-        "objectstore-container-delete",
-        "objectstore-container-list",
-        "objectstore-container-metadata",
-        "objectstore-dlo-support",
-        "objectstore-info-request",
-        "objectstore-object-copy",
-        "objectstore-object-create",
-        "objectstore-object-delete",
-        "objectstore-object-get",
-        "objectstore-object-versioned",
-        "objectstore-slo-support",
-        "objectstore-temp-url-get",
-        "objectstore-temp-url-put",
-        "identity-v3-tokens-create"
-      ],
-      "advisory": [
-      ],
-      "deprecated" : [],
-      "removed": [
+    "OpenStack Powered Compute": {
+      "description": "Core OpenStack compute services including identity, compute, networking, and block storage.",
+      "components": [
+        { "name": "os_powered_compute" }
+      ]
+    },
+    "OpenStack Powered Storage": {
+      "description": "Core OpenStack object storage services including identity and object storage.",
+      "components": [
+        { "name": "os_powered_storage" }
       ]
     }
   },
-  "test-repositories": {
-    "tempest": {
-      "git-sha": "9bd78bcd65c46623b6f04ebdc3efe18375fd296f",
-      "url": "https://git.openstack.org/cgit/openstack/tempest/"
+  "components":{
+    "os_powered_compute": {
+      "capabilities": {
+        "required": [
+          "compute-availability-zones-list",
+          "compute-flavors-list",
+          "compute-images-create",
+          "compute-instance-actions-get",
+          "compute-instance-actions-list",
+          "compute-keypairs-create",
+          "compute-list-api-versions",
+          "compute-quotas-get",
+          "compute-servers-create",
+          "compute-servers-delete",
+          "compute-servers-get",
+          "compute-servers-host",
+          "compute-servers-invalid",
+          "compute-servers-list",
+          "compute-servers-lock",
+          "compute-servers-name",
+          "compute-servers-reboot",
+          "compute-servers-rebuild",
+          "compute-servers-resize",
+          "compute-servers-stop",
+          "compute-servers-update",
+          "compute-servers-verify",
+          "compute-servers-metadata-delete",
+          "compute-servers-metadata-get",
+          "compute-servers-metadata-list",
+          "compute-servers-metadata-set",
+          "compute-servers-metadata-update",
+          "compute-volume-attach",
+          "identity-v3-api-discovery",
+          "identity-v3-list-projects",
+          "identity-v3-tokens-create",
+          "images-v2-index",
+          "images-v2-update",
+          "images-v2-list",
+          "images-v2-delete",
+          "images-v2-get",
+          "networks-l2-CRUD",
+          "networks-l3-router",
+          "networks-l3-CRUD",
+          "networks-list-api-versions",
+          "networks-security-groups-CRUD",
+          "networks-subnet-pools-CRUD",
+          "volumes-list-api-versions",
+          "volumes-v2-create-delete",
+          "volumes-v2-snapshot-create-delete",
+          "volumes-v2-get",
+          "volumes-v2-list",
+          "volumes-v2-update",
+          "volumes-v2-copy-image-to-volume",
+          "volumes-v2-clone",
+          "volumes-v2-availability-zones",
+          "volumes-v2-extensions",
+          "volumes-v2-metadata",
+          "volumes-v2-reserve",
+          "volumes-v2-readonly",
+          "volumes-v2-upload",
+          "volumes-v3-create-delete",
+          "volumes-v3-snapshot-create-delete",
+          "volumes-v3-get",
+          "volumes-v3-list",
+          "volumes-v3-update",
+          "volumes-v3-copy-image-to-volume",
+          "volumes-v3-clone",
+          "volumes-v3-availability-zones",
+          "volumes-v3-extensions",
+          "volumes-v3-metadata",
+          "volumes-v3-reserve",
+          "volumes-v3-readonly"
+        ],
+        "advisory": [
+          "compute-keypairs-create-type",
+          "identity-v3-catalog",
+          "identity-v3-tokens-validate"
+        ],
+        "deprecated": [],
+        "removed": [
+          "volumes-v2-attach-detach",
+          "volumes-v3-attach-detach"
+        ]
+      },
+      "designated_sections": {
+        "required" : [
+          "cinder",
+          "glance",
+          "keystone",
+          "nova",
+          "neutron"
+        ]
+      }
+    },
+    "os_powered_storage": {
+      "capabilities": {
+        "required": [
+          "objectstore-account-quotas",
+          "objectstore-account-list",
+          "objectstore-container-acl",
+          "objectstore-container-quotas",
+          "objectstore-container-create",
+          "objectstore-container-delete",
+          "objectstore-container-list",
+          "objectstore-container-metadata",
+          "objectstore-info-request",
+          "objectstore-object-copy",
+          "objectstore-object-create",
+          "objectstore-object-delete",
+          "objectstore-object-get",
+          "objectstore-object-versioned",
+          "objectstore-temp-url-get",
+          "objectstore-temp-url-put",
+          "identity-v3-tokens-create"
+        ],
+        "advisory": [
+          "objectstore-dlo-support",
+          "objectstore-slo-support"
+        ],
+        "deprecated": [],
+        "removed": []
+      },
+      "designated_sections": {
+        "required": [
+          "keystone",
+          "swift"
+        ]
+      }
     }
   },
   "capabilities": {
@@ -308,7 +405,7 @@
       "admin": false,
       "description": "Generate, import, and delete SSH or x509 keys within Compute services",
       "project": "nova",
-      "required-since": "2018.08",
+      "required-since": "",
       "tests": {
         "tempest.api.compute.keypairs.test_keypairs_v22.KeyPairsV22TestJSON.test_keypairsv22_create_list_show_with_type": {
           "idempotent_id": "id-89d59d43-f735-441a-abcf-0601727f47b6"
@@ -1082,7 +1179,7 @@
       "admin": false,
       "description": "Get service catalog",
       "project": "keystone",
-      "required-since": "2018.08",
+      "required-since": "",
       "tests": {
         "tempest.api.identity.v3.test_catalog.IdentityCatalogTest.test_catalog_standardization": {
           "idempotent_id": "id-56b57ced-22b8-4127-9b8a-565dfb0207e2"
@@ -1157,7 +1254,7 @@
       "admin": false,
       "description": "Validate and show token information",
       "project": "keystone",
-      "required-since": "2018.08",
+      "required-since": "",
       "tests": {
         "tempest.api.identity.v3.test_tokens.TokensV3Test.test_validate_token": {
           "idempotent_id": "id-a9512ac3-3909-48a4-b395-11f438e16260"
@@ -1361,487 +1458,242 @@
     },
     "objectstore-object-copy": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
-      "required-since": "2014.07",
+      "required_since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_2d_way": {
-          "idempotent_id": "id-06f90388-2d0e-40aa-934c-e9a8833e958a"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_across_containers": {
-          "idempotent_id": "id-aa467252-44f3-472a-b5ae-5b57c3c9c147"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_in_same_container": {
-          "idempotent_id": "id-1a9ab572-1b66-4981-8c21-416e2a5e6011"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_to_itself": {
-          "idempotent_id": "id-2248abba-415d-410b-9c30-22dff9cd6e67"
-        }
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_2d_way": {
+         "idempotent_id": "id-06f90388-2d0e-40aa-934c-e9a8833e958a"
+       },
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_across_containers": {
+         "idempotent_id": "id-aa467252-44f3-472a-b5ae-5b57c3c9c147"
+       },
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_in_same_container": {
+         "idempotent_id": "id-1a9ab572-1b66-4981-8c21-416e2a5e6011"
+       },
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_copy_object_to_itself": {
+         "idempotent_id": "id-2248abba-415d-410b-9c30-22dff9cd6e67"
+       }
       }
-    },
-    "objectstore-object-create": {
+      },
+      "objectstore-object-create": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
-      "required-since": "2014.07",
+      "required_since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_create_object": {
-          "idempotent_id": "id-5b4ce26f-3545-46c9-a2ba-5754358a4c62"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
-          "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
-        }
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_create_object": {
+         "idempotent_id": "id-5b4ce26f-3545-46c9-a2ba-5754358a4c62"
+       },
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
+         "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
+       }
       }
-    },
-    "objectstore-object-delete": {
+      },
+      "objectstore-object-delete": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
-      "required-since": "2014.07",
+      "required_since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_delete_object": {
-          "idempotent_id": "id-17738d45-03bd-4d45-9e0b-7b2f58f98687"
-        }
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_delete_object": {
+         "idempotent_id": "id-17738d45-03bd-4d45-9e0b-7b2f58f98687"
+       }
       }
-    },
-    "objectstore-object-get": {
+      },
+      "objectstore-object-get": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
-      "required-since": "2014.07",
+      "required_since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time": {
-          "idempotent_id": "id-fb024a42-37f3-4ba5-9684-4f40a7910b41"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object": {
-          "idempotent_id": "id-02610ba7-86b7-4272-9ed8-aa8d417cb3cd"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object_if_different": {
-          "idempotent_id": "id-50d01f12-526f-4360-9ac2-75dd508d7b68"
-        }
+       "tempest.api.object_storage.test_object_expiry.ObjectExpiryTest.test_get_object_after_expiry_time": {
+         "idempotent_id": "id-fb024a42-37f3-4ba5-9684-4f40a7910b41"
+       },
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object": {
+         "idempotent_id": "id-02610ba7-86b7-4272-9ed8-aa8d417cb3cd"
+       },
+       "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object_if_different": {
+         "idempotent_id": "id-50d01f12-526f-4360-9ac2-75dd508d7b68"
+       }
       }
-    },
-    "objectstore-temp-url-put": {
+      },
+      "objectstore-temp-url-put": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
-      "required-since": "2014.07",
+      "required_since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_temp_url.ObjectTempUrlTest.test_put_object_using_temp_url": {
-          "idempotent_id": "id-9b08dade-3571-4152-8a4f-a4f2a873a735"
-        }
+       "tempest.api.object_storage.test_object_temp_url.ObjectTempUrlTest.test_put_object_using_temp_url": {
+         "idempotent_id": "id-9b08dade-3571-4152-8a4f-a4f2a873a735"
+       }
       }
-    },
-    "objectstore-object-versioned": {
+      },
+      "objectstore-object-versioned": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
-      "required-since": "2014.07",
+      "required_since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_version.ContainerTest.test_versioned_container": {
-          "idempotent_id": "id-a151e158-dcbf-4a1f-a1e7-46cd65895a6f"
-        }
+       "tempest.api.object_storage.test_object_version.ContainerTest.test_versioned_container": {
+         "idempotent_id": "id-a151e158-dcbf-4a1f-a1e7-46cd65895a6f"
+       }
       }
-    },
-    "objectstore-container-metadata": {
+      },
+      "objectstore-container-metadata": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "Basic container metadata operations in Object Storage API",
       "project": "swift",
-      "required-since": "",
       "tests": {
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_and_delete_metadata": {
-          "idempotent_id": "id-cf19bc0b-7e16-4a5a-aaed-cb0c2fe8deef"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_metadata": {
-          "idempotent_id": "id-2ae5f295-4bf1-4e04-bfad-21e54b62cec5"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_delete_metadata": {
-          "idempotent_id": "id-3a5ce7d4-6e4b-47d0-9d87-7cd42c325094"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_metadata_key": {
-          "idempotent_id": "id-31f40a5f-6a52-4314-8794-cd89baed3040"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_delete_metadata_key": {
-          "idempotent_id": "id-a2e36378-6f1f-43f4-840a-ffd9cfd61914"
-        }
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_and_delete_metadata": {
+         "idempotent_id": "id-cf19bc0b-7e16-4a5a-aaed-cb0c2fe8deef"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_metadata": {
+         "idempotent_id": "id-2ae5f295-4bf1-4e04-bfad-21e54b62cec5"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_delete_metadata": {
+         "idempotent_id": "id-3a5ce7d4-6e4b-47d0-9d87-7cd42c325094"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_create_metadata_key": {
+         "idempotent_id": "id-31f40a5f-6a52-4314-8794-cd89baed3040"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_update_container_metadata_with_delete_metadata_key": {
+         "idempotent_id": "id-a2e36378-6f1f-43f4-840a-ffd9cfd61914"
+       }
       }
-    },
-    "objectstore-temp-url-get": {
+      },
+      "objectstore-temp-url-get": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic"
       ],
       "admin": false,
       "description": "Basic object operations in Object Storage API",
       "project": "swift",
-      "required-since": "2014.07",
+      "required_since": "2014.07",
       "tests": {
-        "tempest.api.object_storage.test_object_temp_url.ObjectTempUrlTest.test_get_object_using_temp_url": {
-          "idempotent_id": "id-f91c96d4-1230-4bba-8eb9-84476d18d991"
-        }
+       "tempest.api.object_storage.test_object_temp_url.ObjectTempUrlTest.test_get_object_using_temp_url": {
+         "idempotent_id": "id-f91c96d4-1230-4bba-8eb9-84476d18d991"
+       }
       }
-    },
-    "objectstore-account-quotas": {
+      },
+      "objectstore-account-quotas": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "",
-      "project": "swift",
-      "required-since": "2017.01",
-      "tests": {
-        "tempest.api.object_storage.test_account_quotas.AccountQuotasTest.test_upload_valid_object": {
-          "idempotent_id": "id-a22ef352-a342-4587-8f47-3bbdb5b039c4",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_quotas_negative.AccountQuotasNegativeTest.test_user_modify_quota": {
-          "idempotent_id": "id-d1dc5076-555e-4e6d-9697-28f1fe976324",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        }
-      }
-    },
-    "objectstore-account-list": {
-      "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "",
-      "project": "swift",
-      "required-since": "2017.01",
-      "tests": {
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers": {
-          "idempotent_id": "id-3499406a-ae53-4f8c-b43a-133d4dc6fe3f",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_containers": {
-          "idempotent_id": "id-884ec421-fbad-4fcc-916b-0580f2699565",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_end_marker": {
-          "idempotent_id": "id-5ca164e4-7bde-43fa-bafb-913b53b9e786",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_format_json": {
-          "idempotent_id": "id-1c7efa35-e8a2-4b0b-b5ff-862c7fd83704",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit": {
-          "idempotent_id": "id-5cfa4ab2-4373-48dd-a41f-a532b12b08b2",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_end_marker": {
-          "idempotent_id": "id-888a3f0e-7214-4806-8e50-5e0c9a69bb5e",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_marker": {
-          "idempotent_id": "id-f7064ae8-dbcc-48da-b594-82feef6ea5af",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_marker_and_end_marker": {
-          "idempotent_id": "id-8cf98d9c-e3a0-4e44-971b-c87656fdddbd",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_marker": {
-          "idempotent_id": "id-638f876d-6a43-482a-bbb3-0840bca101c6",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_marker_and_end_marker": {
-          "idempotent_id": "id-ac8502c2-d4e4-4f68-85a6-40befea2ef5e",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_account_metadata": {
-          "idempotent_id": "id-b904c2e3-24c2-4dba-ad7d-04e90a761be5",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        }
-      }
-    },
-    "objectstore-container-acl": {
-      "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "",
-      "project": "swift",
-      "required-since": "2017.01",
-      "tests": {
-        "tempest.api.object_storage.test_container_acl.ObjectTestACLs.test_read_object_with_rights": {
-          "idempotent_id": "id-a3270f3f-7640-4944-8448-c7ea783ea5b6",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        },
-        "tempest.api.object_storage.test_container_acl.ObjectTestACLs.test_write_object_with_rights": {
-          "idempotent_id": "id-aa58bfa5-40d9-4bc3-82b4-d07f4a9e392a",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        }
-      }
-    },
-    "objectstore-container-quotas": {
-      "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "",
-      "project": "swift",
-      "required-since": "2017.01",
-      "tests": {
-        "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_large_object": {
-          "idempotent_id": "id-22eeeb2b-3668-4160-baef-44790f65a5a0"
-        },
-        "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_too_many_objects": {
-          "idempotent_id": "id-3a387039-697a-44fc-a9c0-935de31f426b"
-        },
-        "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_valid_object": {
-          "idempotent_id": "id-9a0fb034-86af-4df0-86fa-f8bd7db21ae0"
-        }
-      }
-    },
-    "objectstore-slo-support": {
-      "acheivements": [
-        "deployed",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discoverable",
-        "doc",
-        "atomic",
-        "proximity"
-      ],
-      "admin": false,
-      "description": "",
-      "project": "swift",
-      "required-since": "2018.08",
-      "tests": {
-        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_delete_large_object": {
-          "idempotent_id": "id-87b6dfa1-abe9-404d-8bf0-6c3751e6aa77"
-        },
-        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_list_large_object_metadata": {
-          "idempotent_id": "id-e69ad766-e1aa-44a2-bdd2-bf62c09c1456"
-        },
-        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_retrieve_large_object": {
-          "idempotent_id": "id-49bc49bc-dd1b-4c0f-904e-d9f10b830ee8"
-        },
-        "tempest.api.object_storage.test_object_slo.ObjectSloTest.test_upload_manifest": {
-            "idempotent_id": "id-2c3f24a6-36e8-4711-9aa2-800ee1fc7b5b"
-        }
-      }
-    },
-    "objectstore-dlo-support": {
-      "acheivements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discoverable",
-        "doc",
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
        "foundation",
        "atomic",
        "proximity"
@@ -1849,154 +1701,260 @@
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "2018.08",
+      "required_since": "2017.01",
       "tests": {
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
-         "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object_with_x_object_manifest": {
-         "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
-        },
-        "tempest.api.object_storage.test_object_services.ObjectTest.test_list_object_metadata_with_x_object_manifest" : {
-          "idempotent_id": "id-23a3674c-d6de-46c3-86af-ff92bfc8a3da"
-        }
+       "tempest.api.object_storage.test_account_quotas.AccountQuotasTest.test_upload_valid_object": {
+         "idempotent_id": "id-a22ef352-a342-4587-8f47-3bbdb5b039c4"
+       },
+       "tempest.api.object_storage.test_account_quotas_negative.AccountQuotasNegativeTest.test_user_modify_quota": {
+         "idempotent_id": "id-d1dc5076-555e-4e6d-9697-28f1fe976324"
+       }
       }
-    },
-    "objectstore-container-create": {
+      },
+      "objectstore-account-list": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "2017.01",
+      "required_since": "2017.01",
       "tests": {
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_create_container": {
-          "idempotent_id": "id-92139d73-7819-4db1-85f8-3f2f22a8d91f"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_create_container_overwrite": {
-          "idempotent_id": "id-49f866ed-d6af-4395-93e7-4187eb56d322"
-        }
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers": {
+         "idempotent_id": "id-3499406a-ae53-4f8c-b43a-133d4dc6fe3f"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_containers": {
+         "idempotent_id": "id-884ec421-fbad-4fcc-916b-0580f2699565"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_end_marker": {
+         "idempotent_id": "id-5ca164e4-7bde-43fa-bafb-913b53b9e786"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_format_json": {
+         "idempotent_id": "id-1c7efa35-e8a2-4b0b-b5ff-862c7fd83704"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit": {
+         "idempotent_id": "id-5cfa4ab2-4373-48dd-a41f-a532b12b08b2"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_end_marker": {
+         "idempotent_id": "id-888a3f0e-7214-4806-8e50-5e0c9a69bb5e"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_marker": {
+         "idempotent_id": "id-f7064ae8-dbcc-48da-b594-82feef6ea5af"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_limit_and_marker_and_end_marker": {
+         "idempotent_id": "id-8cf98d9c-e3a0-4e44-971b-c87656fdddbd"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_marker": {
+         "idempotent_id": "id-638f876d-6a43-482a-bbb3-0840bca101c6"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_containers_with_marker_and_end_marker": {
+         "idempotent_id": "id-ac8502c2-d4e4-4f68-85a6-40befea2ef5e"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
+         "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58"
+       },
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_no_account_metadata": {
+         "idempotent_id": "id-b904c2e3-24c2-4dba-ad7d-04e90a761be5"
+       }
       }
-    },
-    "objectstore-container-delete": {
+      },
+      "objectstore-container-acl": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "2017.01",
+      "required_since": "2017.01",
       "tests": {
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_delete_container": {
-          "idempotent_id": "id-95d3a249-b702-4082-a2c4-14bb860cf06a"
-        }
+       "tempest.api.object_storage.test_container_acl.ObjectTestACLs.test_read_object_with_rights": {
+         "idempotent_id": "id-a3270f3f-7640-4944-8448-c7ea783ea5b6"
+       },
+       "tempest.api.object_storage.test_container_acl.ObjectTestACLs.test_write_object_with_rights": {
+         "idempotent_id": "id-aa58bfa5-40d9-4bc3-82b4-d07f4a9e392a"
+       }
       }
-    },
-    "objectstore-container-list": {
+      },
+      "objectstore-container-quotas": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "2017.01",
+      "required_since": "2017.01",
       "tests": {
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents": {
-          "idempotent_id": "id-312ff6bd-5290-497f-bda1-7c5fec6697ab"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_no_object": {
-          "idempotent_id": "id-4646ac2d-9bfb-4c7d-a3c5-0f527402b3df"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_path": {
-          "idempotent_id": "id-58ca6cc9-6af0-408d-aaec-2a6a7b2f0df9"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_delimiter": {
-            "idempotent_id": "id-fe323a32-57b9-4704-a996-2e68f83b09bc"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_end_marker": {
-            "idempotent_id": "id-55b4fa5c-e12e-4ca9-8fcf-a79afe118522"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_format_json": {
-            "idempotent_id": "id-196f5034-6ab0-4032-9da9-a937bbb9fba9"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_limit": {
-            "idempotent_id": "id-297ec38b-2b61-4ff4-bcd1-7fa055e97b61"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_marker": {
-            "idempotent_id": "id-c31ddc63-2a58-4f6b-b25c-94d2937e6867"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_prefix": {
-            "idempotent_id": "id-77e742c7-caf2-4ec9-8aa4-f7d509a3344c"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_metadata": {
-            "idempotent_id": "id-96e68f0e-19ec-4aa2-86f3-adc6a45e14dd"
-        },
-        "tempest.api.object_storage.test_container_services.ContainerTest.test_list_no_container_metadata": {
-            "idempotent_id": "id-a2faf936-6b13-4f8d-92a2-c2278355821e"
-        }
+       "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_large_object": {
+         "idempotent_id": "id-22eeeb2b-3668-4160-baef-44790f65a5a0"
+       },
+       "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_too_many_objects": {
+         "idempotent_id": "id-3a387039-697a-44fc-a9c0-935de31f426b"
+       },
+       "tempest.api.object_storage.test_container_quotas.ContainerQuotasTest.test_upload_valid_object": {
+         "idempotent_id": "id-9a0fb034-86af-4df0-86fa-f8bd7db21ae0"
+       }
       }
-    },
-    "objectstore-info-request": {
+      },
+      "objectstore-container-create": {
       "achievements": [
-        "deployed",
-        "tools",
-        "clients",
-        "future",
-        "complete",
-        "stable",
-        "discover",
-        "doc",
-        "sticky",
-        "foundation",
-        "atomic",
-        "proximity"
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "foundation",
+       "atomic",
+       "proximity"
       ],
       "admin": false,
       "description": "",
       "project": "swift",
-      "required-since": "2017.01",
+      "required_since": "2017.01",
       "tests": {
-        "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
-          "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58",
-          "flagged": {
-            "reason": "D400 This test requires two user credentials and may create a barrier for independent testing of public clouds",
-            "action": "This test should be removed or changed to require only one user if possible in the future",
-            "date": "2017-02-03"
-          }
-        }
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_create_container": {
+         "idempotent_id": "id-92139d73-7819-4db1-85f8-3f2f22a8d91f"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_create_container_overwrite": {
+         "idempotent_id": "id-49f866ed-d6af-4395-93e7-4187eb56d322"
+       }
       }
-    },
+      },
+      "objectstore-container-delete": {
+      "achievements": [
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "foundation",
+       "atomic",
+       "proximity"
+      ],
+      "admin": false,
+      "description": "",
+      "project": "swift",
+      "required_since": "2017.01",
+      "tests": {
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_delete_container": {
+         "idempotent_id": "id-95d3a249-b702-4082-a2c4-14bb860cf06a"
+       }
+      }
+      },
+      "objectstore-container-list": {
+      "achievements": [
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "foundation",
+       "atomic",
+       "proximity"
+      ],
+      "admin": false,
+      "description": "",
+      "project": "swift",
+      "required_since": "2017.01",
+      "tests": {
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents": {
+         "idempotent_id": "id-312ff6bd-5290-497f-bda1-7c5fec6697ab"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_no_object": {
+         "idempotent_id": "id-4646ac2d-9bfb-4c7d-a3c5-0f527402b3df"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_path": {
+         "idempotent_id": "id-58ca6cc9-6af0-408d-aaec-2a6a7b2f0df9"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_delimiter": {
+           "idempotent_id": "id-fe323a32-57b9-4704-a996-2e68f83b09bc"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_end_marker": {
+           "idempotent_id": "id-55b4fa5c-e12e-4ca9-8fcf-a79afe118522"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_format_json": {
+           "idempotent_id": "id-196f5034-6ab0-4032-9da9-a937bbb9fba9"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_limit": {
+           "idempotent_id": "id-297ec38b-2b61-4ff4-bcd1-7fa055e97b61"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_marker": {
+           "idempotent_id": "id-c31ddc63-2a58-4f6b-b25c-94d2937e6867"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_contents_with_prefix": {
+           "idempotent_id": "id-77e742c7-caf2-4ec9-8aa4-f7d509a3344c"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_container_metadata": {
+           "idempotent_id": "id-96e68f0e-19ec-4aa2-86f3-adc6a45e14dd"
+       },
+       "tempest.api.object_storage.test_container_services.ContainerTest.test_list_no_container_metadata": {
+           "idempotent_id": "id-a2faf936-6b13-4f8d-92a2-c2278355821e"
+       }
+      }
+      },
+      "objectstore-info-request": {
+      "achievements": [
+       "deployed",
+       "tools",
+       "clients",
+       "future",
+       "complete",
+       "stable",
+       "discover",
+       "doc",
+       "sticky",
+       "foundation",
+       "atomic",
+       "proximity"
+      ],
+      "admin": false,
+      "description": "",
+      "project": "swift",
+      "required_since": "2017.01",
+      "tests": {
+       "tempest.api.object_storage.test_account_services.AccountTest.test_list_extensions": {
+         "idempotent_id": "id-6eb04a6a-4860-4e31-ba91-ea3347d76b58"
+       }
+      }
+      },
     "networks-l2-CRUD": {
       "achievements": [
           "foundation",
@@ -2359,7 +2317,7 @@
       "admin": false,
       "description": "List supported versions of the Cinder API",
       "project": "cinder",
-      "required-since": "",
+      "required-since": "2018.02",
       "tests": {
         "tempest.api.volume.NEED_TEST": {
           "idempotent_id": ""
@@ -2953,7 +2911,7 @@
         "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_crud_snapshot_metadata": {
           "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c",
           "aliases": [
-             "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata", 
+             "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_create_get_delete_snapshot_metadata",
              "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_crud_snapshot_metadata"
           ]
         },
@@ -3355,7 +3313,7 @@
       "admin": false,
       "description": "Upload volumes with Cinder v3 API. This is being added as advisory to highlight the transitition from  v2 to v3.",
       "project": "cinder",
-      "required-since": "2018.02",
+      "required-since": "",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_upload": {
           "idempotent_id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
@@ -3364,206 +3322,378 @@
       }
     }
   },
-  "designated-sections" : {
-    "required" : {
-      "nova" : {
+  "designated_sections": {
+    "nova": {
+      "required": {
         "guidance": "By default, designated except scheduler, filter, drivers, API extensions and networking. Additional properties on responses are not allowed.",
         "comment": "All code except driver/plugins listed.  Even for replaceable drivers or plugins, we still expect use of the existing nova service that wraps those interfaces. Additional properties may not be returned on Nova 2.0 API responses. The Nova 2.1 and greater API must return complete and unmodified responses.",
         "sections": {
-          "scheduler driver": { "description": "(Host and cell)", "designated": false, "comment": "none provided"},
-          "filter scheduler driver": { "description": "(Host and cell)  While the line above implies the entire driver is fair game, this case is incredibly common and worth mentioning specifically.", "designated": false, "comment": "none provided"},
-          "compute driver": { "description": "not provided", "designated": false, "comment": "none provided"},
-          "rest api extensions": { "description": "may be required for capabilities", "designated": false, "comment": "none provided"},
-          "nova networking components": { "description": "not provided", "designated": false, "comment": "none provided"},
-          "nova networking drivers": { "description": "not provided", "designated": false, "comment": "none provided"}
+          "scheduler driver": {
+            "description": "(Host and cell)",
+            "designated": false
+          },
+          "filter scheduler driver": {
+            "description": "(Host and cell)  While the line above implies the entire driver is fair game, this case is incredibly common and worth mentioning specifically.",
+            "designated": false
+          },
+          "compute driver": {
+            "description": "not provided",
+            "designated": false
+          },
+          "rest api extensions": {
+            "description": "may be required for capabilities",
+            "designated": false
+          },
+          "nova networking components": {
+            "description": "not provided",
+            "designated": false
+          },
+          "nova networking drivers": {
+            "description": "not provided",
+            "designated": false
+          }
         }
-      },
-      "keystone" : {
+      }
+    },
+    "keystone": {
+      "required": {
         "guidance": "Designation is outlined per API grouping. Identity (user and group) management APIs will not be designated. API access (with exception of auth) may be prohibited by policy (resulting in HTTP 403). Designated APIs include v3 version where applicable.",
         "comment": "Specific Drivers/Plugins and Identity management code are not designated as many deployments have custom drivers and/or read-only, federated, or externally managed Identity information.",
         "sections": {
-          "assignment API": {"description": "APIs for managing roles and assignment of roles to user(s)/group(s) for a given scope", "designated": true, "comment": "Some functionality is provided via the 'user_crud' extension"},
-          "auth (v3) API": {"description": "'/v3/auth' APIs used for v3 authentication and token validation/revocation", "designated": true, "comment": "This includes the catalog data provided as part of the token body and '/v3/auth/catalog'."},
-          "catalog API": {"description": "APIs for managing services, endpoints, and regions", "designated": false, "comment": "Catalog API is not designated due to the support of template catalog driver which cannot be updated via REST calls. The catalog in the token is considered part of the AUTH APIs."},
-          "credential API": {"description": "APIs for managing user credentials", "designated": false, "comment": "none provided"},
-          "drivers": {"description": "specific implementations for the keystone API backends (e.g. SQL, LDAP, etc)", "designated": false, "comment": "none provided"},
-          "ec2 API": {"description": "APIs for managing and utilizing ec2-style credentials", "designated": false, "comment": "May be required for some OpenStack features in non-keystone services"},
-          "federation API": {"description": "APIs for managing and consuming federated identity", "designated": false, "comment": "none provided"},
-          "identity API": {"description": "APIs for managing user(s) and group(s) in a read/write identity store", "designated": false, "comment": "Some functionality is provided via 'user_crud' extensions"},
-          "notifications": {"description": "CADF notifications for events (authentication, creation of resources, etc)", "designated": false, "comment": "Highly recommended and may be required for some features of OpenStack"},
-          "policy API": {"description": "APIs for managing centralized policy.json distribution for OpenStack services", "designated": false, "comment": "none provided"},
-          "trust API": {"description": "APIs for managing delegation (via trusts) of roles from one user/group to another user/group", "designated": true, "comment": "none provided"},
-          "resource API": {"description": "APIs for managing resources (projects/tenants and/or domains)", "designated": true, "comment": "In the releases prior to Kilo this is covered by the assignment API"},
-          "revoke API": {"description": "APIs for revocation event handling", "designated": false, "comment": "Highly recommended and required for Fernet (non-persistent) tokens"}
+          "assignment API": {
+            "description": "APIs for managing roles and assignment of roles to user(s)/group(s) for a given scope",
+            "designated": true,
+            "comment": "Some functionality for v2.0 is provided via the 'admin_crud' extension"
+          },
+          "auth (v3) API": {
+            "description": "'/v3/auth' APIs used for v3 authentication and token validation/revocation",
+            "designated": true,
+            "comment": "This includes the catalog data provided as part of the token body and '/v3/auth/catalog'."
+          },
+          "catalog API": {
+            "description": "APIs for managing services, endpoints, and regions",
+            "designated": false,
+            "comment": "Catalog API is not designated due to the support of template catalog driver which cannot be updated via REST calls. The catalog in the token is considered part of the AUTH APIs."
+          },
+          "credential API": {
+            "description": "APIs for managing user credentials",
+            "designated": false
+          },
+          "drivers": {
+            "description": "specific implementations for the keystone API backends (e.g. SQL, LDAP, etc)",
+            "designated": false
+          },
+          "ec2 API": {
+            "description": "APIs for managing and utilizing ec2-style credentials",
+            "designated": false,
+            "comment": "May be required for some OpenStack features in non-keystone services"
+          },
+          "federation API": {
+            "description": "APIs for managing and consuming federated identity",
+            "designated": false
+          },
+          "identity API": {
+            "description": "APIs for managing user(s) and group(s) in a read/write identity store",
+            "designated": false,
+            "comment": "Some functionality for v2.0 is provided via the 'admin_crud' and 'user_crud' extensions"
+          },
+          "notifications": {
+            "description": "CADF notifications for events (authentication, creation of resources, etc)",
+            "designated": false,
+            "comment": "Highly recommended and may be required for some features of OpenStack"
+          },
+          "policy API": {
+            "description": "APIs for managing centralized policy.json distribution for OpenStack services",
+            "designated": false
+          },
+          "trust API": {
+            "description": "APIs for managing delegation (via trusts) of roles from one user/group to another user/group",
+            "designated": true
+          },
+          "resource API": {
+            "description": "APIs for managing resources (projects/tenants and/or domains)",
+            "designated": true,
+            "comment": "In the releases prior to Kilo this is covered by the assignment API"
+          },
+          "revoke API": {
+            "description": "APIs for revocation event handling",
+            "designated": false,
+            "comment": "Highly recommended and required for Fernet (non-persistent) tokens"
+          }
         }
-      },
-      "glance": {
+      }
+    },
+    "glance": {
+      "required": {
         "guidance": "Designated sections are the API implementation code and domain model.",
-        "comment": "not given",
         "sections": {
-          "http apis": { "description": "not provided", "designated": true, "comment": "API"},
-          "domain model": { "description": "not provided", "designated": true, "comment": "Shared"},
-          "stores": { "description": "the swift, filesystem, and http stores", "designated": false, "comment": "should be replaceable, vendor-specificddCross platform"},
-          "db driver": { "description": "not provided", "designated": false, "comment": "should be replaceable" },
-          "wsgi framework": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+          "http apis": {
+            "description": "API",
+            "designated": true
+          },
+          "domain model": {
+            "description": "Shared",
+            "designated": true
+          },
+          "stores": {
+            "description": "the swift, filesystem, and http stores",
+            "designated": false,
+            "comment": "should be replaceable, vendor-specific, cross platform"
+          },
+          "db driver": {
+            "description": "Database driver for the Glance service",
+            "designated": false,
+            "comment": "should be replaceable"
+          },
+          "wsgi framework": {
+            "description": "application delivery framework",
+            "designated": false,
+            "comment": "should be replaceable"
+          }
         }
-      },
-      "cinder": {
+      }
+    },
+    "cinder": {
+      "required": {
         "guidance": "Designated sections are the API implementation code",
         "comment": "Historically, cinder has had plug-ins around schedulers and drivers.",
         "sections": {
-          "api": { "description": "API section means actually the CODE that exposes the API, not just API-comparability", "designated": true, "comment": ""},
-          "drivers": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
-          "scheduler": { "description": "not provided", "designated": false, "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"},
-          "api extensions": { "description": "not provided", "designated": false, "comment": "should be replaceable"}
+          "api": {
+            "description": "API section means actually the CODE that exposes the API, not just API-comparability",
+            "designated": true
+          },
+          "drivers": {
+            "description": "Volume storage drivers",
+            "designated": false,
+            "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"
+          },
+          "scheduler": {
+            "description": "Scheduler for the volume storage service",
+            "designated": false,
+            "comment": "there MUST be requirements that it implements what's defined as core functionality in the Cinder API"
+          },
+          "api extensions": {
+            "description": "Implementation of volume API extensions",
+            "designated": false,
+            "comment": "should be replaceable"
+          }
         }
-      },
-      "swift" : {
+      }
+    },
+    "swift": {
+      "required": {
         "guidance": "Designated sections are proxy server, object server, container server, account server and select middleware",
         "comment": "You should use the proxy and storage servers, and you can use your own DiskFile or add new middleware for the proxy or storage nodes.  Please review sections for specific middleware guidelines",
         "sections": {
-          "proxy server": { "description": "the proxy server code and, if enabled, the functionality implemented by provided middleware (eg static large objects or signed urls or bulk requests",
-            "designated": true, "comment": ""},
-          "object server": { "description": "the object server code that calls a DiskFile implementation and updates container listings",
-            "designated": true, "comment": ""},
-          "container server": { "description": "the code that provides a list of objects in a container and container metadata",
-            "designated": true, "comment": ""},
-          "account server": { "description": "the code that provides a list of containers and account metadata",
-            "designated": true, "comment": ""},
-          "catch_errors": { "description": "not provided", "designated": true, "comment": "middleware"},
-          "healthcheck": { "description": "not provided", "designated": true, "comment": ""},
-          "bulk": { "description": "not provided", "designated": true, "comment": ""},
-          "slo": { "description": "not provided", "designated": true, "comment": ""},
-          "container-quotas": { "description": "not provided", "designated": true, "comment": ""},
-          "account-quotas": { "description": "not provided", "designated": true, "comment": ""},
-          "tempurl": { "description": "not provided", "designated": true, "comment": ""},
-          "replicators": { "description": "not provided", "designated": false, "comment": "recommended"},
-          "auditors": { "description": "not provided", "designated": false, "comment": "recommended"},
-          "updaters": { "description": "not provided", "designated": false, "comment": "recommended"},
-          "account reaper": { "description": "not provided", "designated": false, "comment": "recommended"},
-          "object expirer": { "description": "not provided", "designated": false, "comment": "recommended"},
-          "ratelimit": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
-          "recon": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
-          "staticweb": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
-          "formpost": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
-          "domain_remap": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
-          "crossdomain": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
-          "cname_lookup": { "description": "not provided", "designated": false, "comment": "middleware, recommended"},
-          "diskfile": { "description": "the part of the object server that actually persists the object data to a storage volume",
-            "designated": false, "comment": "replaceable"},
-          "cache": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
-          "tempauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
-          "keystoneauth": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"},
-          "proxy-logging": { "description": "not provided", "designated": false, "comment": "middleware, replaceable"}
+          "proxy server": {
+            "description": "the proxy server code and, if enabled, the functionality implemented by provided middleware (eg static large objects or signed urls or bulk requests",
+            "designated": true
+          },
+          "object server": {
+            "description": "the object server code that calls a DiskFile implementation and updates container listings",
+            "designated": true
+          },
+          "container server": {
+            "description": "the code that provides a list of objects in a container and container metadata",
+            "designated": true
+          },
+          "account server": {
+            "description": "the code that provides a list of containers and account metadata",
+            "designated": true
+          },
+          "catch_errors": {
+            "description": "error handling code",
+            "designated": true,
+            "comment": "middleware"
+          },
+          "healthcheck": {
+            "description": "health check code",
+            "designated": true,
+            "comment": ""
+          },
+          "bulk": {
+            "description": "not provided",
+            "designated": true
+          },
+          "slo": {
+            "description": "not provided",
+            "designated": true
+          },
+          "container-quotas": {
+            "description": "not provided",
+            "designated": true
+          },
+          "account-quotas": { "description": "not provided",
+           "designated": true
+          },
+          "tempurl": { "description": "not provided",
+           "designated": true
+          },
+          "replicators": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "auditors": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "updaters": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "account reaper": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "object expirer": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "recommended"
+          },
+          "ratelimit": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "recon": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "staticweb": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "formpost": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "domain_remap": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "crossdomain": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "cname_lookup": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, recommended"
+          },
+          "diskfile": {
+            "description": "the part of the object server that actually persists the object data to a storage volume",
+            "designated": false,
+            "comment": "replaceable"
+          },
+          "cache": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          },
+          "tempauth": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          },
+          "keystoneauth": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          },
+          "proxy-logging": {
+            "description": "not provided",
+            "designated": false,
+            "comment": "middleware, replaceable"
+          }
         }
-      },
-      "neutron" : {
+      }
+    },
+    "neutron": {
+      "required": {
         "guidance": "By default, designated for all code backing required capabilities except pluggable components such as plugins, drivers, and API extensions other than those listed below.",
         "comment": "Intentionally replaceable code such as network plugins, ML2 drivers, IPAM drivers, schedulers are not designated.",
         "sections": {
-          "Scheduler drivers": { "description": "Scheduler drivers", "designated": false, "comment": "none provided"},
-          "IPAM drivers": { "description": "IPAM drivers", "designated": false, "comment": "none provided"},
-          "Network plugins": { "description": "Network backend plugins", "designated": false, "comment": "none provided"},
-          "ML2 drivers": { "description": "ML2 type and mechanism drivers", "designated": false, "comment": "none provided"},
-          "Core API and server": { "description": "Core API and server", "designated": true, "comment": "none provided"},
-          "Core API quota extension": { "description": "Quota API", "designated": true, "comment": "none provided"},
-          "Core API security group extension": { "description": "Security group API", "designated": true, "comment": "none provided"},
-          "Core API L3 extension": { "description": "L3 API for floating IPs and routers", "designated": true, "comment": "none provided"},
-          "Agents": { "description": "Agents if used by relevant driver", "designated": true, "comment": "Some drivers require the use of community-developed agents to provide required Capabilities (such as L3 networking). If a product uses such agents, they are designated."},
-          "RPC": { "description": "RPC API", "designated": true, "comment": "none provided"},
-          "neutron-lib": { "description": "Library code imported in several parts of Neutron's core", "designated": true, "comment": "none provided"}
+          "Scheduler drivers": {
+            "description": "Scheduler drivers",
+            "designated": false
+          },
+          "IPAM drivers": {
+            "description": "IPAM drivers",
+            "designated": false
+          },
+          "Network plugins": {
+            "description": "Network backend plugins",
+            "designated": false
+          },
+          "ML2 drivers": {
+            "description": "ML2 type and mechanism drivers",
+            "designated": false
+          },
+          "Core API and server": {
+            "description": "Core API and server",
+            "designated": true
+          },
+          "Core API quota extension": {
+            "description": "Quota API",
+            "designated": true
+          },
+          "Core API security group extension": {
+            "description": "Security group API",
+            "designated": true
+          },
+          "Core API L3 extension": {
+            "description": "L3 API for floating IPs and routers",
+            "designated": true
+          },
+          "Agents": {
+            "description": "Agents if used by relevant driver",
+            "designated": true,
+            "comment": "Some drivers require the use of community-developed agents to provide required Capabilities (such as L3 networking). If a product uses such agents, they are designated."
+          },
+          "RPC": {
+            "description": "RPC API",
+            "designated": true
+          },
+          "neutron-lib": {
+            "description": "Library code imported in several parts of Neutron's core",
+            "designated": true
+          }
         }
       }
     },
-    "advisory" : {},
-    "deprecated" : {
-      "keystone" : {
-        "guidance": "Designation is outlined per API grouping.",
-        "comment": "Removing section related to  auth V2.0 since it is deprecated.",
-        "sections": {
-          "auth (v2.0) API": {"description": "'/v2.0/tokens' APIs used for v2.0 authentication and token validation/revocation/signing certificates (when PKI tokens are in use)", "designated": true, "comment": "This includes the catalog data provided as part of the token body."}
-        }
+    "heat": {
+      "informational": {
+        "guidance": "Not a core capability, add-on program planned.",
+        "sections": {}
       }
     },
-    "removed" : {},
-    "informational" : {
-      "heat": {
-        "guidance": "Not a core capability, no position at this time",
-        "comment": "",
+    "horizon": {
+      "informational": {
+        "guidance": "Clients not considered core capabilities at this time",
         "sections": {}
-      },
-      "horizon": {
+      }
+    },
+    "ceilometer": {
+      "informational": {
         "guidance": "Not a core capability, no position at this time",
-        "comment": "",
-        "sections": {}
-      },
-      "ceilometer": {
-        "guidance": "Not a core capability, no position at this time",
-        "comment": "",
         "sections": {}
       }
     }
   },
-  "criteria": {
-    "atomic": {
-        "Description": "Capabilities is unique and cannot be built out of other must-pass capabilities",
-        "name": "Atomic",
-        "weight": 6
-    },
-    "clients": {
-        "Description": "Candidates are widely used capabilities: Should be included if called by common OpenStack clients (openstackclient, neutronclient, novaclient, etc) if necessary.  This Criteria pertains mostly to API versioning.  For example: if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' Criteria.",
-        "name": "Used by Clients",
-        "weight": 10
-    },
-    "complete": {
-        "Description": "Where the code being tested has a designated area of alternate implementation (extension framework) as per the Core Principles, there should be parity in capability tested across extension implementations. This also implies that the capability test is not configuration specific or locked to non-open technology",
-        "name": "Complete",
-        "weight": 8
-    },
-    "deployed": {
-        "Description": "Candidates are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products",
-        "name": "Widely Deployed",
-        "weight": 8
-    },
-    "discover": {
-        "Description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection)",
-        "name": "Discoverable",
-        "weight": 8
-    },
-    "doc": {
-        "Description": "Should be well documented, particularly the expected behavior. This can be a very subjective measure and we expect to refine this definition over time",
-        "name": "Documented",
-        "weight": 8
-    },
-    "foundation": {
-        "Description": "Test capabilities that are required by other must-pass tests and/or depended on by many other capabilities",
-        "name": "Foundation",
-        "weight": 9
-    },
-    "future": {
-        "Description": "Should reflect future technical direction (from the project technical teams and the TC) and help manage deprecated capabilities",
-        "name": "Future Direction",
-        "weight": 11
-    },
-    "proximity": {
-        "Description": "Sometimes called a Test Cluster, selects for Capabilities that are related to Core Capabilities. This helps ensure that related capabilities are managed together",
-        "name": "Proximity",
-        "weight": 8
-    },
-    "stable": {
-        "Description": "Test is required stable for >2 releases because we don't want Capabilities that do not have dependable APIs",
-        "name": "Stable",
-        "weight": 9
-    },
-    "sticky": {
-        "Description": "A test that is a must-pass test should stay a must-pass test. This makes Capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
-        "name": "Core in Last Release",
-        "weight": 9
-    },
-    "tools": {
-        "Description": "Candidates are widely used capabilities: Should be included if supported by common tools outside of the OpenStack community (RightScale, Scalr, CloudForms, jClouds, Fog, etc...)",
-        "name": "Used by Tools",
-        "weight": 6
+  "test_repositories": {
+    "tempest": {
+      "repository": "https://git.openstack.org/cgit/openstack/tempest/",
+      "reference": "9bd78bcd65c46623b6f04ebdc3efe18375fd296f",
+      "description": "OpenStack Integrated API and Scenario Test Repository"
     }
   }
 }
