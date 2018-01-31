@@ -81,15 +81,30 @@ Notes:
 NFV-feature candidates for inclusion in first release:
 ------------------------------------------------------
 
-  * OpenStack Powered Compute
-
   * Heat add-on
+    - Heat is heavily used for orchestration purposes in the NFV context and 
+      hence this add-on program is a good candidate for inclusion in the NFV
+      vertical program.
+    - This add-on program should be included once it has been approved.
 
   * EPA support (NUMA awareness, huge page support, CPU pinning)
+    - no matching Tempest tests found (yet)
+      - potential tests would set corresponding properties and verify that the
+        properties have been applied
+      - open question how to do the verification through Tempest as this might
+        require checking things on the compute hosts
 
   * SR-IOV support
+    - Using SR-IOV NICs for Neutron ports is mostly a deployment configuration
+      issue and mostly transparent from an API perspective:
+      - https://docs.openstack.org/mitaka/networking-guide/config-sriov.html
+      - the only API-related parameter in this guide is "vnic_type"
+    - No SR-IOV-specific Tempest tests found (yet)
+    - Minimum scope for NFV vertical would be to include the SR-IOV agent in
+      the list of designated sections
 
   * (subset of) telemetry services
+    - this needs to be defined further
 
 
 
@@ -139,3 +154,4 @@ NFV-feature candidates for inclusion in later releases:
   * DPDK dataplane support
 
   * hardware acceleration (SmartNICs)
+
