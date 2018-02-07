@@ -39,7 +39,7 @@ of those barriers to highlight their importance and request the
 community's focus toward discussing and resolving them. This report is
 also not intended to be critical of the work of OpenStack developers: its
 intent is to communicate feedback that the DefCore Committee has received
-constructively so that the the issues are known to the Technical Committee
+constructively so that the issues are known to the Technical Committee
 and Project Teams and to enable discussion and improvement. The report also
 highlights known issues so that OpenStack deployers are aware of some choices
 they make when deploying OpenStack, and so that end users of OpenStack clouds

@@ -26,7 +26,7 @@ Interop Working Group Specific Commandments
 - [D302] If a Capability is found to not meet the `Core Criteria
   <doc/source/process/CoreCriteria.rst>`_ after the Board has approved
   a Guideline, the corresponding tests should have a "flagged" block added
-  to the the relevant tests in the "tests" section of the relevant
+  to the relevant tests in the "tests" section of the relevant
   Board-approved Guidelines.
 
     - See [D307] and [D309] for details about format requirements.
