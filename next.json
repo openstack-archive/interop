@@ -2361,8 +2361,8 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.NEED_TEST": {
-          "idempotent_id": ""
+        "tempest.api.volume.test_versions.VersionsTest.test_list_versions": {
+          "idempotent_id": "77838fc4-b49b-4c64-9533-166762517369"
         }
       }
     },
