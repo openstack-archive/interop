@@ -2133,10 +2133,20 @@
           "idempotent_id": "id-a8902683-c788-4246-95c7-ad9c6d63a4d9"
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_reset_gateway_without_snat": {
-          "idempotent_id": "id-f2faf994-97f4-410b-a831-9bc977b64374"
+          "idempotent_id": "id-f2faf994-97f4-410b-a831-9bc977b64374",
+          "flagged": {
+            "reason": "D400 This test requires admin credentials, and the underlying capability it tests also requires admin privileges by default.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-03-02"
+          }
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_unset_gateway": {
-          "idempotent_id": "id-ad81b7ee-4f81-407b-a19c-17e623f763e8"
+          "idempotent_id": "id-ad81b7ee-4f81-407b-a19c-17e623f763e8",
+          "flagged": {
+            "reason": "D400 This test requires admin credentials.",
+            "action": "This test will be refactored or removed from future guidelines.",
+            "date": "2018-03-02"
+          }
         },
         "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_update_non_existent_router_returns_404": {
           "idempotent_id": "id-b23d1569-8b0c-4169-8d4b-6abd34fad5c7"
