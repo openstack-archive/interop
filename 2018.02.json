@@ -2990,7 +2990,7 @@
           "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1",
           "aliases": [
              "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata",
-             "tempest.api.volume.test_snapshot_metadata.VolumesMetadataTest.test_iupdate_snapshot_metadata"
+             "tempest.api.volume.test_snapshot_metadata.VolumesMetadataTest.test_update_snapshot_metadata"
           ]
         },
         "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item": {
