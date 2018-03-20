@@ -2987,6 +2987,11 @@
           ]
         },
         "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata": {
+          "flagged": {
+            "date": "2018-03-20",
+            "reason": "[D406] This test was removed from Tempest in commit id cd72e905b24b6653c53517ebd016d8f30817bde8",
+            "action": "Remove flag on next refstack release."
+          },
           "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1",
           "aliases": [
              "tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata",
