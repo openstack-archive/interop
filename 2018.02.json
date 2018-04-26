@@ -5,65 +5,65 @@
     "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
     "source": "http://git.openstack.org/cgit/openstack/interop/add-ons/dns.next.json",
     "scoring": {
-      "cutoff_score": "74",
+      "cutoff_score": 74,
       "criteria": {
         "atomic": {
-            "Description": "Capabilities is unique and cannot be built out of other must-pass capabilities",
+            "description": "Capabilities is unique and cannot be built out of other must-pass capabilities",
             "name": "Atomic",
             "weight": 6
         },
         "clients": {
-            "Description": "Candidates are widely used capabilities: Should be included if called by common OpenStack clients (openstackclient, neutronclient, novaclient, etc) if necessary.  This Criteria pertains mostly to API versioning.  For example: if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' Criteria.",
+            "description": "Candidates are widely used capabilities: Should be included if called by common OpenStack clients (openstackclient, neutronclient, novaclient, etc) if necessary.  This Criteria pertains mostly to API versioning.  For example: if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' Criteria.",
             "name": "Used by Clients",
             "weight": 10
         },
         "complete": {
-            "Description": "Where the code being tested has a designated area of alternate implementation (extension framework) as per the Core Principles, there should be parity in capability tested across extension implementations. This also implies that the capability test is not configuration specific or locked to non-open technology",
+            "description": "Where the code being tested has a designated area of alternate implementation (extension framework) as per the Core Principles, there should be parity in capability tested across extension implementations. This also implies that the capability test is not configuration specific or locked to non-open technology",
             "name": "Complete",
             "weight": 8
         },
         "deployed": {
-            "Description": "Candidates are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products",
+            "description": "Candidates are widely deployed capabilities. We favor capabilities that are supported by multiple public cloud providers and private cloud products",
             "name": "Widely Deployed",
             "weight": 8
         },
         "discover": {
-            "Description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection)",
+            "description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection)",
             "name": "Discoverable",
             "weight": 8
         },
         "doc": {
-            "Description": "Should be well documented, particularly the expected behavior. This can be a very subjective measure and we expect to refine this definition over time",
+            "description": "Should be well documented, particularly the expected behavior. This can be a very subjective measure and we expect to refine this definition over time",
             "name": "Documented",
             "weight": 8
         },
         "foundation": {
-            "Description": "Test capabilities that are required by other must-pass tests and/or depended on by many other capabilities",
+            "description": "Test capabilities that are required by other must-pass tests and/or depended on by many other capabilities",
             "name": "Foundation",
             "weight": 9
         },
         "future": {
-            "Description": "Should reflect future technical direction (from the project technical teams and the TC) and help manage deprecated capabilities",
+            "description": "Should reflect future technical direction (from the project technical teams and the TC) and help manage deprecated capabilities",
             "name": "Future Direction",
             "weight": 11
         },
         "proximity": {
-            "Description": "Sometimes called a Test Cluster, selects for Capabilities that are related to Core Capabilities. This helps ensure that related capabilities are managed together",
+            "description": "Sometimes called a Test Cluster, selects for Capabilities that are related to Core Capabilities. This helps ensure that related capabilities are managed together",
             "name": "Proximity",
             "weight": 8
         },
         "stable": {
-            "Description": "Test is required stable for >2 releases because we don't want Capabilities that do not have dependable APIs",
+            "description": "Test is required stable for >2 releases because we don't want Capabilities that do not have dependable APIs",
             "name": "Stable",
             "weight": 9
         },
         "sticky": {
-            "Description": "A test that is a must-pass test should stay a must-pass test. This makes Capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
+            "description": "A test that is a must-pass test should stay a must-pass test. This makes Capabilities sticky release per release. Leaving Core is disruptive to the ecosystem",
             "name": "Core in Last Release",
             "weight": 9
         },
         "tools": {
-            "Description": "Candidates are widely used capabilities: Should be included if supported by common tools outside of the OpenStack community (RightScale, Scalr, CloudForms, jClouds, Fog, etc...)",
+            "description": "Candidates are widely used capabilities: Should be included if supported by common tools outside of the OpenStack community (RightScale, Scalr, CloudForms, jClouds, Fog, etc...)",
             "name": "Used by Tools",
             "weight": 6
         }
@@ -73,8 +73,7 @@
       "target_approval": "2018.02",
       "replaces": "2017.09",
       "releases": ["newton", "ocata", "pike", "queens"],
-      "status": "approved",
-      "additionalProperties": false
+      "status": "approved"
     }
   },
   "platforms": {
