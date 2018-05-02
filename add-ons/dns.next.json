@@ -114,19 +114,19 @@
         "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_create_all_recordset_types": {
           "idempotent_id": "d03b69a5-5052-43bc-a38a-b511b6b34304"
         },
-        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_delete_recordset ": {
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_delete_recordset": {
           "idempotent_id": "855399c1-8806-4ae5-aa31-cb8a6f35e218"
         },
-        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_list_recordsets ": {
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_list_recordsets": {
           "idempotent_id": "5964f730-5546-46e6-9105-5030e9c492b2"
         },
-        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_show_recordsets ": {
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_show_recordsets": {
           "idempotent_id": "84c13cb2-9020-4c1e-aeb0-c348d9a70caa"
         },
-        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_update_recordset ": {
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_update_recordset": {
           "idempotent_id": "8d41c85f-09f9-48be-a202-92d1bdf5c796"
         },
-        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_update_recordset_one_field ": {
+        "designate_tempest_plugin.tests.api.v2.test_recordset.RecordsetsTest.test_update_recordset_one_field": {
           "idempotent_id": "60904cc5-148b-4e3b-a0c6-35656dc8d44c"
         }
       }
