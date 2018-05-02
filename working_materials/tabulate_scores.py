@@ -79,7 +79,7 @@ csv_outfile = open(args.csv_outfile_name, 'w')
 # in order to do scoring.  Read them from a Guideline JSON file.
 with open(args.json_file_name) as json_file:
     json_data = json.loads(json_file.read())
-    criteria = json_data['criteria']
+    criteria = json_data['metadata']['scoring']['criteria']
 
     # Non-Admin doesn't appear in the scores because it's not
     # an official criteria...rather it's something we use in scoring
@@ -179,7 +179,7 @@ with open(args.score_file_name) as filehandle:
             # If the total score exceeds the cutoff_score listed in
             # the JSON file, denote that it has scored high enough
             # to be included in the Guideline with an asterisk.
-            if total >= int(json_data['cutoff_score']):
+            if total >= int(json_data['metadata']['scoring']['cutoff_score']):
                     meets_criteria = '*'
             else:
                     meets_criteria = ''
