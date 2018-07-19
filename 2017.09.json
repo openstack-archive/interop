@@ -2741,19 +2741,39 @@
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_reserve_unreserve_volume": {
           "idempotent_id": "id-92c4ef64-51b2-40c0-9f7e-4749fbaaba33",
-          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume"]
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_negative_volume_status": {
           "idempotent_id": "id-449c4ed2-ecdd-47bb-98dc-072aeccf158c",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status"]
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_nonexistent_volume_id": {
           "idempotent_id": "id-ac6084c0-0546-45f9-b284-38a367e0e0e2",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id"]
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_unreserve_volume_with_nonexistent_volume_id": {
           "idempotent_id": "id-eb467654-3dc1-4a72-9b46-47c29d22654c",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id"]
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         }
       }
     },
@@ -3275,19 +3295,39 @@
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_reserve_unreserve_volume": {
           "idempotent_id": "id-92c4ef64-51b2-40c0-9f7e-4749fbaaba33",
-          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume"]
+          "aliases": ["tempest.api.volume.test_volumes_actions.VolumesV2ActionsTest.test_reserve_unreserve_volume"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_negative_volume_status": {
           "idempotent_id": "id-449c4ed2-ecdd-47bb-98dc-072aeccf158c",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status"]
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_negative_volume_status"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_reserve_volume_with_nonexistent_volume_id": {
           "idempotent_id": "id-ac6084c0-0546-45f9-b284-38a367e0e0e2",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id"]
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_reserve_volume_with_nonexistent_volume_id"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         },
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_unreserve_volume_with_nonexistent_volume_id": {
           "idempotent_id": "id-eb467654-3dc1-4a72-9b46-47c29d22654c",
-          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id"]
+          "aliases": ["tempest.api.volume.test_volumes_negative.VolumesV2NegativeTest.test_unreserve_volume_with_nonexistent_volume_id"],
+          "flagged": {
+            "reason": "[D400] These are internal APIs which means they can be changed/removed in the future.",
+            "action": "This test will be removed from future guidelines.",
+            "date": "2018-07-10"
+          }
         }
       }
     },
