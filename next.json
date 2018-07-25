@@ -107,6 +107,7 @@
           "compute-instance-actions-get",
           "compute-instance-actions-list",
           "compute-keypairs-create",
+          "compute-keypairs-create-type",
           "compute-list-api-versions",
           "compute-quotas-get",
           "compute-servers-create",
@@ -130,8 +131,10 @@
           "compute-servers-metadata-update",
           "compute-volume-attach",
           "identity-v3-api-discovery",
+          "identity-v3-catalog",
           "identity-v3-list-projects",
           "identity-v3-tokens-create",
+          "identity-v3-tokens-validate",
           "images-v2-index",
           "images-v2-update",
           "images-v2-list",
@@ -169,18 +172,13 @@
           "volumes-v3-readonly"
         ],
         "advisory": [
-          "compute-keypairs-create-type",
-          "identity-v3-catalog",
-          "identity-v3-tokens-validate"
+          "volumes-v3-upload"
         ],
         "deprecated": [
           "volumes-v2-reserve",
           "volumes-v3-reserve"
         ],
-        "removed": [
-          "volumes-v2-attach-detach",
-          "volumes-v3-attach-detach"
-        ]
+        "removed": []
       },
       "designated_sections": {
         "required" : [
@@ -203,6 +201,8 @@
           "objectstore-container-delete",
           "objectstore-container-list",
           "objectstore-container-metadata",
+          "objectstore-dlo-support",
+          "objectstore-slo-support",
           "objectstore-info-request",
           "objectstore-object-copy",
           "objectstore-object-create",
@@ -213,10 +213,7 @@
           "objectstore-temp-url-put",
           "identity-v3-tokens-create"
         ],
-        "advisory": [
-          "objectstore-dlo-support",
-          "objectstore-slo-support"
-        ],
+        "advisory": [],
         "deprecated": [],
         "removed": []
       },
