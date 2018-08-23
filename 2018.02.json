@@ -562,10 +562,8 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_host_name_is_same_as_server_name": {
-          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name": {
-          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666"
+          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name"]
         }
       }
     },
@@ -615,16 +613,12 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers": {
-          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f"
+          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers"]
         },
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers_with_detail": {
-          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers": {
-          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers_with_detail": {
-          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997"
+          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers_with_detail"]
         },
         "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_detailed_filter_by_flavor": {
           "idempotent_id": "id-80c574cc-0925-44ba-8602-299028357dd9"
@@ -1089,16 +1083,12 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_created_server_vcpus": {
-          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b"
+          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus"]
         },
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_server_details": {
-          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus": {
-          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_server_details": {
-          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f"
+          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_server_details"]
         }
       }
     },
@@ -1875,10 +1865,8 @@
         "required-since": "",
         "tests": {
           "tempest.api.object_storage.test_object_services.ObjectTest.test_object_upload_in_segments": {
-           "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
-          },
-          "tempest.api.object_storage.test_object_services.ObjectTest.test_get_object_with_x_object_manifest": {
-           "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb"
+           "idempotent_id": "id-e3e6a64a-9f50-4955-b987-6ce6767c97fb",
+            "aliases": ["tempest.api.object_storage.test_object_services.ObjectTest.test_get_object_with_x_object_manifest"]
           },
           "tempest.api.object_storage.test_object_services.ObjectTest.test_list_object_metadata_with_x_object_manifest" : {
             "idempotent_id": "id-23a3674c-d6de-46c3-86af-ff92bfc8a3da"
@@ -3336,7 +3324,7 @@
           ]
         },
         "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata": {
-          "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a",
+          "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769",
           "aliases": [
              "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata",
              "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_crud_volume_metadata"

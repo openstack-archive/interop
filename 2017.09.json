@@ -442,10 +442,8 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_host_name_is_same_as_server_name": {
-          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name": {
-          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666"
+          "idempotent_id": "id-ac1ad47f-984b-4441-9274-c9079b7a0666",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_host_name_is_same_as_server_name"]
         }
       }
     },
@@ -495,16 +493,12 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers": {
-          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f"
+          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers"]
         },
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_list_servers_with_detail": {
-          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers": {
-          "idempotent_id": "id-9a438d88-10c6-4bcd-8b5b-5b6e25e1346f"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers_with_detail": {
-          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997"
+          "idempotent_id": "id-585e934c-448e-43c4-acbf-d06a9b899997",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_list_servers_with_detail"]
         },
         "tempest.api.compute.servers.test_list_server_filters.ListServerFiltersTestJSON.test_list_servers_detailed_filter_by_flavor": {
           "idempotent_id": "id-80c574cc-0925-44ba-8602-299028357dd9"
@@ -969,16 +963,12 @@
       "required-since": "2014.07",
       "tests": {
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_created_server_vcpus": {
-          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b"
+          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus"]
         },
         "tempest.api.compute.servers.test_create_server.ServersTestJSON.test_verify_server_details": {
-          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_created_server_vcpus": {
-          "idempotent_id": "id-cbc0f52f-05aa-492b-bdc1-84b575ca294b"
-        },
-        "tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_server_details": {
-          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f"
+          "idempotent_id": "id-5de47127-9977-400a-936f-abcfbec1218f",
+          "aliases": ["tempest.api.compute.servers.test_create_server.ServersTestManualDisk.test_verify_server_details"]
         }
       }
     },
@@ -2045,10 +2035,22 @@
           "idempotent_id": "id-a8902683-c788-4246-95c7-ad9c6d63a4d9"
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_reset_gateway_without_snat": {
-          "idempotent_id": "id-f2faf994-97f4-410b-a831-9bc977b64374"
+          "idempotent_id": "id-f2faf994-97f4-410b-a831-9bc977b64374",
+          "aliases": ["tempest.api.network.admin.test_routers.RoutersAdminTest.test_update_router_reset_gateway_without_snat"],
+          "flagged": {
+            "reason": "D400 This test checks for an admin capability.",
+            "action": "Remove from future guidelines.",
+            "date": "2018-08-24"
+          }
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_unset_gateway": {
-          "idempotent_id": "id-ad81b7ee-4f81-407b-a19c-17e623f763e8"
+          "idempotent_id": "id-ad81b7ee-4f81-407b-a19c-17e623f763e8",
+          "aliases": ["tempest.api.network.admin.test_routers.RoutersAdminTest.test_update_router_unset_gateway"],
+          "flagged": {
+            "reason": "D400 This test checks for an admin capability.",
+            "action": "Remove from future guidelines.",
+            "date": "2018-08-24"
+          }
         },
         "tempest.api.network.test_routers_negative.RoutersNegativeTest.test_update_non_existent_router_returns_404": {
           "idempotent_id": "id-b23d1569-8b0c-4169-8d4b-6abd34fad5c7"
@@ -2231,9 +2233,6 @@
       "project": "cinder",
       "required-since": "",
       "tests": {
-        "tempest.api.volume.NEED_TEST": {
-          "idempotent_id": ""
-        }
       }
     },
     "volumes-v2-create-delete": {
@@ -2951,7 +2950,12 @@
         },
         "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_snapshot_metadata": {
           "idempotent_id": "id-bd2363bc-de92-48a4-bc98-28943c6e4be1",
-          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata"]
+          "aliases": ["tempest.api.volume.test_snapshot_metadata.SnapshotV2MetadataTestJSON.test_update_snapshot_metadata"],
+          "flagged": {
+            "reason": "[D406] Test removed permanently from test suite.",
+            "action": "Remove from future guidelines.",
+            "date": "2018-08-24"
+          }
         },
         "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_update_show_snapshot_metadata_item": {
           "idempotent_id": "id-e8ff85c5-8f97-477f-806a-3ac364a949ed",
@@ -3266,15 +3270,26 @@
       "tests": {
         "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_create_get_delete_volume_metadata": {
           "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769",
-          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata"]
+          "aliases": [
+            "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_create_get_delete_volume_metadata",
+            "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_crud_volume_metadata"
+          ]
         },
         "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata": {
           "idempotent_id": "id-774d2918-9beb-4f30-b3d1-2a4e8179ec0a",
-          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata"]
+          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata"],
+          "flagged": {
+            "reason": "[D406] Test removed permanently from test suite.",
+            "action": "Remove from future guidelines.",
+            "date": "2018-08-24"
+          }
         },
         "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_volume_metadata_item": {
           "idempotent_id": "id-862261c5-8df4-475a-8c21-946e50e36a20",
-          "aliases": ["tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item"]
+          "aliases": [
+            "tempest.api.volume.test_volume_metadata.VolumesV2MetadataTest.test_update_volume_metadata_item",
+            "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_update_show_volume_metadata_item"
+          ]
         }
       }
     },
