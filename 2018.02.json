@@ -2390,7 +2390,7 @@
       "required-since": "2018.02",
       "tests": {
         "tempest.api.volume.test_versions.VersionsTest.test_list_versions": {
-          "idempotent_id": "77838fc4-b49b-4c64-9533-166762517369"
+          "idempotent_id": "id-77838fc4-b49b-4c64-9533-166762517369"
         }
       }
     },
