@@ -217,7 +217,7 @@ images-v1-update:                [0,1,1] [0,1,1] [0,1,0] [1,0,1] [1] [58]
 images-v2-remove:                [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
 images-v2-update:                [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
 images-v2-share:                 [1,0,1] [1,1,1] [1,1,0] [1,0,1] [1] [79]*
-images-v2-import:                [0,0,0] [1,0,0] [0,0,0] [1,0,1] [1] [28]
+images-v2-import:                [0,0,0] [1,1,0] [0,1,0] [1,0,1] [1] [44]
 images-v2-list:                  [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
 images-v2-delete:                [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
 images-v2-get:                   [1,0,1] [1,1,1] [1,1,1] [1,0,1] [1] [88]*
@@ -235,10 +235,10 @@ Notes:
       defined in the 2016.01 guideline.
     * images-v2-import capability not delivered in Ocata.
     * no new or removed capabilities in the Pike cycle.
-    * images-v2-import was considered "experimental" in Pike, but is expected
-      to be finalized in Queens. currently in the process of confirming that
-      this will be finalized, but in the meantime I am leaving the scoring as
-      is.
+    * images-v2-import was considered "experimental" in Pike and Queens, but is expected
+      to be available in Rocky. According to the PTL, image import will be fully supported
+	  as of Rocky release. The tests are not yet available, but should be available soon.
+	  https://docs.openstack.org/glance/latest/admin/interoperable-image-import.html
 
 Volume
 ----------
