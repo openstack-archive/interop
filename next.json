@@ -172,7 +172,8 @@
           "volumes-v3-readonly"
         ],
         "advisory": [
-          "volumes-v3-upload"
+          "volumes-v3-upload",
+          "compute-servers-create-multiple"
         ],
         "deprecated": [
           "volumes-v2-reserve",
@@ -480,6 +481,29 @@
         },
         "tempest.api.compute.servers.test_servers_negative.ServersNegativeTestJSON.test_create_with_invalid_network_uuid": {
           "idempotent_id": "id-4e72dc2d-44c5-4336-9667-f7972e95c402"
+        }
+      }
+    },
+    "compute-servers-create-multiple": {
+      "achievements": [
+        "foundation",
+        "complete",
+        "doc",
+        "proximity",
+        "clients",
+        "discover",
+        "future",
+        "atomic",
+        "stable",
+        "deployed"
+      ],
+      "admin": false,
+      "description": "Create multiple servers in one API call",
+      "project": "nova",
+      "required_since": "",
+      "tests": {
+        "tempest.api.compute.servers.test_multiple_create.MultipleCreateTestJSON.test_multiple_create": {
+          "idempotent_id": "id-61e03386-89c3-449c-9bb1-a06f423fd9d1"
         }
       }
     },
