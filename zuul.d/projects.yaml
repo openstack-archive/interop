@@ -4,6 +4,8 @@
     check:
       jobs:
         - openstack-tox-pep8
+        - interop-tempest-consistency
     gate:
       jobs:
         - openstack-tox-pep8
+        - interop-tempest-consistency
