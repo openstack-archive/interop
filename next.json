@@ -147,18 +147,6 @@
           "networks-security-groups-CRUD",
           "networks-subnet-pools-CRUD",
           "volumes-list-api-versions",
-          "volumes-v2-create-delete",
-          "volumes-v2-snapshot-create-delete",
-          "volumes-v2-get",
-          "volumes-v2-list",
-          "volumes-v2-update",
-          "volumes-v2-copy-image-to-volume",
-          "volumes-v2-clone",
-          "volumes-v2-availability-zones",
-          "volumes-v2-extensions",
-          "volumes-v2-metadata",
-          "volumes-v2-readonly",
-          "volumes-v2-upload",
           "volumes-v3-create-delete",
           "volumes-v3-snapshot-create-delete",
           "volumes-v3-get",
@@ -176,7 +164,19 @@
         ],
         "deprecated": [
           "volumes-v2-reserve",
-          "volumes-v3-reserve"
+          "volumes-v3-reserve",
+          "volumes-v2-create-delete",
+          "volumes-v2-snapshot-create-delete",
+          "volumes-v2-get",
+          "volumes-v2-list",
+          "volumes-v2-update",
+          "volumes-v2-copy-image-to-volume",
+          "volumes-v2-clone",
+          "volumes-v2-availability-zones",
+          "volumes-v2-extensions",
+          "volumes-v2-metadata",
+          "volumes-v2-readonly",
+          "volumes-v2-upload"
         ],
         "removed": []
       },
@@ -2390,7 +2390,7 @@
       "admin": false,
       "description": "Volume creation and deletion operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete": {
           "idempotent_id": "id-27fb0e9f-fb64-41dd-8bdb-1ffa762f0d51",
@@ -2444,7 +2444,7 @@
       "admin": false,
       "description": "Volume snapshot creation/deletion operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_snapshot_metadata.SnapshotMetadataTestJSON.test_crud_snapshot_metadata": {
           "idempotent_id": "id-a2f20f99-e363-4584-be97-bc33afb1a56c",
@@ -2526,7 +2526,7 @@
       "admin": false,
       "description": "Volume GET operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_get_invalid_volume_id": {
           "idempotent_id": "id-30799cfd-7ee4-446c-b66c-45b383ed211b",
@@ -2560,7 +2560,7 @@
       "admin": false,
       "description": "Volume listing operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_list.VolumesListTestJSON.test_volume_list": {
           "idempotent_id": "id-0b6ddd39-b948-471f-8038-4787978747c4",
@@ -2658,7 +2658,7 @@
       "admin": false,
       "description": "Volume update operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_negative.VolumesNegativeTest.test_update_volume_with_empty_volume_id": {
           "idempotent_id": "id-72aeca85-57a5-4c1f-9057-f320f9ea575b",
@@ -2690,7 +2690,7 @@
       "admin": false,
       "description": "Image copy-to-volume operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_from_image": {
           "idempotent_id": "id-54a01030-c7fc-447c-86ee-c1182beae638",
@@ -2719,7 +2719,7 @@
       "admin": false,
       "description": "Volume cloning operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_get.VolumesGetTest.test_volume_create_get_update_delete_as_clone": {
           "idempotent_id": "id-3f591b4a-7dc6-444c-bd51-77469506b3a1",
@@ -2742,7 +2742,7 @@
       "admin": false,
       "description": "Volume service availability zone operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_availability_zone.AvailabilityZoneTestJSON.test_get_availability_zone_list": {
           "idempotent_id": "id-01f1ae88-eba9-4c6b-a011-6f7ace06b725",
@@ -2763,7 +2763,7 @@
       "admin": false,
       "description": "Volume service extension listing operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_extensions.ExtensionsTestJSON.test_list_extensions": {
           "idempotent_id": "id-94607eb0-43a5-47ca-82aa-736b41bd2e2c",
@@ -2787,7 +2787,7 @@
       "admin": false,
       "description": "Volume metadata operations with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volume_metadata.VolumesMetadataTest.test_crud_volume_metadata": {
           "idempotent_id": "id-6f5b125b-f664-44bf-910f-751591fe5769",
@@ -2876,7 +2876,7 @@
       "admin": false,
       "description": "Verification of read-only status on volumes with the Cinder v2 API",
       "project": "cinder",
-      "required_since": "2016.08",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_readonly_update": {
           "idempotent_id": "id-fff74e1e-5bd3-4b33-9ea9-24c103bc3f59",
@@ -2900,7 +2900,7 @@
       "admin": false,
       "description": "Upload volumes with Cinder v2 API",
       "project": "cinder",
-      "required_since": "2017.09",
+      "required_since": "",
       "tests": {
         "tempest.api.volume.test_volumes_actions.VolumesActionsTest.test_volume_upload": {
           "idempotent_id": "id-d8f1ca95-3d5b-44a3-b8ca-909691c9532d",
