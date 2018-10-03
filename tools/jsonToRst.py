@@ -57,7 +57,7 @@ if not isinstance(data, dict):
 outFileName = 'doc/source/guidelines/' + inFileName.replace("json", "rst")
 
 
-print ("Writing to: " + outFileName)
+print("Writing to: " + outFileName)
 
 
 # intro
