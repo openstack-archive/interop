@@ -152,41 +152,41 @@ def run():
     exit_code = 0
     if len(missing_uuids) > 0:
         exit_code = 1
-        print "### Idempotent ID Errors Detected. To resolve these errors, " \
-              "fix the uuid name (format id-<uuid>) in the guideline to " \
-              "match the id in the test suite:"
+        print("### Idempotent ID Errors Detected. To resolve these errors, "
+              "fix the uuid name (format id-<uuid>) in the guideline to "
+              "match the id in the test suite:")
         for test in missing_uuids:
-            print "Idempotent ID in guideline '%s' does not appear in test " \
-                  "library '%s'\n" \
-                  "  idempotent_id:\n" \
-                  "    %s\n" \
-                  "  names: " % (args.guideline_file, args.testlib, test[0])
+            print("Idempotent ID in guideline '%s' does not appear in test "
+                  "library '%s'\n"
+                  "  idempotent_id:\n"
+                  "    %s\n"
+                  "  names: " % (args.guideline_file, args.testlib, test[0]))
             for testname in test[1]:
-                print "    %s" % (testname)
-            print ""
+                print("    %s" % (testname))
+            print("")
 
     if len(missing_tests) > 0:
         exit_code = 1
-        print "### Test Name Errors Detected. " \
-              "To resolve these errors, update " \
-              "the Interop guideline with the missing " \
-              "test names:"
+        print("### Test Name Errors Detected. "
+              "To resolve these errors, update "
+              "the Interop guideline with the missing "
+              "test names:")
         for uuid in missing_tests:
-            print "Test found in test library '%s'\n" \
-                  "  idempotent_id:\n" \
-                  "    %s\n" \
-                  "  name:\n" \
-                  "    %s\n" \
-                  "Entry in guideline '%s'\n" \
-                  "  idempotent_id:\n" \
-                  "    %s\n" \
+            print("Test found in test library '%s'\n"
+                  "  idempotent_id:\n"
+                  "    %s\n"
+                  "  name:\n"
+                  "    %s\n"
+                  "Entry in guideline '%s'\n"
+                  "  idempotent_id:\n"
+                  "    %s\n"
                   "  names: " % (args.testlib,
                                  uuid, tests[uuid],
                                  args.guideline_file,
-                                 missing_tests[uuid][0])
+                                 missing_tests[uuid][0]))
             for testname in missing_tests[uuid][1]:
-                print "    %s" % (testname)
-            print ""
+                print("    %s" % (testname))
+            print("")
 
     sys.exit(exit_code)
 
