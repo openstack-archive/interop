@@ -37,6 +37,7 @@ compute-keypairs-create-type,1,0,1,1,1,1,1,1,0,0,1,1,1,76*
 compute-list-api-versions,1,0,0,1,1,1,1,0,1,1,1,1,1,76*
 compute-quotas-get,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 compute-servers-create,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
+compute-servers-create-multiple,1,0,1,1,1,1,1,1,0,1,1,1,1,85*
 compute-servers-delete,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 compute-servers-get,1,1,1,1,1,1,1,1,1,1,1,1,1,100*
 compute-servers-host,1,1,1,1,1,1,1,1,1,1,1,1,1,100*

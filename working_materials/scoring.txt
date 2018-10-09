@@ -139,6 +139,7 @@ compute-keypairs-create-type:    [1,0,1] [1,1,1] [1,1,0] [0,1,1] [1] [76]*
 compute-list-api-versions:       [1,0,0] [1,1,1] [1,0,1] [1,1,1] [1] [76]*
 compute-quotas-get:              [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 compute-servers-create:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
+compute-servers-create-multiple: [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
 compute-servers-delete:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 compute-servers-get:             [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 compute-servers-host:            [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
@@ -161,6 +162,9 @@ compute-servers-verify:          [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 compute-volume-attach:           [1,1,1] [1,1,1] [1,1,1] [1,1,1] [1] [100]*
 
 Notes:
+  * compute-server-create-multiple is not widely supported by 3rd party
+    SDK's and tools at this point.  As examples, it does not appear to be
+    supported by gophercloud, libcloud, or Terraform.
   * compute-servers-suspend-resume is not widely supported by
     different hypervisors, and is not recommended as a capability.
   * There has been some discussion that this capability is not widely
