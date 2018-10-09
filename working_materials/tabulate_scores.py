@@ -14,6 +14,8 @@
 # License for the specific language governing permissions and limitations
 # under the License.
 
+from __future__ import print_function
+
 import re
 import json
 import argparse
@@ -194,7 +196,7 @@ with open(args.score_file_name) as filehandle:
 
             # And stdout is useful for folks who are experimenting with
             # the effect of changing a score.
-            print "%s: %d%s" % (cap_name, total, meets_criteria)
+            print("%s: %d%s" % (cap_name, total, meets_criteria))
 
 # Now we can write the text output file.
 with open(args.text_outfile_name, 'w') as outfile:
@@ -202,5 +204,5 @@ with open(args.text_outfile_name, 'w') as outfile:
         outfile.write(line)
 outfile.close()
 
-print "\n\nText output has been written to %s" % args.text_outfile_name
-print "CSV output has been written to %s" % args.csv_outfile_name
+print("\n\nText output has been written to %s" % args.text_outfile_name)
+print("CSV output has been written to %s" % args.csv_outfile_name)
