@@ -161,7 +161,8 @@
         ],
         "advisory": [
           "volumes-v3-upload",
-          "compute-servers-create-multiple"
+          "compute-servers-create-multiple",
+          "identity-v3-tokens-delete"
         ],
         "deprecated": [
           "volumes-v2-reserve",
@@ -214,7 +215,8 @@
           "objectstore-temp-url-put",
           "identity-v3-tokens-create"
         ],
-        "advisory": [],
+        "advisory": [
+          "identity-v3-tokens-delete"],
         "deprecated": [],
         "removed": []
       },
@@ -1269,6 +1271,20 @@
       "tests": {
         "tempest.api.identity.v3.test_tokens.TokensV3Test.test_validate_token": {
           "idempotent_id": "id-a9512ac3-3909-48a4-b395-11f438e16260"
+        }
+      }
+    },
+    "identity-v3-tokens-delete": {
+      "achievements": [
+        ""
+      ],
+      "admin": false,
+      "descriptin": "Delete (revoke) identity token API",
+      "project": "keystone",
+      "required_since": "",
+      "tests": {
+        "tempest.api.identity.v3.test_tokens.TokensV3Test.test_token_auth_creation_existence_deletion": {
+          "idempotent_id": "id-0f9f5a5f-d5cd-4a86-8a5b-c5ded151f212"
         }
       }
     },

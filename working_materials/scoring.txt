@@ -299,12 +299,15 @@ Notes:
 
 Identity
 --------
-identity-v3-api-discovery:       [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
-identity-v3-catalog:             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
-identity-v3-list-projects:       [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
-identity-v3-list-groups:         [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
-identity-v3-tokens-create:       [1,1,1] [1,1,1] [1,1,1] [1,1,0] [1] [92]*
-identity-v3-tokens-validate:     [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-api-discovery:           [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
+identity-v3-catalog:                 [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
+identity-v3-list-projects:           [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-list-groups:             [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-tokens-create:           [1,1,1] [1,1,1] [1,1,1] [1,1,0] [1] [92]*
+identity-v3-tokens-validate:         [1,1,1] [1,1,1] [1,1,1] [0,1,0] [1] [83]*
+identity-v3-tokens-delete:           [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
+identity-v3-application-credentials: [0,0,1] [1,0,0] [1,1,0] [0,1,0] [1] [43]
+identity-v3-user-password:           [0,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [69]
 
 Notes:
   * identity-v3-list-projects and identity-v3-list-groups didn't have usable

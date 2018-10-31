@@ -105,7 +105,7 @@ with open(args.score_file_name) as filehandle:
     # The optional asterisk on the end indicates that the total score
     # is greater than or equal to the cutoff_score parsed from the JSON
     # file and therefore the Capability warrants inclusion in the Guideline.
-    pattern = re.compile('((\S+):\s+((\[\S,\S,\S\] ){4}\[\S\]))')
+    pattern = re.compile(r'((\S+):\s+((\[\S,\S,\S\] ){4}\[\S\]))')
 
     # The scores in the tuples have the following meanings, in
     # the order they appear in the scoring files.
@@ -136,7 +136,7 @@ with open(args.score_file_name) as filehandle:
             csv_outfile.write("%s," % cap_name)
 
             # Grock the scores into a dict keyed by capability name.
-            scores = re.sub('[\[\]\, ]', '', raw.group(3))
+            scores = re.sub(r'[\[\]\, ]', '', raw.group(3))
             score_hash = dict(zip(scorenames, list(scores)))
 
             # Now tabluate scores for this capability.  Scores will
@@ -164,7 +164,7 @@ with open(args.score_file_name) as filehandle:
                         continue
 
                     # If the score is a digit, add it in to the total.
-                    if re.match('\d', score_hash[scorename]):
+                    if re.match(r'\d', score_hash[scorename]):
                         total += (int(score_hash[scorename]) *
                                   int(criteria[scorename]['weight']))
 
