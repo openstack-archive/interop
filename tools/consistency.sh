@@ -29,7 +29,7 @@ exit_1=$?
 PYTHONPATH=$TEMPESTDIR python ./tools/checktests.py --guideline 2018.02.json
 exit_2=$?
 
-PYTHONPATH=$TEMPESTDIR python ./tools/checktests.py --guideline 2017.09.json
+PYTHONPATH=$TEMPESTDIR python ./tools/checktests.py --guideline 2018.11.json
 exit_3=$?
 
 if [[ ! -z "${CLEANTEMPEST}" ]]; then
