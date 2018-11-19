@@ -73,7 +73,7 @@
       "target_approval": "2018.11",
       "replaces": "2018.02",
       "releases": ["ocata", "pike", "queens", "rocky", "stein"],
-      "status": "draft"
+      "status": "approved"
     }
   },
   "platforms": {

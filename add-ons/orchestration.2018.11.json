@@ -58,7 +58,7 @@
       "target_approval": "orchestration.2018.11",
 	  "replaces": "orchestration.2018.02",
       "releases": ["ocata", "pike", "queens", "rocky", "stein"],
-      "status": "draft"
+      "status": "approved"
     }
   },
   "add-ons": {
