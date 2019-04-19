@@ -5,8 +5,8 @@
       Ensure consistency between Tempest source and current interop guidelines.
     vars:
       tox_envlist: consistency
-      tox_extra_args: "-vv -- {{ ansible_user_dir }}/{{ zuul.projects['git.openstack.org/openstack/tempest'].src_dir }}"
-      zuul_work_dir: src/git.openstack.org/openstack/interop
+      tox_extra_args: "-vv -- {{ ansible_user_dir }}/{{ zuul.projects['opendev.org/openstack/tempest'].src_dir }}"
+      zuul_work_dir: src/opendev.org/openstack/interop
     required-projects:
       - name: openstack/tempest
       - name: openstack/interop
