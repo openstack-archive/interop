@@ -167,7 +167,7 @@ this specification.""")
         outFile.write('-' * (len(event) + 20) + '\n\n')
 
         names = sorted(desig[event].keys())
-        if len(names) is 0:
+        if len(names) == 0:
             outFile.write('None')
 
         outlines = []

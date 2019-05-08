@@ -182,9 +182,9 @@ with open(args.score_file_name) as filehandle:
             # the JSON file, denote that it has scored high enough
             # to be included in the Guideline with an asterisk.
             if total >= int(json_data['metadata']['scoring']['cutoff_score']):
-                    meets_criteria = '*'
+                meets_criteria = '*'
             else:
-                    meets_criteria = ''
+                meets_criteria = ''
 
             # Now write the total score to a couple of places.
             # Put it in the tabulated file.
