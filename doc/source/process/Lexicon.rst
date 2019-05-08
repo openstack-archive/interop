@@ -85,7 +85,7 @@ Participant
   documentation, training, product management and other materials.
   For Interop Working Group purposes, Participant is not limited to
   the community members identified as "ATC" as per
-  http://git.openstack.org/cgit/openstack/governance/tree/reference/charter.rst#n132
+  http://opendev.org/openstack/governance/tree/reference/charter.rst#n132
   (see also Technical Leadership)
 
 Platform
@@ -107,7 +107,7 @@ Technical Leadership
   community to guide the technical direction of the OpenStack project.
   These leaders include the Technical Committee (TC) and Project
   Technical Leads (PTL).
-  See: http://git.openstack.org/cgit/openstack/governance/tree/reference/charter.rst
+  See: http://opendev.org/openstack/governance/tree/reference/charter.rst
 
 Test
   Program that exercises functionality of a component to validate

@@ -2,8 +2,8 @@
   "metadata": {
     "id": "orchestration.next",
     "schema": "2.0",
-    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
-    "source": "http://git.openstack.org/cgit/openstack/interop/",
+    "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/2.0.json",
+    "source": "http://opendev.org/openstack/interop/",
     "scoring": {
       "cutoff_score": 60,
       "criteria": {
@@ -69,7 +69,7 @@
       "required_platform_components": [
         {
           "name": "os_powered_compute",
-          "source": "http://git.openstack.org/cgit/openstack/interop/next.json"
+          "source": "http://opendev.org/openstack/interop/next.json"
         }
       ]
     }
@@ -509,7 +509,7 @@
   },
   "test_repositories": {
     "heat": {
-      "repository": "https://git.openstack.org/cgit/openstack/heat-tempest-plugin/",
+      "repository": "https://opendev.org/openstack/heat-tempest-plugin/",
       "reference": "master",
       "description": "OpenStack Heat Tempest Test Plugin Repository"
     }

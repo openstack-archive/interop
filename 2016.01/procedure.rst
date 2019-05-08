@@ -4,7 +4,7 @@
 Testing against DefCore 2016.01 Capabilities
 --------------------------------------------
 
-https://git.openstack.org/cgit/openstack/defcore/tree/2016.01.json
+https://opendev.org/openstack/interop/raw/branch/master/2016.01.json
 
 Tempest can be run standalone, or under a test runner such as refstack-client
 or rally. If only testing against DefCore capabilities, you can use the
@@ -55,7 +55,7 @@ or CentOS 7 have been verified) with administrator privileges.
 
 * Download the RefStack client:
 
-  ``git clone https://git.openstack.org/openstack/refstack-client``
+  ``git clone https://opendev.org/openstack/refstack-client``
 
 * In the refstack-client directory, install tempest and required dependencies.
   You may specify a specific tag of tempest with the -t option.

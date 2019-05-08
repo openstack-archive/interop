@@ -4,7 +4,7 @@ OpenStack Interoperability Guideline 2016.08
 
 :Status: superseded
 :Replaces: 2016.01
-:JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/2016.08.json
+:JSON Master: http://opendev.org/openstack/interop/raw/branch/master/2016.08.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to

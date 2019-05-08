@@ -2,8 +2,8 @@
   "metadata": {
     "id": "orchestration.2018.11",
     "schema": "2.0",
-    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
-    "source": "http://git.openstack.org/cgit/openstack/interop/add-ons/orchestration.2018.11.json",
+    "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/2.0.json",
+    "source": "http://opendev.org/openstack/interop/raw/branch/master/add-ons/orchestration.2018.11.json",
     "scoring": {
       "cutoff_score": 60,
       "criteria": {
@@ -70,7 +70,7 @@
       "required_platform_components": [
         {
           "name": "os_powered_compute",
-          "source": "http://git.openstack.org/cgit/openstack/interop/2018.11.json"
+          "source": "http://opendev.org/openstack/interop/2018.11.json"
         }
       ]
     }
@@ -734,10 +734,9 @@
   },
   "test_repositories": {
     "heat": {
-      "repository": "http://git.openstack.org/cgit/openstack/heat-tempest-plugin/",
+      "repository": "http://opendev.org/openstack/heat-tempest-plugin/",
       "reference": "master",
       "description": "OpenStack Heat Tempest Test Plugin Repository"
     }
   }
 }
-

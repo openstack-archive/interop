@@ -17,7 +17,7 @@ set -x
 
 if [ ! $@ ]; then
   TEMPESTDIR=$(mktemp -d)
-  git clone https://git.openstack.org/openstack/tempest $TEMPESTDIR
+  git clone https://opendev.org/openstack/tempest $TEMPESTDIR
   CLEANTEMPEST=cleantempest
 else
   TEMPESTDIR=${1}

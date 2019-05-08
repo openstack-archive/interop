@@ -4,7 +4,7 @@ OpenStack Interoperability Guideline next
 
 :Status: approved
 :Replaces: 2017.09
-:JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/next.json
+:JSON Master: http://opendev.org/openstack/interop/raw/branch/master/next.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to

@@ -88,4 +88,4 @@ Details of Waiver
 [2] https://specs.openstack.org/openstack/nova-specs/specs/kilo/implemented/api-microversions.html
 [3] http://lists.openstack.org/pipermail/openstack-dev/2015-March/059576.html
 [4] https://github.com/openstack/tempest/tree/master/tempest/lib/api_schema/response/compute
-[5] http://git.openstack.org/cgit/openstack/refstack-client/
+[5] http://opendev.org/openstack/refstack-client/

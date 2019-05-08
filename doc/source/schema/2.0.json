@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-06/schema#",
-  "id": "http://git.openstack.org/cgit/openstack/interop/doc/source/schema/2.0.json",
+  "id": "http://opendev.org/openstack/interop/doc/source/schema/2.0.json",
   "type": "object",
   "properties": {
     "metadata": {

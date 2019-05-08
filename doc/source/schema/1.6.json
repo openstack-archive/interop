@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://git.openstack.org/cgit/openstack/defcore/doc/source/schema/1.6.json",
+  "id": "http://opendev.org/openstack/defcore/doc/source/schema/1.6.json",
   "type": "object",
   "required": [
     "id",

@@ -1,8 +1,8 @@
 {
   "id": "2015.07",
   "schema": "1.5",
-  "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.5.json",
-  "source": "http://git.openstack.org/cgit/openstack/defcore/",
+  "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/1.5.json",
+  "source": "http://opendev.org/openstack/interop/",
   "status": "superseded",
   "replaces": "2015.05",
   "target_approval": "2015-07-28",
@@ -79,7 +79,7 @@
   "test-repositories": {
     "tempest": {
       "git-sha": "26149b612d",
-       "url": "https://git.openstack.org/cgit/openstack/tempest/"
+       "url": "https://opendev.org/openstack/tempest/"
     }
   },
   "capabilities": {

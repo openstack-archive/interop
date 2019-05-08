@@ -29,7 +29,7 @@ Changes from v1.2
   { "id": "2016.01",        # Spec name (date based)
     "schema": "1.4",        # Schema version
     "reference": "http://github.com/openstack/defcore/schema.1.4.rst", # Schema description
-    "source": "http://git.openstack.org/cgit/openstack/defcore/",   # git repo for files
+    "source": "http://opendev.org/openstack/defcore/",   # git repo for files
     "status": "approved",   # can be draft, review, approved or superseded [see 2015B C6.3]
     "cutoff_score": "74", # the minimum score a Capability must achieve to be required in this Guideline
     "target_approval": "2016-01-27", # Target date for BoD to approve Guideline
@@ -60,7 +60,7 @@ Changes from v1.2
     "test-repositories": {  # tracks difference possible test sources
       "tempest": {        # source of tests
         "git-sha": "c77e46d8e3",  # reference for automated checkout
-        "url": "https://git.openstack.org/cgit/openstack/tempest/"   # git location from OpenStack
+        "url": "https://opendev.org/openstack/tempest/"   # git location from OpenStack
       }
     },
     "criteria" : {          # explains achievements

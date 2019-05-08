@@ -1,7 +1,7 @@
 {
   "id": "2015.03",
   "schema": "1.2",
-  "source": "http://git.openstack.org/cgit/openstack/defcore/",
+  "source": "http://opendev.org/openstack/interop/",
   "status": "superseded",
   "replaces": "2014.07",
   "releases": ["havana", "icehouse"],
@@ -530,7 +530,7 @@
           "catch_errors": { "description": "not provided", "designated": true, "comment": "middleware"},
           "healthcheck": { "description": "not provided", "designated": true, "comment": ""},
           "bulk": { "description": "not provided", "designated": true, "comment": ""},
-          "slo": { "description": "not provided", "designated": true, "comment": ""}, 
+          "slo": { "description": "not provided", "designated": true, "comment": ""},
           "container-quotas": { "description": "not provided", "designated": true, "comment": ""},
           "account-quotas": { "description": "not provided", "designated": true, "comment": ""},
           "tempurl": { "description": "not provided", "designated": true, "comment": ""},

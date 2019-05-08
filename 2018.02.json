@@ -2,8 +2,8 @@
   "metadata": {
     "id": "2018.02",
     "schema": "2.0",
-    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
-    "source": "http://git.openstack.org/cgit/openstack/interop/add-ons/dns.next.json",
+    "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/2.0.json",
+    "source": "https://opendev.org/openstack/interop/raw/branch/master/add-ons/dns.next.json",
     "scoring": {
       "cutoff_score": 74,
       "criteria": {
@@ -3806,7 +3806,7 @@
   },
   "test_repositories": {
     "tempest": {
-      "repository": "https://git.openstack.org/cgit/openstack/tempest/",
+      "repository": "https://opendev.org/openstack/tempest/",
       "reference": "9bd78bcd65c46623b6f04ebdc3efe18375fd296f",
       "description": "OpenStack Integrated API and Scenario Test Repository"
     }

@@ -77,14 +77,14 @@ with open(outFileName, "w") as outFile:
 
     # Correct Source
     if data.get('source') not in (
-       'http://git.openstack.org/cgit/openstack/defcore/',
-       'http://git.openstack.org/cgit/openstack/interop/'):
+       'http://opendev.org/openstack/defcore/',
+       'http://opendev.org/openstack/interop/'):
         print_error("The expected interoperability guideline source not found")
 
     outFile.write("""
 :Status: {status}
 :Replaces: {replaces}
-:JSON Master: http://git.openstack.org/cgit/openstack/interop/tree/{id}.json
+:JSON Master: http://opendev.org/openstack/interop/raw/branch/master/{id}.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to

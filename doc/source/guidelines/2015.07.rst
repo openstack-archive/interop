@@ -4,7 +4,7 @@ OpenStack DefCore 2015.07
 
 :Status: superseded
 :Replaces: 2015.05
-:JSON Master: http://git.openstack.org/cgit/openstack/defcore/tree/2015.07.json
+:JSON Master: http://opendev.org/openstack/interop/raw/branch/master/2015.07.json
 
 This document outlines the mandatory capabilities and designated
 sections required to exist in a software installation in order to

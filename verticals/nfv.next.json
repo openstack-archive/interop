@@ -2,8 +2,8 @@
   "metadata": {
     "id": "nfv.next",
     "schema": "2.0",
-    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
-    "source": "http://git.openstack.org/cgit/openstack/interop/",
+    "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/2.0.json",
+    "source": "http://opendev.org/openstack/interop/",
     "scoring": {
       "cutoff_score": 74,
       "criteria": {
@@ -84,7 +84,7 @@
         },
         {
           "name": "os_powered_compute",
-          "source": "https://git.openstack.org/cgit/openstack/interop/tree/2017.09.json"
+          "source": "https://opendev.org/openstack/interop/raw/branch/master/2017.09.json"
         }
       ]
     }
@@ -731,12 +731,12 @@
   },
   "test_repositories": {
     "neutron": {
-      "repository": "https://git.openstack.org/cgit/openstack/neutron/",
+      "repository": "https://opendev.org/openstack/neutron/",
       "reference": "e971f0c317",
       "description": "OpenStack Neutron project reposoritory containing API and scenario tests"
     },
     "networking-bgpvpn": {
-      "repository": "https://git.openstack.org/cgit/openstack/networking-bgpvpn",
+      "repository": "https://opendev.org/openstack/networking-bgpvpn",
       "reference": "c5575c657f",
       "description": "OpenStack networking-bgpvpn project repository containing API and scenario tests"
     }

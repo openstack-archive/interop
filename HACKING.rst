@@ -118,7 +118,7 @@ To file a flag request for a test, follow these steps:
 
    .. code-block:: console
 
-      $ git clone https://git.openstack.org/openstack/defcore.git
+      $ git clone https://opendev.org/openstack/interop.git
 
 #. Open the relevant Guideline or Guidelines in your favorite text
    editor and locate the tests you want to flag.

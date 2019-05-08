@@ -201,9 +201,9 @@ Notes:
     forward [5].
 
 [1] https://bugs.launchpad.net/python-novaclient/+bug/1491579
-[2] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n44
-[3] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n48
-[4] http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst#n90
+[2] http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/CoreCriteria.rst#n44
+[3] http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/CoreCriteria.rst#n48
+[4] http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/CoreCriteria.rst#n90
 [5] http://eavesdrop.openstack.org/meetings/defcore_flag_14/2015/defcore_flag_14.2015-09-09-15.03.log.html#l-13
 
 Image

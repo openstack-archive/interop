@@ -14,5 +14,5 @@ Governance Process
 
 * Process documents and other "rules of the road" will be maintained and
   voted on in `Gerrit
-  <http://git.openstack.org/cgit/openstack/defcore>`_.  Committee
+  <http://opendev.org/openstack/defcore>`_.  Committee
   chairs will have +/-2 voting privilleges.

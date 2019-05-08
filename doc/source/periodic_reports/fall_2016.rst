@@ -77,16 +77,16 @@ for products labeled "OpenStack."  For more information about the DefCore
 Committee, please refer to the following resources:
 
 * The `Core Definition
-  <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreDefinition.rst>`_
+  <http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/CoreDefinition.rst>`_
   document describes the DefCore Committee's guiding principals.
 * The `2016A Process document
-  <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/2016A.rst>`_
+  <http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/2016A.rst>`_
   describes some of the DefCore Committee's operating procedures.
 * The `Core Criteria document
-  <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst>`_
+  <http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/CoreCriteria.rst>`_
   describes the criteria the DefCore Committee uses to evaluate Capabilities
   for inclusion in its Interoperability Guidelines.
-* The `DefCore Lexicon <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/Lexicon.rst>`_
+* The `DefCore Lexicon <http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/Lexicon.rst>`_
   defines some of the terminology the DefCore Committee uses, including some
   terms that are used in this report.
 * The `OpenStack Interoperability page
@@ -165,7 +165,7 @@ The DefCore Committee recognizes that using existing tests for a new purpose
 may sometimes require tests to be refined or even for new tests to be written.
 In order for good interoperability tests to be developed, the DefCore
 Committee has `created a specification
-<http://git.openstack.org/cgit/openstack/defcore/tree/working_materials/DefCoreSpec.rst>`_
+<http://opendev.org/openstack/interop/raw/branch/master/working_materials/DefCoreSpec.rst>`_
 that discusses what traits we look for in a test that is suitable for inclusion
 in the Interoperability Guidelines. It is our hope that this listing will help
 foster awareness and understanding within the development community as tests
@@ -178,7 +178,7 @@ are created, updated, or moved into Tempest over time.
     the Tempest source tree for its Guidelines.
 .. [2] Refer to the
     `Core Criteria
-    <http://git.openstack.org/cgit/openstack/defcore/tree/doc/source/process/CoreCriteria.rst>`_
+    <http://opendev.org/openstack/interop/raw/branch/master/doc/source/process/CoreCriteria.rst>`_
     document for more details.
 .. [3] As of this writing. Refer to the
     `OpenStack API Complete Reference <http://developer.openstack.org/api-ref.html>`_

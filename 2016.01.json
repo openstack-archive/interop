@@ -1,8 +1,8 @@
 {
   "id": "2016.01",
   "schema": "1.5",
-  "reference": "https://git.openstack.org/cgit/openstack/defcore/schema/1.5.json",
-  "source": "http://git.openstack.org/cgit/openstack/defcore/",
+  "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/1.5.json",
+  "source": "http://opendev.org/openstack/interop/",
   "status": "superseded",
   "cutoff_score": "74",
   "target_approval": "2016-01-27",
@@ -111,7 +111,7 @@
   "test-repositories": {
     "tempest": {
       "git-sha": "26149b612d",
-       "url": "https://git.openstack.org/cgit/openstack/tempest/"
+       "url": "https://opendev.org/openstack/tempest/"
     }
   },
   "capabilities": {
@@ -2066,7 +2066,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }           
+          }
         },
         "tempest.api.network.test_routers.RoutersTest.test_create_router_with_snat_explicit": {
           "idempotent_id": "id-ea74068d-09e9-4fd7-8995-9b6a1ace920f",
@@ -2074,7 +2074,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }           
+          }
         },
         "tempest.api.network.test_routers.RoutersTest.test_create_show_list_update_delete_router": {
           "idempotent_id": "id-f64403e2-8483-4b34-8ccd-b09a87bcc68c"
@@ -2100,7 +2100,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }           
+          }
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_with_snat_explicit": {
           "idempotent_id": "id-b386c111-3b21-466d-880c-5e72b01e1a33",
@@ -2108,7 +2108,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }           
+          }
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_set_gateway_without_snat": {
           "idempotent_id": "id-96536bc7-8262-4fb2-9967-5c46940fa279",
@@ -2116,7 +2116,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }           
+          }
         },
         "tempest.api.network.test_routers.RoutersTest.test_update_router_unset_gateway": {
           "idempotent_id": "id-ad81b7ee-4f81-407b-a19c-17e623f763e8"
@@ -2354,7 +2354,7 @@
         },
         "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_snapshots_list_with_params": {
           "idempotent_id": "id-59f41f43-aebf-48a9-ab5d-d76340fab32b",
-          "aliases": ["tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_with_params"]          
+          "aliases": ["tempest.api.volume.test_volumes_snapshots_list.VolumesV2SnapshotListTestJSON.test_snapshots_list_with_params"]
         },
         "tempest.api.volume.test_volumes_snapshots.VolumesV2SnapshotTestJSON.test_volume_from_snapshot": {
           "idempotent_id": "id-677863d1-3142-456d-b6ac-9924f667a7f4"
@@ -2597,7 +2597,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }          
+          }
         },
         "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_create_delete_qos_with_both_consumer": {
           "idempotent_id": "id-f88d65eb-ea0d-487d-af8d-71f4011575a4",
@@ -2621,7 +2621,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }          
+          }
         },
         "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_get_qos": {
           "idempotent_id": "id-7aa214cc-ac1a-4397-931f-3bb2e83bb0fd",
@@ -2629,7 +2629,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }          
+          }
         },
         "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_list_qos": {
           "idempotent_id": "id-75e04226-bcf7-4595-a34b-fdf0736f38fc",
@@ -2637,7 +2637,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }          
+          }
         },
         "tempest.api.volume.test_qos.QosSpecsV2TestJSON.test_set_unset_qos_key": {
           "idempotent_id": "id-ed00fd85-4494-45f2-8ceb-9e2048919aed",
@@ -2645,7 +2645,7 @@
             "reason": "D400 Test does not meet Criteria since it requires admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }          
+          }
         }
       }
     },
@@ -2746,7 +2746,7 @@
             "reason": "D400 Test does not meet Criteria since it requires multi-tenancy and admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }          
+          }
         },
         "tempest.api.volume.test_volume_transfers.VolumesV2TransfersTest.test_create_list_delete_volume_transfer": {
           "idempotent_id": "id-ab526943-b725-4c07-b875-8e8ef87a2c30",
@@ -2754,7 +2754,7 @@
             "reason": "D400 Test does not meet Criteria since it requires multi-tenancy and admin credential",
             "action": "This test has been removed from 2016.08 guideline.",
             "date": "2016-08-09"
-          }          
+          }
         }
       }
     },

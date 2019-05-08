@@ -2,8 +2,8 @@
   "metadata": {
     "id": "next",
     "schema": "2.0",
-    "reference": "https://git.openstack.org/cgit/openstack/interop/schema/2.0.json",
-    "source": "http://git.openstack.org/cgit/openstack/interop/",
+    "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/2.0.json",
+    "source": "http://opendev.org/openstack/interop/",
     "scoring": {
       "cutoff_score": 74,
       "criteria": {
@@ -3528,7 +3528,7 @@
   },
   "test_repositories": {
     "tempest": {
-      "repository": "https://git.openstack.org/cgit/openstack/tempest/",
+      "repository": "https://opendev.org/openstack/tempest/",
       "reference": "c77e46d8e3",
       "description": "OpenStack Integrated API and Senario Test Repository"
     }
