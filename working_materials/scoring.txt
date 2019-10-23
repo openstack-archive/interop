@@ -299,17 +299,26 @@ Notes:
 
 Identity
 --------
-identity-v3-api-discovery:           [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
-identity-v3-catalog:                 [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
-identity-v3-list-projects:           [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
-identity-v3-list-groups:             [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
-identity-v3-tokens-create:           [1,1,1] [1,1,1] [1,1,1] [1,1,0] [1] [92]*
-identity-v3-tokens-validate:         [1,1,1] [1,1,1] [1,1,1] [0,1,0] [1] [83]*
-identity-v3-tokens-delete:           [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
-identity-v3-application-credentials: [0,0,1] [1,0,0] [1,1,0] [0,1,0] [1] [43]
-identity-v3-user-password:           [0,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [69]
+identity-v3-api-discovery:                       [1,0,1] [1,1,1] [1,1,1] [1,1,1] [1] [94]*
+identity-v3-catalog:                             [1,0,1] [1,1,1] [1,1,0] [1,1,1] [1] [85]*
+identity-v3-list-projects:                       [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-list-groups:                         [1,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [74]*
+identity-v3-tokens-create:                       [1,1,1] [1,1,1] [1,1,1] [1,1,0] [1] [92]*
+identity-v3-tokens-validate:                     [1,1,1] [1,1,1] [1,1,1] [0,1,0] [1] [83]*
+identity-v3-tokens-delete:                       [1,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [77]*
+identity-v3-application-credentials:             [0,0,1] [1,0,0] [1,1,0] [0,1,0] [1] [43]
+identity-v3-user-password:                       [0,0,1] [1,1,1] [1,1,0] [1,1,0] [1] [69]
+identity-v3-get-domain-scopes:                   [0,1,1] [1,1,1] [1,1,0] [0,1,0] [1] [66]
+identity-v3-get-system-scopes:                   [0,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [60]
+identity-v3-create-application-credential:       [0,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [60]
+identity-v3-list-application-credentials:        [0,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [60]
+identity-v3-show-application-credential-details: [0,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [60]
+identity-v3-delete-application-credential:       [0,0,1] [1,1,1] [1,1,0] [0,1,0] [1] [60]
 
 Notes:
+  * identity-v3-delete-application-credential no tests
+  * identity-v3-get-system-scopes no tests
+  * identity-v3-get-domain-scopes test requires admin permissions in order to set up the test
   * identity-v3-list-projects and identity-v3-list-groups didn't have usable
   tests in the past, but one was added for identity-v3-list-projects last year.
   Providers like Fog.io
