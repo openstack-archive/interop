@@ -109,7 +109,7 @@ Notes:
     Subnet pools were introduced in Kilo but had incomplete support in
     Horizon at the time.  A Heat resource for subnet pools was added
     in Mitaka, and OpenStackClient added support late in the Mitaka cycle
-    as well (https://review.openstack.org/#/c/279918/).  If we make subnet
+    as well (https://review.opendev.org/#/c/279918/).  If we make subnet
     pools advisory now, they could become required in 2017.08--in which
     the earliest release in the Guideline will be Mitaka.  Toolkits like
     jClouds, Fog, and libcloud do not yet support subnet pools that I see.
