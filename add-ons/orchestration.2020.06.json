@@ -1,0 +1,742 @@
+{
+  "metadata": {
+    "id": "orchestration.2020.06",
+    "schema": "2.0",
+    "reference": "https://opendev.org/openstack/interop/raw/branch/master/doc/source/schema/2.0.json",
+    "source": "http://opendev.org/openstack/interop/raw/branch/master/add-ons/orchestration.2020.06.json",
+    "scoring": {
+      "cutoff_score": 60,
+      "criteria": {
+        "atomic": {
+          "name": "Atomic",
+          "description": "The capabilities are unique and cannot be built out of other must-pass capabilities.",
+          "weight": 6
+        },
+        "clients": {
+          "name": "Used By Clients",
+          "description": "The capabilities are widely used by common OpenStack clients, including the openstack client, nova client, neutron client, and so on. This criterion pertains mostly to API versioning. For example, if v2 of a given API is not used by other OpenStack clients but v1 is, then v2 doesn't achieve the 'used by clients' criterion.",
+          "weight": 10
+        },
+        "complete": {
+          "name": "Complete",
+          "description": "Where the code being tested has a designated area of alternate implementation (add-on framework) as per the Core Principles, there should be parity in capability tested across add-on implementations. This also implies that the capability test is not configuration specific or locked to non-open technology.",
+          "weight": 8
+        },
+        "discover": {
+          "name": "Discoverable",
+          "description": "Capability being tested is Service Discoverable (can be found in Keystone and via service introspection).",
+          "weight": 8
+        },
+        "doc": {
+          "name": "Documented",
+          "description": "The capability is well documented, including both the interface and the expected behavior.",
+          "weight": 8
+        },
+        "future": {
+          "name": "Future Direction",
+          "description": "The capability reflects the future technical direction as defined by theproject technical teams and the Technical Committee.",
+          "weight": 11
+        },
+        "stable": {
+          "name": "Stable",
+          "description": "A capability that whose API has changed in more than two releases. Meant to select for capabilities that are stable and not under active development.",
+          "weight": 9
+        },
+        "sticky": {
+          "name": "Core In Last Release",
+          "description": "A capability whose API was present in the previous guideline release. Discourages the disruption of replacing the API a capability uses, or removing a capability from core.",
+          "weight": 9
+        },
+        "tools": {
+          "name": "Used By Tools",
+          "description": "Capabilities that are widely used outside of the OpenStack client ecosystem. Example tools include GopherCloud, jClouds, Fog, and so on.",
+          "weight": 6
+        }
+      }
+    },
+    "os_trademark_approval": {
+      "target_approval": "orchestration.2020.06",
+	  "replaces": "orchestration.2019.11",
+      "releases": ["stein", "train", "ussuri", "victoria"],
+      "status": "draft"
+    }
+  },
+  "add-ons": {
+    "Orchestration": {
+      "description": "OpenStack Powered with Orchestration",
+      "components": [
+        { "name": "os_powered_orchestration" }
+      ],
+      "required_platform_components": [
+        {
+          "name": "os_powered_compute",
+          "source": "http://opendev.org/openstack/interop/2020.06.json"
+        }
+      ]
+    }
+  },
+  "components": {
+    "os_powered_orchestration": {
+      "capabilities": {
+        "required": [
+          "stack-create",
+          "stack-delete",
+          "stack-environment-parameter",
+          "stack-event",
+          "stack-hook",
+          "stack-list",
+          "stack-output",
+          "stack-preview",
+          "stack-list-resources",
+          "stack-list-resource-types",
+          "stack-list-template-functions",
+          "stack-list-template-versions",
+          "stack-mark-resource-unhealthy",
+          "stack-resource-type-template",
+          "stack-show",
+          "stack-show-resource",
+          "stack-show-resource-type",
+          "stack-show-unhealthy-resource",
+          "stack-signal-resource",
+          "stack-software-config",
+          "stack-tag",
+          "stack-template",
+          "stack-update"
+        ],
+        "advisory": [
+        ],
+        "deprecated": [
+        ],
+        "removed": [
+        ]
+      },
+      "designated_sections": {
+        "required": [
+          "heat"
+        ]
+      }
+    }
+  },
+  "capabilities": {
+    "stack-create": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Create new stacks.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.stacks_create_empty_stack.test_request": {
+          "idempotent_id": "bde1b827-65fb-47ea-909f-82537e6260d3"
+        },
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_create_stack_with_resources.test_request": {
+          "idempotent_id": "947be7b2-503d-41f5-9843-61be50954f13"
+        },
+        "heat_tempest_plugin.tests.scenario.test_base_resources.BasicResourcesTest.test_base_resources_integration": {
+          "idempotent_id": "bd151ea4-2dcd-4440-9bf0-eff63a98e5d4"
+        }
+      }
+    },
+    "stack-update": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Update stacks.",
+      "project": "heat",
+	  "required_since": "2018.11",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.stacks_update_stack.test_request": {
+          "idempotent_id": "6bb1ec02-dd19-4b2c-9a6d-866ce666650f"
+        },
+        "heat_tempest_plugin.tests.api.test_heat_api.stacks_patch_update_stack.test_request": {
+          "idempotent_id": "927cea42-a35b-4664-b209-ab2cb34e6ef4"
+        }
+      }
+    },
+    "stack-delete": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Delete stacks.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.stacks_delete_empty_stack.test_request": {
+          "idempotent_id": "7eca55fe-8300-43b6-a6b8-fb2d99b51911"
+        },
+        "heat_tempest_plugin.tests.api.test_heat_api.environments_delete_envstack.test_request": {
+          "idempotent_id": "0efde180-cc0e-4f2c-bb18-fa345e8d21ad"
+        },
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_delete_stack_with_resources.test_request": {
+          "idempotent_id": "0edc4fdc-811d-4d27-a0dd-6ec4db2bda6e"
+        }
+      }
+    },
+    "stack-environment-parameter": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Create an environment with parameters.",
+      "project": "heat",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.environments_environment_with_parameter.test_request": {
+          "idempotent_id": "8281d088-0c80-4071-a13d-333b309be6ca"
+        }
+      }
+    },
+    "stack-output": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Get the output of a stack.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.environments_get_stack_output.test_request": {
+          "idempotent_id": "f60dd8df-82d1-4228-8926-54d65ebd12e1"
+        },
+        "heat_tempest_plugin.tests.functional.test_stack_outputs.StackOutputsTest.test_outputs": {
+          "idempotent_id": "a886dd67-4506-4a37-82ae-43f0a7d83f35"
+        },
+        "heat_tempest_plugin.tests.functional.test_stack_outputs.StackOutputsTest.test_outputs_update_new_resource": {
+          "idempotent_id": "aea0e495-4c77-4033-8c43-3351e9cb7b48"
+        },
+        "heat_tempest_plugin.tests.functional.test_stack_outputs.StackOutputsTest.test_output_error_nested": {
+          "idempotent_id": "993a403c-c6e2-475d-a65d-a82b8c9e0c22"
+        }
+      }
+    },
+    "stack-list": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List stacks.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.stacks_stack_list.test_request": {
+          "idempotent_id": "39c0245e-6055-41cf-9f0e-15adfe55ded6"
+        }
+      }
+    },
+    "stack-list-resources": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List available resources.",
+      "project": "heat",
+	  "required_since": "2018.11",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_list_filtered_resources.test_request": {
+          "idempotent_id": "da07d3d2-9ccc-4fa1-9b1b-9cb3074fe9b9"
+        },
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_list_resources.test_request": {
+          "idempotent_id": "ec53f10d-a89a-4243-8706-629a01ea890f"
+        },
+        "heat_tempest_plugin.tests.functional.test_resources_list.ResourcesList.test_filtering_with_depend": {
+          "idempotent_id": "b65b5c82-68b0-42c9-82a0-c0e74e9ad906"
+        },
+        "heat_tempest_plugin.tests.functional.test_resources_list.ResourcesList.test_required_by": {
+          "idempotent_id": "97a65d53-b449-4a43-8283-42d43b165756"
+        }
+      }
+    },
+    "stack-list-resource-types": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List available resource types.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resourcetypes_list_resource_types.test_request": {
+          "idempotent_id": "5b4db88b-d171-4400-b7a7-a7dc8f597d31"
+         }
+      }
+    },
+    "stack-list-template-versions": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List template versions.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.templates_list_template_versions.test_request": {
+          "idempotent_id": "cbc28c20-e740-43ef-a01b-b1a39f4a0db3"
+         }
+      }
+    },
+    "stack-list-template-functions": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "List template functions.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.templates_list_template_functions.test_request": {
+          "idempotent_id": "721ff23c-8527-480f-a090-1c915b4f8430"
+        }
+      }
+    },
+    "stack-mark-resource-unhealthy": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Mark a resource as unhealthy.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_mark_resource_unhealthy.test_request": {
+          "idempotent_id": "6031516b-3a8f-4d1b-8990-81a571b5f956"
+        }
+      }
+    },
+    "stack-resource-type-template": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show resource type template.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resourcetypes_resource_type_template.test_request": {
+          "idempotent_id": "5a2164eb-645a-4245-acd7-b222a715fc09"
+        }
+      }
+    },
+    "stack-show": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show the empty stack.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.stacks_show_empty_stack.test_request": {
+          "idempotent_id": "89b233fe-0d55-4959-9289-0b5dabe4e4c9"
+        }
+      }
+    },
+    "stack-show-resource": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show a resource.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_show_resource.test_request": {
+          "idempotent_id": "2cbcedc5-0aa7-454e-bf89-a3dd5d379dc1"
+        }
+      }
+    },
+    "stack-show-resource-type": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show a resource type.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resourcetypes_show_resource_type.test_request": {
+          "idempotent_id": "cc05d1ef-17f1-430e-bea1-0f6766f7d0b4"
+        }
+      }
+    },
+    "stack-show-unhealthy-resource": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Show unhealthy resources.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_show_unhealthy_resource.test_request": {
+          "idempotent_id": "9e784490-2e88-49af-8ee7-c4c6aba2be64"
+        }
+      }
+    },
+    "stack-signal-resource": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Send a signal to a resource.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.resources_signal_resource.test_request": {
+          "idempotent_id": "c65a047c-8c7b-4b44-9f5f-bf1069751c5c"
+        }
+      }
+    },
+    "stack-template": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Validate templates.",
+      "project": "heat",
+	  "required_since": "2018.02",
+      "tests": {
+        "heat_tempest_plugin.tests.api.test_heat_api.templates_template_validate.test_request": {
+          "idempotent_id": "f307139b-03d0-4006-92b7-81c86c949727"
+        },
+        "heat_tempest_plugin.tests.functional.test_templates.TemplateAPITest.test_get_stack_template": {
+          "idempotent_id": "ac6ebc41-bd6a-4df4-80e5-f4b9ae3b5506"
+        },
+        "heat_tempest_plugin.tests.functional.test_templates.TemplateAPITest.test_resource_types": {
+          "idempotent_id": "9f9a2fc0-f029-4d1f-a2eb-f019b9f75944"
+        },
+        "heat_tempest_plugin.tests.functional.test_templates.TemplateAPITest.test_show_resource_template": {
+          "idempotent_id": "fafbdcd0-eec3-4e6f-9c88-1e4835d085cf"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_basic": {
+          "idempotent_id": "b65a80c2-a507-4deb-9e7e-43181cc05211"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_override_default": {
+          "idempotent_id": "bf27371d-e202-4bae-9f13-2ef137958517"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_override_none": {
+          "idempotent_id": "0278e03d-ed50-4909-b29d-9c4267d3fcd6"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_basic_required_param": {
+          "idempotent_id": "acb1435b-f1db-4427-9121-7e3144ddb81e"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_fail_version": {
+          "idempotent_id": "7aac1feb-8256-4f70-8459-5e9780d28904"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_parameter_groups": {
+          "idempotent_id": "6a6472d2-71fa-4ebe-a2b6-20878838555b"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_nested_off": {
+          "idempotent_id": "5100cf18-f52a-47a2-880c-d540edad149f"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_nested_on": {
+          "idempotent_id": "480bcf64-25ae-49c7-b147-7cbc27d09cea"
+        },
+        "heat_tempest_plugin.tests.functional.test_template_validate.StackTemplateValidateTest.test_template_validate_nested_on_multiple": {
+          "idempotent_id": "a0bb07f0-2e10-4226-a205-a7eb04df415f"
+        },
+        "heat_tempest_plugin.tests.functional.test_unicode_template.StackUnicodeTemplateTest.test_template_validate_basic": {
+          "idempotent_id": "871cc5dd-7550-494d-8c6d-9d549a8c0305"
+        },
+        "heat_tempest_plugin.tests.functional.test_unicode_template.StackUnicodeTemplateTest.test_template_validate_override_default": {
+          "idempotent_id": "e84c76b8-a5e5-45e7-9c4b-4c160d1c385f"
+        },
+        "heat_tempest_plugin.tests.functional.test_unicode_template.StackUnicodeTemplateTest.test_stack_preview": {
+          "idempotent_id": "66338945-a3ae-4e3a-aa17-ab802ceb00b1"
+        },
+        "heat_tempest_plugin.tests.functional.test_unicode_template.StackUnicodeTemplateTest.test_create_stack": {
+          "idempotent_id": "d2c4a10c-3cb4-4efd-889d-695a0acbd04f"
+        }
+      }
+    },
+    "stack-hook": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Set and unset hook",
+      "project": "heat",
+	  "required_since": "2018.11",
+      "tests": {
+        "heat_tempest_plugin.tests.functional.test_hooks.HooksTest.test_hook_pre_create": {
+          "idempotent_id": "f14cbe86-0392-474a-9f28-bb561745698d"
+        },
+        "heat_tempest_plugin.tests.functional.test_hooks.HooksTest.test_hook_pre_update_nochange": {
+          "idempotent_id": "75009076-96eb-43af-b4df-f002704737d2"
+        },
+        "heat_tempest_plugin.tests.functional.test_hooks.HooksTest.test_hook_pre_update_replace": {
+          "idempotent_id": "9f03d1e0-a2d2-42fc-a9c6-47db05b9c8ed"
+        },
+        "heat_tempest_plugin.tests.functional.test_hooks.HooksTest.test_hook_pre_update_in_place": {
+          "idempotent_id": "15c4f97d-5e06-40c6-83af-0e57d5afaff9"
+        },
+        "heat_tempest_plugin.tests.functional.test_hooks.HooksTest.test_hook_pre_create_nested": {
+          "idempotent_id": "7d96b5f4-4aba-493d-b098-4beea4654a2b"
+        },
+        "heat_tempest_plugin.tests.functional.test_hooks.HooksTest.test_hook_pre_create_wildcard": {
+          "idempotent_id": "cffc0783-3add-4f0c-ac66-03c90f6feeb0"
+        }
+      }
+    },
+    "stack-preview": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Preview stack",
+      "project": "heat",
+	  "required_since": "2018.11",
+      "tests": {
+        "heat_tempest_plugin.tests.functional.test_preview.StackPreviewTest.test_basic_pass": {
+          "idempotent_id": "4c2c062d-4723-42c0-a113-3307dd4ceb12"
+        },
+        "heat_tempest_plugin.tests.functional.test_preview.StackPreviewTest.test_basic_fail": {
+          "idempotent_id": "54e69a54-762d-479e-a4f4-1fbf21af01c6"
+        },
+        "heat_tempest_plugin.tests.functional.test_preview.StackPreviewTest.test_nested_pass": {
+          "idempotent_id": "0449113c-ff90-4f2b-8825-27ea35c1983f"
+        },
+        "heat_tempest_plugin.tests.functional.test_preview.StackPreviewTest.test_res_group_with_nested_template:Wherej": {
+          "idempotent_id": "6ca8ddfc-106f-4ecc-83f7-fca31d0c85ca"
+        }
+      }
+    },
+    "stack-software-config": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Software config deployment",
+      "project": "heat",
+	  "required_since": "2018.11",
+      "tests": {
+        "heat_tempest_plugin.tests.functional.test_software_config.ParallelDeploymentsTest.test_deployments_metadata": {
+          "idempotent_id": "8ee231ff-f80a-4a17-a860-5cda87e18ad0"
+        },
+        "heat_tempest_plugin.tests.functional.test_software_config.ParallelDeploymentsTest.test_deployments_timeout_failed": {
+          "idempotent_id": "bd539232-b999-4bec-b47d-ff4822fc8b82"
+        }
+      }
+    },
+    "stack-event": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Stack event.",
+      "project": "heat",
+	  "required_since": "2018.11",
+      "tests": {
+        "heat_tempest_plugin.tests.functional.test_stack_events.StackEventsTest.test_event": {
+          "idempotent_id": "620f4f7c-74f8-48a4-a8b0-d06d0337f133"
+        }
+      }
+    },
+    "stack-tag": {
+      "achievements": [
+        "atomic",
+        "clients",
+        "complete",
+        "discover",
+        "doc",
+        "future",
+        "stable",
+        "tools"
+      ],
+      "admin": false,
+      "description": "Tag Stack.",
+      "project": "heat",
+	  "required_since": "2018.11",
+      "tests": {
+        "heat_tempest_plugin.tests.functional.test_stack_tags.StackTagTest.test_stack_tag": {
+          "idempotent_id": "67332e51-b427-42d5-ad8d-fd2ec334f361"
+        },
+        "heat_tempest_plugin.tests.functional.test_stack_tags.StackTagTest.test_hidden_stack": {
+          "idempotent_id": "5ed79584-0684-4f9c-ae8e-44a8f874ec79"
+        }
+      }
+    }
+
+
+  },
+  "designated_sections": {
+    "heat": {
+      "required": {
+        "guidance": "Must at a minimum include resources for OpenStack Powered Compute components.",
+        "comment": "As a templating language, some clouds may include more or less code depending on offered resources.",
+        "sections": {
+          "resource class": {
+            "description": "Must include class 'Resource', as it is the basis for all resources.",
+            "designated": true
+          },
+          "template versions": {
+            "description": "Must contain corresponding hot template versions (and make it up to date with your OpenStack release) which code entry lists in 'heat.templates' under setup.cfg of heat repo. And make sure hot template functionality for versions are compatible with the corresponding versions.",
+            "designated": true
+          }
+        }
+      }
+    }
+  },
+  "test_repositories": {
+    "heat": {
+      "repository": "http://opendev.org/openstack/heat-tempest-plugin/",
+      "reference": "master",
+      "description": "OpenStack Heat Tempest Test Plugin Repository"
+    }
+  }
+}
