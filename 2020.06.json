@@ -3214,7 +3214,7 @@
         "guidance": "Clients not considered core capabilities at this time",
         "sections": {}
       }
-    },
+    }
   },
   "test_repositories": {
     "tempest": {
