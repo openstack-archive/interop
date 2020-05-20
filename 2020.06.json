@@ -3219,7 +3219,7 @@
   "test_repositories": {
     "tempest": {
       "repository": "https://opendev.org/openstack/tempest/",
-      "reference": ""d43223773d75d2e82fb33a1281038e611c41d0f3,
+      "reference": "d43223773d75d2e82fb33a1281038e611c41d0f3",
       "description": "OpenStack Integrated API and Scenario Test Repository"
     }
   }
