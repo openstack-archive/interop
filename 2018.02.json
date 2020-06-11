@@ -73,7 +73,7 @@
       "target_approval": "2018.02",
       "replaces": "2017.09",
       "releases": ["newton", "ocata", "pike", "queens"],
-      "status": "approved"
+      "status": "superseded"
     }
   },
   "platforms": {

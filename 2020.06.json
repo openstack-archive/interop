@@ -73,7 +73,7 @@
       "target_approval": "2020.06",
       "replaces": "2019.11",
       "releases": ["stein", "train", "ussuri", "victoria"],
-      "status": "draft"
+      "status": "approved"
     }
   },
   "platforms": {

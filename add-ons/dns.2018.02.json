@@ -57,7 +57,7 @@
     "os_trademark_approval": {
       "target_approval": "2018.02",
       "releases": ["newton", "ocata", "pike", "queens"],
-      "status": "approved"
+      "status": "superseded"
     }
   },
   "add-ons": {
